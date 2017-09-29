@@ -2,8 +2,11 @@ package dev.tilegame.entities.animals;
 
 import dev.tilegame.Game;
 import dev.tilegame.gfx.Assets;
+import dev.tilegame.utils.Utils;
 
 import java.awt.*;
+import java.util.ArrayList;
+
 
 /**
  * @author kaseystowell
@@ -23,13 +26,19 @@ public class Pet extends Animal {
 
     private void getInput() {
         if (game.getKeyManager().up) // temp
-            y -= 3; // temp
+            y -= 32; // temp
+        System.out.println("y "+ super.gridLoc()[1]);
         if (game.getKeyManager().down) // temp
-            y += 3; // temp
+            y += 32; // temp
+            System.out.println(y);
+        System.out.println("y "+ super.gridLoc()[1]);
         if (game.getKeyManager().left) // temp
-            x -= 3; // temp
+            x -= 32; // temp
+        System.out.println("x "+ super.gridLoc()[0]);
         if (game.getKeyManager().right) // temp
-            x += 3; // temp
+            x += 32; // temp
+            System.out.println(x);
+        System.out.println("x "+ super.gridLoc()[0]);
     }
 
     @Override
