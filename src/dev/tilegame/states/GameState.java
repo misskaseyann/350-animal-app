@@ -36,4 +36,5 @@ public class GameState extends State {
         pet.render(g);
     }
 
+    public World getWorld(){ return world;}
 }
