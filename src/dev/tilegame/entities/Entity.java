@@ -3,6 +3,9 @@ package dev.tilegame.entities;
 import dev.tilegame.Game;
 import java.awt.*;
 import java.util.ArrayList;
+
+import dev.tilegame.input.KeyManager;
+import dev.tilegame.tile.Tile;
 import dev.tilegame.utils.Utils;
 /**
  * @author kaseystowell
@@ -29,6 +32,47 @@ public abstract class Entity {
         int Y = Math.round(y/32);
         return Y;
     };
+
+    public boolean noCollide(KeyManager key){
+        if(key.up){
+            int gridx = gridLocX();
+            int gridy = gridLocY()-1;
+            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+                return false;
+            }
+            return true;
+        }
+        if(key.down){
+            int gridx = gridLocX();
+            int gridy = gridLocY()+1;
+            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+                return false;
+            }
+            return true;
+        }
+        if(key.left){
+            int gridx = gridLocX()-1;
+            int gridy = gridLocY();
+            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+                return false;
+            }
+            return true;
+        }
+        if(key.right){
+            int gridx = gridLocX()+1;
+            int gridy = gridLocY();
+            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+                return false;
+            }
+            return true;
+        }
+
+        return false;
+    }
 
     public abstract void tick();
 

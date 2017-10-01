@@ -28,62 +28,23 @@ public class Pet extends Animal {
     }
 
     private void getInput() {
-        if (game.getKeyManager().up && noCollide(game.getKeyManager())) // temp
+        if (game.getKeyManager().up && super.noCollide(game.getKeyManager())) // temp
             y -= 32; // temp
 
-        if (game.getKeyManager().down && noCollide(game.getKeyManager()) ) // temp
+        if (game.getKeyManager().down && super.noCollide(game.getKeyManager()) ) // temp
             y += 32; // temp
 
-        if (game.getKeyManager().left && noCollide(game.getKeyManager())) // temp
+        if (game.getKeyManager().left && super.noCollide(game.getKeyManager())) // temp
             x -= 32; // temp
 
-        if (game.getKeyManager().right && noCollide(game.getKeyManager()))// temp
+        if (game.getKeyManager().right && super.noCollide(game.getKeyManager()))// temp
             x += 32; // temp
 
 
     }
 
 
-    public boolean noCollide(KeyManager key){
-        if(key.up){
-            int gridx = super.gridLocX();
-            int gridy = super.gridLocY()-1;
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.down){
-            int gridx = super.gridLocX();
-            int gridy = super.gridLocY()+1;
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.left){
-            int gridx = super.gridLocX()-1;
-            int gridy = super.gridLocY();
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.right){
-            int gridx = super.gridLocX()+1;
-            int gridy = super.gridLocY();
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
 
-        return false;
-    }
 
     @Override
     public void render(Graphics g) {
