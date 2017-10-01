@@ -1,6 +1,7 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Game;
+import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
@@ -9,6 +10,8 @@ import java.awt.*;
  * @version 09.24.2017
  */
 public abstract class State {
+
+
 
     private static State currentState = null;
 
@@ -19,6 +22,8 @@ public abstract class State {
     public static State getCurrentState() {
         return currentState;
     }
+
+    public abstract World getWorld();
 
     // required methods
     protected Game game;

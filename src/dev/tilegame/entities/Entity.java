@@ -20,9 +20,14 @@ public abstract class Entity {
     }
 
 
-    public int[] gridLoc(){
-        int[] xAndY = {Math.round(x/32), Math.round(y/32)};
-        return xAndY;
+    public int gridLocX(){
+        int X = Math.round(x/32);
+        return X;
+    };
+
+    public int gridLocY(){
+        int Y = Math.round(y/32);
+        return Y;
     };
 
     public abstract void tick();

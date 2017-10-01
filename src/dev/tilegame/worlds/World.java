@@ -17,6 +17,11 @@ public class World {
     private Game game;
     private int width, height;
     private int spawnX, spawnY;
+
+    public int[][] getTiles() {
+        return tiles;
+    }
+
     private int[][] tiles;
 
     public World(Game game, String path) {
@@ -59,6 +64,8 @@ public class World {
             }
         }
     }
+
+
 
     public int getSpawnX(){
         return spawnX;

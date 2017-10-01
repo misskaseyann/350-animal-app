@@ -2,6 +2,7 @@ package dev.tilegame.states;
 
 import dev.tilegame.Game;
 import dev.tilegame.gfx.Assets;
+import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
@@ -14,6 +15,8 @@ public class MenuState extends State {
     public MenuState(Game game) {
         super(game);
     }
+
+    public World getWorld(){ return null;}
 
     @Override
     public void tick() {

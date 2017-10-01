@@ -31,6 +31,10 @@ public class Game implements Runnable {
     private BufferStrategy bs;
     private Graphics g;
 
+    public State getGameState() {
+        return gameState;
+    }
+
     //States
     private State gameState, menuState, titleState;
 
