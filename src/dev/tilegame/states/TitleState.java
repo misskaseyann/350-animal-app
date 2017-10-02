@@ -27,6 +27,6 @@ public class TitleState extends State {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.wallReg,0,0,null);
+        g.drawImage(Assets.woodFloor,0,0,null);
     }
 }
