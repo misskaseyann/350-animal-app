@@ -1,6 +1,7 @@
 package dev.tilegame;
 
 import dev.tilegame.display.Display;
+import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
@@ -8,6 +9,7 @@ import dev.tilegame.states.GameState;
 import dev.tilegame.states.MenuState;
 import dev.tilegame.states.State;
 import dev.tilegame.states.TitleState;
+import dev.tilegame.worlds.World;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;

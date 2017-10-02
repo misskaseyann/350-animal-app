@@ -1,9 +1,9 @@
 package dev.tilegame.entities;
 
 import dev.tilegame.Game;
-
 import java.awt.*;
-
+import java.util.ArrayList;
+import dev.tilegame.utils.Utils;
 /**
  * @author kaseystowell
  * @version 09.24.2017
@@ -18,6 +18,12 @@ public abstract class Entity {
         this.x = x;
         this.y = y;
     }
+
+
+    public int[] gridLoc(){
+        int[] xAndY = {Math.round(x/32), Math.round(y/32)};
+        return xAndY;
+    };
 
     public abstract void tick();
 
@@ -38,4 +44,6 @@ public abstract class Entity {
     public void setY(float y) {
         this.y = y;
     }
+
+
 }

@@ -5,6 +5,8 @@ import dev.tilegame.tile.Tile;
 import dev.tilegame.utils.Utils;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * @author kaseystowell
@@ -58,4 +60,11 @@ public class World {
         }
     }
 
+    public int getSpawnX(){
+        return spawnX;
+    }
+
+    public int getSpawnY(){
+        return spawnY;
+    }
 }

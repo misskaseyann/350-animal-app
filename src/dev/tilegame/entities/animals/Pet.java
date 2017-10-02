@@ -3,7 +3,10 @@ package dev.tilegame.entities.animals;
 import dev.tilegame.Game;
 import dev.tilegame.gfx.Assets;
 import java.util.Random;
+import dev.tilegame.utils.Utils;
 import java.awt.*;
+import java.util.ArrayList;
+
 
 /**
  * @author kaseystowell
@@ -24,9 +27,9 @@ public class Pet extends Animal {
         game.getGameCamera().centerOnEntity(this);
     }
 
-    private void resetCount(){
-        count = 100;
-    }
+
+    private void resetCount(){ count = 100; }
+
     private void getInput() {
 //        if (game.getKeyManager().up) // temp
 //            y -= 3; // temp
@@ -47,32 +50,32 @@ public class Pet extends Animal {
                 case 0: //Rest
                     break;
                 case 1: //Up
-                    y -= 1;
+                    y -= 32;
                     break;
                 case 2: //Down
-                    y += 1;
+                    y += 32;
                     break;
                 case 3: //Left
-                    x -= 1;
+                    x -= 32;
                     break;
                 case 4: //Right
-                    x += 1;
+                    x += 32;
                     break;
                 case 5: //Up to the Left
-                    y -= 1;
-                    x -= 1;
+                    y -= 32;
+                    x -= 32;
                     break;
                 case 6: //Up to the Right
-                    y -= 1;
-                    x += 1;
+                    y -= 32;
+                    x += 32;
                     break;
                 case 7: //Down to the Left
-                    y += 1;
-                    x -= 1;
+                    y += 32;
+                    x -= 32;
                     break;
                 case 8: //Down to the Right
-                    y += 1;
-                    x += 1;
+                    y += 32;
+                    x += 32;
                     break;
             }
         }

@@ -2,6 +2,9 @@ package dev.tilegame.entities.animals;
 
 import dev.tilegame.Game;
 import dev.tilegame.entities.Entity;
+import dev.tilegame.utils.Utils;
+
+import java.util.ArrayList;
 
 /**
  * @author kaseystowell
@@ -25,4 +28,9 @@ public abstract class Animal extends Entity {
     public void setHealth(int health) {
         this.health = health;
     }
+
+
+
+
+
 }
