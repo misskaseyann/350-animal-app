@@ -1,6 +1,7 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Game;
+import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.tile.Tile;
@@ -18,16 +19,19 @@ public class GameState extends State {
     private Pet pet;
     private World world;
 
-    public GameState(Game game) {
-        super(game);
-        world = new World(game, "res/worlds/world1.txt");
-        pet = new Pet(game, world.getSpawnX()*32, world.getSpawnY()*32);
+    public GameState(Manager manager) {
+        super(manager);
+        world = new World(manager, "res/worlds/world1.txt");
+        manager.setWorld(world);
+        pet = new Pet(manager, world.getSpawnX()*32, world.getSpawnY()*32);
     }
 
     @Override
     public void tick() {
         world.tick();
         pet.tick();
+        if (manager.getKeyManager().esc)
+            State.setState(manager.getGame().getMenuState());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Game;
+import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.worlds.World;
 
@@ -12,19 +13,21 @@ import java.awt.*;
  */
 public class MenuState extends State {
 
-    public MenuState(Game game) {
-        super(game);
+    public MenuState(Manager manager) {
+        super(manager);
     }
 
     public World getWorld(){ return null;}
 
     @Override
     public void tick() {
-
+        if (manager.getKeyManager().enter)
+            State.setState(manager.getGame().getGameState());
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.dogBowl,0,0,null);
+        g.setColor(Color.GREEN);
+        g.fillRect(manager.getMouseManager().getMouseX(), manager.getMouseManager().getMouseY(), 50, 50);
     }
 }
