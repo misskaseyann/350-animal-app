@@ -5,6 +5,7 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
+import dev.tilegame.input.MouseManager;
 import dev.tilegame.states.GameState;
 import dev.tilegame.states.MenuState;
 import dev.tilegame.states.State;
@@ -36,9 +37,13 @@ public class Game implements Runnable {
 
     //Input
     private KeyManager keyManager;
+    private MouseManager mouseManager;
 
     //Camera
     private GameCamera gameCamera;
+
+    // Manager
+    private Manager manager;
 
 
     public Game(String title, int width, int height) {
@@ -46,20 +51,29 @@ public class Game implements Runnable {
         this.height = height;
         this.title = title;
         keyManager = new KeyManager();
+        mouseManager = new MouseManager();
     }
 
     // initialize display
     private void init() {
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
+
+        // set canvas and frame for mouselistener
+        display.getFrame().addMouseListener(mouseManager);
+        display.getFrame().addMouseMotionListener(mouseManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
+
         Assets.init(); // create all game assets
 
         gameCamera = new GameCamera(this,0,0);
+        manager = new Manager(this);
 
-        gameState = new GameState(this);
-        menuState = new MenuState(this);
-        titleState = new TitleState(this);
-        State.setState(gameState);
+        gameState = new GameState(manager);
+        menuState = new MenuState(manager);
+        titleState = new TitleState(manager);
+        State.setState(titleState);
     }
 
     private void tick() {
@@ -133,6 +147,10 @@ public class Game implements Runnable {
         return keyManager;
     }
 
+    public MouseManager getMouseManager() {
+        return mouseManager;
+    }
+
     public GameCamera getGameCamera() {
         return gameCamera;
     }
@@ -164,6 +182,18 @@ public class Game implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public State getMenuState() {
+        return menuState;
+    }
+
+    public State getTitleState() {
+        return titleState;
+    }
+
+    public State getGameState() {
+        return gameState;
     }
 
 }

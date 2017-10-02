@@ -1,6 +1,7 @@
 package dev.tilegame.entities.animals;
 
 import dev.tilegame.Game;
+import dev.tilegame.Manager;
 import dev.tilegame.entities.Entity;
 import dev.tilegame.utils.Utils;
 
@@ -15,10 +16,10 @@ public abstract class Animal extends Entity {
     // add extra stats
     protected int health;
 
-    public Animal(Game game, float x, float y) {
-        super(game, x, y);
-        health = 10;
+    public Animal (Manager manager, float x, float y) {
+        super(manager, x, y);
     }
+
 
     // Getters & Setters
     public int getHealth() {
