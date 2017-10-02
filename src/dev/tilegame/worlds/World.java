@@ -1,6 +1,7 @@
 package dev.tilegame.worlds;
 
 import dev.tilegame.Game;
+import dev.tilegame.Manager;
 import dev.tilegame.tile.Tile;
 import dev.tilegame.utils.Utils;
 
@@ -14,7 +15,7 @@ import java.util.Arrays;
  */
 public class World {
 
-    private Game game;
+    private Manager manager;
     private int width, height;
     private int spawnX, spawnY;
 
@@ -24,8 +25,8 @@ public class World {
 
     private int[][] tiles;
 
-    public World(Game game, String path) {
-        this.game = game;
+    public World(Manager manager, String path) {
+        this.manager = manager;
         loadWorld(path);
     }
 
@@ -36,8 +37,8 @@ public class World {
     public void render(Graphics g) {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                getTile(x,y).render(g, (int) (x * Tile.TILEWIDTH - game.getGameCamera().getxOffset()),
-                        (int) (y * Tile.TILEHEIGHT - game.getGameCamera().getyOffset()));
+                getTile(x,y).render(g, (int) (x * Tile.TILEWIDTH - manager.getGameCamera().getxOffset()),
+                        (int) (y * Tile.TILEHEIGHT - manager.getGameCamera().getyOffset()));
             }
         }
     }

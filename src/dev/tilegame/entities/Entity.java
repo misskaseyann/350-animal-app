@@ -4,6 +4,7 @@ import dev.tilegame.Game;
 import java.awt.*;
 import java.util.ArrayList;
 
+import dev.tilegame.Manager;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.tile.Tile;
 import dev.tilegame.utils.Utils;
@@ -13,11 +14,11 @@ import dev.tilegame.utils.Utils;
  */
 public abstract class Entity {
 
-    protected Game game;
+    protected Manager manager;
     protected float x, y;
 
-    public Entity(Game game, float x, float y) {
-        this.game = game;
+    public Entity(Manager manager, float x, float y) {
+        this.manager = manager;
         this.x = x;
         this.y = y;
     }
@@ -37,7 +38,7 @@ public abstract class Entity {
         if(key.up){
             int gridx = gridLocX();
             int gridy = gridLocY()-1;
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -46,7 +47,7 @@ public abstract class Entity {
         if(key.down){
             int gridx = gridLocX();
             int gridy = gridLocY()+1;
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -55,7 +56,7 @@ public abstract class Entity {
         if(key.left){
             int gridx = gridLocX()-1;
             int gridy = gridLocY();
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -64,7 +65,7 @@ public abstract class Entity {
         if(key.right){
             int gridx = gridLocX()+1;
             int gridy = gridLocY();
-            int[][] tiles = this.game.getGameState().getWorld().getTiles();
+            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }

@@ -1,6 +1,7 @@
 package dev.tilegame.entities.animals;
 
 import dev.tilegame.Game;
+import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.states.GameState;
@@ -17,29 +18,28 @@ import java.util.ArrayList;
  */
 public class Pet extends Animal {
 
-    public Pet(Game game, float x, float y) {
-        super(game, x, y);
+    public Pet(Manager manager, float x, float y) {
+        super(manager, x, y);
     }
 
     @Override
     public void tick() {
         getInput();
-        game.getGameCamera().centerOnEntity(this);
+        manager.getGameCamera().centerOnEntity(this);
     }
 
     private void getInput() {
-        if (game.getKeyManager().up && super.noCollide(game.getKeyManager())) // temp
+        if (manager.getKeyManager().up && super.noCollide(manager.getKeyManager())) // temp
             y -= 32; // temp
 
-        if (game.getKeyManager().down && super.noCollide(game.getKeyManager()) ) // temp
+        if (manager.getKeyManager().down && super.noCollide(manager.getKeyManager()) ) // temp
             y += 32; // temp
 
-        if (game.getKeyManager().left && super.noCollide(game.getKeyManager())) // temp
+        if (manager.getKeyManager().left && super.noCollide(manager.getKeyManager())) // temp
             x -= 32; // temp
 
-        if (game.getKeyManager().right && super.noCollide(game.getKeyManager()))// temp
+        if (manager.getKeyManager().right && super.noCollide(manager.getKeyManager()))// temp
             x += 32; // temp
-
 
     }
 
@@ -48,7 +48,7 @@ public class Pet extends Animal {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.dog, (int) (x - game.getGameCamera().getxOffset()),
-                (int) (y - game.getGameCamera().getyOffset()), null);
+        g.drawImage(Assets.dog, (int) (x - manager.getGameCamera().getxOffset()),
+                (int) (y - manager.getGameCamera().getyOffset()), null);
     }
 }
