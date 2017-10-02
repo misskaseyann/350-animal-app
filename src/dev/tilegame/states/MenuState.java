@@ -25,6 +25,6 @@ public class MenuState extends State {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.bowl,0,0,null);
+        g.drawImage(Assets.dogBowl,0,0,null);
     }
 }
