@@ -15,9 +15,7 @@ public abstract class Animal extends Entity {
 
     // add extra stats
     protected int health;
-
-
-    protected int hungar;
+    protected int hunger;
 
     public Animal (Manager manager, float x, float y) {
         super(manager, x, y);
@@ -33,11 +31,11 @@ public abstract class Animal extends Entity {
         this.health = health;
     }
 
-    public int getHungar() {
-        return hungar;
+    public int getHunger() {
+        return hunger;
     }
 
-    public void setHungar(int hungar) {
-        this.hungar = hungar;
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
     }
 }

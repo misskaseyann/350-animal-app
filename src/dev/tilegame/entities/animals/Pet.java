@@ -17,33 +17,35 @@ import java.util.ArrayList;
  * @version 09.24.2017
  */
 public class Pet extends Animal {
-
-    public Pet(Manager manager, float x, float y) {
-        super(manager, x, y);
-    }
     private Random random;
     private int count = 0;
+    private int clock = 36000;
+    private int [] even = {7200, 14400,71600 , 28800, 36000};
     private int randomInt;
+    public Pet(Manager manager, float x, float y) {
+        super(manager, x, y);
+        health = 3;
+        hunger = 3;
+        clock --;
+    }
 
     @Override
     public void tick() {
             getInput();
             manager.getGameCamera().centerOnEntity(this);
-
     }
 
 
     private int resetCount(int count){ return count = 100; }
 
+    private int resetClock(int clock){ return clock = 36000;}
+
     private void getInput() {
-//        if (game.getKeyManager().up) // temp
-//            y -= 3; // temp
-//        if (game.getKeyManager().down) // temp
-//            y += 3; // temp
-//        if (game.getKeyManager().left) // temp
-//            x -= 3; // temp
-//        if (game.getKeyManager().right) // temp
-//            x += 3; // temp
+        if(clock == 0){ health --; clock = resetClock(clock);}
+        if(isEqual(even, clock)){ hunger--;}
+        System.out.println(("Health: "+ health));
+        System.out.println("Hunger: "+ hunger);
+        System.out.println("Clock: "+ clock);
             random = new Random();
             if(count == 0) {
                 randomInt = random.nextInt(9);
@@ -86,7 +88,6 @@ public class Pet extends Animal {
                         x += 3;
                         break;
                 }
-
         }
 
 
@@ -101,6 +102,7 @@ public class Pet extends Animal {
 
         if (manager.getKeyManager().right && super.noKeyCollide(manager.getKeyManager()))// temp
             x += 32; // temp
+        clock--;
 
     }
 
@@ -108,6 +110,14 @@ public class Pet extends Animal {
         random = new Random();
         if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
         return move;
+    }
+
+    private boolean isEqual(int [] list, int num){
+        for(int i = 0; i < list.length; i ++){
+            if(num == list[i])
+                return true;
+        }
+        return false;
     }
 
 
