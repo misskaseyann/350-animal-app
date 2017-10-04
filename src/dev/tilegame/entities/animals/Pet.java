@@ -20,7 +20,7 @@ public class Pet extends Animal {
     private Random random;
     private int count = 0;
     private int clock = 36000;
-    private int [] even = {7200, 14400,71600 , 28800, 36000};
+    private int [] even = {7200 , 14400, 71600 , 28800 , 36000};
     private int randomInt;
     public Pet(Manager manager, float x, float y) {
         super(manager, x, y);
@@ -50,9 +50,7 @@ public class Pet extends Animal {
             if(count == 0) {
                 randomInt = random.nextInt(9);
                 randomInt = checkMove(randomInt);
-                System.out.println("Random int: "+ randomInt);
                 count = resetCount(count);
-
             }
             else { randomInt = checkMove(randomInt); count--; }
         if((count % 2) == 0) {
