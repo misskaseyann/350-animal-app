@@ -2,7 +2,10 @@ package dev.tilegame.entities.animals;
 
 import dev.tilegame.Game;
 import dev.tilegame.Manager;
+import dev.tilegame.gfx.Animation;
 import dev.tilegame.gfx.Assets;
+
+import java.awt.image.BufferedImage;
 import java.util.Random;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.states.GameState;
@@ -18,91 +21,43 @@ import java.util.ArrayList;
  */
 public class Pet extends Animal {
 
-    public Pet(Manager manager, float x, float y) {
-        super(manager, x, y);
-    }
+    //Animations
+    private Animation aniDown, aniUp, aniLeft, aniRight;
+
+
+    // Random Movement
     private Random random;
     private int count = 0;
     private int randomInt;
 
+    public Pet(Manager manager, float x, float y) {
+        super(manager, x, y);
+
+        // Animations
+        aniDown = new Animation(200, Assets.dogDown);
+        aniUp = new Animation(200, Assets.dogUp);
+        aniLeft = new Animation(200, Assets.dogLeft);
+        aniRight = new Animation(200, Assets.dogRight);
+
+    }
+
     @Override
     public void tick() {
-            getInput();
-            manager.getGameCamera().centerOnEntity(this);
+        // Animations
+        aniDown.tick();
+        aniUp.tick();
+        aniLeft.tick();
+        aniRight.tick();
+
+        //Movement
+        //getInput();
+        getCurrentAnimationFrame();
+        manager.getGameCamera().centerOnEntity(this);
 
     }
 
 
     private int resetCount(int count){ return count = 100; }
-
-    private void getInput() {
-//        if (game.getKeyManager().up) // temp
-//            y -= 3; // temp
-//        if (game.getKeyManager().down) // temp
-//            y += 3; // temp
-//        if (game.getKeyManager().left) // temp
-//            x -= 3; // temp
-//        if (game.getKeyManager().right) // temp
-//            x += 3; // temp
-            random = new Random();
-            if(count == 0) {
-                randomInt = random.nextInt(9);
-                randomInt = checkMove(randomInt);
-                System.out.println("Random int: "+ randomInt);
-                count = resetCount(count);
-
-            }
-            else { randomInt = checkMove(randomInt); count--; }
-        if((count % 2) == 0) {
-                switch (randomInt) {
-                    case 0: //Rest
-                        break;
-                    case 1: //Up
-                        y -= 3;
-                        break;
-                    case 2: //Down
-                        y += 3;
-                        break;
-                    case 3: //Left
-                        x -= 3;
-                        break;
-                    case 4: //Right
-                        x += 3;
-                        break;
-                    case 5: //Up to the Left
-                        y -= 3;
-                        x -= 3;
-                        break;
-                    case 6: //Up to the Right
-                        y -= 3;
-                        x += 3;
-                        break;
-                    case 7: //Down to the Left
-                        y += 3;
-                        x -= 3;
-                        break;
-                    case 8: //Down to the Right
-                        y += 3;
-                        x += 3;
-                        break;
-                }
-
-        }
-
-
-        if (manager.getKeyManager().up && super.noKeyCollide(manager.getKeyManager())) // temp
-            y -= 32; // temp
-
-        if (manager.getKeyManager().down && super.noKeyCollide(manager.getKeyManager()) ) // temp
-            y += 32; // temp
-
-        if (manager.getKeyManager().left && super.noKeyCollide(manager.getKeyManager())) // temp
-            x -= 32; // temp
-
-        if (manager.getKeyManager().right && super.noKeyCollide(manager.getKeyManager()))// temp
-            x += 32; // temp
-
-    }
 
     private int checkMove(int move){
         random = new Random();
@@ -110,11 +65,81 @@ public class Pet extends Animal {
         return move;
     }
 
-
-
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.dog, (int) (x - manager.getGameCamera().getxOffset()),
+        g.drawImage(getCurrentAnimationFrame(), (int) (x - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
     }
+
+    private BufferedImage getCurrentAnimationFrame() {
+        random = new Random();
+        if(count == 0) {
+            randomInt = random.nextInt(9);
+            randomInt = checkMove(randomInt);
+            System.out.println("Random int: "+ randomInt);
+            count = resetCount(count);
+        }
+        else {
+            randomInt = checkMove(randomInt);
+            count--;
+        }
+        if((count % 2) == 0) {
+            switch (randomInt) {
+                case 0: //Rest
+                    return Assets.dog;
+                case 1: //Up
+                    y -= 3;
+                    return aniUp.getCurrentFrame();
+                case 2: //Down
+                    y += 3;
+                    return aniDown.getCurrentFrame();
+                case 3: //Left
+                    x -= 3;
+                    return aniLeft.getCurrentFrame();
+                case 4: //Right
+                    x += 3;
+                    return aniRight.getCurrentFrame();
+                case 5: //Up to the Left
+                    y -= 3;
+                    x -= 3;
+                    return aniUp.getCurrentFrame();
+                case 6: //Up to the Right
+                    y -= 3;
+                    x += 3;
+                    return aniUp.getCurrentFrame();
+                case 7: //Down to the Left
+                    y += 3;
+                    x -= 3;
+                    return aniDown.getCurrentFrame();
+                case 8: //Down to the Right
+                    y += 3;
+                    x += 3;
+                    return aniDown.getCurrentFrame();
+                default:
+                    return Assets.dog;
+            }
+        }
+        switch (randomInt) {
+            case 0: //Rest
+                return Assets.dog;
+            case 1: //Up
+                return aniUp.getCurrentFrame();
+            case 2: //Down
+                return aniDown.getCurrentFrame();
+            case 3: //Left
+                return aniLeft.getCurrentFrame();
+            case 4: //Right
+                return aniRight.getCurrentFrame();
+            case 5: //Up to the Left
+                return aniUp.getCurrentFrame();
+            case 6: //Up to the Right
+                return aniUp.getCurrentFrame();
+            case 7: //Down to the Left
+                return aniDown.getCurrentFrame();
+            case 8: //Down to the Right
+                return aniDown.getCurrentFrame();
+            default:
+                return Assets.dog;
+        }
+        }
 }

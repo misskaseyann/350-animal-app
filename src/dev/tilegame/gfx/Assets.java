@@ -33,7 +33,9 @@ public class Assets {
             rugTL, rugTC, rugTR, rugBL, rugBC, rugBR,
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
-            path;
+            path,
+            pug;
+    public static BufferedImage[] dogDown, dogLeft, dogRight, dogUp;
 
 
     private static final int WIDTH = 32, HEIGHT = 32;
@@ -41,9 +43,37 @@ public class Assets {
     // load everything in game and loads only ONCE
     public static void init() {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
-        SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home.png"));
+        SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));
+
+        // ANIMAL ASSETS
 
         dog = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
+
+        dogDown = new BufferedImage[4];
+        dogDown[0] = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
+        dogDown[1] = dogSheet.crop(0, 0, WIDTH, HEIGHT);
+        dogDown[2] = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
+        dogDown[3] = dogSheet.crop(WIDTH * 2, 0, WIDTH, HEIGHT);
+
+        dogLeft = new BufferedImage[4];
+        dogLeft[0] = dogSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);
+        dogLeft[1] = dogSheet.crop(0, HEIGHT, WIDTH, HEIGHT);
+        dogLeft[2] = dogSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);
+        dogLeft[3] = dogSheet.crop(WIDTH * 2, HEIGHT, WIDTH, HEIGHT);
+
+        dogRight = new BufferedImage[4];
+        dogRight[0] = dogSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);
+        dogRight[1] = dogSheet.crop(0, HEIGHT * 2, WIDTH, HEIGHT);
+        dogRight[2] = dogSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);
+        dogRight[3] = dogSheet.crop(WIDTH * 2, HEIGHT * 2, WIDTH, HEIGHT);
+
+        dogUp = new BufferedImage[4];
+        dogUp[0] = dogSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);
+        dogUp[1] = dogSheet.crop(0, HEIGHT * 3, WIDTH, HEIGHT);
+        dogUp[2] = dogSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);
+        dogUp[3] = dogSheet.crop(WIDTH * 2, HEIGHT * 3, WIDTH, HEIGHT);
+
+        // WORLD ASSETS
 
         woodFloor = houseSheet.crop(0, 0, WIDTH, HEIGHT);
         kitchenFloor = houseSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
