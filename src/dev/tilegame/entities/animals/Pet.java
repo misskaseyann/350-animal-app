@@ -33,7 +33,7 @@ public class Pet extends Animal {
     }
 
 
-    private void resetCount(){ count = 50; }
+    private int resetCount(int count){ return count = 100; }
 
     private void getInput() {
 //        if (game.getKeyManager().up) // temp
@@ -49,44 +49,45 @@ public class Pet extends Animal {
                 randomInt = random.nextInt(9);
                 randomInt = checkMove(randomInt);
                 System.out.println("Random int: "+ randomInt);
-                resetCount();
+                count = resetCount(count);
 
             }
             else { randomInt = checkMove(randomInt); count--; }
-        System.out.println(count);
-        switch (randomInt) {
-            case 0: //Rest
-                break;
-            case 1: //Up
-                y -= 32;
-                break;
-            case 2: //Down
-                y += 32;
-                break;
-            case 3: //Left
-                x -= 32;
-                break;
-            case 4: //Right
-                x += 32;
-                break;
-            case 5: //Up to the Left
-                y -= 32;
-                x -= 32;
-                break;
-            case 6: //Up to the Right
-                y -= 32;
-                x += 32;
-                break;
-            case 7: //Down to the Left
-                y += 32;
-                x -= 32;
-                break;
-            case 8: //Down to the Right
-                y += 32;
-                x += 32;
-                break;
-        }
+        if((count % 2) == 0) {
+                switch (randomInt) {
+                    case 0: //Rest
+                        break;
+                    case 1: //Up
+                        y -= 3;
+                        break;
+                    case 2: //Down
+                        y += 3;
+                        break;
+                    case 3: //Left
+                        x -= 3;
+                        break;
+                    case 4: //Right
+                        x += 3;
+                        break;
+                    case 5: //Up to the Left
+                        y -= 3;
+                        x -= 3;
+                        break;
+                    case 6: //Up to the Right
+                        y -= 3;
+                        x += 3;
+                        break;
+                    case 7: //Down to the Left
+                        y += 3;
+                        x -= 3;
+                        break;
+                    case 8: //Down to the Right
+                        y += 3;
+                        x += 3;
+                        break;
+                }
 
+        }
 
 
         if (manager.getKeyManager().up && super.noKeyCollide(manager.getKeyManager())) // temp
@@ -105,8 +106,7 @@ public class Pet extends Animal {
 
     private int checkMove(int move){
         random = new Random();
-        System.out.println("Move: "+ move);
-        if(!super.noCollide(move)){System.out.println("made it"); return checkMove(random.nextInt(9));}
+        if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
         return move;
     }
 
