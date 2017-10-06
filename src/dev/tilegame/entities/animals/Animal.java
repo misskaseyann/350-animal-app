@@ -15,7 +15,8 @@ public abstract class Animal extends Entity {
 
     // add extra stats
     protected int health;
-    protected int clock = 36000;
+    protected int clock = 36000; //Ten Minutes
+    protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
     protected int hunger;
 
     public Animal (Manager manager, float x, float y) {

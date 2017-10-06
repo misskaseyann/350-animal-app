@@ -29,7 +29,6 @@ public class Pet extends Animal {
     private Random random;
     private int count = 0;
     private int randomInt;
-    private int [] even = {7200 , 14400, 71600 , 28800 , 36000};
 
     public Pet(Manager manager, float x, float y) {
         super(manager, x, y);
@@ -84,7 +83,7 @@ public class Pet extends Animal {
 
     private BufferedImage getCurrentAnimationFrame() {
         if (clock == 0) { resetClock(); }
-        if(hunger == 0){ hunger --;} //If user doesn't feed the pet health decreases.
+        if(hunger == 0 && isEqual(even, clock)){ hunger --;} //If user doesn't feed the pet health decreases.
         if (isEqual(even, clock)) { hunger--; } //Over time the pet's hunger decrease until owner feeds pet.
         clock --;
         random = new Random();
