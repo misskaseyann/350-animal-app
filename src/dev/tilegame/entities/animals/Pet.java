@@ -29,10 +29,13 @@ public class Pet extends Animal {
     private Random random;
     private int count = 0;
     private int randomInt;
+    private int [] even = {7200 , 14400, 71600 , 28800 , 36000};
 
     public Pet(Manager manager, float x, float y) {
         super(manager, x, y);
-
+        health = 6;
+        hunger = 6;
+        clock --;
         // Animations
         aniDown = new Animation(200, Assets.dogDown);
         aniUp = new Animation(200, Assets.dogUp);
@@ -59,6 +62,14 @@ public class Pet extends Animal {
 
     private int resetCount(int count){ return count = 100; }
 
+    private boolean isEqual(int [] list, int num){
+        for(int i = 0; i < list.length; i ++){
+            if(num == list[i])
+                return true;
+        }
+        return false;
+    }
+
     private int checkMove(int move){
         random = new Random();
         if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
@@ -72,6 +83,10 @@ public class Pet extends Animal {
     }
 
     private BufferedImage getCurrentAnimationFrame() {
+        if (clock == 0) { resetClock(); }
+        if(hunger == 0){ hunger --;} //If user doesn't feed the pet health decreases.
+        if (isEqual(even, clock)) { hunger--; } //Over time the pet's hunger decrease until owner feeds pet.
+        clock --;
         random = new Random();
         if(count == 0) {
             randomInt = random.nextInt(9);
