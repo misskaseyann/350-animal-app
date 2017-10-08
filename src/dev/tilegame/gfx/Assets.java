@@ -684,6 +684,43 @@ public class Assets {
             doorTop, doorBot,
             path;
     /**
+     * filler.
+     */
+    public static BufferedImage[] getDogDown() {
+        return dogDown;
+    }
+    /**
+     * filler.
+     */
+    public static BufferedImage[] getDogLeft() {
+        return dogLeft;
+    }
+    /**
+     * filler.
+     */
+    public static BufferedImage[] getDogRight() {
+        return dogRight;
+    }
+    /**
+     * filler.
+     */
+    public static BufferedImage[] getDogUp() {
+        return dogUp;
+    }
+    /**
+     * filler.
+     */
+    public static int getWIDTH() {
+        return WIDTH;
+    }
+    /**
+     * filler.
+     */
+    public static int getHEIGHT() {
+        return HEIGHT;
+    }
+
+    /**
      *
      */
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp;

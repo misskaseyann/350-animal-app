@@ -30,14 +30,14 @@ public class Pet extends Animal {
     private int count = 0;
     private int randomInt;
 
-    public Pet(Manager manager, float x, float y) {
+    public Pet(final Manager manager, final float x, final float y) {
         super(manager, x, y);
 
         // Animations
-        aniDown = new Animation(200, Assets.dogDown);
-        aniUp = new Animation(200, Assets.dogUp);
-        aniLeft = new Animation(200, Assets.dogLeft);
-        aniRight = new Animation(200, Assets.dogRight);
+        aniDown = new Animation(200, Assets.getDogDown());
+        aniUp = new Animation(200, Assets.getDogUp());
+        aniLeft = new Animation(200, Assets.getDogLeft());
+        aniRight = new Animation(200, Assets.getDogRight());
 
     }
 
@@ -61,19 +61,21 @@ public class Pet extends Animal {
 
     private int checkMove(int move){
         random = new Random();
-        if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
+        if (!super.noCollide(move)) {
+            return checkMove(random.nextInt(9));
+        }
         return move;
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(getCurrentAnimationFrame(), (int) (x - manager.getGameCamera().getxOffset()),
+        g.drawImage(getCurrentAnimationFrame(), (int) (getX() - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
     }
 
     private BufferedImage getCurrentAnimationFrame() {
         random = new Random();
-        if(count == 0) {
+        if (count == 0) {
             randomInt = random.nextInt(9);
             randomInt = checkMove(randomInt);
             System.out.println("Random int: "+ randomInt);
@@ -86,7 +88,7 @@ public class Pet extends Animal {
         if((count % 2) == 0) {
             switch (randomInt) {
                 case 0: //Rest
-                    return Assets.dog;
+                    return Assets.getDog();
                 case 1: //Up
                     y -= 3;
                     return aniUp.getCurrentFrame();
@@ -94,34 +96,34 @@ public class Pet extends Animal {
                     y += 3;
                     return aniDown.getCurrentFrame();
                 case 3: //Left
-                    x -= 3;
+                    setX(getX() - 3);
                     return aniLeft.getCurrentFrame();
                 case 4: //Right
-                    x += 3;
+                    setX(getX()+ 3);
                     return aniRight.getCurrentFrame();
                 case 5: //Up to the Left
                     y -= 3;
-                    x -= 3;
+                    setX(getX()- 3);
                     return aniUp.getCurrentFrame();
                 case 6: //Up to the Right
                     y -= 3;
-                    x += 3;
+                    setX(getX()+ 3);
                     return aniUp.getCurrentFrame();
                 case 7: //Down to the Left
                     y += 3;
-                    x -= 3;
+                    setX(getX() - 3);
                     return aniDown.getCurrentFrame();
                 case 8: //Down to the Right
                     y += 3;
-                    x += 3;
+                    setX(getX() + 3);
                     return aniDown.getCurrentFrame();
                 default:
-                    return Assets.dog;
+                    return Assets.getDog();
             }
         }
         switch (randomInt) {
             case 0: //Rest
-                return Assets.dog;
+                return Assets.getDog();
             case 1: //Up
                 return aniUp.getCurrentFrame();
             case 2: //Down
@@ -139,7 +141,7 @@ public class Pet extends Animal {
             case 8: //Down to the Right
                 return aniDown.getCurrentFrame();
             default:
-                return Assets.dog;
+                return Assets.getDog();
         }
         }
 }
