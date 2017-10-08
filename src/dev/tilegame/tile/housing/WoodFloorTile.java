@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class WoodFloorTile extends Tile {
-    public WoodFloorTile(int id) {
-        super(Assets.woodFloor, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public WoodFloorTile(final int id) {
+        super(Assets.getWoodFloor(), id);
     }
 }

@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class EndTableTile extends Tile {
-    public EndTableTile(int id) {
-        super(Assets.endTable, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public EndTableTile(final int id) {
+        super(Assets.getEndTable(), id);
     }
 
     @Override

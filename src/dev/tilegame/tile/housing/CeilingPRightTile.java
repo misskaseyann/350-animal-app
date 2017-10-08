@@ -8,8 +8,13 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class CeilingPRightTile extends Tile {
-    public CeilingPRightTile(int id) {
-        super(Assets.ceilingPRight, id);
+
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public CeilingPRightTile(final int id) {
+        super(Assets.getCeilingPRight(), id);
     }
 
     @Override

@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class CounterEndTile extends Tile {
-    public CounterEndTile(int id) {
-        super(Assets.counterEnd, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public CounterEndTile(final int id) {
+        super(Assets.getCounterEnd(), id);
     }
 
     @Override

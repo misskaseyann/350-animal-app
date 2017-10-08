@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class KitRugTile extends Tile {
-    public KitRugTile(int id) {
-        super(Assets.kitRug, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public KitRugTile(final int id) {
+        super(Assets.getKitRug(), id);
     }
 }

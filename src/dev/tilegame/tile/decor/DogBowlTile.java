@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class DogBowlTile extends Tile {
-    public DogBowlTile(int id) {
-        super(Assets.dogBowl, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public DogBowlTile(final int id) {
+        super(Assets.getDogBowl(), id);
     }
 }

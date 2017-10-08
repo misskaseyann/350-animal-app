@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class ShelfBLTile extends Tile {
-    public ShelfBLTile(int id) {
-        super(Assets.shelfBL, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public ShelfBLTile(final int id) {
+        super(Assets.getShelfBL(), id);
     }
 
     @Override

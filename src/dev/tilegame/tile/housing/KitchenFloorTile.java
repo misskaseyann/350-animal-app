@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class KitchenFloorTile extends Tile {
-    public KitchenFloorTile(int id) {
-        super(Assets.kitchenFloor, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public KitchenFloorTile(final int id) {
+        super(Assets.getKitchenFloor(), id);
     }
 }

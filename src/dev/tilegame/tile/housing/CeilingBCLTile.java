@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class CeilingBCLTile extends Tile {
-    public CeilingBCLTile(int id) {
-        super(Assets.ceilingBCL, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public CeilingBCLTile(final int id) {
+        super(Assets.getCeilingBCL(), id);
     }
 
     @Override

@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class PhoneTile extends Tile {
-    public PhoneTile(int id) {
-        super(Assets.phone, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public PhoneTile(final int id) {
+        super(Assets.getPhone(), id);
     }
 
     @Override

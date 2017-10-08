@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class ShowerBotTile extends Tile {
-    public ShowerBotTile(int id) {
-        super(Assets.showerBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public ShowerBotTile(final int id) {
+        super(Assets.getShowerBot(), id);
     }
 }

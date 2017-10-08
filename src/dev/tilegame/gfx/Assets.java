@@ -1,6 +1,5 @@
 package dev.tilegame.gfx;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -10,7 +9,657 @@ import java.awt.image.BufferedImage;
  */
 public class Assets {
 
-    public static BufferedImage
+    /** 
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDog() {
+        return dog;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getWoodFloor() {
+        return woodFloor;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getKitchenFloor() {
+        return kitchenFloor;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBathFloor() {
+        return bathFloor;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getStoneFloor() {
+        return stoneFloor;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getWallLeft() {
+        return wallLeft;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getWallCenter() {
+        return wallCenter;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getWallRight() {
+        return wallRight;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getWallEnd() {
+        return wallEnd;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingLeft() {
+        return ceilingLeft;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingCenter() {
+        return ceilingCenter;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingRight() {
+        return ceilingRight;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingEnd() {
+        return ceilingEnd;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingDown() {
+        return ceilingDown;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingBCL() {
+        return ceilingBCL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingBCR() {
+        return ceilingBCR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingTCL() {
+        return ceilingTCL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingTCR() {
+        return ceilingTCR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingPDown() {
+        return ceilingPDown;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingPLeft() {
+        return ceilingPLeft;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCeilingPRight() {
+        return ceilingPRight;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallTL() {
+        return outWallTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallTC() {
+        return outWallTC;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallTR() {
+        return outWallTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallBL() {
+        return outWallBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallBC() {
+        return outWallBC;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getOutWallBR() {
+        return outWallBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getPlantTop() {
+        return plantTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getPlantBot() {
+        return plantBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getKitTableTL() {
+        return kitTableTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getKitTableTR() {
+        return kitTableTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getKitTableBL() {
+        return kitTableBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+
+    public static BufferedImage getKitTableBR() {
+        return kitTableBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getChairLeft() {
+        return chairLeft;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getChairRight() {
+        return chairRight;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCounterCenter() {
+        return counterCenter;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCounterCorner() {
+        return counterCorner;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCounterEnd() {
+        return counterEnd;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDogBowl() {
+        return dogBowl;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDogBone() {
+        return dogBone;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBox() {
+        return box;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getFridgeTop() {
+        return fridgeTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getFridgeBot() {
+        return fridgeBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getStoveTop() {
+        return stoveTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getStoveBot() {
+        return stoveBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getSinkLTop() {
+        return sinkLTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getSinkLBot() {
+        return sinkLBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getSinkRTop() {
+        return sinkRTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getSinkRBot() {
+        return sinkRBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getPhone() {
+        return phone;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getKitRug() {
+        return kitRug;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getClock() {
+        return clock;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getEndTable() {
+        return endTable;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getToiletTop() {
+        return toiletTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getToiletBot() {
+        return toiletBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBathSinkTop() {
+        return bathSinkTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBathSinkBot() {
+        return bathSinkBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getShowerTop() {
+        return showerTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getShowerBot() {
+        return showerBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCouchLeft() {
+        return couchLeft;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getCouchRight() {
+        return couchRight;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getTvTop() {
+        return tvTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getTvBot() {
+        return tvBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getShelfTL() {
+        return shelfTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getShelfTR() {
+        return shelfTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+
+    public static BufferedImage getShelfBL() {
+        return shelfBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getShelfBR() {
+        return shelfBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDeskTop() {
+        return deskTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDeskBot() {
+        return deskBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedTL() {
+        return bedTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedTR() {
+        return bedTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedCL() {
+        return bedCL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedCR() {
+        return bedCR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedBL() {
+        return bedBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getBedBR() {
+        return bedBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDiningTL() {
+        return diningTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDiningTR() {
+        return diningTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDiningBL() {
+        return diningBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDiningBR() {
+        return diningBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugTL() {
+        return rugTL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugTC() {
+        return rugTC;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugTR() {
+        return rugTR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugBL() {
+        return rugBL;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugBC() {
+        return rugBC;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getRugBR() {
+        return rugBR;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getGrassLong() {
+        return grassLong;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getGrassFlowers() {
+        return grassFlowers;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getGrassRock() {
+        return grassRock;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getGrassShort() {
+        return grassShort;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDoorTop() {
+        return doorTop;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getDoorBot() {
+        return doorBot;
+    }
+    /**
+     * filler.
+     * @return filler.
+     * */
+    public static BufferedImage getPath() {
+        return path;
+    }
+
+    /**
+     * filler.
+     */
+    private static BufferedImage
             dog,
             woodFloor, kitchenFloor, bathFloor, stoneFloor,
             wallLeft, wallCenter, wallRight, wallEnd,
@@ -33,14 +682,21 @@ public class Assets {
             rugTL, rugTC, rugTR, rugBL, rugBC, rugBR,
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
-            path,
-            pug;
-    public static BufferedImage[] dogDown, dogLeft, dogRight, dogUp;
+            path;
+    /**
+     *
+     */
+    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp;
 
-
+    /**
+     *
+     */
     private static final int WIDTH = 32, HEIGHT = 32;
 
     // load everything in game and loads only ONCE
+    /**
+     *
+     */
     public static void init() {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
         SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));

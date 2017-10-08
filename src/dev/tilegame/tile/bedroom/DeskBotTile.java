@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class DeskBotTile extends Tile {
-    public DeskBotTile(int id) {
-        super(Assets.deskBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public DeskBotTile(final int id) {
+        super(Assets.getDeskBot(), id);
     }
 
     @Override

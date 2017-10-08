@@ -20,7 +20,8 @@ public class World {
     private int spawnX, spawnY;
 
     public int[][] getTiles() {
-        return tiles;
+        int[][] tiles1;
+        return  tiles1 = tiles;
     }
 
     private int[][] tiles;

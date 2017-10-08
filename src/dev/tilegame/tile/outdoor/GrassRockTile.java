@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class GrassRockTile extends Tile {
-    public GrassRockTile(int id) {
-        super(Assets.grassRock, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public GrassRockTile(final int id) {
+        super(Assets.getGrassRock(), id);
     }
 }

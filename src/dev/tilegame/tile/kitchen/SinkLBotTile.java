@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class SinkLBotTile extends Tile {
-    public SinkLBotTile(int id) {
-        super(Assets.sinkLBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public SinkLBotTile(final int id) {
+        super(Assets.getSinkLBot(), id);
     }
 
     @Override

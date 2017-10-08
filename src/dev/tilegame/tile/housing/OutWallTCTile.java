@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class OutWallTCTile extends Tile {
-    public OutWallTCTile(int id) {
-        super(Assets.outWallTC, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public OutWallTCTile(final int id) {
+        super(Assets.getOutWallTC(), id);
     }
 
     @Override
