@@ -45,7 +45,7 @@ public class World {
     }
 
     public Tile getTile(int x, int y) {
-        Tile t = Tile.tiles[tiles[x][y]];
+        Tile t = Tile.getTiles()[tiles[x][y]];
         if (t == null)
             return Tile.woodFloorTile;
         return t;

@@ -14,8 +14,6 @@ public abstract class Animal extends Entity {
     private int health;
     /**filler.**/
     private int hunger;
-    /**filler.**/
-    private float x;
     /**
      * @param manager filler
      * @param x filler
