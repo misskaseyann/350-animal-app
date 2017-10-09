@@ -1,25 +1,15 @@
 package dev.tilegame.entities.animals;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
 import dev.tilegame.gfx.Assets;
 
-import java.awt.image.BufferedImage;
-import java.util.Random;
-import dev.tilegame.input.KeyManager;
-import dev.tilegame.states.GameState;
-import dev.tilegame.tile.Tile;
-import dev.tilegame.utils.Utils;
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.image.BufferedImage;
+import java.sql.SQLSyntaxErrorException;
+import java.util.Random;
 
-
-/**
- * @author kaseystowell
- * @version 09.24.2017
- */
-public class Pet extends Animal {
+public class Pet_AI extends Animal {
 
     //Animations
     private Animation aniDown, aniUp, aniLeft, aniRight;
@@ -30,13 +20,8 @@ public class Pet extends Animal {
     private int count = 0;
     private int randomInt;
 
-    public Pet(Manager manager, float x, float y) {
+    public Pet_AI(Manager manager, float x, float y) {
         super(manager, x, y);
-        health = 6;
-        hunger = 6;
-        happiness = 6;
-        cleanliness = 6;
-        clock --;
         // Animations
         aniDown = new Animation(200, Assets.dogDown);
         aniUp = new Animation(200, Assets.dogUp);
@@ -55,45 +40,26 @@ public class Pet extends Animal {
 
         //Movement
         //getInput();
-        getCurrentAnimationFrame();
-        manager.getGameCamera().centerOnEntity(this);
 
     }
-
 
     private int resetCount(int count){ return count = 100; }
 
-    private boolean isEqual(int [] list, int num){
-        for(int i = 0; i < list.length; i ++){
-            if(num == list[i])
-                return true;
-        }
-        return false;
-    }
-
     private int checkMove(int move){
         random = new Random();
-        System.out.println("Pet: ");
+        System.out.println("Pet_AI: ");
         if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
         return move;
     }
 
     @Override
     public void render(Graphics g) {
-        System.out.println("offset x: "+manager.getGameCamera().getxOffset());
-        System.out.println("offset y: "+manager.getGameCamera().getyOffset());
-        System.out.println("x: "+x);
-        System.out.println("y: "+y);
         g.drawImage(getCurrentAnimationFrame(), (int) (x - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
     }
 
+
     private BufferedImage getCurrentAnimationFrame() {
-        if (clock == 0) { resetClock(); }
-        if((hunger == 0 || happiness == 0 || cleanliness == 0)&& isEqual(even, clock)){ health --;} //If user doesn't feed the pet health decreases.
-        if (isEqual(even, clock)) { hunger--; } //Over time the pet's hunger decrease until owner feeds pet.
-        if(even[2] == clock){cleanliness--;}
-        clock --;
         random = new Random();
         if(count == 0) {
             randomInt = random.nextInt(9);
@@ -162,5 +128,5 @@ public class Pet extends Animal {
             default:
                 return Assets.dog;
         }
-        }
+    }
 }

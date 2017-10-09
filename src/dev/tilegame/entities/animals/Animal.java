@@ -18,6 +18,8 @@ public abstract class Animal extends Entity {
     protected int clock = 36000; //Ten Minutes
     protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
     protected int hunger;
+    protected int happiness;
+    protected int cleanliness;
 
     public Animal (Manager manager, float x, float y) {
         super(manager, x, y);
@@ -41,4 +43,12 @@ public abstract class Animal extends Entity {
     public void setHunger(int hunger) {
         this.hunger = hunger;
     }
+
+    public int getHappiness() { return happiness; }
+
+    public void setHappiness(int happiness) { this.happiness = happiness; }
+
+    public int getCleanliness() { return cleanliness; }
+
+    public void setCleanliness(int cleanliness) { this.cleanliness = cleanliness; }
 }

@@ -33,52 +33,13 @@ public abstract class Entity {
         return Y;
     };
 
-    public boolean noKeyCollide(KeyManager key){
-        if(key.up){
-            int gridx = gridLocX();
-            int gridy = gridLocY()-1;
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.down){
-            int gridx = gridLocX();
-            int gridy = gridLocY()+1;
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.left){
-            int gridx = gridLocX()-1;
-            int gridy = gridLocY();
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-        if(key.right){
-            int gridx = gridLocX()+1;
-            int gridy = gridLocY();
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
-                return false;
-            }
-            return true;
-        }
-
-        return false;
-    }
 
     public boolean noCollide(int move){
         if(move == 5){ //Up to left
             int gridx = gridLocX()-1;
             int gridy = gridLocY()-1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -88,6 +49,7 @@ public abstract class Entity {
             int gridx = gridLocX()+1;
             int gridy = gridLocY()-1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -97,6 +59,7 @@ public abstract class Entity {
             int gridx = gridLocX()-1;
             int gridy = gridLocY()+1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -106,6 +69,7 @@ public abstract class Entity {
             int gridx = gridLocX()+1;
             int gridy = gridLocY()+1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -115,6 +79,7 @@ public abstract class Entity {
             int gridx = gridLocX();
             int gridy = gridLocY()-1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -124,6 +89,7 @@ public abstract class Entity {
             int gridx = gridLocX();
             int gridy = gridLocY()+1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -133,6 +99,7 @@ public abstract class Entity {
             int gridx = gridLocX()-1;
             int gridy = gridLocY();
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
@@ -142,6 +109,7 @@ public abstract class Entity {
             int gridx = gridLocX()+1;
             int gridy = gridLocY();
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
+            System.out.println("Tile: "+Tile.tiles[tiles[gridx][gridy]].getId()+ " Is Solid: "+Tile.tiles[tiles[gridx][gridy]].isSolid());
             if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
                 return false;
             }
