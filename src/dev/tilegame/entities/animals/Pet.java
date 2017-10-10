@@ -80,10 +80,6 @@ public class Pet extends Animal {
 
     @Override
     public void render(Graphics g) {
-        System.out.println("offset x: "+manager.getGameCamera().getxOffset());
-        System.out.println("offset y: "+manager.getGameCamera().getyOffset());
-        System.out.println("x: "+x);
-        System.out.println("y: "+y);
         g.drawImage(getCurrentAnimationFrame(), (int) (x - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
     }
