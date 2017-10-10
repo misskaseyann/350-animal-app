@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class WallRightTile extends Tile {
-    public WallRightTile(int id) {
-        super(Assets.wallRight, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public WallRightTile(final int id) {
+        super(Assets.getWallRight(), id);
     }
 
     @Override

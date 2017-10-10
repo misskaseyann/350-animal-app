@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class PathTile extends Tile {
-    public PathTile(int id) {
-        super(Assets.path, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public PathTile(final int id) {
+        super(Assets.getPath(), id);
     }
 }

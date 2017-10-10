@@ -20,7 +20,8 @@ public class World {
     private int spawnX, spawnY;
 
     public int[][] getTiles() {
-        return tiles;
+        int[][] tiles1;
+        return  tiles1 = tiles;
     }
 
     private int[][] tiles;
@@ -44,7 +45,7 @@ public class World {
     }
 
     public Tile getTile(int x, int y) {
-        Tile t = Tile.tiles[tiles[x][y]];
+        Tile t = Tile.getTiles()[tiles[x][y]];
         if (t == null)
             return Tile.woodFloorTile;
         return t;

@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class GrassShortTile extends Tile {
-    public GrassShortTile(int id) {
-        super(Assets.grassShort, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public GrassShortTile(final int id) {
+        super(Assets.getGrassShort(), id);
     }
 }

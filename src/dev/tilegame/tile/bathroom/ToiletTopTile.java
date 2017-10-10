@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class ToiletTopTile extends Tile {
-    public ToiletTopTile(int id) {
-        super(Assets.toiletTop, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public ToiletTopTile(final int id) {
+        super(Assets.getToiletTop(), id);
     }
 
     @Override

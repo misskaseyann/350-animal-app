@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class BedBLTile extends Tile {
-    public BedBLTile(int id) {
-        super(Assets.bedBL, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public BedBLTile(final int id) {
+        super(Assets.getBedBL(), id);
     }
 
     @Override

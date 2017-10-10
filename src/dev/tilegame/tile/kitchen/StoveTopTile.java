@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class StoveTopTile extends Tile {
-    public StoveTopTile(int id) {
-        super(Assets.stoveTop, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public StoveTopTile(final int id) {
+        super(Assets.getStoveTop(), id);
     }
 
     @Override

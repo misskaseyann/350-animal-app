@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class StoveBotTile extends Tile {
-    public StoveBotTile(int id) {
-        super(Assets.stoveBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public StoveBotTile(final int id) {
+        super(Assets.getStoveBot(), id);
     }
 
     @Override

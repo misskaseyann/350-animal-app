@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class KitTableBRTile extends Tile {
-    public KitTableBRTile(int id) {
-        super(Assets.kitTableBR, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public KitTableBRTile(final int id) {
+        super(Assets.getKitTableBR(), id);
     }
 
     @Override

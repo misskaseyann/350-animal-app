@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class CeilingDownTile extends Tile {
-    public CeilingDownTile(int id) {
-        super(Assets.ceilingDown, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public CeilingDownTile(final int id) {
+        super(Assets.getCeilingDown(), id);
     }
 
     @Override

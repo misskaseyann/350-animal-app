@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class DiningTLTile extends Tile {
-    public DiningTLTile(int id) {
-        super(Assets.diningTL, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public DiningTLTile(final int id) {
+        super(Assets.getDiningTL(), id);
     }
 
     @Override
