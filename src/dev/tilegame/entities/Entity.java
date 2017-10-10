@@ -11,124 +11,170 @@ import dev.tilegame.utils.Utils;
  * @author kaseystowell
  * @version 09.24.2017
  */
-public abstract class Entity {
+public abstract class Entity  {
 
+    /**
+     * filler.
+     * */
     protected Manager manager;
+    /**
+     * filler.
+     * */
     protected float x, y;
 
-    public Entity(Manager manager, float x, float y) {
+    /**
+     * filler.
+     * @param y filler
+     * @param x filler
+     * @param manager filler
+     * */
+    public Entity(final Manager manager, final float x, final float y)  {
         this.manager = manager;
         this.x = x;
         this.y = y;
     }
 
 
-    public int gridLocX(){
+    /**
+     * filler.
+     * */
+    public int gridLocX() {
         int X = Math.round(x/32);
         return X;
     };
 
-    public int gridLocY(){
+    /**
+     * filler.
+     * */
+    public int gridLocY() {
         int Y = Math.round(y/32);
         return Y;
     };
 
 
-    public boolean noCollide(int move){
-        if(move == 5){ //Up to left
-            int gridx = gridLocX()-1;
-            int gridy = gridLocY()-1;
+    /**
+     * filler.
+     * @param key filler
+     * */
+
+    /**
+     * filler.
+     * @param move filler
+     * */
+    public boolean noCollide(final int move) {
+        if  (move == 5) {  //Up to left
+            int gridx = gridLocX() -  1;
+            int gridy = gridLocY() -  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 6){ //Up to right
-            int gridx = gridLocX()+1;
-            int gridy = gridLocY()-1;
+        if  (move == 6) {  //Up to right
+            int gridx = gridLocX() +  1;
+            int gridy = gridLocY() -  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 7){ //Down to left
-            int gridx = gridLocX()-1;
-            int gridy = gridLocY()+1;
+        if  (move == 7) {  //Down to left
+            int gridx = gridLocX() -  1;
+            int gridy = gridLocY() +  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 8){ //Down to right
-            int gridx = gridLocX()+1;
-            int gridy = gridLocY()+1;
+        if  (move == 8) {  //Down to right
+            int gridx = gridLocX() +  1;
+            int gridy = gridLocY() +  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 1){ //Up
+        if  (move ==   1) {  //Up
             int gridx = gridLocX();
-            int gridy = gridLocY()-1;
+            int gridy = gridLocY() -  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 2){ //Down
+        if  (move == 2) {  //Down
             int gridx = gridLocX();
-            int gridy = gridLocY()+1;
+            int gridy = gridLocY() +  1;
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 3){ //Left
-            int gridx = gridLocX()-1;
+        if  (move == 3) {  //Left
+            int gridx = gridLocX() -  1;
             int gridy = gridLocY();
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 4){ //Right
-            int gridx = gridLocX()+1;
+        if  (move == 4) {  //Right
+            int gridx = gridLocX() +  1;
             int gridy = gridLocY();
             int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if(Tile.tiles[tiles[gridx][gridy]].isSolid()){
+            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if(move == 0){ return true;}
+        if  (move == 0) {  return true;}
 
         return false;
     }
-
+    /**
+     * filler.
+     * */
     public abstract void tick();
 
+    /**
+     * filler.
+     * */
     public abstract void render(Graphics g);
 
-    public float getX() {
+    /**
+     * filler.
+     * */
+    public float getX()  {
         return x;
     }
 
-    public void setX(float x) {
+    /**
+     * filler.
+     * @param x filler
+     * */
+    public void setX(final float x)  {
         this.x = x;
     }
 
-    public float getY() {
+    /**
+     * filler.
+     * */
+    public float getY()  {
         return y;
     }
 
-    public void setY(float y) {
+    /**
+     * filler.
+     * @param y filler
+     * */
+    public void setY(final float y)  {
         this.y = y;
     }
 

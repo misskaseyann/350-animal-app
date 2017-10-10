@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class BathFloorTile extends Tile {
-    public BathFloorTile(int id) {
-        super(Assets.bathFloor, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public BathFloorTile(final int id) {
+        super(Assets.getBathFloor(), id);
     }
 }

@@ -8,7 +8,11 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class RugBLTile extends Tile {
-    public RugBLTile(int id) {
-        super(Assets.rugBL, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public RugBLTile(final int id) {
+        super(Assets.getRugBL(), id);
     }
 }

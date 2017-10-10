@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class FridgeBotTile extends Tile {
-    public FridgeBotTile(int id) {
-        super(Assets.fridgeBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public FridgeBotTile(final int id) {
+        super(Assets.getFridgeBot(), id);
     }
 
     @Override

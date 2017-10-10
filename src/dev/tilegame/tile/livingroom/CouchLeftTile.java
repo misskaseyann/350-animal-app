@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class CouchLeftTile extends Tile {
-    public CouchLeftTile(int id) {
-        super(Assets.couchLeft, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public CouchLeftTile(final int id) {
+        super(Assets.getCouchLeft(), id);
     }
 
     @Override

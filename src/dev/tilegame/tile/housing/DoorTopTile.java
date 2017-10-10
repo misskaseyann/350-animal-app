@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class DoorTopTile extends Tile {
-    public DoorTopTile(int id) {
-        super(Assets.doorTop, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public DoorTopTile(final int id) {
+        super(Assets.getDoorTop(), id);
     }
 
     @Override

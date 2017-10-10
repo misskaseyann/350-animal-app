@@ -1,11 +1,7 @@
 package dev.tilegame.entities.animals;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.entities.Entity;
-import dev.tilegame.utils.Utils;
-
-import java.util.ArrayList;
 
 /**
  * @author kaseystowell
@@ -21,28 +17,36 @@ public abstract class Animal extends Entity {
     protected int happiness;
     protected int cleanliness;
 
-    public Animal (Manager manager, float x, float y) {
-        super(manager, x, y);
-    }
 
     protected void resetClock(){clock = 36000;}
 
+
+
+    /**
+     * @param manager filler
+     * @param x filler
+     * @param y filler
+     **/
+    public Animal(final Manager manager, final float x, final float y) {
+        super(manager, x, y);
+    }
     // Getters & Setters
-    public int getHealth() {
-        return health;
-    }
+    /**@return filler**/
+    public int getHealth() { return health; }
 
-    public void setHealth(int health) {
-        this.health = health;
-    }
+    /**
+     * @param health filler
+     * **/
+    public void setHealth(final int health) { this.health = health; }
 
-    public int getHunger() {
-        return hunger;
-    }
-
-    public void setHunger(int hunger) {
-        this.hunger = hunger;
-    }
+    /**
+     * @return filler
+     * **/
+    public int getHunger() { return hunger; }
+    /**
+     * @param hunger filler
+     * **/
+    public void setHunger(final int hunger) { this.hunger = hunger; }
 
     public int getHappiness() { return happiness; }
 

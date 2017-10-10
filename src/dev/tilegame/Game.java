@@ -1,7 +1,6 @@
 package dev.tilegame;
 
 import dev.tilegame.display.Display;
-import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
@@ -10,8 +9,6 @@ import dev.tilegame.states.GameState;
 import dev.tilegame.states.MenuState;
 import dev.tilegame.states.State;
 import dev.tilegame.states.TitleState;
-import dev.tilegame.worlds.World;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -21,21 +18,45 @@ import java.awt.image.BufferStrategy;
  * @version 09.24.2017
  */
 public class Game implements Runnable {
-
+    /**
+     *
+     */
     private Display display;
+    /**
+     *
+     */
     private int width, height;
+    /**
+     *
+     */
     private String title;
-
+    /**
+     *
+     */
     private boolean running = false;
+    /**
+     *
+     */
     private Thread thread;
-
+    /**
+     *
+     */
     private BufferStrategy bs;
+    /**
+     *
+     */
     private Graphics g;
 
     //States
+    /**
+     *
+     */
     private State gameState, menuState, titleState;
 
     //Input
+    /**
+     *
+     */
     private KeyManager keyManager;
     private MouseManager mouseManager;
 
@@ -111,7 +132,7 @@ public class Game implements Runnable {
     public void run() {
         init();
 
-        int fps = 60;
+        double fps = 60.0;
         double timePerTick = 1000000000 / fps;  // one second in nanoseconds divided by fps
         double delta = 0;
         long now;
@@ -119,7 +140,7 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
-        while(running) {
+        while (running) {
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick; // time past since call / max time allowed // delta says when we can run tick and render
             timer += now - lastTime;

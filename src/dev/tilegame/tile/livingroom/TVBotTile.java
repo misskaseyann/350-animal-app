@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class TVBotTile extends Tile {
-    public TVBotTile(int id) {
-        super(Assets.tvBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public TVBotTile(final int id) {
+        super(Assets.getTvBot(), id);
     }
 
     @Override

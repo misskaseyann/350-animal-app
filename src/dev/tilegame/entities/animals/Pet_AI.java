@@ -23,10 +23,10 @@ public class Pet_AI extends Animal {
     public Pet_AI(Manager manager, float x, float y) {
         super(manager, x, y);
         // Animations
-        aniDown = new Animation(200, Assets.dogDown);
-        aniUp = new Animation(200, Assets.dogUp);
-        aniLeft = new Animation(200, Assets.dogLeft);
-        aniRight = new Animation(200, Assets.dogRight);
+        aniDown = new Animation(200, Assets.getDogDown());
+        aniUp = new Animation(200, Assets.getDogUp());
+        aniLeft = new Animation(200, Assets.getDogLeft());
+        aniRight = new Animation(200, Assets.getDogRight());
 
     }
 
@@ -73,7 +73,7 @@ public class Pet_AI extends Animal {
         if((count % 2) == 0) {
             switch (randomInt) {
                 case 0: //Rest
-                    return Assets.dog;
+                    return Assets.getDog();
                 case 1: //Up
                     y -= 3;
                     return aniUp.getCurrentFrame();
@@ -103,12 +103,12 @@ public class Pet_AI extends Animal {
                     x += 3;
                     return aniDown.getCurrentFrame();
                 default:
-                    return Assets.dog;
+                    return Assets.getDog();
             }
         }
         switch (randomInt) {
             case 0: //Rest
-                return Assets.dog;
+                return Assets.getDog();
             case 1: //Up
                 return aniUp.getCurrentFrame();
             case 2: //Down
@@ -126,7 +126,7 @@ public class Pet_AI extends Animal {
             case 8: //Down to the Right
                 return aniDown.getCurrentFrame();
             default:
-                return Assets.dog;
+                return Assets.getDog();
         }
     }
 }

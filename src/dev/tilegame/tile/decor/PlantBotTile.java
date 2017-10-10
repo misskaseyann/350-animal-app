@@ -8,8 +8,12 @@ import dev.tilegame.tile.Tile;
  * @version 10.01.2017
  */
 public class PlantBotTile extends Tile {
-    public PlantBotTile(int id) {
-        super(Assets.plantBot, id);
+    /**
+     * filler.
+     * @param id filler
+     * */
+    public PlantBotTile(final int id) {
+        super(Assets.getPlantBot(), id);
     }
 
     @Override

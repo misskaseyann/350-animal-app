@@ -1,9 +1,7 @@
 package dev.tilegame.sound;
 
-import sun.audio.AudioData;
 import sun.audio.AudioPlayer;
 import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +14,7 @@ import java.io.InputStream;
  */
 public class LoopLoader {
     private AudioPlayer audioPlayer;
-    ContinuousAudioDataStream loop = null;
+    //ContinuousAudioDataStream loop = null;
     AudioStream stream;
     boolean isPlaying;
 
