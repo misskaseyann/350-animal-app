@@ -51,50 +51,12 @@ public abstract class Entity  {
         return Y;
     };
 
+
     /**
      * filler.
      * @param key filler
      * */
-    public boolean noKeyCollide(final KeyManager key) {
-        if (key.up)  { 
-            int gridx = gridLocX();
-            int gridy = gridLocY() - 1;
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
-                return false;
-            }
-            return true;
-        }
-        if (key.down)  { 
-            int gridx = gridLocX();
-            int gridy = gridLocY() + 1;
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
-                return false;
-            }
-            return true;
-        }
-        if (key.left) { 
-            int gridx = gridLocX() - 1;
-            int gridy = gridLocY();
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
-                return false;
-            }
-            return true;
-        }
-        if (key.right) { 
-            int gridx = gridLocX() + 1;
-            int gridy = gridLocY();
-            int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
-            if (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
-                return false;
-            }
-            return true;
-        }
 
-        return false;
-    }
     /**
      * filler.
      * @param move filler

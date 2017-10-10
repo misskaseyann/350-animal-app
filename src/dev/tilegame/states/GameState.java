@@ -3,6 +3,7 @@ package dev.tilegame.states;
 import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
+import dev.tilegame.entities.animals.Pet_AI;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.tile.Tile;

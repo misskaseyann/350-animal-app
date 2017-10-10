@@ -32,7 +32,11 @@ public class Pet extends Animal {
 
     public Pet(final Manager manager, final float x, final float y) {
         super(manager, x, y);
-
+        health = 6;
+        hunger = 6;
+        happiness = 6;
+        cleanliness = 6;
+        clock --;
         // Animations
         aniDown = new Animation(200, Assets.getDogDown());
         aniUp = new Animation(200, Assets.getDogUp());
@@ -59,8 +63,17 @@ public class Pet extends Animal {
 
     private int resetCount(){ return 100; }
 
+    private boolean isEqual(int [] list, int num){
+        for(int i = 0; i < list.length; i ++){
+            if(num == list[i])
+                return true;
+        }
+        return false;
+    }
+
     private int checkMove(int move){
         random = new Random();
+        if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
         if (!super.noCollide(move)) {
             return checkMove(random.nextInt(9));
         }
@@ -74,11 +87,15 @@ public class Pet extends Animal {
     }
 
     private BufferedImage getCurrentAnimationFrame() {
+        if (clock == 0) { resetClock(); }
+        if((hunger == 0 || happiness == 0 || cleanliness == 0)&& isEqual(even, clock)){ health --;} //If user doesn't feed the pet health decreases.
+        if (isEqual(even, clock)) { hunger--; } //Over time the pet's hunger decrease until owner feeds pet.
+        if(even[2] == clock){cleanliness--;}
+        clock --;
         random = new Random();
         if (count == 0) {
             randomInt = random.nextInt(9);
             randomInt = checkMove(randomInt);
-            System.out.println("Random int: "+ randomInt);
             count = resetCount();
         }
         else {
