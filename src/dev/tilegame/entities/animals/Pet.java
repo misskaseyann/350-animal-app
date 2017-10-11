@@ -29,10 +29,10 @@ public class Pet extends Animal {
 
     public Pet(final Manager manager, final float x, final float y) {
         super(manager, x, y);
-        health = 6;
-        hunger = 6;
+        health = 3;
+        hunger = 3;
         happiness = 6;
-        cleanliness = 6;
+        cleanliness = 3;
         clock--;
         // Animations
         aniDown = new Animation(200, Assets.getDogDown());
@@ -92,14 +92,20 @@ public class Pet extends Animal {
             resetClock();
         }
         if ((hunger == 0 || happiness == 0 || cleanliness == 0) && isEqual(even, clock)) {
-            health--;
+            if(!(health == 0))
+                 health--;
         } //If user doesn't feed the pet health decreases.
         if (isEqual(even, clock)) {
-            hunger--;
+            if(!(hunger==0))
+                 hunger--;
         } //Over time the pet's hunger decrease until owner feeds pet.
         if (even[2] == clock) {
-            cleanliness--;
+            if(!(cleanliness==0))
+                cleanliness--;
         }
+        System.out.println("Health: "+ getHealth());
+        System.out.println("Hunger: "+ getHunger());
+        System.out.println("Cleanliness: "+ getCleanliness());
         clock--;
         random = new Random();
         if (count == 0) {
