@@ -23,7 +23,8 @@ public class Tile {
      * filler
      * */
     public static Tile[] getTiles() {
-        return tiles;
+        Tile[] tiles1 = tiles;
+        return tiles1;
     }
 
     /**

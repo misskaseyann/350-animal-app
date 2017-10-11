@@ -13,7 +13,6 @@ import java.io.InputStream;
  * @version 10.03.2017
  */
 public class LoopLoader {
-    private AudioPlayer audioPlayer;
     //ContinuousAudioDataStream loop = null;
     AudioStream stream;
     boolean isPlaying;
@@ -23,7 +22,6 @@ public class LoopLoader {
     }
 
     public void load(String path) {
-        audioPlayer = AudioPlayer.player;
         try {
             InputStream input = new FileInputStream(path);
             stream = new AudioStream(input);
@@ -44,10 +42,6 @@ public class LoopLoader {
     public void stop() {
         AudioPlayer.player.stop(stream);
         isPlaying = false;
-    }
-
-    public void setPlaying(boolean isPlaying) {
-        this.isPlaying = isPlaying;
     }
 
     public boolean isPlaying() {
