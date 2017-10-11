@@ -745,10 +745,14 @@ public class Assets {
         return titleImg;
     }
 
+    public static BufferedImage[] getHearts() {
+        return hearts;
+    }
+
     /**
      *
      */
-    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp;
+    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts;
 
     /**
      *
@@ -762,6 +766,17 @@ public class Assets {
     public static void init() {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
         SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));
+        SpriteSheet heartSheet = new SpriteSheet(ImageLoader.loadImage("/textures/hearts.png"));
+
+        // STATS ASSETS
+        hearts = new BufferedImage[7];
+        hearts[6] = heartSheet.crop(0, 0, 126, 35);
+        hearts[5] = heartSheet.crop(0, 35, 126, 35);
+        hearts[4] = heartSheet.crop(0, 70, 126, 35);
+        hearts[3] = heartSheet.crop(0, 105, 126, 35);
+        hearts[2] = heartSheet.crop(0, 140, 126, 35);
+        hearts[1] = heartSheet.crop(0, 175, 126, 35);
+        hearts[0] = heartSheet.crop(0, 210, 126, 35);
 
         // MENU ASSETS
 

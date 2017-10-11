@@ -11,14 +11,16 @@ public abstract class Animal extends Entity {
 
     // add extra stats
     protected int health;
-    protected int clock = 36000; //Ten Minutes
-    protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
+    //protected int clock = 36000; //Ten Minutes
+    //protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
+    protected int clock = 9000;
+    protected int [] even = {1800, 3600, 5400, 7200, 9000};
     protected int hunger;
     protected int happiness;
     protected int cleanliness;
 
 
-    protected void resetClock(){clock = 36000;}
+    protected void resetClock(){clock = 9000;}//36000;}
 
 
 

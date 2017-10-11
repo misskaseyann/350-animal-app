@@ -6,6 +6,7 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.entities.animals.Pet_AI;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.sound.LoopLoader;
+import dev.tilegame.stats.StatsManager;
 import dev.tilegame.tile.Tile;
 import dev.tilegame.worlds.World;
 
@@ -21,12 +22,14 @@ public class GameState extends State {
     private Pet pet;
     private World world;
     private LoopLoader music;
+    private StatsManager statsManager;
 
     public GameState(Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world1.txt");
         manager.setWorld(world);
         pet = new Pet(manager, world.getSpawnX()*32, world.getSpawnY()*32);
+        statsManager = new StatsManager(pet);
         music = new LoopLoader();
     }
 
@@ -50,6 +53,10 @@ public class GameState extends State {
         pet.render(g);
         g.drawImage(Assets.getMainMenuTop(), 0, 0, null);
         g.drawImage(Assets.getMainMenuBot(), 0, 475, null);
+        g.drawImage(statsManager.healthBar(), 90, 513, null);
+        g.drawImage(statsManager.hungerBar(), 90, 585, null);
+        g.drawImage(statsManager.happyBar(), 225, 513, null);
+        g.drawImage(statsManager.cleanBar(), 225, 585, null);
     }
 
     public World getWorld(){ return world;}
