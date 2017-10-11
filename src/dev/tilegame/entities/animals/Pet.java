@@ -1,18 +1,13 @@
 package dev.tilegame.entities.animals;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
 import dev.tilegame.gfx.Assets;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;
-import dev.tilegame.input.KeyManager;
-import dev.tilegame.states.GameState;
-import dev.tilegame.tile.Tile;
-import dev.tilegame.utils.Utils;
+
 import java.awt.*;
-import java.util.ArrayList;
 
 
 /**
@@ -20,8 +15,10 @@ import java.util.ArrayList;
  * @version 09.24.2017
  */
 public class Pet extends Animal {
-
-    //Animations
+    /***
+     * Private Animations are four different
+     * Animations that the pet has for movement.
+     */
     private Animation aniDown, aniUp, aniLeft, aniRight;
 
 
@@ -36,7 +33,7 @@ public class Pet extends Animal {
         hunger = 6;
         happiness = 6;
         cleanliness = 6;
-        clock --;
+        clock--;
         // Animations
         aniDown = new Animation(200, Assets.getDogDown());
         aniUp = new Animation(200, Assets.getDogUp());
@@ -61,19 +58,23 @@ public class Pet extends Animal {
     }
 
 
-    private int resetCount(){ return 100; }
+    private int resetCount() {
+        return 100;
+    }
 
-    private boolean isEqual(int [] list, int num){
-        for(int i = 0; i < list.length; i ++){
-            if(num == list[i])
+    private boolean isEqual(int[] list, int num) {
+        for (int i = 0; i < list.length; i++) {
+            if (num == list[i])
                 return true;
         }
         return false;
     }
 
-    private int checkMove(int move){
+    private int checkMove(int move) {
         random = new Random();
-        if(!super.noCollide(move)){return checkMove(random.nextInt(9));}
+        if (!super.noCollide(move)) {
+            return checkMove(random.nextInt(9));
+        }
         if (!super.noCollide(move)) {
             return checkMove(random.nextInt(9));
         }
@@ -87,22 +88,29 @@ public class Pet extends Animal {
     }
 
     private BufferedImage getCurrentAnimationFrame() {
-        if (clock == 0) { resetClock(); }
-        if((hunger == 0 || happiness == 0 || cleanliness == 0)&& isEqual(even, clock)){ health --;} //If user doesn't feed the pet health decreases.
-        if (isEqual(even, clock)) { hunger--; } //Over time the pet's hunger decrease until owner feeds pet.
-        if(even[2] == clock){cleanliness--;}
-        clock --;
+        if (clock == 0) {
+            resetClock();
+        }
+        if ((hunger == 0 || happiness == 0 || cleanliness == 0) && isEqual(even, clock)) {
+            health--;
+        } //If user doesn't feed the pet health decreases.
+        if (isEqual(even, clock)) {
+            hunger--;
+        } //Over time the pet's hunger decrease until owner feeds pet.
+        if (even[2] == clock) {
+            cleanliness--;
+        }
+        clock--;
         random = new Random();
         if (count == 0) {
             randomInt = random.nextInt(9);
             randomInt = checkMove(randomInt);
             count = resetCount();
-        }
-        else {
+        } else {
             randomInt = checkMove(randomInt);
             count--;
         }
-        if((count % 2) == 0) {
+        if ((count % 2) == 0) {
             switch (randomInt) {
                 case 0: //Rest
                     return Assets.getDog();
@@ -116,15 +124,15 @@ public class Pet extends Animal {
                     setX(getX() - 3);
                     return aniLeft.getCurrentFrame();
                 case 4: //Right
-                    setX(getX()+ 3);
+                    setX(getX() + 3);
                     return aniRight.getCurrentFrame();
                 case 5: //Up to the Left
                     y -= 3;
-                    setX(getX()- 3);
+                    setX(getX() - 3);
                     return aniUp.getCurrentFrame();
                 case 6: //Up to the Right
                     y -= 3;
-                    setX(getX()+ 3);
+                    setX(getX() + 3);
                     return aniUp.getCurrentFrame();
                 case 7: //Down to the Left
                     y += 3;
@@ -160,5 +168,5 @@ public class Pet extends Animal {
             default:
                 return Assets.getDog();
         }
-        }
+    }
 }

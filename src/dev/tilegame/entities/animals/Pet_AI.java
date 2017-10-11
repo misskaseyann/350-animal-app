@@ -43,7 +43,7 @@ public class Pet_AI extends Animal {
 
     }
 
-    private int resetCount(int count){ return count = 100; }
+    private int resetCount(){ return 100; }
 
     private int checkMove(int move){
         random = new Random();
@@ -64,7 +64,7 @@ public class Pet_AI extends Animal {
         if(count == 0) {
             randomInt = random.nextInt(9);
             randomInt = checkMove(randomInt);
-            count = resetCount(count);
+            count = resetCount();
         }
         else {
             randomInt = checkMove(randomInt);

@@ -687,25 +687,29 @@ public class Assets {
      * filler.
      */
     public static BufferedImage[] getDogDown() {
-        return dogDown;
+        BufferedImage[] buff = dogDown;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogLeft() {
-        return dogLeft;
+        BufferedImage[] buff = dogLeft;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogRight() {
-        return dogRight;
+        BufferedImage[] buff = dogRight;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogUp() {
-        return dogUp;
+        BufferedImage[] buff = dogUp;
+        return buff;
     }
     /**
      * filler.
