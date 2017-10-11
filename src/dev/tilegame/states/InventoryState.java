@@ -1,6 +1,5 @@
 package dev.tilegame.states;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.sound.LoopLoader;
@@ -10,12 +9,12 @@ import java.awt.*;
 
 /**
  * @author kaseystowell
- * @version 09.24.2017
+ * @version 10.10.2017
  */
-public class MenuState extends State {
+public class InventoryState extends State {
     //private LoopLoader music;
 
-    public MenuState(Manager manager) {
+    public InventoryState(Manager manager) {
         super(manager);
         //music = new LoopLoader();
     }
@@ -24,14 +23,13 @@ public class MenuState extends State {
 
     @Override
     public void tick() {
-        if (manager.getKeyManager().enter) {
-            State.setState(manager.getGame().getGameState());
+        if (manager.getKeyManager().esc) {
+            State.setState(manager.getGame().getMenuState());
         }
-
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.getPauseMenu(), 0, 0, null);
+        g.drawImage(Assets.getMenuInventory(), 0, 0, null);
     }
 }

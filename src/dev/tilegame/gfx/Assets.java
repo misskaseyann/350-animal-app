@@ -682,7 +682,8 @@ public class Assets {
             rugTL, rugTC, rugTR, rugBL, rugBC, rugBR,
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
-            path;
+            path,
+            mainMenuBot, mainMenuTop, menuInventory, menuTravel, pauseMenu, titleImg;
     /**
      * filler.
      */
@@ -720,6 +721,30 @@ public class Assets {
         return HEIGHT;
     }
 
+    public static BufferedImage getMainMenuBot() {
+        return mainMenuBot;
+    }
+
+    public static BufferedImage getMainMenuTop() {
+        return mainMenuTop;
+    }
+
+    public static BufferedImage getMenuInventory() {
+        return menuInventory;
+    }
+
+    public static BufferedImage getMenuTravel() {
+        return menuTravel;
+    }
+
+    public static BufferedImage getPauseMenu() {
+        return pauseMenu;
+    }
+
+    public static BufferedImage getTitleImg() {
+        return titleImg;
+    }
+
     /**
      *
      */
@@ -737,6 +762,15 @@ public class Assets {
     public static void init() {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
         SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));
+
+        // MENU ASSETS
+
+        mainMenuBot = ImageLoader.loadImage("/textures/mainmenubot.png");
+        mainMenuTop = ImageLoader.loadImage("/textures/mainmenutop.png");
+        menuInventory = ImageLoader.loadImage("/textures/menuinventory.png");
+        menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
+        pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
+        titleImg = ImageLoader.loadImage("/textures/titlepic.png");
 
         // ANIMAL ASSETS
 

@@ -5,10 +5,8 @@ import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
-import dev.tilegame.states.GameState;
-import dev.tilegame.states.MenuState;
-import dev.tilegame.states.State;
-import dev.tilegame.states.TitleState;
+import dev.tilegame.states.*;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -51,7 +49,7 @@ public class Game implements Runnable {
     /**
      *
      */
-    private State gameState, menuState, titleState;
+    private State gameState, menuState, titleState, inventoryState, travelState;
 
     //Input
     /**
@@ -94,6 +92,8 @@ public class Game implements Runnable {
         gameState = new GameState(manager);
         menuState = new MenuState(manager);
         titleState = new TitleState(manager);
+        inventoryState = new InventoryState(manager);
+        travelState = new TravelState(manager);
         State.setState(titleState);
     }
 
@@ -217,4 +217,11 @@ public class Game implements Runnable {
         return gameState;
     }
 
+    public State getInventoryState() {
+        return inventoryState;
+    }
+
+    public State getTravelState() {
+        return travelState;
+    }
 }

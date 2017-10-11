@@ -39,7 +39,7 @@ public class GameState extends State {
             music.play();
         }
         if (manager.getKeyManager().esc) {
-            music.stop();
+            //music.stop();
             State.setState(manager.getGame().getMenuState());
         }
     }
@@ -48,7 +48,8 @@ public class GameState extends State {
     public void render(Graphics g) {
         world.render(g);
         pet.render(g);
-
+        g.drawImage(Assets.getMainMenuTop(), 0, 0, null);
+        g.drawImage(Assets.getMainMenuBot(), 0, 475, null);
     }
 
     public World getWorld(){ return world;}

@@ -39,8 +39,7 @@ public class TitleState extends State {
 
     @Override
     public void render(Graphics g) {
-        g.setColor(Color.BLUE);
-        g.fillRect(manager.getMouseManager().getMouseX(), manager.getMouseManager().getMouseY(), 10, 10);
+        g.drawImage(Assets.getTitleImg(), 0, 0, null);
     }
 
     public boolean isInState() {
