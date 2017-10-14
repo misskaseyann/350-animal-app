@@ -97,4 +97,23 @@ public class StatsManager {
         }
     }
 
+    public BufferedImage emojiBox() {
+        switch (pet.getHealth()) {
+            case 6:
+                return Assets.getEmotions()[6];
+            case 5:
+                return Assets.getEmotions()[5];
+            case 4:
+                return Assets.getEmotions()[4];
+            case 3:
+                return Assets.getEmotions()[3];
+            case 2:
+                return Assets.getEmotions()[2];
+            case 1:
+                return Assets.getEmotions()[1];
+            default:
+                return Assets.getEmotions()[0];
+        }
+    }
+
 }

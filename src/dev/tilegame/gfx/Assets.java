@@ -683,30 +683,35 @@ public class Assets {
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
             path,
-            mainMenuBot, mainMenuTop, menuInventory, menuTravel, pauseMenu, titleImg;
+            mainMenuBot, mainMenuTop, menuInventory, menuTravel, pauseMenu, titleImg,
+            happiness, hygene, hunger, health, menuButton;
     /**
      * filler.
      */
     public static BufferedImage[] getDogDown() {
-        return dogDown;
+        BufferedImage[] buff = dogDown;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogLeft() {
-        return dogLeft;
+        BufferedImage[] buff = dogLeft;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogRight() {
-        return dogRight;
+        BufferedImage[] buff = dogRight;
+        return buff;
     }
     /**
      * filler.
      */
     public static BufferedImage[] getDogUp() {
-        return dogUp;
+        BufferedImage[] buff = dogUp;
+        return buff;
     }
     /**
      * filler.
@@ -749,10 +754,34 @@ public class Assets {
         return hearts;
     }
 
+    public static BufferedImage getHappiness() {
+        return happiness;
+    }
+
+    public static BufferedImage getHygene() {
+        return hygene;
+    }
+
+    public static BufferedImage getHunger() {
+        return hunger;
+    }
+
+    public static BufferedImage getHealth() {
+        return health;
+    }
+
+    public static BufferedImage[] getEmotions() {
+        return emotions;
+    }
+
+    public static BufferedImage getMenuButton() {
+        return menuButton;
+    }
+
     /**
      *
      */
-    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts;
+    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions;
 
     /**
      *
@@ -767,6 +796,8 @@ public class Assets {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
         SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));
         SpriteSheet heartSheet = new SpriteSheet(ImageLoader.loadImage("/textures/hearts.png"));
+        SpriteSheet wordSheet = new SpriteSheet(ImageLoader.loadImage("/textures/wordssheet.png"));
+        SpriteSheet emotionSheet = new SpriteSheet(ImageLoader.loadImage("/textures/emotions.png"));
 
         // STATS ASSETS
         hearts = new BufferedImage[7];
@@ -778,6 +809,20 @@ public class Assets {
         hearts[1] = heartSheet.crop(0, 175, 126, 35);
         hearts[0] = heartSheet.crop(0, 210, 126, 35);
 
+        emotions = new BufferedImage[7];
+        emotions[6] = emotionSheet.crop(0, 0, 64, 64);
+        emotions[5] = emotionSheet.crop(0, 64, 64, 64);
+        emotions[4] = emotionSheet.crop(0, 128, 64, 64);
+        emotions[3] = emotionSheet.crop(0, 192, 64, 64);
+        emotions[2] = emotionSheet.crop(0, 256, 64, 64);
+        emotions[1] = emotionSheet.crop(0, 320, 64, 64);
+        emotions[0] = emotionSheet.crop(0, 384, 64, 64);
+
+        hunger = wordSheet.crop(0, 0, 119, 11);
+        hygene = wordSheet.crop(0, 11, 119, 11);
+        health = wordSheet.crop(0, 22, 119, 11);
+        happiness = wordSheet.crop(0, 33, 119, 11);
+
         // MENU ASSETS
 
         mainMenuBot = ImageLoader.loadImage("/textures/mainmenubot.png");
@@ -786,6 +831,7 @@ public class Assets {
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
         titleImg = ImageLoader.loadImage("/textures/titlepic.png");
+        menuButton = ImageLoader.loadImage("/textures/menubutton.png");
 
         // ANIMAL ASSETS
 

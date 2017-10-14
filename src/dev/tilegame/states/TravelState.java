@@ -22,8 +22,13 @@ public class TravelState extends State {
 
     @Override
     public void tick() {
-        if (manager.getKeyManager().esc) {
-            State.setState(manager.getGame().getMenuState());
+        if (manager.getMouseManager().getLeftPress()) {
+            int x = manager.getMouseManager().getMouseX();
+            int y = manager.getMouseManager().getMouseY();
+            if ((x > 70 && x < 294) && (y > 559 && y < 623)) {
+                State.setState(manager.getGame().getGameState());
+            }
+            // add statements for items...
         }
     }
 
