@@ -1,9 +1,12 @@
 package dev.tilegame;
 
 import dev.tilegame.Game;
+import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
+import dev.tilegame.sound.LoopLoader;
+import dev.tilegame.stats.StatsManager;
 import dev.tilegame.worlds.World;
 
 /**
@@ -15,6 +18,9 @@ import dev.tilegame.worlds.World;
 public class Manager {
     private Game game;
     private World world;
+    private Pet pet;
+    private StatsManager statsManager;
+    private LoopLoader loopLoader;
 
     public Manager(Game game) {
         this.game = game;
@@ -54,5 +60,21 @@ public class Manager {
 
     public void setWorld(World world) {
         this.world = world;
+    }
+
+    public void setPet(Pet pet) { this.pet = pet; }
+
+    public Pet getPet() { return pet; }
+
+    public void setStatsManager(StatsManager statsManager) { this.statsManager = statsManager; }
+
+    public StatsManager getStatsManager() { return statsManager; }
+
+    public LoopLoader getLoopLoader() {
+        return loopLoader;
+    }
+
+    public void setLoopLoader(LoopLoader loopLoader) {
+        this.loopLoader = loopLoader;
     }
 }

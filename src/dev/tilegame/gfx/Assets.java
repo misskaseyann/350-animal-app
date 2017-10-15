@@ -683,7 +683,7 @@ public class Assets {
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
             path,
-            mainMenuBot, mainMenuTop, menuInventory, menuTravel, pauseMenu, titleImg,
+            mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu, titleImg,
             happiness, hygene, hunger, health, menuButton;
     /**
      * filler.
@@ -730,8 +730,12 @@ public class Assets {
         return mainMenuBot;
     }
 
-    public static BufferedImage getMainMenuTop() {
-        return mainMenuTop;
+    public static BufferedImage getMainMenuTopReg() {
+        return mainMenuTopReg;
+    }
+
+    public static BufferedImage getMainMenuTopTravel() {
+        return mainMenuTopTravel;
     }
 
     public static BufferedImage getMenuInventory() {
@@ -794,10 +798,11 @@ public class Assets {
      */
     public static void init() {
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
-        SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home2.png"));
+        SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home.png"));
         SpriteSheet heartSheet = new SpriteSheet(ImageLoader.loadImage("/textures/hearts.png"));
         SpriteSheet wordSheet = new SpriteSheet(ImageLoader.loadImage("/textures/wordssheet.png"));
         SpriteSheet emotionSheet = new SpriteSheet(ImageLoader.loadImage("/textures/emotions.png"));
+        SpriteSheet mainMenuTopSheet = new SpriteSheet(ImageLoader.loadImage("/textures/mainmenutop.png"));
 
         // STATS ASSETS
         hearts = new BufferedImage[7];
@@ -826,7 +831,8 @@ public class Assets {
         // MENU ASSETS
 
         mainMenuBot = ImageLoader.loadImage("/textures/mainmenubot.png");
-        mainMenuTop = ImageLoader.loadImage("/textures/mainmenutop.png");
+        mainMenuTopTravel = mainMenuTopSheet.crop(0, 0, 360, 75);
+        mainMenuTopReg = mainMenuTopSheet.crop(0, 75, 360, 75);
         menuInventory = ImageLoader.loadImage("/textures/menuinventory.png");
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");

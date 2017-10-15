@@ -20,7 +20,7 @@ public class Pet extends Animal {
      * Animations that the pet has for movement.
      */
     private Animation aniDown, aniUp, aniLeft, aniRight;
-
+    private int lastX, lastY;
 
     // Random Movement
     private Random random;
@@ -56,7 +56,6 @@ public class Pet extends Animal {
         manager.getGameCamera().centerOnEntity(this);
 
     }
-
 
     private int resetCount() {
         return 100;
@@ -169,4 +168,6 @@ public class Pet extends Animal {
                 return Assets.getDog();
         }
     }
+
+
 }

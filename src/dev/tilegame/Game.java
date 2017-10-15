@@ -49,7 +49,7 @@ public class Game implements Runnable {
     /**
      *
      */
-    private State gameState, menuState, titleState, inventoryState, travelState;
+    private State gameState, menuState, titleState, inventoryState, travelState, parkState;
 
     //Input
     /**
@@ -94,6 +94,7 @@ public class Game implements Runnable {
         titleState = new TitleState(manager);
         inventoryState = new InventoryState(manager);
         travelState = new TravelState(manager);
+        parkState = new ParkState(manager);
         State.setState(titleState);
     }
 
@@ -223,5 +224,9 @@ public class Game implements Runnable {
 
     public State getTravelState() {
         return travelState;
+    }
+
+    public State getParkState() {
+        return parkState;
     }
 }

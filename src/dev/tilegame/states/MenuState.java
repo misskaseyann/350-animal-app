@@ -1,49 +1,67 @@
 package dev.tilegame.states;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
-import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
 /**
+ * Pause/main menu for the game.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class MenuState extends State {
-    //private LoopLoader music;
 
+    /**
+     * MenuState constructor.
+     *
+     * @param manager game class manager
+     */
     public MenuState(Manager manager) {
         super(manager);
-        //music = new LoopLoader();
     }
 
-    public World getWorld(){ return null;}
-
+    /**
+     * Checks for button presses.
+     */
     @Override
     public void tick() {
-        /*if (manager.getKeyManager().enter) {
-            State.setState(manager.getGame().getGameState());
-        }*/
+        // Did the mouse left click?
         if (manager.getMouseManager().getLeftPress()) {
+            // Set x and y coordinates.
             int x = manager.getMouseManager().getMouseX();
             int y = manager.getMouseManager().getMouseY();
-            if ((x > 70 && x < 294) && (y > 153 && y < 217)) {
-                // save function here
+            // Save Button
+            if ((x > 70 && x < 292) && (y > 204 && y < 268)) {
+                // TODO implement saving the game
             }
-            if ((x > 83 && x < 280) && (y > 276 && y < 340)) {
-                State.setState(manager.getGame().getTitleState());
+            // Load Button
+            if ((x > 70 && x < 292) && (y > 297 && y < 340)) {
+                // TODO implement loading a game
             }
-            if ((x > 16 && x < 346) && (y > 397 && y < 461)) {
-                State.setState(manager.getGame().getGameState());
+            // Back Button
+            if ((x > 70 && x < 292) && (y > 392 && y < 456)) {
+                State.setState(State.getLastState());
             }
         }
     }
 
+    /**
+     * Render main menu screen.
+     *
+     * @param g graphics object.
+     */
     @Override
     public void render(Graphics g) {
+        // TODO make menu prettier and add exit to title button
         g.drawImage(Assets.getPauseMenu(), 0, 0, null);
     }
+
+    /**
+     * @return null/no world in this state
+     */
+    public World getWorld(){ return null;}
+
 }
