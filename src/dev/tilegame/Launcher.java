@@ -1,11 +1,16 @@
 package dev.tilegame;
 
 /**
+ * Launches the game.
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class Launcher {
-    // start game
+
+    /**
+     * Main function and game launcher.
+     * @param args string arguments.
+     */
     public static void main(final String[] args) {
         Game game = new Game("Test Game", 360, 640);
         game.start();
