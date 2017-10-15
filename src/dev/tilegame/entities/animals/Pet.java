@@ -92,15 +92,15 @@ public class Pet extends Animal {
             resetClock();
         }
         if ((hunger == 0 || happiness == 0 || cleanliness == 0) && isEqual(even, clock)) {
-            if(!(health == 0))
+            if(!(health <= 0))
                  health--;
         } //If user doesn't feed the pet health decreases.
         if (isEqual(even, clock)) {
-            if(!(hunger==0))
+            if(!(hunger<=0))
                  hunger--;
         } //Over time the pet's hunger decrease until owner feeds pet.
         if (even[2] == clock) {
-            if(!(cleanliness==0))
+            if(!(cleanliness<=0))
                 cleanliness--;
         }
         System.out.println("Health: "+ getHealth());
