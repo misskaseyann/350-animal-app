@@ -7,7 +7,6 @@ import java.awt.*;
 
 /**
  * Abstract State class that helps manage each of the game's states.
- *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -20,7 +19,6 @@ public abstract class State {
     /**
      * State constructor.
      * Sets up the class manager.
-     *
      * @param manager class mananger.
      */
     public State(Manager manager) {
@@ -34,7 +32,6 @@ public abstract class State {
 
     /**
      * Render any graphics on the screen.
-     *
      * @param g graphics object.
      */
     public abstract void render(Graphics g);

@@ -11,7 +11,6 @@ import java.awt.*;
 
 /**
  * Actual gameplay instantiation and home world.
- *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -24,7 +23,6 @@ public class GameState extends State {
 
     /**
      * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
-     *
      * @param manager game class manager.
      */
     public GameState(Manager manager) {
@@ -98,7 +96,6 @@ public class GameState extends State {
 
     /**
      * Renders the home world and game menus.
-     *
      * @param g graphics object.
      */
     @Override

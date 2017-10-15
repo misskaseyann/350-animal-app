@@ -6,6 +6,7 @@ import dev.tilegame.gfx.Assets;
 import java.awt.image.BufferedImage;
 
 /**
+ * Manages stats display.
  * @author kaseystowell
  * @version 10.10.2017
  */
@@ -13,11 +14,17 @@ public class StatsManager {
 
     private Animal pet;
 
+    /**
+     * StatsManager constructor.
+     * @param pet entity with stats.
+     */
     public StatsManager(Animal pet) {
         this.pet = pet;
     }
 
-    //health
+    /**
+     * @return health bar image with current stat.
+     */
     public BufferedImage healthBar() {
         switch (pet.getHealth()) {
             case 6:
@@ -37,7 +44,9 @@ public class StatsManager {
         }
     }
 
-    //hunger
+    /**
+     * @return hunger bar image with current stat.
+     */
     public BufferedImage hungerBar() {
         switch (pet.getHunger()) {
             case 6:
@@ -57,7 +66,9 @@ public class StatsManager {
         }
     }
 
-    //happiness
+    /**
+     * @return happiness bar image with current stat.
+     */
     public BufferedImage happyBar() {
         switch (pet.getHappiness()) {
             case 6:
@@ -77,7 +88,9 @@ public class StatsManager {
         }
     }
 
-    //cleanliness
+    /**
+     * @return cleanliness bar image with current stat.
+     */
     public BufferedImage cleanBar() {
         switch (pet.getCleanliness()) {
             case 6:
@@ -97,6 +110,9 @@ public class StatsManager {
         }
     }
 
+    /**
+     * @return emoji image with current stat.
+     */
     public BufferedImage emojiBox() {
         switch (pet.getHealth()) {
             case 6:

@@ -8,7 +8,6 @@ import java.awt.*;
 
 /**
  * Inventory menu for the game.
- *
  * @author kaseystowell
  * @version 10.10.2017
  */
@@ -16,7 +15,6 @@ public class InventoryState extends State {
 
     /**
      * Inventory state constructor.
-     *
      * @param manager game class manager.
      */
     public InventoryState(Manager manager) {
@@ -43,7 +41,6 @@ public class InventoryState extends State {
 
     /**
      * Renders the inventory menu.
-     *
      * @param g graphics object.
      */
     @Override

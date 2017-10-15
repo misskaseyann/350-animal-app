@@ -5,13 +5,13 @@ import dev.tilegame.entities.Entity;
 
 /**
  * Animal entity.
- *
  * @author kaseystowell
+ * @author brendannahed
  * @version 09.24.2017
  */
 public abstract class Animal extends Entity {
 
-    // TODO add more stats
+    // TODO add more stats?
     protected int health;
     //protected int clock = 36000; //Ten Minutes
     protected int clock = 9000; // Every 2.5 minutes.
@@ -28,7 +28,6 @@ public abstract class Animal extends Entity {
 
     /**
      * Animal constructor.
-     *
      * @param manager game class manager.
      * @param x float x value on canvas.
      * @param y float y value on canvas.
@@ -88,4 +87,5 @@ public abstract class Animal extends Entity {
         // TODO error check for a value less than 0 or more than 6
         this.cleanliness = cleanliness;
     }
+
 }

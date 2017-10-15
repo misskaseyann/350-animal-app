@@ -13,7 +13,6 @@ import java.awt.*;
  * Park world.
  * Generates a top menu for taking care of your pet but eliminates the option for feeding and cleaning.
  * Generates a bottom menu for monitoring your pets stats and accessing main menu.
- *
  * @author kaseystowell
  * @version 10.14.2017
  */
@@ -27,7 +26,6 @@ public class ParkState extends State {
     /**
      * Park state constructor.
      * Sets up the park world, loads the pet and its stats, and sets up music with current loop loader.
-     *
      * @param manager game class manager.
      */
     public ParkState(Manager manager) {

@@ -8,7 +8,6 @@ import java.awt.*;
 
 /**
  * Pause/main menu for the game.
- *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -16,7 +15,6 @@ public class MenuState extends State {
 
     /**
      * MenuState constructor.
-     *
      * @param manager game class manager
      */
     public MenuState(Manager manager) {
@@ -50,7 +48,6 @@ public class MenuState extends State {
 
     /**
      * Render main menu screen.
-     *
      * @param g graphics object.
      */
     @Override

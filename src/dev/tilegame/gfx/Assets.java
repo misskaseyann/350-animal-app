@@ -3,662 +3,14 @@ package dev.tilegame.gfx;
 import java.awt.image.BufferedImage;
 
 /**
- * Any image, sound, piece of music.
+ * Any game image.
  * @author kaseystowell
+ * @author allisonbolen
  * @version 09.24.2017
  */
 public class Assets {
 
-    /** 
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDog() {
-        return dog;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getWoodFloor() {
-        return woodFloor;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getKitchenFloor() {
-        return kitchenFloor;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBathFloor() {
-        return bathFloor;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getStoneFloor() {
-        return stoneFloor;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getWallLeft() {
-        return wallLeft;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getWallCenter() {
-        return wallCenter;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getWallRight() {
-        return wallRight;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getWallEnd() {
-        return wallEnd;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingLeft() {
-        return ceilingLeft;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingCenter() {
-        return ceilingCenter;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingRight() {
-        return ceilingRight;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingEnd() {
-        return ceilingEnd;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingDown() {
-        return ceilingDown;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingBCL() {
-        return ceilingBCL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingBCR() {
-        return ceilingBCR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingTCL() {
-        return ceilingTCL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingTCR() {
-        return ceilingTCR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingPDown() {
-        return ceilingPDown;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingPLeft() {
-        return ceilingPLeft;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCeilingPRight() {
-        return ceilingPRight;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallTL() {
-        return outWallTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallTC() {
-        return outWallTC;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallTR() {
-        return outWallTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallBL() {
-        return outWallBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallBC() {
-        return outWallBC;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getOutWallBR() {
-        return outWallBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getPlantTop() {
-        return plantTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getPlantBot() {
-        return plantBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getKitTableTL() {
-        return kitTableTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getKitTableTR() {
-        return kitTableTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getKitTableBL() {
-        return kitTableBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-
-    public static BufferedImage getKitTableBR() {
-        return kitTableBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getChairLeft() {
-        return chairLeft;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getChairRight() {
-        return chairRight;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCounterCenter() {
-        return counterCenter;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCounterCorner() {
-        return counterCorner;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCounterEnd() {
-        return counterEnd;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDogBowl() {
-        return dogBowl;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDogBone() {
-        return dogBone;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBox() {
-        return box;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getFridgeTop() {
-        return fridgeTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getFridgeBot() {
-        return fridgeBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getStoveTop() {
-        return stoveTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getStoveBot() {
-        return stoveBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getSinkLTop() {
-        return sinkLTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getSinkLBot() {
-        return sinkLBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getSinkRTop() {
-        return sinkRTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getSinkRBot() {
-        return sinkRBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getPhone() {
-        return phone;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getKitRug() {
-        return kitRug;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getClock() {
-        return clock;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getEndTable() {
-        return endTable;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getToiletTop() {
-        return toiletTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getToiletBot() {
-        return toiletBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBathSinkTop() {
-        return bathSinkTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBathSinkBot() {
-        return bathSinkBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getShowerTop() {
-        return showerTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getShowerBot() {
-        return showerBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCouchLeft() {
-        return couchLeft;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getCouchRight() {
-        return couchRight;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getTvTop() {
-        return tvTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getTvBot() {
-        return tvBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getShelfTL() {
-        return shelfTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getShelfTR() {
-        return shelfTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-
-    public static BufferedImage getShelfBL() {
-        return shelfBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getShelfBR() {
-        return shelfBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDeskTop() {
-        return deskTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDeskBot() {
-        return deskBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedTL() {
-        return bedTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedTR() {
-        return bedTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedCL() {
-        return bedCL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedCR() {
-        return bedCR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedBL() {
-        return bedBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getBedBR() {
-        return bedBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDiningTL() {
-        return diningTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDiningTR() {
-        return diningTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDiningBL() {
-        return diningBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDiningBR() {
-        return diningBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugTL() {
-        return rugTL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugTC() {
-        return rugTC;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugTR() {
-        return rugTR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugBL() {
-        return rugBL;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugBC() {
-        return rugBC;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getRugBR() {
-        return rugBR;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getGrassLong() {
-        return grassLong;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getGrassFlowers() {
-        return grassFlowers;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getGrassRock() {
-        return grassRock;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getGrassShort() {
-        return grassShort;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDoorTop() {
-        return doorTop;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getDoorBot() {
-        return doorBot;
-    }
-    /**
-     * filler.
-     * @return filler.
-     * */
-    public static BufferedImage getPath() {
-        return path;
-    }
-
-    /**
-     * filler.
-     */
+    // All images that are rendered on screen.
     private static BufferedImage
             dog,
             woodFloor, kitchenFloor, bathFloor, stoneFloor,
@@ -683,128 +35,30 @@ public class Assets {
             grassLong, grassFlowers, grassRock, grassShort,
             doorTop, doorBot,
             path,
-            mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu, titleImg,
+            mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
             happiness, hygene, hunger, health, menuButton;
-    /**
-     * filler.
-     */
-    public static BufferedImage[] getDogDown() {
-        BufferedImage[] buff = dogDown;
-        return buff;
-    }
-    /**
-     * filler.
-     */
-    public static BufferedImage[] getDogLeft() {
-        BufferedImage[] buff = dogLeft;
-        return buff;
-    }
-    /**
-     * filler.
-     */
-    public static BufferedImage[] getDogRight() {
-        BufferedImage[] buff = dogRight;
-        return buff;
-    }
-    /**
-     * filler.
-     */
-    public static BufferedImage[] getDogUp() {
-        BufferedImage[] buff = dogUp;
-        return buff;
-    }
-    /**
-     * filler.
-     */
-    public static int getWIDTH() {
-        return WIDTH;
-    }
-    /**
-     * filler.
-     */
-    public static int getHEIGHT() {
-        return HEIGHT;
-    }
 
-    public static BufferedImage getMainMenuBot() {
-        return mainMenuBot;
-    }
-
-    public static BufferedImage getMainMenuTopReg() {
-        return mainMenuTopReg;
-    }
-
-    public static BufferedImage getMainMenuTopTravel() {
-        return mainMenuTopTravel;
-    }
-
-    public static BufferedImage getMenuInventory() {
-        return menuInventory;
-    }
-
-    public static BufferedImage getMenuTravel() {
-        return menuTravel;
-    }
-
-    public static BufferedImage getPauseMenu() {
-        return pauseMenu;
-    }
-
-    public static BufferedImage getTitleImg() {
-        return titleImg;
-    }
-
-    public static BufferedImage[] getHearts() {
-        return hearts;
-    }
-
-    public static BufferedImage getHappiness() {
-        return happiness;
-    }
-
-    public static BufferedImage getHygene() {
-        return hygene;
-    }
-
-    public static BufferedImage getHunger() {
-        return hunger;
-    }
-
-    public static BufferedImage getHealth() {
-        return health;
-    }
-
-    public static BufferedImage[] getEmotions() {
-        return emotions;
-    }
-
-    public static BufferedImage getMenuButton() {
-        return menuButton;
-    }
-
-    /**
-     *
-     */
-    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions;
-
-    /**
-     *
-     */
+    // All animated images rendered on screen.
+    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
+    // Tile size.
     private static final int WIDTH = 32, HEIGHT = 32;
 
-    // load everything in game and loads only ONCE
     /**
-     *
+     * Loads all images in the game and loads only once.
      */
     public static void init() {
+        // Sprite sheets that can be cropped into individual tiles.
         SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage("/textures/dog.png"));
         SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage("/textures/home.png"));
         SpriteSheet heartSheet = new SpriteSheet(ImageLoader.loadImage("/textures/hearts.png"));
         SpriteSheet wordSheet = new SpriteSheet(ImageLoader.loadImage("/textures/wordssheet.png"));
         SpriteSheet emotionSheet = new SpriteSheet(ImageLoader.loadImage("/textures/emotions.png"));
         SpriteSheet mainMenuTopSheet = new SpriteSheet(ImageLoader.loadImage("/textures/mainmenutop.png"));
+        SpriteSheet titleSheet = new SpriteSheet(ImageLoader.loadImage("/textures/titlepic.png"));
 
         // STATS ASSETS
+
+        // Stat hearts.
         hearts = new BufferedImage[7];
         hearts[6] = heartSheet.crop(0, 0, 126, 35);
         hearts[5] = heartSheet.crop(0, 35, 126, 35);
@@ -814,6 +68,7 @@ public class Assets {
         hearts[1] = heartSheet.crop(0, 175, 126, 35);
         hearts[0] = heartSheet.crop(0, 210, 126, 35);
 
+        // Stat emotions.
         emotions = new BufferedImage[7];
         emotions[6] = emotionSheet.crop(0, 0, 64, 64);
         emotions[5] = emotionSheet.crop(0, 64, 64, 64);
@@ -823,6 +78,7 @@ public class Assets {
         emotions[1] = emotionSheet.crop(0, 320, 64, 64);
         emotions[0] = emotionSheet.crop(0, 384, 64, 64);
 
+        // Stat text.
         hunger = wordSheet.crop(0, 0, 119, 11);
         hygene = wordSheet.crop(0, 11, 119, 11);
         health = wordSheet.crop(0, 22, 119, 11);
@@ -836,10 +92,14 @@ public class Assets {
         menuInventory = ImageLoader.loadImage("/textures/menuinventory.png");
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
-        titleImg = ImageLoader.loadImage("/textures/titlepic.png");
         menuButton = ImageLoader.loadImage("/textures/menubutton.png");
 
-        // ANIMAL ASSETS
+        titleImg = new BufferedImage[3];
+        titleImg[0] = titleSheet.crop(0, 0, 360, 640);
+        titleImg[1] = titleSheet.crop(360, 0, 360, 640);
+        titleImg[2] = titleSheet.crop(720, 0, 360, 640);
+
+        // ANIMAL ANIMATION ASSETS
 
         dog = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);
 
@@ -981,4 +241,784 @@ public class Assets {
 
         path = houseSheet.crop(WIDTH * 8, HEIGHT * 5, WIDTH, HEIGHT);
     }
+
+    // ANIMATION GETTERS
+
+
+    /**
+     * @return title screen animation images.
+     */
+    public static BufferedImage[] getTitleImg() {
+        return titleImg;
+    }
+
+    /**
+     * @return walking down animation images.
+     */
+    public static BufferedImage[] getDogDown() {
+        BufferedImage[] buff = dogDown;
+        return buff;
+    }
+
+    /**
+     * @return walking left animation images.
+     */
+    public static BufferedImage[] getDogLeft() {
+        BufferedImage[] buff = dogLeft;
+        return buff;
+    }
+
+    /**
+     * @return walking right animation images.
+     */
+    public static BufferedImage[] getDogRight() {
+        BufferedImage[] buff = dogRight;
+        return buff;
+    }
+
+    /**
+     * @return walking up animation images.
+     */
+    public static BufferedImage[] getDogUp() {
+        BufferedImage[] buff = dogUp;
+        return buff;
+    }
+
+    // TILE GETTERS
+
+    /**
+     * @return regular dog tile.
+     */
+    public static BufferedImage getDog() {
+        return dog;
+    }
+
+    /**
+     * @return wood floor tile.
+     */
+    public static BufferedImage getWoodFloor() {
+        return woodFloor;
+    }
+
+    /**
+     * @return kitchen floor tile.
+     */
+    public static BufferedImage getKitchenFloor() {
+        return kitchenFloor;
+    }
+
+    /**
+     * @return bathroom floor tile.
+     */
+    public static BufferedImage getBathFloor() {
+        return bathFloor;
+    }
+
+    /**
+     * @return stone floor tile.
+     */
+    public static BufferedImage getStoneFloor() {
+        return stoneFloor;
+    }
+
+    /**
+     * @return wall left tile.
+     */
+    public static BufferedImage getWallLeft() {
+        return wallLeft;
+    }
+
+    /**
+     * @return wall center tile.
+     */
+    public static BufferedImage getWallCenter() {
+        return wallCenter;
+    }
+
+    /**
+     * @return wall right tile.
+     */
+    public static BufferedImage getWallRight() {
+        return wallRight;
+    }
+
+    /**
+     * @return wall end tile.
+     */
+    public static BufferedImage getWallEnd() {
+        return wallEnd;
+    }
+
+    /**
+     * @return ceiling left tile.
+     */
+    public static BufferedImage getCeilingLeft() {
+        return ceilingLeft;
+    }
+
+    /**
+     * @return ceiling center tile.
+     */
+    public static BufferedImage getCeilingCenter() {
+        return ceilingCenter;
+    }
+
+    /**
+     * @return ceiling right tile
+     */
+    public static BufferedImage getCeilingRight() {
+        return ceilingRight;
+    }
+
+    /**
+     * @return ceiling end tile.
+     */
+    public static BufferedImage getCeilingEnd() {
+        return ceilingEnd;
+    }
+
+    /**
+     * @return ceiling down tile.
+     */
+    public static BufferedImage getCeilingDown() {
+        return ceilingDown;
+    }
+
+    /**
+     * @return ceiling bottom center left tile.
+     */
+    public static BufferedImage getCeilingBCL() {
+        return ceilingBCL;
+    }
+
+    /**
+     * @return ceiling bottom center right tile.
+     */
+    public static BufferedImage getCeilingBCR() {
+        return ceilingBCR;
+    }
+
+    /**
+     * @return ceiling top center left tile.
+     */
+    public static BufferedImage getCeilingTCL() {
+        return ceilingTCL;
+    }
+
+    /**
+     * @return ceiling top center right tile.
+     */
+    public static BufferedImage getCeilingTCR() {
+        return ceilingTCR;
+    }
+
+    /**
+     * @return ceiling pointing down tile.
+     */
+    public static BufferedImage getCeilingPDown() {
+        return ceilingPDown;
+    }
+
+    /**
+     * @return ceiling pointing left tile.
+     */
+    public static BufferedImage getCeilingPLeft() {
+        return ceilingPLeft;
+    }
+
+    /**
+     * @return ceiling poitning right tile.
+     */
+    public static BufferedImage getCeilingPRight() {
+        return ceilingPRight;
+    }
+
+    /**
+     * @return outer wall top left tile.
+     */
+    public static BufferedImage getOutWallTL() {
+        return outWallTL;
+    }
+
+    /**
+     * @return outer wall top center tile.
+     */
+    public static BufferedImage getOutWallTC() {
+        return outWallTC;
+    }
+
+    /**
+     * @return outer wall top right tile.
+     */
+    public static BufferedImage getOutWallTR() {
+        return outWallTR;
+    }
+
+    /**
+     * @return outer wall bottom left tile.
+     */
+    public static BufferedImage getOutWallBL() {
+        return outWallBL;
+    }
+
+    /**
+     * @return outer wall bottom center tile.
+     */
+    public static BufferedImage getOutWallBC() {
+        return outWallBC;
+    }
+
+    /**
+     * @return outer wall bottom right tile.
+     */
+    public static BufferedImage getOutWallBR() {
+        return outWallBR;
+    }
+
+    /**
+     * @return plant top tile.
+     */
+    public static BufferedImage getPlantTop() {
+        return plantTop;
+    }
+
+    /**
+     * @return plant bottom tile.
+     */
+    public static BufferedImage getPlantBot() {
+        return plantBot;
+    }
+
+    /**
+     * @return kitchen table top left tile.
+     */
+    public static BufferedImage getKitTableTL() {
+        return kitTableTL;
+    }
+
+    /**
+     * @return kitchen table top right tile.
+     */
+    public static BufferedImage getKitTableTR() {
+        return kitTableTR;
+    }
+
+    /**
+     * @return kitchen table bottom left tile.
+     */
+    public static BufferedImage getKitTableBL() {
+        return kitTableBL;
+    }
+
+    /**
+     * @return kitchen table bottom right tile.
+     */
+    public static BufferedImage getKitTableBR() {
+        return kitTableBR;
+    }
+
+    /**
+     * @return chair left facing tile.
+     */
+    public static BufferedImage getChairLeft() {
+        return chairLeft;
+    }
+
+    /**
+     * @return chair right facing tile.
+     */
+    public static BufferedImage getChairRight() {
+        return chairRight;
+    }
+
+    /**
+     * @return counter center tile.
+     */
+    public static BufferedImage getCounterCenter() {
+        return counterCenter;
+    }
+
+    /**
+     * @return counter corner tile.
+     */
+    public static BufferedImage getCounterCorner() {
+        return counterCorner;
+    }
+
+    /**
+     * @return counter end tile.
+     */
+    public static BufferedImage getCounterEnd() {
+        return counterEnd;
+    }
+
+    /**
+     * @return dog bowl tile.
+     */
+    public static BufferedImage getDogBowl() {
+        return dogBowl;
+    }
+
+    /**
+     * @return dog bone tile.
+     */
+    public static BufferedImage getDogBone() {
+        return dogBone;
+    }
+
+    /**
+     * @return box tile.
+     */
+    public static BufferedImage getBox() {
+        return box;
+    }
+
+    /**
+     * @return fridge top tile.
+     */
+    public static BufferedImage getFridgeTop() {
+        return fridgeTop;
+    }
+
+    /**
+     * @return fridge bottom tile.
+     */
+    public static BufferedImage getFridgeBot() {
+        return fridgeBot;
+    }
+
+    /**
+     * @return stove top tile.
+     */
+    public static BufferedImage getStoveTop() {
+        return stoveTop;
+    }
+
+    /**
+     * @return stove bottom tile.
+     */
+    public static BufferedImage getStoveBot() {
+        return stoveBot;
+    }
+
+    /**
+     * @return sink left top tile.
+     */
+    public static BufferedImage getSinkLTop() {
+        return sinkLTop;
+    }
+
+    /**
+     * @return sink left bottom tile.
+     */
+    public static BufferedImage getSinkLBot() {
+        return sinkLBot;
+    }
+
+    /**
+     * @return sink right top tile.
+     */
+    public static BufferedImage getSinkRTop() {
+        return sinkRTop;
+    }
+
+    /**
+     * @return sink right bottom tile.
+     */
+    public static BufferedImage getSinkRBot() {
+        return sinkRBot;
+    }
+
+    /**
+     * @return phone tile.
+     */
+    public static BufferedImage getPhone() {
+        return phone;
+    }
+
+    /**
+     * @return kitchen rug tile.
+     */
+    public static BufferedImage getKitRug() {
+        return kitRug;
+    }
+
+    /**
+     * @return clock tile.
+     */
+    public static BufferedImage getClock() {
+        return clock;
+    }
+
+    /**
+     * @return end table tile.
+     */
+    public static BufferedImage getEndTable() {
+        return endTable;
+    }
+
+    /**
+     * @return toilet top tile.
+     */
+    public static BufferedImage getToiletTop() {
+        return toiletTop;
+    }
+
+    /**
+     * @return toilet bottom tile.
+     */
+    public static BufferedImage getToiletBot() {
+        return toiletBot;
+    }
+
+    /**
+     * @return bathroom sink top tile.
+     */
+    public static BufferedImage getBathSinkTop() {
+        return bathSinkTop;
+    }
+
+    /**
+     * @return bathroom sink bottom tile.
+     */
+    public static BufferedImage getBathSinkBot() {
+        return bathSinkBot;
+    }
+
+    /**
+     * @return shower top tile.
+     */
+    public static BufferedImage getShowerTop() {
+        return showerTop;
+    }
+
+    /**
+     * @return shower bottom tile.
+     */
+    public static BufferedImage getShowerBot() {
+        return showerBot;
+    }
+
+    /**
+     * @return couch left tile.
+     */
+    public static BufferedImage getCouchLeft() {
+        return couchLeft;
+    }
+
+    /**
+     * @return couch right tile.
+     */
+    public static BufferedImage getCouchRight() {
+        return couchRight;
+    }
+
+    /**
+     * @return tv top tile.
+     */
+    public static BufferedImage getTvTop() {
+        return tvTop;
+    }
+
+    /**
+     * @return tv bottom tile.
+     */
+    public static BufferedImage getTvBot() {
+        return tvBot;
+    }
+
+    /**
+     * @return shelf top left tile.
+     */
+    public static BufferedImage getShelfTL() {
+        return shelfTL;
+    }
+
+    /**
+     * @return shelf top right tile.
+     */
+    public static BufferedImage getShelfTR() {
+        return shelfTR;
+    }
+
+    /**
+     * @return shelf bottom left tile.
+     */
+    public static BufferedImage getShelfBL() {
+        return shelfBL;
+    }
+
+    /**
+     * @return shelf bottom right tile.
+     */
+    public static BufferedImage getShelfBR() {
+        return shelfBR;
+    }
+
+    /**
+     * @return desk top tile.
+     */
+    public static BufferedImage getDeskTop() {
+        return deskTop;
+    }
+
+    /**
+     * @return desk bottom tile.
+     */
+    public static BufferedImage getDeskBot() {
+        return deskBot;
+    }
+
+    /**
+     * @return bed top left tile.
+     */
+    public static BufferedImage getBedTL() {
+        return bedTL;
+    }
+
+    /**
+     * @return bed top right tile.
+     */
+    public static BufferedImage getBedTR() {
+        return bedTR;
+    }
+
+    /**
+     * @return bed center left tile.
+     */
+    public static BufferedImage getBedCL() {
+        return bedCL;
+    }
+
+    /**
+     * @return bed center right tile.
+     */
+    public static BufferedImage getBedCR() {
+        return bedCR;
+    }
+
+    /**
+     * @return bed bottom left tile.
+     */
+    public static BufferedImage getBedBL() {
+        return bedBL;
+    }
+
+    /**
+     * @return bed bottom right tile.
+     */
+    public static BufferedImage getBedBR() {
+        return bedBR;
+    }
+
+    /**
+     * @return dining table top left tile.
+     */
+    public static BufferedImage getDiningTL() {
+        return diningTL;
+    }
+
+    /**
+     * @return dining table top right tile.
+     */
+    public static BufferedImage getDiningTR() {
+        return diningTR;
+    }
+
+    /**
+     * @return dining table bottom left tile.
+     */
+    public static BufferedImage getDiningBL() {
+        return diningBL;
+    }
+
+    /**
+     * @return dining table bottom right tile.
+     */
+    public static BufferedImage getDiningBR() {
+        return diningBR;
+    }
+
+    /**
+     * @return rug top left tile.
+     */
+    public static BufferedImage getRugTL() {
+        return rugTL;
+    }
+
+    /**
+     * @return rug top center tile.
+     */
+    public static BufferedImage getRugTC() {
+        return rugTC;
+    }
+
+    /**
+     * @return rug top right tile.
+     */
+    public static BufferedImage getRugTR() {
+        return rugTR;
+    }
+
+    /**
+     * @return rug bottom left tile.
+     */
+    public static BufferedImage getRugBL() {
+        return rugBL;
+    }
+
+    /**
+     * @return rug bottom center tile.
+     */
+    public static BufferedImage getRugBC() {
+        return rugBC;
+    }
+
+    /**
+     * @return rug bottom right tile.
+     */
+    public static BufferedImage getRugBR() {
+        return rugBR;
+    }
+
+    /**
+     * @return long grass tile.
+     */
+    public static BufferedImage getGrassLong() {
+        return grassLong;
+    }
+
+    /**
+     * @return grass with flowers tile.
+     */
+    public static BufferedImage getGrassFlowers() {
+        return grassFlowers;
+    }
+
+    /**
+     * @return grass with rock tile.
+     */
+    public static BufferedImage getGrassRock() {
+        return grassRock;
+    }
+
+    /**
+     * @return short grass tile.
+     */
+    public static BufferedImage getGrassShort() {
+        return grassShort;
+    }
+
+    /**
+     * @return front door top tile.
+     */
+    public static BufferedImage getDoorTop() {
+        return doorTop;
+    }
+
+    /**
+     * @return front door bottom tile.
+     */
+    public static BufferedImage getDoorBot() {
+        return doorBot;
+    }
+
+    /**
+     * @return path tile.
+     */
+    public static BufferedImage getPath() {
+        return path;
+    }
+
+    /**
+     * @return main menu bottom.
+     */
+    public static BufferedImage getMainMenuBot() {
+        return mainMenuBot;
+    }
+
+    /**
+     * @return main menu home top.
+     */
+    public static BufferedImage getMainMenuTopReg() {
+        return mainMenuTopReg;
+    }
+
+    /**
+     * @return main menu travel top.
+     */
+    public static BufferedImage getMainMenuTopTravel() {
+        return mainMenuTopTravel;
+    }
+
+    /**
+     * @return inventory screen.
+     */
+    public static BufferedImage getMenuInventory() {
+        return menuInventory;
+    }
+
+    /**
+     * @return travel screen.
+     */
+    public static BufferedImage getMenuTravel() {
+        return menuTravel;
+    }
+
+    /**
+     * @return pause screen.
+     */
+    public static BufferedImage getPauseMenu() {
+        return pauseMenu;
+    }
+
+    /**
+     * @return happiness text.
+     */
+    public static BufferedImage getHappiness() {
+        return happiness;
+    }
+
+    /**
+     * @return hygene text.
+     */
+    public static BufferedImage getHygene() {
+        return hygene;
+    }
+
+    /**
+     * @return hunger text.
+     */
+    public static BufferedImage getHunger() {
+        return hunger;
+    }
+
+    /**
+     * @return health text.
+     */
+    public static BufferedImage getHealth() {
+        return health;
+    }
+
+    /**
+     * @return menu button.
+     */
+    public static BufferedImage getMenuButton() {
+        return menuButton;
+    }
+
+    /**
+     * @return heart image array.
+     */
+    public static BufferedImage[] getHearts() {
+        return hearts;
+    }
+
+    /**
+     * @return emotion image array.
+     */
+    public static BufferedImage[] getEmotions() {
+        return emotions;
+    }
+
 }

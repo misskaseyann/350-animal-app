@@ -9,18 +9,27 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * Music loader.
  * @author kaseystowell
  * @version 10.03.2017
  */
 public class LoopLoader {
-    //ContinuousAudioDataStream loop = null;
+
     AudioStream stream;
     boolean isPlaying;
 
+    /**
+     * LoopLoader constuctor.
+     * Sets the value of isPlaying to false.
+     */
     public LoopLoader() {
         isPlaying = false;
     }
 
+    /**
+     * Loads an audio stream from a string path.
+     * @param path string path of .wav music.
+     */
     public void load(String path) {
         try {
             InputStream input = new FileInputStream(path);
@@ -34,16 +43,25 @@ public class LoopLoader {
         }
     }
 
+    /**
+     * Play music.
+     */
     public void play() {
         AudioPlayer.player.start(stream);
         isPlaying = true;
     }
 
+    /**
+     * Stop music.
+     */
     public void stop() {
         AudioPlayer.player.stop(stream);
         isPlaying = false;
     }
 
+    /**
+     * @return true if music is playing.
+     */
     public boolean isPlaying() {
         return isPlaying;
     }
