@@ -6,29 +6,35 @@ import dev.tilegame.gfx.Assets;
 
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
 import java.awt.*;
 
 
 /**
+ * Pet Animal.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class Pet extends Animal {
-    /***
-     * Private Animations are four different
-     * Animations that the pet has for movement.
-     */
+
     private Animation aniDown, aniUp, aniLeft, aniRight;
-    private int lastX, lastY;
 
     // Random Movement
     private Random random;
     private int count = 0;
     private int randomInt;
 
+    /**
+     * Pet constructor.
+     *
+     * @param manager game class manager.
+     * @param x float x value on canvas.
+     * @param y float y value on canvas.
+     */
     public Pet(final Manager manager, final float x, final float y) {
+
         super(manager, x, y);
+        // Stats
         health = 6;
         hunger = 6;
         happiness = 6;
@@ -42,25 +48,38 @@ public class Pet extends Animal {
 
     }
 
+    /**
+     * Animate animal based on direction and move.
+     */
     @Override
     public void tick() {
+
         // Animations
         aniDown.tick();
         aniUp.tick();
         aniLeft.tick();
         aniRight.tick();
 
-        //Movement
-        //getInput();
+        // Movement
         getCurrentAnimationFrame();
         manager.getGameCamera().centerOnEntity(this);
 
     }
 
+    // TODO eliminate magic number and make 100 constant val?
+    /**
+     * @return value 100.
+     */
     private int resetCount() {
         return 100;
     }
 
+    /**
+     * Checks value of clock against even.
+     * @param list int array.
+     * @param num int number.
+     * @return true if number is equal to value in array.
+     */
     private boolean isEqual(int[] list, int num) {
         for (int i = 0; i < list.length; i++) {
             if (num == list[i])
@@ -69,6 +88,11 @@ public class Pet extends Animal {
         return false;
     }
 
+    /**
+     *
+     * @param move
+     * @return
+     */
     private int checkMove(int move) {
         random = new Random();
         if (!super.noCollide(move)) {

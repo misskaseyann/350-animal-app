@@ -1,33 +1,27 @@
 package dev.tilegame.entities;
 
-import dev.tilegame.Game;
 import java.awt.*;
-import java.util.ArrayList;
 import dev.tilegame.Manager;
-import dev.tilegame.input.KeyManager;
 import dev.tilegame.states.State;
 import dev.tilegame.tile.Tile;
-import dev.tilegame.utils.Utils;
+
 /**
+ * Game entity.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public abstract class Entity  {
 
-    /**
-     * filler.
-     * */
     protected Manager manager;
-    /**
-     * filler.
-     * */
     protected float x, y;
 
     /**
-     * filler.
-     * @param y filler
-     * @param x filler
-     * @param manager filler
+     * Game entity constructor.
+     *
+     * @param y float value on canvas.
+     * @param x float value on canvas.
+     * @param manager game class manager.
      * */
     public Entity(final Manager manager, final float x, final float y)  {
         this.manager = manager;
@@ -37,39 +31,44 @@ public abstract class Entity  {
 
 
     /**
-     * filler.
-     * */
+     * X location of entity on 32x32 tile based grid.
+     *
+     * @return x location of entity on grid.
+     */
     public int gridLocX() {
         int X = Math.round(x/32);
         return X;
     };
 
     /**
-     * filler.
-     * */
+     * Y location of entity on 32x32 tile based grid.
+     *
+     * @return y location of entity on grid.
+     */
     public int gridLocY() {
         int Y = Math.round(y/32);
         return Y;
     };
 
-
-
     /**
-     * filler.
-     * @param move filler
-     * */
+     * Checks for entity collision in world.
+     *
+     * @param move int value of entity movement.
+     * @return false if entity will run into solid tile.
+     */
     public boolean noCollide(final int move) {
-        if  (move == 5) {  //Up to left
+        // Up to left.
+        if  (move == 5) {
             int gridx = gridLocX() -  1;
             int gridy = gridLocY() -  1;
-            //int[][] tiles = this.manager.getGame().getGameState().getWorld().getTiles();
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
             if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid()) {
                 return false;
             }
             return true;
         }
-        if  (move == 6) {  //Up to right
+        // Up to right.
+        if  (move == 6) {
             int gridx = gridLocX() +  1;
             int gridy = gridLocY() -  1;
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -78,7 +77,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move == 7) {  //Down to left
+        // Down to left.
+        if  (move == 7) {
             int gridx = gridLocX() -  1;
             int gridy = gridLocY() +  1;
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -87,7 +87,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move == 8) {  //Down to right
+        // Down to right.
+        if  (move == 8) {
             int gridx = gridLocX() +  1;
             int gridy = gridLocY() +  1;
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -96,7 +97,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move ==   1) {  //Up
+        // Up.
+        if  (move ==   1) {
             int gridx = gridLocX();
             int gridy = gridLocY() -  1;
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -105,7 +107,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move == 2) {  //Down
+        // Down.
+        if  (move == 2) {
             int gridx = gridLocX();
             int gridy = gridLocY() +  1;
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -114,7 +117,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move == 3) {  //Left
+        // Left.
+        if  (move == 3) {
             int gridx = gridLocX() -  1;
             int gridy = gridLocY();
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -123,7 +127,8 @@ public abstract class Entity  {
             }
             return true;
         }
-        if  (move == 4) {  //Right
+        // Right.
+        if  (move == 4) {
             int gridx = gridLocX() +  1;
             int gridy = gridLocY();
             int[][] tiles = State.getCurrentState().getWorld().getTiles();
@@ -132,49 +137,52 @@ public abstract class Entity  {
             }
             return true;
         }
+        // No movement.
         if  (move == 0) {  return true;}
 
+        // All else return false.
         return false;
+
     }
+
     /**
-     * filler.
-     * */
+     * Tick entity.
+     */
     public abstract void tick();
 
     /**
-     * filler.
-     * */
+     * Render entity on tick.
+     *
+     * @param g graphics object.
+     */
     public abstract void render(Graphics g);
 
     /**
-     * filler.
-     * */
+     * @return x location of entity.
+     */
     public float getX()  {
         return x;
     }
 
     /**
-     * filler.
-     * @param x filler
-     * */
+     * @param x set x location of entity.
+     */
     public void setX(final float x)  {
         this.x = x;
     }
 
     /**
-     * filler.
-     * */
+     * @return y location of entity.
+     */
     public float getY()  {
         return y;
     }
 
     /**
-     * filler.
-     * @param y filler
-     * */
+     * @param y set y location of entity.
+     */
     public void setY(final float y)  {
         this.y = y;
     }
-
 
 }
