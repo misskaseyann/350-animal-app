@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class DogBoneTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for dog bone tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public DogBoneTile(final int id) {
         super(Assets.getDogBone(), id);
