@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class WoodFloorTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for wood floor tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public WoodFloorTile(final int id) {
         super(Assets.getWoodFloor(), id);

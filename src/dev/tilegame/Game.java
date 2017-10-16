@@ -5,10 +5,8 @@ import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
-import dev.tilegame.states.GameState;
-import dev.tilegame.states.MenuState;
-import dev.tilegame.states.State;
-import dev.tilegame.states.TitleState;
+import dev.tilegame.states.*;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -18,45 +16,19 @@ import java.awt.image.BufferStrategy;
  * @version 09.24.2017
  */
 public class Game implements Runnable {
-    /**
-     *
-     */
+
     private Display display;
-    /**
-     *
-     */
     private int width, height;
-    /**
-     *
-     */
     private String title;
-    /**
-     *
-     */
     private boolean running = false;
-    /**
-     *
-     */
     private Thread thread;
-    /**
-     *
-     */
     private BufferStrategy bs;
-    /**
-     *
-     */
     private Graphics g;
 
     //States
-    /**
-     *
-     */
-    private State gameState, menuState, titleState;
+    private State gameState, menuState, titleState, inventoryState, travelState, parkState;
 
     //Input
-    /**
-     *
-     */
     private KeyManager keyManager;
     private MouseManager mouseManager;
 
@@ -67,6 +39,13 @@ public class Game implements Runnable {
     private Manager manager;
 
 
+    /**
+     * Game constructor.
+     * Initializes key and mouse listeners.
+     * @param title title of game window.
+     * @param width width of game window.
+     * @param height height of game window.
+     */
     public Game(String title, int width, int height) {
         this.width = width;
         this.height = height;
@@ -75,63 +54,71 @@ public class Game implements Runnable {
         mouseManager = new MouseManager();
     }
 
-    // initialize display
+    /**
+     * Initialize the display, create game states, set starting state to the title screen.
+     */
     private void init() {
+        // Create display and add keylistener.
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
-
-        // set canvas and frame for mouselistener
+        // Create canvas set both it and the frame for mouselistener.
         display.getFrame().addMouseListener(mouseManager);
         display.getFrame().addMouseMotionListener(mouseManager);
         display.getCanvas().addMouseListener(mouseManager);
         display.getCanvas().addMouseMotionListener(mouseManager);
-
-        Assets.init(); // create all game assets
-
+        // Create all game assets.
+        Assets.init();
+        // Set up game camera and class manager.
         gameCamera = new GameCamera(this,0,0);
         manager = new Manager(this);
-
+        // Create states of the game.
         gameState = new GameState(manager);
         menuState = new MenuState(manager);
         titleState = new TitleState(manager);
+        inventoryState = new InventoryState(manager);
+        travelState = new TravelState(manager);
+        parkState = new ParkState(manager);
         State.setState(titleState);
     }
 
+    /**
+     * Tick the game.
+     */
     private void tick() {
         keyManager.tick();
-
         if(State.getCurrentState() != null)
             State.getCurrentState().tick();
     }
 
+    /**
+     * Tell the computer how to draw on the screen.
+     */
     private void render() {
-        // tells computer how to draw to screen
         // initializes our buffer strategy to the canvas buffer strategy
-        // we are drawing on 'hidden screen' before we display
         bs = display.getCanvas().getBufferStrategy();
         if (bs == null) {
+            // three buffers so we can draw on a 'hidden screen' before we display.
             display.getCanvas().createBufferStrategy(3); // max buffers we need
             return;
         }
-
-        g = bs.getDrawGraphics(); // our magical paintbrush
-        // Clear Screen
+        // graphics paintbrush
+        g = bs.getDrawGraphics();
+        // clear screen
         g.clearRect(0,0,width,height);
-        // DRAW HERE!
-
+        // draw the state
         if(State.getCurrentState() != null)
             State.getCurrentState().render(g);
-
-        // END DRAWING!
-
+        // show what was drawn
         bs.show();
-        g.dispose(); // elimate graphics object properly
+        // elimate graphics properly
+        g.dispose();
     }
 
-    // game loop
+    /**
+     * Game engine loop.
+     */
     public void run() {
         init();
-
         double fps = 60.0;
         double timePerTick = 1000000000 / fps;  // one second in nanoseconds divided by fps
         double delta = 0;
@@ -139,20 +126,19 @@ public class Game implements Runnable {
         long lastTime = System.nanoTime();
         long timer = 0;
         int ticks = 0;
-
+        // delta says when we can run tick and render
         while (running) {
             now = System.nanoTime();
-            delta += (now - lastTime) / timePerTick; // time past since call / max time allowed // delta says when we can run tick and render
+            // delta says when we can run tick and render
+            delta += (now - lastTime) / timePerTick; // time past since call / max time allowed
             timer += now - lastTime;
             lastTime = now;
-
             if (delta >= 1) {
                 tick();
                 render();
                 ticks++;
                 delta--;
             }
-
             // if timer running for one second... see FPS
             if (timer >= 1000000000) {
                 System.out.println("Ticks and Frames: " + ticks);
@@ -160,31 +146,12 @@ public class Game implements Runnable {
                 timer = 0;
             }
         }
-
         stop();
     }
 
-    public KeyManager getKeyManager() {
-        return keyManager;
-    }
-
-    public MouseManager getMouseManager() {
-        return mouseManager;
-    }
-
-    public GameCamera getGameCamera() {
-        return gameCamera;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    // starting thread directly
+    /**
+     * Directly start thread.
+     */
     public synchronized void start() {
         if (running) // if already running, dont repeat
             return;
@@ -193,7 +160,9 @@ public class Game implements Runnable {
         thread.start(); // starts run method
     }
 
-    // stopping thread directly
+    /**
+     * Directly stop thread.
+     */
     public synchronized void stop() {
         if(!running) // if already not running, dont repeat
             return;
@@ -205,16 +174,82 @@ public class Game implements Runnable {
         }
     }
 
+    // GETTERS
+
+    /**
+     * @return key manager.
+     */
+    public KeyManager getKeyManager() {
+        return keyManager;
+    }
+
+    /**
+     * @return mouse manager.
+     */
+    public MouseManager getMouseManager() {
+        return mouseManager;
+    }
+
+    /**
+     * @return game camera.
+     */
+    public GameCamera getGameCamera() {
+        return gameCamera;
+    }
+
+    /**
+     * @return screen width.
+     */
+    public int getWidth() {
+        return width;
+    }
+
+    /**
+     * @return screen height.
+     */
+    public int getHeight() {
+        return height;
+    }
+
+    /**
+     * @return menu state.
+     */
     public State getMenuState() {
         return menuState;
     }
 
+    /**
+     * @return title state.
+     */
     public State getTitleState() {
         return titleState;
     }
 
+    /**
+     * @return game state.
+     */
     public State getGameState() {
         return gameState;
     }
 
+    /**
+     * @return inventory state.
+     */
+    public State getInventoryState() {
+        return inventoryState;
+    }
+
+    /**
+     * @return travel state.
+     */
+    public State getTravelState() {
+        return travelState;
+    }
+
+    /**
+     * @return park state.
+     */
+    public State getParkState() {
+        return parkState;
+    }
 }

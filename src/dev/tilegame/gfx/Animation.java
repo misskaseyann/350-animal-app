@@ -3,47 +3,53 @@ package dev.tilegame.gfx;
 import java.awt.image.BufferedImage;
 
 /**
+ * Animation graphics.
  * @author kaseystowell
  * @version 10.03.2017
  */
 public class Animation {
-    /**filler.**/
+
     private int speed, index;
-    /**filler.**/
     private long lastTime, timer;
-    /**filler.**/
     private BufferedImage[] frames;
-    /**filler.
-     * @param frames filler
-     * @param speed filler
-     * **/
+
+    /**
+     * Animation constructor.
+     * @param speed speed of animation.
+     * @param frames animation frames.
+     */
     public Animation(final int speed, final BufferedImage[] frames) {
         this.speed = speed;
         this.frames = frames;
         index = 0;
         timer = 0;
+        // Set last time to current system time in milliseconds.
         lastTime = System.currentTimeMillis();
     }
-    /**filler.**/
-    public void tick() {
-        // time in milliseconds since the last tick method called.
-        timer += System.currentTimeMillis() - lastTime;
-        // reset it to the time this tick method is called
-        lastTime = System.currentTimeMillis();
 
-        // once timer exceeds speed, we reset timer and increment
-        // index variable of animation image
+    /**
+     * Tracks time passed in milliseconds.
+     * Sets animation frame based on speed of animation.
+     */
+    public void tick() {
+        // Time in milliseconds since the last tick method called.
+        timer += System.currentTimeMillis() - lastTime;
+        // Reset to the time this tick method is called.
+        lastTime = System.currentTimeMillis();
+        // Once timer exceeds speed, we reset timer and increment index variable of animation image.
         if (timer > speed) {
             index++;
             timer = 0;
-            if (index >= frames.length) {
+            if (index >= frames.length)
                 index = 0;
-            }
         }
     }
-    /**filler.
-     * @return filler**/
+
+    /**
+     * @return current animation image.
+     */
     public BufferedImage getCurrentFrame() {
         return frames[index];
     }
+
 }

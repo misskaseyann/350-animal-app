@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class RugTCTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for rug top center tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public RugTCTile(final int id) {
         super(Assets.getRugTC(), id);

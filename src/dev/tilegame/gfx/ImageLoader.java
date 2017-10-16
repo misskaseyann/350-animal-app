@@ -5,12 +5,16 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 /**
+ * Helper class that reads a path to an image and returns a buffered image.
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class ImageLoader {
 
-    // returns buffered image object
+    /**
+     * @param path string path to image.
+     * @return buffered image.
+     */
     public static BufferedImage loadImage(String path) {
         try {
             return ImageIO.read(ImageLoader.class.getResource(path));
@@ -20,4 +24,5 @@ public class ImageLoader {
         }
         return null;
     }
+
 }
