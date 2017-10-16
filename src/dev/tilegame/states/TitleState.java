@@ -18,6 +18,11 @@ public class TitleState extends State {
     private Animation titleAni;
     private LoopLoader music;
 
+    /**
+     * TitleState constructor.
+     * Sets up the tile states.
+     * @param manager game class manager.
+     */
     public TitleState(Manager manager) {
         super(manager);
         titleAni = new Animation(300, Assets.getTitleImg());
@@ -25,8 +30,15 @@ public class TitleState extends State {
         music = new LoopLoader();
     }
 
-    public World getWorld(){ return null;}
+    /**
+     * getWorld returns the world.
+     * @return null
+     */
+    public World getWorld(){ return null; }
 
+    /**
+     * Checks for button presses.
+     */
     @Override
     public void tick() {
         titleAni.tick();
