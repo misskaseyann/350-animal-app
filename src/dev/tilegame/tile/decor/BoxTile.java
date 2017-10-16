@@ -10,8 +10,8 @@ import dev.tilegame.tile.Tile;
 public class BoxTile extends Tile {
 
     /**
-     * filler.
-     * @param id filler
+     * Constructor for box tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public BoxTile(final int id) {
         super(Assets.getBox(), id);

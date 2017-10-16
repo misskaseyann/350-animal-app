@@ -9,13 +9,18 @@ import dev.tilegame.tile.Tile;
  */
 public class DiningBLTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for dining bottom left tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public DiningBLTile(final int id) {
         super(Assets.getDiningBL(), id);
     }
 
+    /**
+     * The isSolid boolean is overridden to say this is a solid object.
+     * @return true because this object is solid and the pet can not
+     * walk over it.
+     */
     @Override
     public boolean isSolid() {
         return true;

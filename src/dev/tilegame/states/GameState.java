@@ -121,6 +121,5 @@ public class GameState extends State {
     /**
      * @return home world.
      */
-    public World getWorld(){ return world;}
-
+    public World getWorld(){ return world; }
 }

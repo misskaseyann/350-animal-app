@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class BathFloorTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for Bathroom floor tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public BathFloorTile(final int id) {
         super(Assets.getBathFloor(), id);

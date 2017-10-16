@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class StoneFloorTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for stone floor tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public StoneFloorTile(final int id) {
         super(Assets.getStoneFloor(), id);

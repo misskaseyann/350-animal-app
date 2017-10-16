@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class KitchenFloorTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for kitchen floor tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public KitchenFloorTile(final int id) {
         super(Assets.getKitchenFloor(), id);

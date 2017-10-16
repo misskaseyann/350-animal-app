@@ -2,7 +2,6 @@ package dev.tilegame.entities.animals;
 
 import dev.tilegame.Manager;
 import dev.tilegame.entities.Entity;
-
 /**
  * Animal entity.
  * @author kaseystowell
@@ -13,6 +12,7 @@ public abstract class Animal extends Entity {
 
     // TODO add more stats?
     protected int health;
+
     //protected int clock = 36000; //Ten Minutes
     protected int clock = 9000; // Every 2.5 minutes.
     //protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
@@ -20,6 +20,7 @@ public abstract class Animal extends Entity {
     protected int hunger;
     protected int happiness;
     protected int cleanliness;
+
 
     /**
      * Reset clock to 2.5 minutes.

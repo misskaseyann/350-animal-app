@@ -59,6 +59,5 @@ public class MenuState extends State {
     /**
      * @return null/no world in this state
      */
-    public World getWorld(){ return null;}
-
+    public World getWorld(){ return null; }
 }

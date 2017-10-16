@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class KitRugTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for kitchen rug tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public KitRugTile(final int id) {
         super(Assets.getKitRug(), id);

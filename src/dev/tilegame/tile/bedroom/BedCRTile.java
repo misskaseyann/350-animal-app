@@ -10,8 +10,8 @@ import dev.tilegame.tile.Tile;
 
 public class BedCRTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for bed center right tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public BedCRTile(final int id) {
         super(Assets.getBedCR(), id);

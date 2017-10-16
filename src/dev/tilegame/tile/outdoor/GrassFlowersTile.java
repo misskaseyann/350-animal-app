@@ -9,8 +9,8 @@ import dev.tilegame.tile.Tile;
  */
 public class GrassFlowersTile extends Tile {
     /**
-     * filler.
-     * @param id filler
+     * Constructor for Grass Flowers tile.
+     * @param id an int that sets a numerical id to the tile.
      * */
     public GrassFlowersTile(final int id) {
         super(Assets.getGrassFlowers(), id);

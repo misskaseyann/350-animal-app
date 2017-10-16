@@ -2,6 +2,7 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
+import dev.tilegame.entities.animals.Pet_AI;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
@@ -19,6 +20,7 @@ import java.awt.*;
 public class ParkState extends State {
 
     private Pet pet;
+    private Pet_AI pet_ai;
     private World world;
     private LoopLoader music;
     private StatsManager statsManager;
@@ -33,6 +35,7 @@ public class ParkState extends State {
         world = new World(manager, "res/worlds/world2.txt");
         manager.setWorld(world);
         pet = manager.getPet();
+        pet_ai = new Pet_AI(manager, 10*32, 10*32);
         statsManager = manager.getStatsManager();
         music = manager.getLoopLoader();
     }
@@ -46,6 +49,7 @@ public class ParkState extends State {
     public void tick() {
         world.tick();
         pet.tick();
+        pet_ai.tick();
         // Check for park music.
         if (!music.isPlaying()) {
             music.load("res/sounds/doggo2.wav");
@@ -95,6 +99,7 @@ public class ParkState extends State {
     public void render(Graphics g) {
         world.render(g);
         pet.render(g);
+        pet_ai.render(g);
         // Draw menus.
         g.drawImage(Assets.getMainMenuTopTravel(), 0, 0, null);
         g.drawImage(Assets.getMainMenuBot(), 0, 475, null);

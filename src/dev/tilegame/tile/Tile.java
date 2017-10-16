@@ -13,14 +13,19 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
+ * Tile class.
  * @author kaseystowell
+ * @author allisonbolen
+ * @author brendannahed
  * @version 09.24.2017
  */
 public class Tile {
 
     //STATIC STUFF HERE
     /**
-     * filler
+     * getTiles returns the tile list.
+     * @return tiles1 which is a copy of
+     * the tile list.
      * */
     public static Tile[] getTiles() {
         Tile[] tiles1 = tiles;
@@ -28,1031 +33,1215 @@ public class Tile {
     }
 
     /**
-     * filler
+     * The initial tiles list.
      * */
     private static Tile[] tiles = new Tile[256];
 
      /**
-     * filler
+     * The method that returns the wood floor tile.
+      * @return woodFloorTile, which is
+      * the wood floor tile image.
      * */
     public static Tile getWoodFloorTile() {
         return woodFloorTile;
     }
 
      /**
-     * filler
+     * The method that returns the wood floor tile.
+      * @return kitchenFloorTile, which is
+      * the kitchen floor tile image.
      * */
     public static Tile getKitchenFloorTile() {
         return kitchenFloorTile;
     }
 
      /**
-     * filler
+     * The method that returns the wood floor tile.
+      * @return bathFloorTile, which is the
+      * bathroom floor tile image.
      * */
     public static Tile getBathFloorTile() {
         return bathFloorTile;
     }
 
      /**
-     * filler
+     * The method that returns the stone tile.
+      * @return stoneFloorTile, which is the
+      * stone floor tile image.
      * */
     public static Tile getStoneFloorTile() {
         return stoneFloorTile;
     }
 
      /**
-     * filler
+     * The method that returns the wall left tile.
+      * @return wallLeftTile, which is the
+      * wall left tile image.
      * */
     public static Tile getWallLeftTile() {
         return wallLeftTile;
     }
 
      /**
-     * filler
+     * The method that returns the wall center tile.
+      * @return wallCenterTIle, which is the wall
+      * center tile image.
      * */
     public static Tile getWallCenterTile() {
         return wallCenterTile;
     }
 
      /**
-     * filler
+     * The method that returns the wall right tile.
+      * @return wallRightTile, which is the wall
+      * center tile image.
      * */
     public static Tile getWallRightTile() {
         return wallRightTile;
     }
 
      /**
-     * filler
+     * The method that returns the wall end tile.
+      * @return wallEndTile, which is the wall
+      * end tile image.
      * */
     public static Tile getWallEndTile() {
         return wallEndTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling left tile.
+      * @return ceilingLeftTile, which is the ceiling
+      * left tile image.
      * */
     public static Tile getCeilingLeftTile() {
         return ceilingLeftTile;
     }
 
      /**
-     * filler
-     * */
+      * The method that returns the ceiling center tile.
+      * @return ceilingCenterTile, which is the ceiling
+      * center tile image.
+      * */
     public static Tile getCeilingCenterTile() {
         return ceilingCenterTile;
     }
 
      /**
-     * filler
+      * The method that returns the ceiling right tile.
+      * @return ceilingRightTile, which is the ceiling
+      * right tile image.
      * */
     public static Tile getCeilingRightTile() {
         return ceilingRightTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling end tile.
+      * @return ceilingEndTile, which is the ceiling
+      * end tile image.
      * */
     public static Tile getCeilingEndTile() {
         return ceilingEndTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling down tile.
+      * @return ceilingDownTile, which is the ceiling
+      * down tile image.
      * */
     public static Tile getCeilingDownTile() {
         return ceilingDownTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling BCL tile.
+      * @return ceilingBCLTile, which is the ceiling
+      * BCL tile image.
      * */
     public static Tile getCeilingBCLTile() {
         return ceilingBCLTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling BCR tile.
+      * @return ceilingBCRTile, which is the ceiling
+      * BCR tile image.
      * */
     public static Tile getCeilingBCRTile() {
         return ceilingBCRTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling TCL tile.
+      * @return ceilingTCLTile, which is the ceiling
+      * TCL tile image.
      * */
     public static Tile getCeilingTCLTile() {
         return ceilingTCLTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling TCR tile.
+      * @return ceilingTCRTile, which is the ceiling
+      * TCR tile image.
      * */
     public static Tile getCeilingTCRTile() {
         return ceilingTCRTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling PDown tile.
+      * @return ceilingPDownTile, which is the ceiling
+      * PDown tile image.
      * */
     public static Tile getCeilingPDownTile() {
         return ceilingPDownTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling PRight tile.
+      * @return ceilingPRightTile, which is the ceiling
+      * PRight tile image.
      * */
     public static Tile getCeilingPRightTile() {
         return ceilingPRightTile;
     }
 
      /**
-     * filler
+     * The method that returns the ceiling PLeft tile.
+      * @return ceilingPLeftTile, which is the ceiling
+      * PLeft tile image.
      * */
     public static Tile getCeilingPLeftTile() {
         return ceilingPLeftTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall TL tile.
+      * @return outWallTLTile, which is the out wall
+      * TL tile image.
      * */
     public static Tile getOutWallTLTile() {
         return outWallTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall TC tile.
+      * @return outWallTCTile, which is the out wall
+      * TC tile image.
      * */
     public static Tile getOutWallTCTile() {
         return outWallTCTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall TR tile.
+      * @return outWallTRTile, which is the out wall
+      * TR tile image.
      * */
     public static Tile getOutWallTRTile() {
         return outWallTRTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall BL tile.
+      * @return outWallBLTile, which is the out wall
+      * BL tile image.
      * */
     public static Tile getOutWallBLTile() {
         return outWallBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall BC tile.
+      * @return outWallBCTile, which is the out wall
+      * BC tile image.
      * */
     public static Tile getOutWallBCTile() {
         return outWallBCTile;
     }
 
      /**
-     * filler
+     * The method that returns the out wall BR tile.
+      * @return outWallBRTile, which is the out wall
+      * BR tile image.
      * */
     public static Tile getOutWallBRTile() {
         return outWallBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the plant top file.
+      * @return plantTopTile, which is the plant top
+      * tile image.
      * */
     public static Tile getPlantTopTile() {
         return plantTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the plant bottom file.
+      * @return plantBotTile, which is the plant bottom
+      * tile image.
      * */
     public static Tile getPlantBotTile() {
         return plantBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the Kitchen table
+      * TL tile.
+      * @return kitTableTLTile, which is the Kitchen Table
+      * TL tile image.
      * */
     public static Tile getKitTableTLTile() {
         return kitTableTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the Kitchen table
+      * TR tile.
+      * @return kitTableTRTile, which is the Kitchen Table
+      * TR tile image.
      * */
     public static Tile getKitTableTRTile() {
         return kitTableTRTile;
     }
 
      /**
-     * filler
+     * fThe method that returns the Kitchen table
+      * BL tile.
+      * @return kitTableBLTile, which is the Kitchen Table
+      * BL tile image.
      * */
     public static Tile getKitTableBLTile() {
         return kitTableBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the Kitchen table
+      * BR tile.
+      * @return kitTableBRTile, which is the Kitchen Table
+      * BR tile image.
      * */
     public static Tile getKitTableBRTile() {
         return kitTableBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the chair left tile.
+      * @return chairLeftTile, which is the chair left
+      * tile image.
      * */
     public static Tile getChairLeftTile() {
         return chairLeftTile;
     }
 
      /**
-     * filler
+     * The method that returns the chair right tile.
+      * @return chairRightTile, which is the chair right
+      * tile image.
      * */
     public static Tile getChairRightTile() {
         return chairRightTile;
     }
 
      /**
-     * filler
+     * The method that returns the counter center tile.
+      * @return counterCenterTile, which is the counter
+      * center tile image.
      * */
     public static Tile getCounterCenterTile() {
         return counterCenterTile;
     }
 
      /**
-     * filler
+     * The method that returns the counter corner tile.
+      * @return counterCornerTile, which is the counter
+      * corner tile image.
      * */
     public static Tile getCounterCornerTile() {
         return counterCornerTile;
     }
 
      /**
-     * filler
+     * The method that returns the counter end tile.
+      * @return counterEndTile, which is the counter
+      * end tile image.
      * */
     public static Tile getCounterEndTile() {
         return counterEndTile;
     }
 
      /**
-     * filler
+     * The method that returns the dog bowl tile.
+      * @return dogBowlTile, which is the counter
+      * bowl tile image.
      * */
     public static Tile getDogBowlTile() {
         return dogBowlTile;
     }
 
      /**
-     * filler
+     * The method that returns the dog bone tile.
+      * @return dogBoneTile, which is the counter
+      * bone tile image.
      * */
     public static Tile getDogBoneTile() {
         return dogBoneTile;
     }
 
      /**
-     * filler
+     * The method that returns the box tile.
+      * @return boxTile, which is the box
+      * tile image.
      * */
     public static Tile getBoxTile() {
         return boxTile;
     }
 
      /**
-     * filler
+     *  The method that returns the fridge top tile.
+      * @return fridgeTopTile, which is the fridge top
+      * tile image.
      * */
     public static Tile getFridgeTopTile() {
         return fridgeTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the fridge bottom tile.
+      * @return fridgeBOtTile, which is the fridge bottom
+      * tile image.
      * */
     public static Tile getFridgeBotTile() {
         return fridgeBotTile;
     }
 
      /**
-     * filler
+     *  The method that returns the stove top tile.
+      * @return stoveTopTile, which is the stove top
+      * tile image.
      * */
     public static Tile getStoveTopTile() {
         return stoveTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the stove bottom tile.
+      * @return stoveBotTile, which is the stove bottom
+      * tile image.
      * */
     public static Tile getStoveBotTile() {
         return stoveBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the sink left top tile.
+      * @return sinkLTopTile, which is the sink left top
+      * tile image.
      * */
     public static Tile getSinkLTopTile() {
         return sinkLTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the sink left bottom tile.
+      * @return sinkLBotTile, which is the sink left bottom
+      * tile image.
      * */
     public static Tile getSinkLBotTile() {
         return sinkLBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the sink right top tile.
+      * @return sinkRTopTile, which is the sink right top
+      * tile image.
      * */
     public static Tile getSinkRTopTile() {
         return sinkRTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the sink right bottom tile.
+      * @return sinkRBotTile, which is the sink right bottom
+      * tile image.
      * */
     public static Tile getSinkRBotTile() {
         return sinkRBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the phone tile.
+      * @return phoneTile, which is the phone
+      * tile image.
      * */
     public static Tile getPhoneTile() {
         return phoneTile;
     }
 
      /**
-     * filler
+     * The method that returns the kitchen rug  tile.
+      * @return kitRugTile, which is the kitchen rug
+      * tile image.
      * */
     public static Tile getKitRugTile() {
         return kitRugTile;
     }
 
      /**
-     * filler
+     * The method that returns the clock tile.
+      * @return clockTile, which is the clock
+      * tile image.
      * */
     public static Tile getClockTile() {
         return clockTile;
     }
 
      /**
-     * filler
+     * The method that returns the end table tile.
+      * @return endTableTile, which is the end table
+      * tile image.
      * */
     public static Tile getEndTableTile() {
         return endTableTile;
     }
 
      /**
-     * filler
+     *The method that returns the toilet top tile.
+      * @return toiletTopTile, which is the toilet top
+      * tile image.
      * */
     public static Tile getToiletTopTile() {
         return toiletTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the toilet bottom tile.
+      * @return toiletBotTile, which is the toilet bottom
+      * tile image.
      * */
     public static Tile getToiletBotTile() {
         return toiletBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the bathroom sink top tile.
+      * @return bathSinkTopTile, which is the bathroom sink top
+      * tile image.
      * */
     public static Tile getBathSinkTopTile() {
         return bathSinkTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the bathroom sink bottom tile.
+      * @return bathSinkBotTile, which is the bathroom sink bottom
+      * tile image.
      * */
     public static Tile getBathSinkBotTile() {
         return bathSinkBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the shower top tile.
+      * @return showerTopTile, which is the shower top
+      * tile image.
      * */
     public static Tile getShowerTopTile() {
         return showerTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the shower bottom tile.
+      * @return showerBotTile, which is the shower bottom
+      * tile image.
      * */
     public static Tile getShowerBotTile() {
         return showerBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the couch left tile.
+      * @return couchLeftTile, which is the couch left tile
+      * tile image.
      * */
-    public static Tile getCouchLeftTile() {
-        return couchLeftTile;
-    }
+    public static Tile getCouchLeftTile() { return couchLeftTile; }
 
      /**
-     * filler
+     * The method that returns the couch right tile.
+      * @return couchRightTile, which is the couch right tile
+      * tile image.
      * */
     public static Tile getCouchRightTile() {
         return couchRightTile;
     }
 
      /**
-     * filler
+     * The method that returns the Tv top tile.
+      * @return tvTopTile, which is the Tv top tile
+      * tile image.
      * */
     public static Tile getTvTopTile() {
         return tvTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the Tv bottom tile.
+      * @return tvBotTile, which is the Tv bottom tile
+      * tile image.
      * */
     public static Tile getTvBotTile() {
         return tvBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the shelf top left tile.
+      * @return shelfTLTile, which is the shelf top left
+      * tile image.
      * */
     public static Tile getShelfTLTile() {
         return shelfTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the shelf top right tile.
+      * @return shelfTRTile, which is the shelf top right
+      * tile image.
      * */
     public static Tile getShelfTRTile() {
         return shelfTRTile;
     }
 
      /**
-     * filler
+     * The method that returns the shelf bottom left tile.
+      * @return shelfBLTile, which is the shelf bottom left
+      * tile image.
      * */
     public static Tile getShelfBLTile() {
         return shelfBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the shelf bottom right tile.
+      * @return shelfBRTile, which is the shelf bottom right
+      * tile image.
      * */
     public static Tile getShelfBRTile() {
         return shelfBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the Desk top tile.
+      * @return deskTopTile, which is the desk top
+      * tile image.
      * */
     public static Tile getDeskTopTile() {
         return deskTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the Desk bottom tile.
+      * @return deskBotTile, which is the desk bottom
+      * tile image.
      * */
     public static Tile getDeskBotTile() {
         return deskBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed top left tile.
+      * @return bedTLTile, which is the bed top left
+      * tile image.
      * */
     public static Tile getBedTLTile() {
         return bedTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed top right tile.
+      * @return bedTRTile, which is the bed top right
+      * tile image.
      * */
     public static Tile getBedTRTile() {
         return bedTRTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed center left tile.
+      * @return bedCLTile, which is the bed center left
+      * tile image.
      * */
     public static Tile getBedCLTile() {
         return bedCLTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed center right tile.
+      * @return bedCRTile, which is the bed center right
+      * tile image.
      * */
     public static Tile getBedCRTile() {
         return bedCRTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed bottom left tile.
+      * @return bedBLTile, which is the bed bottom left
+      * tile image.
      * */
     public static Tile getBedBLTile() {
         return bedBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the bed bottom right tile.
+      * @return bedBRTile, which is the bed bottom right
+      * tile image.
      * */
     public static Tile getBedBRTile() {
         return bedBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the dining top left tile.
+      * @return diningTLTile, which is the dining top left
+      * tile image.
      * */
     public static Tile getDiningTLTile() {
         return diningTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the dining top right tile.
+      * @return diningTRTile, which is the dining top right
+      * tile image.
      * */
     public static Tile getDiningTRTile() {
         return diningTRTile;
     }
 
      /**
-     * filler
+     * The method that returns the dining bottom left tile.
+      * @return diningBLTile, which is the dining bottom left
+      * tile image.
      * */
     public static Tile getDiningBLTile() {
         return diningBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the dining bottom right tile.
+      * @return diningBRTile, which is the dining bottom right
+      * tile image.
      * */
     public static Tile getDiningBRTile() {
         return diningBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug top left tile.
+      * @return rugTLTile, which is the rug top left
+      * tile image.
      * */
     public static Tile getRugTLTile() {
         return rugTLTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug top center tile.
+      * @return rugTCTile, which is the rug top center
+      * tile image.
      * */
     public static Tile getRugTCTile() {
         return rugTCTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug top right tile.
+      * @return rugTRTile, which is the rug top right
+      * tile image.
      * */
     public static Tile getRugTRTile() {
         return rugTRTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug bottom left tile.
+      * @return rugBLTile, which is the rug bottom left
+      * tile image.
      * */
     public static Tile getRugBLTile() {
         return rugBLTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug bottom center tile.
+      * @return rugBCTile, which is the rug bottom center
+      * tile image.
      * */
     public static Tile getRugBCTile() {
         return rugBCTile;
     }
 
      /**
-     * filler
+     * The method that returns the rug bottom right tile.
+      * @return rugBRTile, which is the rug bottom right
+      * tile image.
      * */
     public static Tile getRugBRTile() {
         return rugBRTile;
     }
 
      /**
-     * filler
+     * The method that returns the grass long tile.
+      * @return grassLongTile, which is the grass long
+      * tile image.
      * */
     public static Tile getGrassLongTile() {
         return grassLongTile;
     }
 
      /**
-     * filler
+     * The method that returns the grass flowers tile.
+      * @return grassFlowersTile, which is the grass flowers
+      * tile image.
      * */
     public static Tile getGrassFlowersTile() {
         return grassFlowersTile;
     }
 
      /**
-     * filler
+     * The method that returns the grass rock tile.
+      * @return grassRockTile, which is the grass rock
+      * tile image.
      * */
     public static Tile getGrassRockTile() {
         return grassRockTile;
     }
 
      /**
-     * filler
+     * The method that returns the grass short tile.
+      * @return grassShortTile, which is the grass short
+      * tile image.
      * */
     public static Tile getGrassShortTile() {
         return grassShortTile;
     }
 
      /**
-     * filler
+     * The method that returns the door top tile.
+      * @return doorTopTile, which is the door top
+      * tile image.
      * */
     public static Tile getDoorTopTile() {
         return doorTopTile;
     }
 
      /**
-     * filler
+     * The method that returns the door bottom tile.
+      * @return doorBotTile, which is the door bottom
+      * tile image.
      * */
     public static Tile getDoorBotTile() {
         return doorBotTile;
     }
 
      /**
-     * filler
+     * The method that returns the path tile.
+      * @return pathTile, which is the path
+      * tile image.
      * */
     public static Tile getPathTile() {
         return pathTile;
     }
 
     /**
-     * filler
+     * Here is create a WoodFloorTile object and it's id is set.
      * */
     public final static Tile  woodFloorTile = new WoodFloorTile(10);
     /**
-     * filler
+     * Here is create a kitchenFloorTile object and it's id is set.
      * */
     public final static  Tile kitchenFloorTile = new KitchenFloorTile(11);
     /**
-     * filler
+     * Here is create a bathFloorTile object and it's id is set.
      * */
     public final static  Tile bathFloorTile = new BathFloorTile(12);
     /**
-     * filler
+     * Here is create a stoneFloorTile object and it's id is set.
      * */
     public final static  Tile stoneFloorTile = new StoneFloorTile(13);
 
     /**
-     * filler
+     *  Here is create a wallLeftTile object and it's id is set.
      * */
     public final static  Tile wallLeftTile = new WallLeftTile(14);
     /**
-     * filler
+     *  Here is create a wallCenterTile object and it's id is set.
      * */
     public final static  Tile wallCenterTile = new WallCenterTile(15);
     /**
-     * filler
+     *  Here is create a wallRightTile object and it's id is set.
      * */
     public final static  Tile wallRightTile = new WallRightTile(16);
     /**
-     * filler
+     *  Here is create a wallEndTile object and it's id is set.
      * */
     public final static  Tile wallEndTile = new WallEndTile(17);
 
     /**
-     * filler
+     *  Here is create a ceilingLeftTile object and it's id is set.
      * */
     public final static  Tile ceilingLeftTile = new CeilingLeftTile(18);
     /**
-     * filler
+     *  Here is create a ceilingCenterTile object and it's id is set.
      * */
     public final static  Tile ceilingCenterTile = new CeilingCenterTile(19);
 
     /**
-     * filler
+     *  Here is create a ceilingRightTile object and it's id is set.
      * */
     public final static  Tile ceilingRightTile = new CeilingRightTile(20);
     /**
-     * filler
+     *  Here is create a ceilingEndTile object and it's id is set.
      * */
     public final static  Tile ceilingEndTile = new CeilingEndTile(21);
     /**
-     * filler
+     *  Here is create a ceilingDownTile object and it's id is set.
      * */
     public final static  Tile ceilingDownTile = new CeilingDownTile(22);
     /**
-     * filler
+     *  Here is create a ceilingBCLTile object and it's id is set.
      * */
     public final static  Tile ceilingBCLTile = new CeilingBCLTile(23);
     /**
-     * filler
+     *  Here is create a ceilingBCRTile object and it's id is set.
      * */
     public final static  Tile ceilingBCRTile = new CeilingBCRTile(24);
     /**
-     * filler
+     *  Here is create a ceilingTCLTile object and it's id is set.
      * */
     public final static  Tile ceilingTCLTile = new CeilingTCLTile(25);
     /**
-     * filler
+     *  Here is create a ceilingTCRTile object and it's id is set.
      * */
     public final static  Tile ceilingTCRTile = new CeilingTCRTile(26);
     /**
-     * filler
+     *  Here is create a ceilingPDownTile object and it's id is set.
      * */
     public final static  Tile ceilingPDownTile = new CeilingPDownTile(92);
     /**
-     * filler
+     *  Here is create a ceilingPRightTile object and it's id is set.
      * */
     public final static  Tile ceilingPRightTile = new CeilingPRightTile(93);
     /**
-     * filler
+     *  Here is create a ceilingPLeftTile object and it's id is set.
      * */
     public final static  Tile ceilingPLeftTile = new CeilingPLeftTile(94);
 
     /**
-     * filler
+     *  Here is create a outWallTLTile object and it's id is set.
      * */
     public final static  Tile outWallTLTile = new OutWallTLTile(01);
     /**
-     * filler
+     *  Here is create a outWallTCTile object and it's id is set.
      * */
     public final static  Tile outWallTCTile = new OutWallTCTile(02);
     /**
-     * filler
+     *  Here is create a outWallTRTile object and it's id is set.
      * */
     public final static  Tile outWallTRTile = new OutWallTRTile(03);
     /**
-     * filler
+     *  Here is create a outWallBLTile object and it's id is set.
      * */
     public final static  Tile outWallBLTile = new OutWallBLTile(04);
     /**
-     * filler
+     * Here is create a outWallBCTile object and it's id is set.
      * */
     public final static  Tile outWallBCTile = new OutWallBCTile(05);
     /**
-     * filler
+     *Here is create a outWallBRTile object and it's id is set.
      * */
     public final static  Tile outWallBRTile = new OutWallBRTile(06);
 
     /**
-     * filler
+     * Here is create a plantTopTile object and it's id is set.
      * */
     public final static  Tile plantTopTile = new PlantTopTile(27);
     /**
-     * filler
+     * Here is create a plantBotTile object and it's id is set.
      * */
     public final static  Tile plantBotTile = new PlantBotTile(28);
 
     /**
-     * filler
+     * Here is create a kitTableTLTile object and it's id is set.
      * */
     public final static  Tile kitTableTLTile = new KitTableTLTile(29);
     /**
-     * filler
+     * Here is create a kitTableTRTile object and it's id is set.
      * */
     public final static  Tile kitTableTRTile = new KitTableTRTile(30);
     /**
-     * filler
+     * Here is create a kitTableBLTile object and it's id is set.
      * */
     public final static  Tile kitTableBLTile = new KitTableBLTile(31);
     /**
-     * filler
+     * Here is create a kitTableBRTile object and it's id is set.
      * */
     public final static  Tile kitTableBRTile = new KitTableBRTile(32);
 
     /**
-     * filler
+     * Here is create a chairLeftTile object and it's id is set.
      * */
     public final static  Tile chairLeftTile = new ChairLeftTile(33);
     /**
-     * filler
+     * Here is create a chairRightTile object and it's id is set.
      * */
     public final static  Tile chairRightTile = new ChairRightTile(34);
 
     /**
-     * filler
+     * Here is create a counterCenterTile object and it's id is set.
      * */
     public final static  Tile counterCenterTile = new CounterCenterTile(35);
     /**
-     * filler
+     *Here is create a counterCornerTile object and it's id is set.
      * */
     public final static  Tile counterCornerTile = new CounterCornerTile(36);
     /**
-     * filler
+     * Here is create a counterEndTile object and it's id is set.
      * */
     public final static  Tile counterEndTile = new CounterEndTile(37);
 
     /**
-     * filler
+     * Here is create a dogBowlTile object and it's id is set.
      * */
     public final static  Tile dogBowlTile = new DogBowlTile(38);
     /**
-     * filler
+     * Here is create a dogBoneTile object and it's id is set.
      * */
     public final static  Tile dogBoneTile = new DogBoneTile(39);
     /**
-     * filler
+     * Here is create a boxTile object and it's id is set.
      * */
     public final static  Tile boxTile = new BoxTile(40);
 
     /**
-     * filler
+     * Here is create a fridgeTopTile object and it's id is set.
      * */
     public final static  Tile fridgeTopTile = new FridgeTopTile(41);
     /**
-     * filler
+     * Here is create a fridgeBotTile object and it's id is set.
      * */
     public final static  Tile fridgeBotTile = new FridgeBotTile(42);
     /**
-     * filler
+     * Here is create a stoveTopTile object and it's id is set.
      * */
     public final static  Tile stoveTopTile = new StoveTopTile(43);
     /**
-     * filler
+     * Here is create a stoveBotTile object and it's id is set.
      * */
     public final static  Tile stoveBotTile = new StoveBotTile(44);
     /**
-     * filler
+     * Here is create a sinkLTopTile object and it's id is set.
      * */
     public final static  Tile sinkLTopTile = new SinkLTopTile(45);
     /**
-     * filler
+     * Here is create a sinkLBotTile object and it's id is set.
      * */
     public final static  Tile sinkLBotTile = new SinkLBotTile(46);
     /**
-     * filler
+     * Here is create a sinkRTopTile object and it's id is set.
      * */
     public final static  Tile sinkRTopTile = new SinkRTopTile(47);
     /**
-     * filler
+     * Here is create a sinkRBotTile object and it's id is set.
      * */
     public final static  Tile sinkRBotTile = new SinkRBotTile(48);
 
     /**
-     * filler
+     * Here is create a phoneTile object and it's id is set.
      * */
     public final static  Tile phoneTile = new PhoneTile(49);
     /**
-     * filler
+     * Here is create a kitRugTile object and it's id is set.
      * */
     public final static  Tile kitRugTile = new KitRugTile(50);
     /**
-     * filler
+     * Here is create a clockTile object and it's id is set.
      * */
     public final static  Tile clockTile = new ClockTile(51);
     /**
-     * filler
+     * Here is create a endTableTile object and it's id is set.
      * */
     public final static  Tile endTableTile = new EndTableTile(52);
 
     /**
-     * filler
+     * Here is create a toiletTopTile object and it's id is set.
      * */
     public final static  Tile toiletTopTile = new ToiletTopTile(53);
     /**
-     * filler
+     * Here is create a toiletBotTile object and it's id is set.
      * */
     public final static  Tile toiletBotTile = new ToiletBotTile(54);
     /**
-     * filler
+     * Here is create a bathSinkTopTile object and it's id is set.
      * */
     public final static  Tile bathSinkTopTile = new BathSinkTopTile(55);
     /**
-     * filler
+     * Here is create a bathSinkBotTile object and it's id is set.
      * */
     public final static  Tile bathSinkBotTile = new BathSinkBotTile(56);
     /**
-     * filler
+     * Here is create a showerTopTile object and it's id is set.
      * */
     public final static  Tile showerTopTile = new ShowerTopTile(57);
     /**
-     * filler
+     * Here is create a showerBotTile object and it's id is set.
      * */
     public final static  Tile showerBotTile = new ShowerBotTile(58);
 
     /**
-     * filler
+     * Here is create a couchLeftTile object and it's id is set.
      * */
     public final static  Tile couchLeftTile = new CouchLeftTile(59);
     /**
-     * filler
+     * Here is create a couchRightTile object and it's id is set.
      * */
     public final static  Tile couchRightTile = new CouchRightTile(60);
     /**
-     * filler
+     * Here is create a tvTopTile object and it's id is set.
      * */
     public final static  Tile tvTopTile = new TVTopTile(61);
     /**
-     * filler
+     * Here is create a tvBotTile object and it's id is set.
      * */
     public final static  Tile tvBotTile = new TVBotTile(62);
 
     /**
-     * filler
+     * Here is create a shelfTLTile object and it's id is set.
      * */
     public final static  Tile shelfTLTile = new ShelfTLTile(63);
     /**
-     * filler
+     * Here is create a shelfTRTile object and it's id is set.
      * */
     public final static  Tile shelfTRTile = new ShelfTRTile(64);
     /**
-     * filler
+     * Here is create a shelfBLTile object and it's id is set.
      * */
     public final static  Tile shelfBLTile = new ShelfBLTile(65);
     /**
-     * filler
+     * Here is create a shelfBRTile object and it's id is set.
      * */
     public final static  Tile shelfBRTile = new ShelfBRTile(66);
 
     /**
-     * filler
+     * Here is create a deskTopTile object and it's id is set.
      * */
     public final static  Tile deskTopTile = new DeskTopTile(67);
     /**
-     * filler
+     * Here is create a deskBotTile object and it's id is set.
      * */
     public final static  Tile deskBotTile = new DeskBotTile(68);
 
     /**
-     * filler
+     * Here is create a bedTLTile object and it's id is set.
      * */
     public final static  Tile bedTLTile = new BedTLTile(69);
     /**
-     * filler
+     * Here is create a bedTRTile object and it's id is set.
      * */
      public final static  Tile bedTRTile = new BedTRTile(70);
 
      /**
-     * filler
+     * Here is create a bedCLTile object and it's id is set.
      * */
      public final static  Tile bedCLTile = new BedCLTile(90);
     /**
-     * filler
+     * Here is create a bedCRTile object and it's id is set.
      * */
     public final static  Tile bedCRTile = new BedCRTile(91);
     /**
-     * filler
+     * Here is create a bedBLTile object and it's id is set.
      * */
     public final static  Tile bedBLTile = new BedBLTile(71);
     /**
-     * filler
+     * Here is create a bedBRTile object and it's id is set.
      * */
     public final static  Tile bedBRTile = new BedBRTile(72);
 
     /**
-     * filler
+     * Here is create a diningTLTile object and it's id is set.
      * */
     public final static  Tile diningTLTile = new DiningTLTile(73);
     /**
-     * filler
+     * Here is create a diningTRTile object and it's id is set.
      * */
     public final static  Tile diningTRTile = new DiningTRTile(74);
     /**
-     * filler
+     * Here is create a diningBLTile object and it's id is set.
      * */
     public final static  Tile diningBLTile = new DiningBLTile(75);
     /**
-     * filler
+     * Here is create a diningBRTile object and it's id is set.
      * */
     public final static  Tile diningBRTile = new DiningBRTile(76);
 
     /**
-     * filler
+     * Here is create a rugTLTile object and it's id is set.
      * */
     public final static  Tile rugTLTile = new RugTLTile(77);
     /**
-     * filler
+     * Here is create a rugTCTile object and it's id is set.
      * */
     public final static  Tile rugTCTile = new RugTCTile(78);
     /**
-     * filler
+     * Here is create a rugTRTile object and it's id is set.
      * */
     public final static  Tile rugTRTile = new RugTRTile(79);
     /**
-     * filler
+     * Here is create a rugBLTile object and it's id is set.
      * */
     public final static  Tile rugBLTile = new RugBLTile(80);
     /**
-     * filler
+     * Here is create a rugBCTile object and it's id is set.
      * */
     public final static  Tile rugBCTile = new RugBCTile(81);
     /**
-     * filler
+     * Here is create a rugBRTile object and it's id is set.
      * */
     public final static  Tile rugBRTile = new RugBRTile(82);
 
     /**
-     * filler
+     * Here is create a grassLongTile object and it's id is set.
      * */
     public final static  Tile grassLongTile = new GrassLongTile(83);
     /**
-     * filler
+     * Here is create a grassFlowersTile object and it's id is set.
      * */
     public final static  Tile grassFlowersTile = new GrassFlowersTile(84);
     /**
-     * filler
+     * Here is create a grassRockTile object and it's id is set.
      * */
     public final static  Tile grassRockTile = new GrassRockTile(85);
     /**
-     * filler
+     * Here is create a grassShortTile object and it's id is set.
      * */
     public final static  Tile grassShortTile = new GrassShortTile(86);
 
     /**
-     * filler
+     * Here is create a doorTopTile object and it's id is set.
      * */
     public final static  Tile doorTopTile = new DoorTopTile(87);
     /**
-     * filler
+     * Here is create a doorBotTile object and it's id is set.
      * */
     public final static  Tile doorBotTile = new DoorBotTile(88);
 
     /**
-     * filler
+     * Here is create a pathTile object and it's id is set.
      * */
     public final static  Tile pathTile = new PathTile(89);
 
@@ -1067,7 +1256,10 @@ public class Tile {
     protected final int id;
 
     /**
-     * filler
+     * Tile creates a tile object using a BufferedImage
+     * and an int id.
+     * @param id integer id.
+     * @param texture BufferedImage object.
      * */
     public Tile(BufferedImage texture, int id) {
         this.texture = texture;
@@ -1084,21 +1276,27 @@ public class Tile {
     }
 
     /**
-     * filler
+     * Render draws the image into the game.
+     * @param g graphics of the image.
+     * @param x int of the x value to render the image.
+     * @param y int of the y value to render the image.
      * */
     public void render(Graphics g, int x, int y) {
         g.drawImage(texture,x,y,TILEWIDTH,TILEHEIGHT,null);
     }
 
     /**
-     * filler
+     * Boolean of tile objects to check if a tile is solid.
+     * @return false if the object is not solid and the pet can
+     * walk over the tile.
      * */
     public boolean isSolid() {
         return false;
     }
 
     /**
-     * filler
+     * Get id returns the id a tile.
+     * @return the int id of the tile.
      * */
     public int getId() {
         return id;
