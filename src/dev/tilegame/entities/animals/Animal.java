@@ -32,9 +32,7 @@ public abstract class Animal extends Entity {
      * @param x float x value on canvas.
      * @param y float y value on canvas.
      */
-    public Animal(final Manager manager, final float x, final float y) {
-        super(manager, x, y);
-    }
+    public Animal(final Manager manager, final float x, final float y) { super(manager, x, y); }
 
     /**
      * @return health of animal.
