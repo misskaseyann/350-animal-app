@@ -7,7 +7,6 @@ import dev.tilegame.inventory.Inventory;
  * @version 11.14.2017
  */
 public class Player {
-
     Inventory inventory;
 
     public Player(Inventory inventory) {
