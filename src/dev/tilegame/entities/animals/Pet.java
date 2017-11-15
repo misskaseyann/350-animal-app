@@ -208,5 +208,4 @@ public class Pet extends Animal {
                 happiness--;
         clock--;
     }
-
 }

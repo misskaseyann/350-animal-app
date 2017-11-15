@@ -12,7 +12,6 @@ public abstract class Animal extends Entity {
 
     // TODO add more stats?
     protected int health;
-
     //protected int clock = 36000; //Ten Minutes
     protected int clock = 9000; // Every 2.5 minutes.
     //protected int [] even = {7200 , 14400, 71600 , 28800 , 36000}; //Every Two Minutes
@@ -43,7 +42,7 @@ public abstract class Animal extends Entity {
     /**
      * @param health health of animal value from 0-6.
      */
-    public void setHealth(final int health) {
+    public void setHealth(int health) {
         // TODO error check for a value less than 0 or more than 6
         this.health = health;
     }
