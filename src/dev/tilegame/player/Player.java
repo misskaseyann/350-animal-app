@@ -6,6 +6,9 @@ package dev.tilegame.player;
  */
 public class Player {
 
+    public player(){
+
+    }
 
 
 }
