@@ -8,9 +8,18 @@ import dev.tilegame.inventory.Inventory;
  */
 public class Player {
     Inventory inventory;
+    int money;
+
 
     public Player(Inventory inventory) {
 
     }
 
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 }
