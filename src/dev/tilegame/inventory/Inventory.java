@@ -30,7 +30,7 @@ public class Inventory {
      * @return true if the item was added, false if it could not be added.
      */
     public boolean addItem(Item item) {
-        if (itemList.size() < 15) {
+        if (itemList.size() < 12) {
             itemList.add(item);
             return true;
         }

@@ -2,31 +2,29 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
-import dev.tilegame.inventory.Inventory;
+import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
 /**
- * Inventory menu for the game.
  * @author kaseystowell
- * @version 10.10.2017
+ * @version 11.26.2017
  */
-public class InventoryState extends State {
+public class StoreState extends State {
 
-    Inventory inventory;
+    private LoopLoader music;
 
     /**
-     * Inventory state constructor.
+     * StoreState constructor.
      * @param manager game class manager.
      */
-    public InventoryState(Manager manager) {
+    public StoreState(Manager manager) {
         super(manager);
-        inventory = manager.getPlayer().getInventory();
     }
 
     /**
-     * Checks for button clicks.
+     * Checks for button presses.
      */
     @Override
     public void tick() {
@@ -36,25 +34,24 @@ public class InventoryState extends State {
             int x = manager.getMouseManager().getMouseX();
             int y = manager.getMouseManager().getMouseY();
             // Back Button
-            if ((x > 70 && x < 294) && (y > 559 && y < 623)) {
+            if ((x > 67 && x < 291) && (y > 560 && y < 624)) {
                 State.setState(State.getLastState());
             }
-            // TODO implement item button clicks and inventory loading.
         }
     }
 
     /**
-     * Renders the inventory menu.
+     * Renders the shop menu screen.
      * @param g graphics object.
      */
     @Override
     public void render(Graphics g) {
-        // TODO make the inventory menu prettier
-        g.drawImage(Assets.getMenuInventory(), 0, 0, null);
+        g.drawImage(Assets.getShopMenu(), 0, 0, null);
     }
 
     /**
-     * @return null/no world in inventory state.
+     * @return null/no world in this state
      */
-    public World getWorld(){ return null; }
+    public World getWorld(){ return null;}
+
 }

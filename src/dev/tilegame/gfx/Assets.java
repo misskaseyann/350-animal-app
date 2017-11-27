@@ -37,7 +37,8 @@ public class Assets {
             path,
             mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
             happiness, hygene, hunger, health, menuButton,
-            baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall;
+            baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall,
+            shopMenu;
 
     // All animated images rendered on screen.
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
@@ -95,6 +96,7 @@ public class Assets {
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
         menuButton = ImageLoader.loadImage("/textures/menubutton.png");
+        shopMenu = ImageLoader.loadImage("/textures/shop.png");
 
         // TITLE SCREEN
 
@@ -1089,5 +1091,12 @@ public class Assets {
      */
     public static BufferedImage getTennisBall() {
         return tennisBall;
+    }
+
+    /**
+     * @return shop menu image.
+     */
+    public static BufferedImage getShopMenu() {
+        return shopMenu;
     }
 }
