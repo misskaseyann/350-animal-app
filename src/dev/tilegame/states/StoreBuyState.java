@@ -3,6 +3,7 @@ package dev.tilegame.states;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
+import dev.tilegame.player.Player;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
@@ -14,11 +15,13 @@ import java.awt.*;
 public class StoreBuyState extends State {
     private Manager manager;
     private Item item;
+    private Player player;
 
     public StoreBuyState(Manager manager, Item item) {
         super(manager);
         this.manager = manager;
         this.item = item;
+        this.player = manager.getPlayer();
     }
 
     @Override
@@ -28,6 +31,16 @@ public class StoreBuyState extends State {
             // Set x and y coordinates.
             int x = manager.getMouseManager().getMouseX();
             int y = manager.getMouseManager().getMouseY();
+            // Buy
+            if ((x > 188 && x < 344) && (y > 583 && y < 622)) {
+                if (player.getMoney() >= item.getCost()) {
+                    player.setMoney(player.getMoney() - item.getCost());
+                    player.getInventory().addItem(item);
+                    System.out.println("Added " + item.getName());
+                } else {
+                    // deny purchase
+                }
+            }
             // Cancel
             if ((x > 16 && x < 172) && (y > 583 && y < 622)) {
                 State.setState(manager.getGame().getStoreState());
@@ -42,13 +55,12 @@ public class StoreBuyState extends State {
         g.drawImage(Assets.getShopBuy(), 0, 0, null);
         g.drawImage(item.getImg(), 148, 376, null);
         g.setFont(manager.getFont());
-        String money = "Your Money: $" + Integer.toString(manager.getPlayer().getMoney());
+        String money = "Your Money: $" + Integer.toString(player.getMoney());
         g.drawString(money, (328 - fm.stringWidth(money)) / 2, 343);
         g.drawString(item.getName(), (328 - fm.stringWidth(item.getName())) / 2, 458);
         String cost = "Price: $" + Integer.toString(item.getCost());
         int y = 468 + fm.getAscent();
         g.drawString(cost, (328 - fm.stringWidth(cost)) / 2, y);
-        //y += fm.getAscent();
         for (String line : item.getDescription().split("\n"))
             g.drawString(line, ((270 - fm.stringWidth(line)) / 2), y += g.getFontMetrics().getHeight());
     }
