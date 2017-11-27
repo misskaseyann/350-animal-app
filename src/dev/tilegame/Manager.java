@@ -5,9 +5,14 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
+import dev.tilegame.inventory.Inventory;
+import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
+import dev.tilegame.utils.Utils;
 import dev.tilegame.worlds.World;
+
+import java.awt.*;
 
 /**
  * Allows easier management of our classes.
@@ -22,6 +27,8 @@ public class Manager {
     private MiniGamePet miniPet;
     private StatsManager statsManager;
     private LoopLoader loopLoader;
+    private Player player;
+    private Font font = null;
 
     /**
      * Manager constructor.
@@ -29,6 +36,13 @@ public class Manager {
      */
     public Manager(Game game) {
         this.game = game;
+        try {
+            if (font == null) {
+                font = Utils.createFont("res/fonts/PokemonClassic.ttf");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -136,5 +150,25 @@ public class Manager {
      */
     public void setLoopLoader(LoopLoader loopLoader) {
         this.loopLoader = loopLoader;
+    }
+
+    /**
+     * @return player object.
+     */
+    public Player getPlayer() {
+        return player;
+    }
+
+    /**
+     * Set the player of the game.
+     *
+     * @param player player object.
+     */
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Font getFont() {
+        return font;
     }
 }

@@ -57,12 +57,13 @@ public class TravelState extends State {
             }
             // Shop Button
             if ((x > 70 && x < 294) && (y > 424 && y < 489)) {
-                // TODO implement shop state
+                State.setState(manager.getGame().getStoreState());
             }
             // Back Button
             if ((x > 70 && x < 294) && (y > 524 && y < 588)) {
                 State.setState(State.getLastState());
             }
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

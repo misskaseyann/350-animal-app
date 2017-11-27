@@ -2,6 +2,7 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
+import dev.tilegame.inventory.Inventory;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
@@ -13,12 +14,15 @@ import java.awt.*;
  */
 public class InventoryState extends State {
 
+    Inventory inventory;
+
     /**
      * Inventory state constructor.
      * @param manager game class manager.
      */
     public InventoryState(Manager manager) {
         super(manager);
+        inventory = manager.getPlayer().getInventory();
     }
 
     /**
@@ -36,6 +40,7 @@ public class InventoryState extends State {
                 State.setState(State.getLastState());
             }
             // TODO implement item button clicks and inventory loading.
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

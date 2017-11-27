@@ -91,6 +91,7 @@ public class GameState extends State {
                 State.setLastState(this);
                 State.setState(manager.getGame().getTravelState());
             }
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

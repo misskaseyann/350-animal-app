@@ -3,6 +3,7 @@ package dev.tilegame.input;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.Timer;
 
 /**
  * Listens for mouse clicks and mouse movement.
@@ -26,7 +27,10 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      */
     @Override
     public void mouseClicked(MouseEvent e) {
-        // do nothing
+        if(e.getButton() == MouseEvent.BUTTON1)
+            leftPress = true;
+        else if(e.getButton() == MouseEvent.BUTTON3)
+            rightPress = true;
     }
 
     /**
@@ -35,10 +39,10 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      */
     @Override
     public void mousePressed(MouseEvent e) {
-        if(e.getButton() == MouseEvent.BUTTON1)
+        /*if(e.getButton() == MouseEvent.BUTTON1)
             leftPress = true;
         else if(e.getButton() == MouseEvent.BUTTON3)
-            rightPress = true;
+            rightPress = true;*/
     }
 
     /**
@@ -94,6 +98,10 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      */
     public boolean getLeftPress() {
         return leftPress;
+    }
+
+    public void setLeftPress(boolean leftPress) {
+        this.leftPress = leftPress;
     }
 
     /**

@@ -5,6 +5,7 @@ import dev.tilegame.gfx.Assets;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
+import dev.tilegame.player.Player;
 import dev.tilegame.states.*;
 
 import java.awt.*;
@@ -26,7 +27,7 @@ public class Game implements Runnable {
     private Graphics g;
 
     //States
-    private State gameState, menuState, titleState, inventoryState, travelState, parkState;
+    private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState;
 
     //Input
     private KeyManager keyManager;
@@ -37,6 +38,9 @@ public class Game implements Runnable {
 
     // Manager
     private Manager manager;
+
+    //Player
+    private Player player;
 
 
     /**
@@ -71,6 +75,8 @@ public class Game implements Runnable {
         // Set up game camera and class manager.
         gameCamera = new GameCamera(this,0,0);
         manager = new Manager(this);
+        player = new Player(manager);
+        manager.setPlayer(player);
         // Create states of the game.
         gameState = new GameState(manager);
         menuState = new MenuState(manager);
@@ -78,6 +84,7 @@ public class Game implements Runnable {
         inventoryState = new InventoryState(manager);
         travelState = new TravelState(manager);
         parkState = new ParkState(manager);
+        storeState = new StoreState(manager);
         State.setState(titleState);
     }
 
@@ -251,5 +258,12 @@ public class Game implements Runnable {
      */
     public State getParkState() {
         return parkState;
+    }
+
+    /**
+     * @return store state.
+     */
+    public State getStoreState() {
+        return storeState;
     }
 }

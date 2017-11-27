@@ -1,5 +1,6 @@
 package dev.tilegame.gfx;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -36,7 +37,9 @@ public class Assets {
             doorTop, doorBot,
             path,
             mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
-            happiness, hygene, hunger, health, menuButton;
+            happiness, hygene, hunger, health, menuButton,
+            baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall,
+            shopMenu, shopBuy;
 
     // All animated images rendered on screen.
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
@@ -55,6 +58,7 @@ public class Assets {
         SpriteSheet emotionSheet = new SpriteSheet(ImageLoader.loadImage("/textures/emotions.png"));
         SpriteSheet mainMenuTopSheet = new SpriteSheet(ImageLoader.loadImage("/textures/mainmenutop.png"));
         SpriteSheet titleSheet = new SpriteSheet(ImageLoader.loadImage("/textures/titlepic.png"));
+        SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
 
         // STATS ASSETS
 
@@ -93,11 +97,25 @@ public class Assets {
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
         menuButton = ImageLoader.loadImage("/textures/menubutton.png");
+        shopMenu = ImageLoader.loadImage("/textures/shop.png");
+        shopBuy = ImageLoader.loadImage("/textures/shopbuy.png");
+
+        // TITLE SCREEN
 
         titleImg = new BufferedImage[3];
         titleImg[0] = titleSheet.crop(0, 0, 360, 640);
         titleImg[1] = titleSheet.crop(360, 0, 360, 640);
         titleImg[2] = titleSheet.crop(720, 0, 360, 640);
+
+        // ITEMS
+        baconTreat = itemSheet.crop(0, 0, 64, 64);
+        chewToy = itemSheet.crop(64, 0, 64, 64);
+        dogBiscuit = itemSheet.crop(128, 0, 64, 64);
+        chewBone = itemSheet.crop(192, 0, 64, 64);
+        dogFoodPremium = itemSheet.crop(0, 64, 64, 64);
+        dogFoodStandard = itemSheet.crop(64, 64, 64, 64);
+        stuffedAnimal = itemSheet.crop(128, 64, 64, 64);
+        tennisBall = itemSheet.crop(192, 64, 64, 64);
 
         // ANIMAL ANIMATION ASSETS
 
@@ -1021,4 +1039,73 @@ public class Assets {
         return emotions;
     }
 
+    /**
+     * @return bacon treat image.
+     */
+    public static BufferedImage getBaconTreat() {
+        return baconTreat;
+    }
+
+    /**
+     * @return chew toy image.
+     */
+    public static BufferedImage getChewToy() {
+        return chewToy;
+    }
+
+    /**
+     * @return dog biscuit image.
+     */
+    public static BufferedImage getDogBiscuit() {
+        return dogBiscuit;
+    }
+
+    /**
+     * @return chew bone image.
+     */
+    public static BufferedImage getChewBone() {
+        return chewBone;
+    }
+
+    /**
+     * @return premium dog food image.
+     */
+    public static BufferedImage getDogFoodPremium() {
+        return dogFoodPremium;
+    }
+
+    /**
+     * @return standard dog food image.
+     */
+    public static BufferedImage getDogFoodStandard() {
+        return dogFoodStandard;
+    }
+
+    /**
+     * @return stuffed animal image.
+     */
+    public static BufferedImage getStuffedAnimal() {
+        return stuffedAnimal;
+    }
+
+    /**
+     * @return tennis ball image.
+     */
+    public static BufferedImage getTennisBall() {
+        return tennisBall;
+    }
+
+    /**
+     * @return shop menu image.
+     */
+    public static BufferedImage getShopMenu() {
+        return shopMenu;
+    }
+
+    /**
+     * @return shop buy image.
+     */
+    public static BufferedImage getShopBuy() {
+        return shopBuy;
+    }
 }
