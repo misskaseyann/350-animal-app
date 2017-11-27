@@ -36,7 +36,7 @@ public class Assets {
             doorTop, doorBot,
             path,
             mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
-            happiness, hygene, hunger, health, menuButton;
+            happiness, hygene, hunger, health, menuButton, menuSave;
 
     // All animated images rendered on screen.
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
@@ -93,6 +93,7 @@ public class Assets {
         menuTravel = ImageLoader.loadImage("/textures/menutravel.png");
         pauseMenu = ImageLoader.loadImage("/textures/pausemenu.png");
         menuButton = ImageLoader.loadImage("/textures/menubutton.png");
+        menuSave = ImageLoader.loadImage("/textures/menutravel.png");
 
         titleImg = new BufferedImage[3];
         titleImg[0] = titleSheet.crop(0, 0, 360, 640);
@@ -963,6 +964,13 @@ public class Assets {
      */
     public static BufferedImage getMenuTravel() {
         return menuTravel;
+    }
+
+    /**
+     * @return Save screen.
+     */
+    public static BufferedImage getMenuSave() {
+        return menuSave;
     }
 
     /**

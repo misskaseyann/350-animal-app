@@ -4,10 +4,13 @@ import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.worlds.World;
 
+import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 
 /**
  * Pause/main menu for the game.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -15,6 +18,7 @@ public class MenuState extends State {
 
     /**
      * MenuState constructor.
+     *
      * @param manager game class manager
      */
     public MenuState(Manager manager) {
@@ -32,12 +36,23 @@ public class MenuState extends State {
             int x = manager.getMouseManager().getMouseX();
             int y = manager.getMouseManager().getMouseY();
             // Save Button
+            System.out.println("x and y "+ x +" and " + y);
             if ((x > 70 && x < 292) && (y > 204 && y < 268)) {
                 // TODO implement saving the game
+                State.setState(manager.getGame().getSaveState());
             }
             // Load Button
             if ((x > 70 && x < 292) && (y > 297 && y < 340)) {
-                // TODO implement loading a game
+//                BufferedReader br = new BufferedReader(
+//                        new InputStreamReader(new FileInputStream(fileName)));
+//                try {
+//                    String line;
+//                    while ((line = br.readLine()) != null) {
+//                        // process line
+//                    }
+//                } finally {
+//                    br.close();
+//                }
             }
             // Back Button
             if ((x > 70 && x < 292) && (y > 392 && y < 456)) {
@@ -48,6 +63,7 @@ public class MenuState extends State {
 
     /**
      * Render main menu screen.
+     *
      * @param g graphics object.
      */
     @Override
@@ -59,5 +75,7 @@ public class MenuState extends State {
     /**
      * @return null/no world in this state
      */
-    public World getWorld(){ return null; }
+    public World getWorld() {
+        return null;
+    }
 }
