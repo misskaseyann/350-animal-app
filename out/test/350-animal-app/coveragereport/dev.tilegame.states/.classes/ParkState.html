@@ -1,0 +1,207 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ParkState</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.states</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ParkState (dev.tilegame.states)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ParkState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (48/ 48)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.states;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import dev.tilegame.Manager;
+<i>4</i>&nbsp;import dev.tilegame.entities.animals.Pet;
+<i>5</i>&nbsp;import dev.tilegame.entities.animals.Pet_AI;
+<i>6</i>&nbsp;import dev.tilegame.gfx.Assets;
+<i>7</i>&nbsp;import dev.tilegame.sound.LoopLoader;
+<i>8</i>&nbsp;import dev.tilegame.stats.StatsManager;
+<i>9</i>&nbsp;import dev.tilegame.worlds.World;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.awt.*;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;/**
+<i>14</i>&nbsp; * Park world.
+<i>15</i>&nbsp; * Generates a top menu for taking care of your pet but eliminates the option for feeding and cleaning.
+<i>16</i>&nbsp; * Generates a bottom menu for monitoring your pets stats and accessing main menu.
+<i>17</i>&nbsp; * @author kaseystowell
+<i>18</i>&nbsp; * @version 10.14.2017
+<i>19</i>&nbsp; */
+<i>20</i>&nbsp;public class ParkState extends State {
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    private Pet pet;
+<i>23</i>&nbsp;    private Pet_AI pet_ai;
+<i>24</i>&nbsp;    private World world;
+<i>25</i>&nbsp;    private LoopLoader music;
+<i>26</i>&nbsp;    private StatsManager statsManager;
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    /**
+<i>29</i>&nbsp;     * Park state constructor.
+<i>30</i>&nbsp;     * Sets up the park world, loads the pet and its stats, and sets up music with current loop loader.
+<i>31</i>&nbsp;     * @param manager game class manager.
+<i>32</i>&nbsp;     */
+<i>33</i>&nbsp;    public ParkState(Manager manager) {
+<b class="fc"><i>34</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>35</i>&nbsp;        world = new World(manager, &quot;res/worlds/world2.txt&quot;);</b>
+<b class="fc"><i>36</i>&nbsp;        manager.setWorld(world);</b>
+<b class="fc"><i>37</i>&nbsp;        pet = manager.getPet();</b>
+<b class="fc"><i>38</i>&nbsp;        pet_ai = new Pet_AI(manager, 10*32, 10*32);</b>
+<b class="fc"><i>39</i>&nbsp;        statsManager = manager.getStatsManager();</b>
+<b class="fc"><i>40</i>&nbsp;        music = manager.getLoopLoader();</b>
+<b class="fc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * Ticks world and pet.
+<i>45</i>&nbsp;     * Makes sure that park music is playing.
+<i>46</i>&nbsp;     * Checks for button presses.
+<i>47</i>&nbsp;     */
+<i>48</i>&nbsp;    @Override
+<i>49</i>&nbsp;    public void tick() {
+<b class="fc"><i>50</i>&nbsp;        world.tick();</b>
+<b class="fc"><i>51</i>&nbsp;        pet.tick();</b>
+<b class="fc"><i>52</i>&nbsp;        pet_ai.tick();</b>
+<i>53</i>&nbsp;        // Check for park music.
+<b class="fc"><i>54</i>&nbsp;        if (!music.isPlaying()) {</b>
+<b class="fc"><i>55</i>&nbsp;            music.load(&quot;res/sounds/doggo2.wav&quot;);</b>
+<b class="fc"><i>56</i>&nbsp;            music.play();</b>
+<i>57</i>&nbsp;        }
+<i>58</i>&nbsp;        // Did the mouse left click?
+<b class="fc"><i>59</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
+<i>60</i>&nbsp;            // Set x and y coordinates.
+<b class="fc"><i>61</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
+<b class="fc"><i>62</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
+<i>63</i>&nbsp;            // Main Menu Button
+<b class="fc"><i>64</i>&nbsp;            if ((x &gt; 10 &amp;&amp; x &lt; 74) &amp;&amp; (y &gt; 490 &amp;&amp; y &lt; 554)) {</b>
+<b class="fc"><i>65</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>66</i>&nbsp;                State.setState(manager.getGame().getMenuState());</b>
+<i>67</i>&nbsp;            }
+<i>68</i>&nbsp;            // Talk Button
+<b class="fc"><i>69</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 136) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<i>70</i>&nbsp;                // TODO include barking sound clip
+<i>71</i>&nbsp;                // TODO add imcremental method
+<b class="fc"><i>72</i>&nbsp;                pet.setHappiness(6);</b>
+<i>73</i>&nbsp;            }
+<i>74</i>&nbsp;            // Play Button
+<b class="fc"><i>75</i>&nbsp;            if ((x &gt; 204 &amp;&amp; x &lt; 252) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<i>76</i>&nbsp;                // TODO implement mini games
+<i>77</i>&nbsp;                // TODO add imcremental method
+<b class="fc"><i>78</i>&nbsp;                pet.setHappiness(6);</b>
+<i>79</i>&nbsp;            }
+<i>80</i>&nbsp;            // Inventory Button
+<b class="fc"><i>81</i>&nbsp;            if ((x &gt; 252 &amp;&amp; x &lt; 305) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>82</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>83</i>&nbsp;                State.setState(manager.getGame().getInventoryState());</b>
+<i>84</i>&nbsp;            }
+<i>85</i>&nbsp;            // Travel Button
+<b class="fc"><i>86</i>&nbsp;            if ((x &gt; 305 &amp;&amp; x &lt; 360) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>87</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>88</i>&nbsp;                State.setState(manager.getGame().getTravelState());</b>
+<i>89</i>&nbsp;            }
+<i>90</i>&nbsp;        }
+<b class="fc"><i>91</i>&nbsp;    }</b>
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    /**
+<i>94</i>&nbsp;     * Renders the park scene and game menu.
+<i>95</i>&nbsp;     *
+<i>96</i>&nbsp;     * @param g graphics object.
+<i>97</i>&nbsp;     */
+<i>98</i>&nbsp;    @Override
+<i>99</i>&nbsp;    public void render(Graphics g) {
+<b class="fc"><i>100</i>&nbsp;        world.render(g);</b>
+<b class="fc"><i>101</i>&nbsp;        pet.render(g);</b>
+<b class="fc"><i>102</i>&nbsp;        pet_ai.render(g);</b>
+<i>103</i>&nbsp;        // Draw menus.
+<b class="fc"><i>104</i>&nbsp;        g.drawImage(Assets.getMainMenuTopTravel(), 0, 0, null);</b>
+<b class="fc"><i>105</i>&nbsp;        g.drawImage(Assets.getMainMenuBot(), 0, 475, null);</b>
+<b class="fc"><i>106</i>&nbsp;        g.drawImage(Assets.getMenuButton(), 10, 490, null);</b>
+<i>107</i>&nbsp;        // Draw stats.
+<b class="fc"><i>108</i>&nbsp;        g.drawImage(statsManager.emojiBox(), 10, 564, null);</b>
+<b class="fc"><i>109</i>&nbsp;        g.drawImage(Assets.getHealth(), 95, 497, null);</b>
+<b class="fc"><i>110</i>&nbsp;        g.drawImage(statsManager.healthBar(), 90, 513, null);</b>
+<b class="fc"><i>111</i>&nbsp;        g.drawImage(Assets.getHunger(), 95, 569, null);</b>
+<b class="fc"><i>112</i>&nbsp;        g.drawImage(statsManager.hungerBar(), 90, 585, null);</b>
+<b class="fc"><i>113</i>&nbsp;        g.drawImage(Assets.getHappiness(), 230, 497, null);</b>
+<b class="fc"><i>114</i>&nbsp;        g.drawImage(statsManager.happyBar(), 225, 513, null);</b>
+<b class="fc"><i>115</i>&nbsp;        g.drawImage(Assets.getHygene(), 230, 569, null);</b>
+<b class="fc"><i>116</i>&nbsp;        g.drawImage(statsManager.cleanBar(), 225, 585, null);</b>
+<b class="fc"><i>117</i>&nbsp;    }</b>
+<i>118</i>&nbsp;
+<i>119</i>&nbsp;    /**
+<i>120</i>&nbsp;     * @return park world.
+<i>121</i>&nbsp;     */
+<b class="fc"><i>122</i>&nbsp;    public World getWorld(){ return world;}</b>
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-10-16 22:48</div>
+</div>
+</body>
+</html>

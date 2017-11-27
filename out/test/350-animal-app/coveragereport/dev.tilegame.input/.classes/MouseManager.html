@@ -1,0 +1,203 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MouseManager</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.input</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MouseManager (dev.tilegame.input)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MouseManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (11/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    78.3%
+  </span>
+  <span class="absValue">
+    (18/ 23)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.input;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.awt.event.MouseEvent;
+<i>4</i>&nbsp;import java.awt.event.MouseListener;
+<i>5</i>&nbsp;import java.awt.event.MouseMotionListener;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * Listens for mouse clicks and mouse movement.
+<i>9</i>&nbsp; * @author kaseystowell
+<i>10</i>&nbsp; * @version 10.02.2017
+<i>11</i>&nbsp; */
+<i>12</i>&nbsp;public class MouseManager implements MouseListener, MouseMotionListener {
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    private boolean leftPress, rightPress;
+<i>15</i>&nbsp;    private int mouseX, mouseY;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    /**
+<i>18</i>&nbsp;     * MouseManager constructor.
+<i>19</i>&nbsp;     */
+<b class="fc"><i>20</i>&nbsp;    public MouseManager() {</b>
+<i>21</i>&nbsp;        // do nothing
+<b class="fc"><i>22</i>&nbsp;    }</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;    /**
+<i>25</i>&nbsp;     * @param e mouse event.
+<i>26</i>&nbsp;     */
+<i>27</i>&nbsp;    @Override
+<i>28</i>&nbsp;    public void mouseClicked(MouseEvent e) {
+<i>29</i>&nbsp;        // do nothing
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    /**
+<i>33</i>&nbsp;     * Verify if mouse button is being pressed.
+<i>34</i>&nbsp;     * @param e mouse event.
+<i>35</i>&nbsp;     */
+<i>36</i>&nbsp;    @Override
+<i>37</i>&nbsp;    public void mousePressed(MouseEvent e) {
+<b class="fc"><i>38</i>&nbsp;        if(e.getButton() == MouseEvent.BUTTON1)</b>
+<b class="fc"><i>39</i>&nbsp;            leftPress = true;</b>
+<b class="nc"><i>40</i>&nbsp;        else if(e.getButton() == MouseEvent.BUTTON3)</b>
+<b class="nc"><i>41</i>&nbsp;            rightPress = true;</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    /**
+<i>45</i>&nbsp;     * Verify if mouse button is being released.
+<i>46</i>&nbsp;     * @param e mouse event.
+<i>47</i>&nbsp;     */
+<i>48</i>&nbsp;    @Override
+<i>49</i>&nbsp;    public void mouseReleased(MouseEvent e) {
+<b class="fc"><i>50</i>&nbsp;        if(e.getButton() == MouseEvent.BUTTON1)</b>
+<b class="fc"><i>51</i>&nbsp;            leftPress = false;</b>
+<b class="nc"><i>52</i>&nbsp;        else if(e.getButton() == MouseEvent.BUTTON3)</b>
+<b class="nc"><i>53</i>&nbsp;            rightPress = false;</b>
+<b class="fc"><i>54</i>&nbsp;    }</b>
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    /**
+<i>57</i>&nbsp;     * @param e mouse event.
+<i>58</i>&nbsp;     */
+<i>59</i>&nbsp;    @Override
+<i>60</i>&nbsp;    public void mouseEntered(MouseEvent e) {
+<i>61</i>&nbsp;        // do nothing
+<b class="fc"><i>62</i>&nbsp;    }</b>
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    /**
+<i>65</i>&nbsp;     * @param e mouse event.
+<i>66</i>&nbsp;     */
+<i>67</i>&nbsp;    @Override
+<i>68</i>&nbsp;    public void mouseExited(MouseEvent e) {
+<i>69</i>&nbsp;        // do nothing
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    /**
+<i>73</i>&nbsp;     * @param e mouse event.
+<i>74</i>&nbsp;     */
+<i>75</i>&nbsp;    @Override
+<i>76</i>&nbsp;    public void mouseDragged(MouseEvent e) {
+<i>77</i>&nbsp;        // do nothing
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    /**
+<i>81</i>&nbsp;     * Get position of mouse on the screen.
+<i>82</i>&nbsp;     * @param e mouse event.
+<i>83</i>&nbsp;     */
+<i>84</i>&nbsp;    @Override
+<i>85</i>&nbsp;    public void mouseMoved(MouseEvent e) {
+<b class="fc"><i>86</i>&nbsp;        mouseX = e.getX();</b>
+<b class="fc"><i>87</i>&nbsp;        mouseY = e.getY();</b>
+<b class="fc"><i>88</i>&nbsp;    }</b>
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;    // MOUSE GETTERS
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    /**
+<i>93</i>&nbsp;     * @return true if left mouse click.
+<i>94</i>&nbsp;     */
+<i>95</i>&nbsp;    public boolean getLeftPress() {
+<b class="fc"><i>96</i>&nbsp;        return leftPress;</b>
+<i>97</i>&nbsp;    }
+<i>98</i>&nbsp;
+<i>99</i>&nbsp;    /**
+<i>100</i>&nbsp;     * @return true if right mouse click.
+<i>101</i>&nbsp;     */
+<i>102</i>&nbsp;    public boolean getRightPress() {
+<b class="nc"><i>103</i>&nbsp;        return rightPress;</b>
+<i>104</i>&nbsp;    }
+<i>105</i>&nbsp;
+<i>106</i>&nbsp;    /**
+<i>107</i>&nbsp;     * @return x value of mouse on screen in pixels.
+<i>108</i>&nbsp;     */
+<i>109</i>&nbsp;    public int getMouseX() {
+<b class="fc"><i>110</i>&nbsp;        return mouseX;</b>
+<i>111</i>&nbsp;    }
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;    /**
+<i>114</i>&nbsp;     * @return y value of mouse on screen in pixels.
+<i>115</i>&nbsp;     */
+<i>116</i>&nbsp;    public int getMouseY() {
+<b class="fc"><i>117</i>&nbsp;        return mouseY;</b>
+<i>118</i>&nbsp;    }
+<i>119</i>&nbsp;
+<i>120</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-10-16 22:48</div>
+</div>
+</body>
+</html>

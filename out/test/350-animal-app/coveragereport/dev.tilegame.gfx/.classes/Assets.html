@@ -1,0 +1,1107 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Assets</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.gfx</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Assets (dev.tilegame.gfx)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Assets</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    98.2%
+  </span>
+  <span class="absValue">
+    (110/ 112)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    99.2%
+  </span>
+  <span class="absValue">
+    (264/ 266)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.gfx;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.awt.image.BufferedImage;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * Any game image.
+<i>7</i>&nbsp; * @author kaseystowell
+<i>8</i>&nbsp; * @author allisonbolen
+<i>9</i>&nbsp; * @version 09.24.2017
+<i>10</i>&nbsp; */
+<b class="nc"><i>11</i>&nbsp;public class Assets {</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    // All images that are rendered on screen.
+<i>14</i>&nbsp;    private static BufferedImage
+<i>15</i>&nbsp;            dog,
+<i>16</i>&nbsp;            woodFloor, kitchenFloor, bathFloor, stoneFloor,
+<i>17</i>&nbsp;            wallLeft, wallCenter, wallRight, wallEnd,
+<i>18</i>&nbsp;            ceilingLeft, ceilingCenter, ceilingRight, ceilingEnd, ceilingDown,
+<i>19</i>&nbsp;            ceilingBCL, ceilingBCR, ceilingTCL, ceilingTCR, ceilingPDown, ceilingPLeft, ceilingPRight,
+<i>20</i>&nbsp;            outWallTL, outWallTC, outWallTR, outWallBL, outWallBC, outWallBR,
+<i>21</i>&nbsp;            plantTop, plantBot,
+<i>22</i>&nbsp;            kitTableTL, kitTableTR, kitTableBL, kitTableBR,
+<i>23</i>&nbsp;            chairLeft, chairRight,
+<i>24</i>&nbsp;            counterCenter, counterCorner, counterEnd,
+<i>25</i>&nbsp;            dogBowl, dogBone, box,
+<i>26</i>&nbsp;            fridgeTop, fridgeBot, stoveTop, stoveBot, sinkLTop, sinkLBot, sinkRTop, sinkRBot,
+<i>27</i>&nbsp;            phone, kitRug, clock, endTable,
+<i>28</i>&nbsp;            toiletTop, toiletBot, bathSinkTop, bathSinkBot, showerTop, showerBot,
+<i>29</i>&nbsp;            couchLeft, couchRight, tvTop, tvBot,
+<i>30</i>&nbsp;            shelfTL, shelfTR, shelfBL, shelfBR,
+<i>31</i>&nbsp;            deskTop, deskBot,
+<i>32</i>&nbsp;            bedTL, bedTR, bedCL, bedCR, bedBL, bedBR,
+<i>33</i>&nbsp;            diningTL, diningTR, diningBL, diningBR,
+<i>34</i>&nbsp;            rugTL, rugTC, rugTR, rugBL, rugBC, rugBR,
+<i>35</i>&nbsp;            grassLong, grassFlowers, grassRock, grassShort,
+<i>36</i>&nbsp;            doorTop, doorBot,
+<i>37</i>&nbsp;            path,
+<i>38</i>&nbsp;            mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
+<i>39</i>&nbsp;            happiness, hygene, hunger, health, menuButton;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    // All animated images rendered on screen.
+<i>42</i>&nbsp;    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
+<i>43</i>&nbsp;    // Tile size.
+<i>44</i>&nbsp;    private static final int WIDTH = 32, HEIGHT = 32;
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    /**
+<i>47</i>&nbsp;     * Loads all images in the game and loads only once.
+<i>48</i>&nbsp;     */
+<i>49</i>&nbsp;    public static void init() {
+<i>50</i>&nbsp;        // Sprite sheets that can be cropped into individual tiles.
+<b class="fc"><i>51</i>&nbsp;        SpriteSheet dogSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/dog.png&quot;));</b>
+<b class="fc"><i>52</i>&nbsp;        SpriteSheet houseSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/home.png&quot;));</b>
+<b class="fc"><i>53</i>&nbsp;        SpriteSheet heartSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/hearts.png&quot;));</b>
+<b class="fc"><i>54</i>&nbsp;        SpriteSheet wordSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/wordssheet.png&quot;));</b>
+<b class="fc"><i>55</i>&nbsp;        SpriteSheet emotionSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/emotions.png&quot;));</b>
+<b class="fc"><i>56</i>&nbsp;        SpriteSheet mainMenuTopSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/mainmenutop.png&quot;));</b>
+<b class="fc"><i>57</i>&nbsp;        SpriteSheet titleSheet = new SpriteSheet(ImageLoader.loadImage(&quot;/textures/titlepic.png&quot;));</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;        // STATS ASSETS
+<i>60</i>&nbsp;
+<i>61</i>&nbsp;        // Stat hearts.
+<b class="fc"><i>62</i>&nbsp;        hearts = new BufferedImage[7];</b>
+<b class="fc"><i>63</i>&nbsp;        hearts[6] = heartSheet.crop(0, 0, 126, 35);</b>
+<b class="fc"><i>64</i>&nbsp;        hearts[5] = heartSheet.crop(0, 35, 126, 35);</b>
+<b class="fc"><i>65</i>&nbsp;        hearts[4] = heartSheet.crop(0, 70, 126, 35);</b>
+<b class="fc"><i>66</i>&nbsp;        hearts[3] = heartSheet.crop(0, 105, 126, 35);</b>
+<b class="fc"><i>67</i>&nbsp;        hearts[2] = heartSheet.crop(0, 140, 126, 35);</b>
+<b class="fc"><i>68</i>&nbsp;        hearts[1] = heartSheet.crop(0, 175, 126, 35);</b>
+<b class="fc"><i>69</i>&nbsp;        hearts[0] = heartSheet.crop(0, 210, 126, 35);</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;        // Stat emotions.
+<b class="fc"><i>72</i>&nbsp;        emotions = new BufferedImage[7];</b>
+<b class="fc"><i>73</i>&nbsp;        emotions[6] = emotionSheet.crop(0, 0, 64, 64);</b>
+<b class="fc"><i>74</i>&nbsp;        emotions[5] = emotionSheet.crop(0, 64, 64, 64);</b>
+<b class="fc"><i>75</i>&nbsp;        emotions[4] = emotionSheet.crop(0, 128, 64, 64);</b>
+<b class="fc"><i>76</i>&nbsp;        emotions[3] = emotionSheet.crop(0, 192, 64, 64);</b>
+<b class="fc"><i>77</i>&nbsp;        emotions[2] = emotionSheet.crop(0, 256, 64, 64);</b>
+<b class="fc"><i>78</i>&nbsp;        emotions[1] = emotionSheet.crop(0, 320, 64, 64);</b>
+<b class="fc"><i>79</i>&nbsp;        emotions[0] = emotionSheet.crop(0, 384, 64, 64);</b>
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;        // Stat text.
+<b class="fc"><i>82</i>&nbsp;        hunger = wordSheet.crop(0, 0, 119, 11);</b>
+<b class="fc"><i>83</i>&nbsp;        hygene = wordSheet.crop(0, 11, 119, 11);</b>
+<b class="fc"><i>84</i>&nbsp;        health = wordSheet.crop(0, 22, 119, 11);</b>
+<b class="fc"><i>85</i>&nbsp;        happiness = wordSheet.crop(0, 33, 119, 11);</b>
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;        // MENU ASSETS
+<i>88</i>&nbsp;
+<b class="fc"><i>89</i>&nbsp;        mainMenuBot = ImageLoader.loadImage(&quot;/textures/mainmenubot.png&quot;);</b>
+<b class="fc"><i>90</i>&nbsp;        mainMenuTopTravel = mainMenuTopSheet.crop(0, 0, 360, 75);</b>
+<b class="fc"><i>91</i>&nbsp;        mainMenuTopReg = mainMenuTopSheet.crop(0, 75, 360, 75);</b>
+<b class="fc"><i>92</i>&nbsp;        menuInventory = ImageLoader.loadImage(&quot;/textures/menuinventory.png&quot;);</b>
+<b class="fc"><i>93</i>&nbsp;        menuTravel = ImageLoader.loadImage(&quot;/textures/menutravel.png&quot;);</b>
+<b class="fc"><i>94</i>&nbsp;        pauseMenu = ImageLoader.loadImage(&quot;/textures/pausemenu.png&quot;);</b>
+<b class="fc"><i>95</i>&nbsp;        menuButton = ImageLoader.loadImage(&quot;/textures/menubutton.png&quot;);</b>
+<i>96</i>&nbsp;
+<b class="fc"><i>97</i>&nbsp;        titleImg = new BufferedImage[3];</b>
+<b class="fc"><i>98</i>&nbsp;        titleImg[0] = titleSheet.crop(0, 0, 360, 640);</b>
+<b class="fc"><i>99</i>&nbsp;        titleImg[1] = titleSheet.crop(360, 0, 360, 640);</b>
+<b class="fc"><i>100</i>&nbsp;        titleImg[2] = titleSheet.crop(720, 0, 360, 640);</b>
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;        // ANIMAL ANIMATION ASSETS
+<i>103</i>&nbsp;
+<b class="fc"><i>104</i>&nbsp;        dog = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);</b>
+<i>105</i>&nbsp;
+<b class="fc"><i>106</i>&nbsp;        dogDown = new BufferedImage[4];</b>
+<b class="fc"><i>107</i>&nbsp;        dogDown[0] = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>108</i>&nbsp;        dogDown[1] = dogSheet.crop(0, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>109</i>&nbsp;        dogDown[2] = dogSheet.crop(WIDTH, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>110</i>&nbsp;        dogDown[3] = dogSheet.crop(WIDTH * 2, 0, WIDTH, HEIGHT);</b>
+<i>111</i>&nbsp;
+<b class="fc"><i>112</i>&nbsp;        dogLeft = new BufferedImage[4];</b>
+<b class="fc"><i>113</i>&nbsp;        dogLeft[0] = dogSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>114</i>&nbsp;        dogLeft[1] = dogSheet.crop(0, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>115</i>&nbsp;        dogLeft[2] = dogSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>116</i>&nbsp;        dogLeft[3] = dogSheet.crop(WIDTH * 2, HEIGHT, WIDTH, HEIGHT);</b>
+<i>117</i>&nbsp;
+<b class="fc"><i>118</i>&nbsp;        dogRight = new BufferedImage[4];</b>
+<b class="fc"><i>119</i>&nbsp;        dogRight[0] = dogSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>120</i>&nbsp;        dogRight[1] = dogSheet.crop(0, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>121</i>&nbsp;        dogRight[2] = dogSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>122</i>&nbsp;        dogRight[3] = dogSheet.crop(WIDTH * 2, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<i>123</i>&nbsp;
+<b class="fc"><i>124</i>&nbsp;        dogUp = new BufferedImage[4];</b>
+<b class="fc"><i>125</i>&nbsp;        dogUp[0] = dogSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>126</i>&nbsp;        dogUp[1] = dogSheet.crop(0, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>127</i>&nbsp;        dogUp[2] = dogSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>128</i>&nbsp;        dogUp[3] = dogSheet.crop(WIDTH * 2, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;        // WORLD ASSETS
+<i>131</i>&nbsp;
+<b class="fc"><i>132</i>&nbsp;        woodFloor = houseSheet.crop(0, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>133</i>&nbsp;        kitchenFloor = houseSheet.crop(WIDTH, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>134</i>&nbsp;        bathFloor = houseSheet.crop(WIDTH * 2, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>135</i>&nbsp;        stoneFloor = houseSheet.crop(WIDTH, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<i>136</i>&nbsp;
+<b class="fc"><i>137</i>&nbsp;        wallLeft = houseSheet.crop(WIDTH * 3, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>138</i>&nbsp;        wallCenter = houseSheet.crop(WIDTH * 4, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>139</i>&nbsp;        wallRight = houseSheet.crop(WIDTH * 5, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>140</i>&nbsp;        wallEnd = houseSheet.crop(0, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<i>141</i>&nbsp;
+<b class="fc"><i>142</i>&nbsp;        ceilingLeft = houseSheet.crop(WIDTH * 6, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>143</i>&nbsp;        ceilingCenter = houseSheet.crop(WIDTH * 7, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>144</i>&nbsp;        ceilingRight = houseSheet.crop(WIDTH * 8, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>145</i>&nbsp;        ceilingEnd = houseSheet.crop(0, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>146</i>&nbsp;        ceilingDown = houseSheet.crop(WIDTH, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>147</i>&nbsp;        ceilingBCL = houseSheet.crop(WIDTH * 2, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>148</i>&nbsp;        ceilingBCR = houseSheet.crop(WIDTH * 3, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>149</i>&nbsp;        ceilingTCL = houseSheet.crop(WIDTH * 6, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>150</i>&nbsp;        ceilingTCR = houseSheet.crop(WIDTH * 7, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>151</i>&nbsp;        ceilingPDown = houseSheet.crop(WIDTH * 8, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>152</i>&nbsp;        ceilingPLeft = houseSheet.crop(WIDTH * 9, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>153</i>&nbsp;        ceilingPRight = houseSheet.crop(WIDTH * 9, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>154</i>&nbsp;
+<b class="fc"><i>155</i>&nbsp;        outWallTL = houseSheet.crop(WIDTH * 10, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>156</i>&nbsp;        outWallTC = houseSheet.crop(WIDTH * 11, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>157</i>&nbsp;        outWallTR = houseSheet.crop(WIDTH * 12, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>158</i>&nbsp;        outWallBL = houseSheet.crop(WIDTH * 10, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>159</i>&nbsp;        outWallBC = houseSheet.crop(WIDTH * 11, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>160</i>&nbsp;        outWallBR = houseSheet.crop(WIDTH * 12, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>161</i>&nbsp;
+<b class="fc"><i>162</i>&nbsp;        plantTop = houseSheet.crop(WIDTH * 9, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>163</i>&nbsp;        plantBot = houseSheet.crop(WIDTH * 9, HEIGHT, WIDTH, HEIGHT);</b>
+<i>164</i>&nbsp;
+<b class="fc"><i>165</i>&nbsp;        kitTableTL = houseSheet.crop(WIDTH * 10, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>166</i>&nbsp;        kitTableTR = houseSheet.crop(WIDTH * 11, 0, WIDTH, HEIGHT);</b>
+<b class="fc"><i>167</i>&nbsp;        kitTableBL = houseSheet.crop(WIDTH * 10, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>168</i>&nbsp;        kitTableBR = houseSheet.crop(WIDTH * 11, HEIGHT, WIDTH, HEIGHT);</b>
+<i>169</i>&nbsp;
+<b class="fc"><i>170</i>&nbsp;        chairLeft = houseSheet.crop(WIDTH * 12, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>171</i>&nbsp;        chairRight = houseSheet.crop(WIDTH * 12, 0, WIDTH, HEIGHT);</b>
+<i>172</i>&nbsp;
+<b class="fc"><i>173</i>&nbsp;        counterCenter = houseSheet.crop(WIDTH * 2, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>174</i>&nbsp;        counterCorner = houseSheet.crop(WIDTH * 3, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>175</i>&nbsp;        counterEnd = houseSheet.crop(WIDTH * 4, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<i>176</i>&nbsp;
+<b class="fc"><i>177</i>&nbsp;        dogBowl = houseSheet.crop(WIDTH * 4, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>178</i>&nbsp;        dogBone = houseSheet.crop(WIDTH * 3, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>179</i>&nbsp;        box = houseSheet.crop(WIDTH * 4, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>180</i>&nbsp;
+<b class="fc"><i>181</i>&nbsp;        fridgeTop = houseSheet.crop(WIDTH * 5, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>182</i>&nbsp;        fridgeBot = houseSheet.crop(WIDTH * 5, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>183</i>&nbsp;        stoveTop = houseSheet.crop(WIDTH * 6, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>184</i>&nbsp;        stoveBot = houseSheet.crop(WIDTH * 6, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>185</i>&nbsp;        sinkLTop = houseSheet.crop(WIDTH * 7, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>186</i>&nbsp;        sinkLBot = houseSheet.crop(WIDTH * 7, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>187</i>&nbsp;        sinkRTop = houseSheet.crop(WIDTH * 8, HEIGHT, WIDTH, HEIGHT);</b>
+<b class="fc"><i>188</i>&nbsp;        sinkRBot = houseSheet.crop(WIDTH * 8, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<i>189</i>&nbsp;
+<b class="fc"><i>190</i>&nbsp;        phone = houseSheet.crop(WIDTH * 9, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>191</i>&nbsp;        kitRug = houseSheet.crop(WIDTH * 6, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>192</i>&nbsp;        clock = houseSheet.crop(WIDTH * 7, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>193</i>&nbsp;        endTable = houseSheet.crop(WIDTH * 10, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>194</i>&nbsp;
+<b class="fc"><i>195</i>&nbsp;        toiletTop = houseSheet.crop(0, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>196</i>&nbsp;        toiletBot = houseSheet.crop(0, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>197</i>&nbsp;        bathSinkTop = houseSheet.crop(WIDTH, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>198</i>&nbsp;        bathSinkBot = houseSheet.crop(WIDTH, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>199</i>&nbsp;        showerTop = houseSheet.crop(WIDTH * 2, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>200</i>&nbsp;        showerBot = houseSheet.crop(WIDTH * 2, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>201</i>&nbsp;
+<b class="fc"><i>202</i>&nbsp;        couchLeft = houseSheet.crop(WIDTH * 3, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>203</i>&nbsp;        couchRight = houseSheet.crop(WIDTH * 4, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>204</i>&nbsp;        tvTop = houseSheet.crop(WIDTH * 5, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>205</i>&nbsp;        tvBot = houseSheet.crop(WIDTH * 5, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>206</i>&nbsp;
+<b class="fc"><i>207</i>&nbsp;        shelfTL = houseSheet.crop(WIDTH * 8, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>208</i>&nbsp;        shelfTR = houseSheet.crop(WIDTH * 9, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>209</i>&nbsp;        shelfBL = houseSheet.crop(WIDTH * 8, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>210</i>&nbsp;        shelfBR = houseSheet.crop(WIDTH * 9, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>211</i>&nbsp;
+<b class="fc"><i>212</i>&nbsp;        deskTop = houseSheet.crop(WIDTH * 10, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>213</i>&nbsp;        deskBot = houseSheet.crop(WIDTH * 10, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<i>214</i>&nbsp;
+<b class="fc"><i>215</i>&nbsp;        bedTL = houseSheet.crop(WIDTH * 11, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>216</i>&nbsp;        bedTR = houseSheet.crop(WIDTH * 12, HEIGHT * 2, WIDTH, HEIGHT);</b>
+<b class="fc"><i>217</i>&nbsp;        bedCL = houseSheet.crop(WIDTH * 11, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>218</i>&nbsp;        bedCR = houseSheet.crop(WIDTH * 12, HEIGHT * 3, WIDTH, HEIGHT);</b>
+<b class="fc"><i>219</i>&nbsp;        bedBL = houseSheet.crop(WIDTH * 11, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<b class="fc"><i>220</i>&nbsp;        bedBR = houseSheet.crop(WIDTH * 12, HEIGHT * 4, WIDTH, HEIGHT);</b>
+<i>221</i>&nbsp;
+<b class="fc"><i>222</i>&nbsp;        diningTL = houseSheet.crop(0, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>223</i>&nbsp;        diningTR = houseSheet.crop(WIDTH, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>224</i>&nbsp;        diningBL = houseSheet.crop(0, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>225</i>&nbsp;        diningBR = houseSheet.crop(WIDTH, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>226</i>&nbsp;
+<b class="fc"><i>227</i>&nbsp;        rugTL = houseSheet.crop(WIDTH * 2, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>228</i>&nbsp;        rugTC = houseSheet.crop(WIDTH * 3, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>229</i>&nbsp;        rugTR = houseSheet.crop(WIDTH * 4, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>230</i>&nbsp;        rugBL = houseSheet.crop(WIDTH * 2, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>231</i>&nbsp;        rugBC = houseSheet.crop(WIDTH * 3, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>232</i>&nbsp;        rugBR = houseSheet.crop(WIDTH * 4, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>233</i>&nbsp;
+<b class="fc"><i>234</i>&nbsp;        grassLong = houseSheet.crop(WIDTH * 5, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>235</i>&nbsp;        grassFlowers = houseSheet.crop(WIDTH * 6, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>236</i>&nbsp;        grassRock = houseSheet.crop(WIDTH * 5, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<b class="fc"><i>237</i>&nbsp;        grassShort = houseSheet.crop(WIDTH * 6, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>238</i>&nbsp;
+<b class="fc"><i>239</i>&nbsp;        doorTop = houseSheet.crop(WIDTH * 7, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>240</i>&nbsp;        doorBot = houseSheet.crop(WIDTH * 7, HEIGHT * 6, WIDTH, HEIGHT);</b>
+<i>241</i>&nbsp;
+<b class="fc"><i>242</i>&nbsp;        path = houseSheet.crop(WIDTH * 8, HEIGHT * 5, WIDTH, HEIGHT);</b>
+<b class="fc"><i>243</i>&nbsp;    }</b>
+<i>244</i>&nbsp;
+<i>245</i>&nbsp;    // ANIMATION GETTERS
+<i>246</i>&nbsp;
+<i>247</i>&nbsp;
+<i>248</i>&nbsp;    /**
+<i>249</i>&nbsp;     * @return title screen animation images.
+<i>250</i>&nbsp;     */
+<i>251</i>&nbsp;    public static BufferedImage[] getTitleImg() {
+<b class="fc"><i>252</i>&nbsp;        return titleImg;</b>
+<i>253</i>&nbsp;    }
+<i>254</i>&nbsp;
+<i>255</i>&nbsp;    /**
+<i>256</i>&nbsp;     * @return walking down animation images.
+<i>257</i>&nbsp;     */
+<i>258</i>&nbsp;    public static BufferedImage[] getDogDown() {
+<b class="fc"><i>259</i>&nbsp;        BufferedImage[] buff = dogDown;</b>
+<b class="fc"><i>260</i>&nbsp;        return buff;</b>
+<i>261</i>&nbsp;    }
+<i>262</i>&nbsp;
+<i>263</i>&nbsp;    /**
+<i>264</i>&nbsp;     * @return walking left animation images.
+<i>265</i>&nbsp;     */
+<i>266</i>&nbsp;    public static BufferedImage[] getDogLeft() {
+<b class="fc"><i>267</i>&nbsp;        BufferedImage[] buff = dogLeft;</b>
+<b class="fc"><i>268</i>&nbsp;        return buff;</b>
+<i>269</i>&nbsp;    }
+<i>270</i>&nbsp;
+<i>271</i>&nbsp;    /**
+<i>272</i>&nbsp;     * @return walking right animation images.
+<i>273</i>&nbsp;     */
+<i>274</i>&nbsp;    public static BufferedImage[] getDogRight() {
+<b class="fc"><i>275</i>&nbsp;        BufferedImage[] buff = dogRight;</b>
+<b class="fc"><i>276</i>&nbsp;        return buff;</b>
+<i>277</i>&nbsp;    }
+<i>278</i>&nbsp;
+<i>279</i>&nbsp;    /**
+<i>280</i>&nbsp;     * @return walking up animation images.
+<i>281</i>&nbsp;     */
+<i>282</i>&nbsp;    public static BufferedImage[] getDogUp() {
+<b class="fc"><i>283</i>&nbsp;        BufferedImage[] buff = dogUp;</b>
+<b class="fc"><i>284</i>&nbsp;        return buff;</b>
+<i>285</i>&nbsp;    }
+<i>286</i>&nbsp;
+<i>287</i>&nbsp;    // TILE GETTERS
+<i>288</i>&nbsp;
+<i>289</i>&nbsp;    /**
+<i>290</i>&nbsp;     * @return regular dog tile.
+<i>291</i>&nbsp;     */
+<i>292</i>&nbsp;    public static BufferedImage getDog() {
+<b class="fc"><i>293</i>&nbsp;        return dog;</b>
+<i>294</i>&nbsp;    }
+<i>295</i>&nbsp;
+<i>296</i>&nbsp;    /**
+<i>297</i>&nbsp;     * @return wood floor tile.
+<i>298</i>&nbsp;     */
+<i>299</i>&nbsp;    public static BufferedImage getWoodFloor() {
+<b class="fc"><i>300</i>&nbsp;        return woodFloor;</b>
+<i>301</i>&nbsp;    }
+<i>302</i>&nbsp;
+<i>303</i>&nbsp;    /**
+<i>304</i>&nbsp;     * @return kitchen floor tile.
+<i>305</i>&nbsp;     */
+<i>306</i>&nbsp;    public static BufferedImage getKitchenFloor() {
+<b class="fc"><i>307</i>&nbsp;        return kitchenFloor;</b>
+<i>308</i>&nbsp;    }
+<i>309</i>&nbsp;
+<i>310</i>&nbsp;    /**
+<i>311</i>&nbsp;     * @return bathroom floor tile.
+<i>312</i>&nbsp;     */
+<i>313</i>&nbsp;    public static BufferedImage getBathFloor() {
+<b class="fc"><i>314</i>&nbsp;        return bathFloor;</b>
+<i>315</i>&nbsp;    }
+<i>316</i>&nbsp;
+<i>317</i>&nbsp;    /**
+<i>318</i>&nbsp;     * @return stone floor tile.
+<i>319</i>&nbsp;     */
+<i>320</i>&nbsp;    public static BufferedImage getStoneFloor() {
+<b class="fc"><i>321</i>&nbsp;        return stoneFloor;</b>
+<i>322</i>&nbsp;    }
+<i>323</i>&nbsp;
+<i>324</i>&nbsp;    /**
+<i>325</i>&nbsp;     * @return wall left tile.
+<i>326</i>&nbsp;     */
+<i>327</i>&nbsp;    public static BufferedImage getWallLeft() {
+<b class="fc"><i>328</i>&nbsp;        return wallLeft;</b>
+<i>329</i>&nbsp;    }
+<i>330</i>&nbsp;
+<i>331</i>&nbsp;    /**
+<i>332</i>&nbsp;     * @return wall center tile.
+<i>333</i>&nbsp;     */
+<i>334</i>&nbsp;    public static BufferedImage getWallCenter() {
+<b class="fc"><i>335</i>&nbsp;        return wallCenter;</b>
+<i>336</i>&nbsp;    }
+<i>337</i>&nbsp;
+<i>338</i>&nbsp;    /**
+<i>339</i>&nbsp;     * @return wall right tile.
+<i>340</i>&nbsp;     */
+<i>341</i>&nbsp;    public static BufferedImage getWallRight() {
+<b class="fc"><i>342</i>&nbsp;        return wallRight;</b>
+<i>343</i>&nbsp;    }
+<i>344</i>&nbsp;
+<i>345</i>&nbsp;    /**
+<i>346</i>&nbsp;     * @return wall end tile.
+<i>347</i>&nbsp;     */
+<i>348</i>&nbsp;    public static BufferedImage getWallEnd() {
+<b class="fc"><i>349</i>&nbsp;        return wallEnd;</b>
+<i>350</i>&nbsp;    }
+<i>351</i>&nbsp;
+<i>352</i>&nbsp;    /**
+<i>353</i>&nbsp;     * @return ceiling left tile.
+<i>354</i>&nbsp;     */
+<i>355</i>&nbsp;    public static BufferedImage getCeilingLeft() {
+<b class="fc"><i>356</i>&nbsp;        return ceilingLeft;</b>
+<i>357</i>&nbsp;    }
+<i>358</i>&nbsp;
+<i>359</i>&nbsp;    /**
+<i>360</i>&nbsp;     * @return ceiling center tile.
+<i>361</i>&nbsp;     */
+<i>362</i>&nbsp;    public static BufferedImage getCeilingCenter() {
+<b class="fc"><i>363</i>&nbsp;        return ceilingCenter;</b>
+<i>364</i>&nbsp;    }
+<i>365</i>&nbsp;
+<i>366</i>&nbsp;    /**
+<i>367</i>&nbsp;     * @return ceiling right tile
+<i>368</i>&nbsp;     */
+<i>369</i>&nbsp;    public static BufferedImage getCeilingRight() {
+<b class="fc"><i>370</i>&nbsp;        return ceilingRight;</b>
+<i>371</i>&nbsp;    }
+<i>372</i>&nbsp;
+<i>373</i>&nbsp;    /**
+<i>374</i>&nbsp;     * @return ceiling end tile.
+<i>375</i>&nbsp;     */
+<i>376</i>&nbsp;    public static BufferedImage getCeilingEnd() {
+<b class="fc"><i>377</i>&nbsp;        return ceilingEnd;</b>
+<i>378</i>&nbsp;    }
+<i>379</i>&nbsp;
+<i>380</i>&nbsp;    /**
+<i>381</i>&nbsp;     * @return ceiling down tile.
+<i>382</i>&nbsp;     */
+<i>383</i>&nbsp;    public static BufferedImage getCeilingDown() {
+<b class="fc"><i>384</i>&nbsp;        return ceilingDown;</b>
+<i>385</i>&nbsp;    }
+<i>386</i>&nbsp;
+<i>387</i>&nbsp;    /**
+<i>388</i>&nbsp;     * @return ceiling bottom center left tile.
+<i>389</i>&nbsp;     */
+<i>390</i>&nbsp;    public static BufferedImage getCeilingBCL() {
+<b class="fc"><i>391</i>&nbsp;        return ceilingBCL;</b>
+<i>392</i>&nbsp;    }
+<i>393</i>&nbsp;
+<i>394</i>&nbsp;    /**
+<i>395</i>&nbsp;     * @return ceiling bottom center right tile.
+<i>396</i>&nbsp;     */
+<i>397</i>&nbsp;    public static BufferedImage getCeilingBCR() {
+<b class="fc"><i>398</i>&nbsp;        return ceilingBCR;</b>
+<i>399</i>&nbsp;    }
+<i>400</i>&nbsp;
+<i>401</i>&nbsp;    /**
+<i>402</i>&nbsp;     * @return ceiling top center left tile.
+<i>403</i>&nbsp;     */
+<i>404</i>&nbsp;    public static BufferedImage getCeilingTCL() {
+<b class="fc"><i>405</i>&nbsp;        return ceilingTCL;</b>
+<i>406</i>&nbsp;    }
+<i>407</i>&nbsp;
+<i>408</i>&nbsp;    /**
+<i>409</i>&nbsp;     * @return ceiling top center right tile.
+<i>410</i>&nbsp;     */
+<i>411</i>&nbsp;    public static BufferedImage getCeilingTCR() {
+<b class="fc"><i>412</i>&nbsp;        return ceilingTCR;</b>
+<i>413</i>&nbsp;    }
+<i>414</i>&nbsp;
+<i>415</i>&nbsp;    /**
+<i>416</i>&nbsp;     * @return ceiling pointing down tile.
+<i>417</i>&nbsp;     */
+<i>418</i>&nbsp;    public static BufferedImage getCeilingPDown() {
+<b class="fc"><i>419</i>&nbsp;        return ceilingPDown;</b>
+<i>420</i>&nbsp;    }
+<i>421</i>&nbsp;
+<i>422</i>&nbsp;    /**
+<i>423</i>&nbsp;     * @return ceiling pointing left tile.
+<i>424</i>&nbsp;     */
+<i>425</i>&nbsp;    public static BufferedImage getCeilingPLeft() {
+<b class="fc"><i>426</i>&nbsp;        return ceilingPLeft;</b>
+<i>427</i>&nbsp;    }
+<i>428</i>&nbsp;
+<i>429</i>&nbsp;    /**
+<i>430</i>&nbsp;     * @return ceiling poitning right tile.
+<i>431</i>&nbsp;     */
+<i>432</i>&nbsp;    public static BufferedImage getCeilingPRight() {
+<b class="fc"><i>433</i>&nbsp;        return ceilingPRight;</b>
+<i>434</i>&nbsp;    }
+<i>435</i>&nbsp;
+<i>436</i>&nbsp;    /**
+<i>437</i>&nbsp;     * @return outer wall top left tile.
+<i>438</i>&nbsp;     */
+<i>439</i>&nbsp;    public static BufferedImage getOutWallTL() {
+<b class="fc"><i>440</i>&nbsp;        return outWallTL;</b>
+<i>441</i>&nbsp;    }
+<i>442</i>&nbsp;
+<i>443</i>&nbsp;    /**
+<i>444</i>&nbsp;     * @return outer wall top center tile.
+<i>445</i>&nbsp;     */
+<i>446</i>&nbsp;    public static BufferedImage getOutWallTC() {
+<b class="fc"><i>447</i>&nbsp;        return outWallTC;</b>
+<i>448</i>&nbsp;    }
+<i>449</i>&nbsp;
+<i>450</i>&nbsp;    /**
+<i>451</i>&nbsp;     * @return outer wall top right tile.
+<i>452</i>&nbsp;     */
+<i>453</i>&nbsp;    public static BufferedImage getOutWallTR() {
+<b class="fc"><i>454</i>&nbsp;        return outWallTR;</b>
+<i>455</i>&nbsp;    }
+<i>456</i>&nbsp;
+<i>457</i>&nbsp;    /**
+<i>458</i>&nbsp;     * @return outer wall bottom left tile.
+<i>459</i>&nbsp;     */
+<i>460</i>&nbsp;    public static BufferedImage getOutWallBL() {
+<b class="nc"><i>461</i>&nbsp;        return outWallBL;</b>
+<i>462</i>&nbsp;    }
+<i>463</i>&nbsp;
+<i>464</i>&nbsp;    /**
+<i>465</i>&nbsp;     * @return outer wall bottom center tile.
+<i>466</i>&nbsp;     */
+<i>467</i>&nbsp;    public static BufferedImage getOutWallBC() {
+<b class="fc"><i>468</i>&nbsp;        return outWallBC;</b>
+<i>469</i>&nbsp;    }
+<i>470</i>&nbsp;
+<i>471</i>&nbsp;    /**
+<i>472</i>&nbsp;     * @return outer wall bottom right tile.
+<i>473</i>&nbsp;     */
+<i>474</i>&nbsp;    public static BufferedImage getOutWallBR() {
+<b class="fc"><i>475</i>&nbsp;        return outWallBR;</b>
+<i>476</i>&nbsp;    }
+<i>477</i>&nbsp;
+<i>478</i>&nbsp;    /**
+<i>479</i>&nbsp;     * @return plant top tile.
+<i>480</i>&nbsp;     */
+<i>481</i>&nbsp;    public static BufferedImage getPlantTop() {
+<b class="fc"><i>482</i>&nbsp;        return plantTop;</b>
+<i>483</i>&nbsp;    }
+<i>484</i>&nbsp;
+<i>485</i>&nbsp;    /**
+<i>486</i>&nbsp;     * @return plant bottom tile.
+<i>487</i>&nbsp;     */
+<i>488</i>&nbsp;    public static BufferedImage getPlantBot() {
+<b class="fc"><i>489</i>&nbsp;        return plantBot;</b>
+<i>490</i>&nbsp;    }
+<i>491</i>&nbsp;
+<i>492</i>&nbsp;    /**
+<i>493</i>&nbsp;     * @return kitchen table top left tile.
+<i>494</i>&nbsp;     */
+<i>495</i>&nbsp;    public static BufferedImage getKitTableTL() {
+<b class="fc"><i>496</i>&nbsp;        return kitTableTL;</b>
+<i>497</i>&nbsp;    }
+<i>498</i>&nbsp;
+<i>499</i>&nbsp;    /**
+<i>500</i>&nbsp;     * @return kitchen table top right tile.
+<i>501</i>&nbsp;     */
+<i>502</i>&nbsp;    public static BufferedImage getKitTableTR() {
+<b class="fc"><i>503</i>&nbsp;        return kitTableTR;</b>
+<i>504</i>&nbsp;    }
+<i>505</i>&nbsp;
+<i>506</i>&nbsp;    /**
+<i>507</i>&nbsp;     * @return kitchen table bottom left tile.
+<i>508</i>&nbsp;     */
+<i>509</i>&nbsp;    public static BufferedImage getKitTableBL() {
+<b class="fc"><i>510</i>&nbsp;        return kitTableBL;</b>
+<i>511</i>&nbsp;    }
+<i>512</i>&nbsp;
+<i>513</i>&nbsp;    /**
+<i>514</i>&nbsp;     * @return kitchen table bottom right tile.
+<i>515</i>&nbsp;     */
+<i>516</i>&nbsp;    public static BufferedImage getKitTableBR() {
+<b class="fc"><i>517</i>&nbsp;        return kitTableBR;</b>
+<i>518</i>&nbsp;    }
+<i>519</i>&nbsp;
+<i>520</i>&nbsp;    /**
+<i>521</i>&nbsp;     * @return chair left facing tile.
+<i>522</i>&nbsp;     */
+<i>523</i>&nbsp;    public static BufferedImage getChairLeft() {
+<b class="fc"><i>524</i>&nbsp;        return chairLeft;</b>
+<i>525</i>&nbsp;    }
+<i>526</i>&nbsp;
+<i>527</i>&nbsp;    /**
+<i>528</i>&nbsp;     * @return chair right facing tile.
+<i>529</i>&nbsp;     */
+<i>530</i>&nbsp;    public static BufferedImage getChairRight() {
+<b class="fc"><i>531</i>&nbsp;        return chairRight;</b>
+<i>532</i>&nbsp;    }
+<i>533</i>&nbsp;
+<i>534</i>&nbsp;    /**
+<i>535</i>&nbsp;     * @return counter center tile.
+<i>536</i>&nbsp;     */
+<i>537</i>&nbsp;    public static BufferedImage getCounterCenter() {
+<b class="fc"><i>538</i>&nbsp;        return counterCenter;</b>
+<i>539</i>&nbsp;    }
+<i>540</i>&nbsp;
+<i>541</i>&nbsp;    /**
+<i>542</i>&nbsp;     * @return counter corner tile.
+<i>543</i>&nbsp;     */
+<i>544</i>&nbsp;    public static BufferedImage getCounterCorner() {
+<b class="fc"><i>545</i>&nbsp;        return counterCorner;</b>
+<i>546</i>&nbsp;    }
+<i>547</i>&nbsp;
+<i>548</i>&nbsp;    /**
+<i>549</i>&nbsp;     * @return counter end tile.
+<i>550</i>&nbsp;     */
+<i>551</i>&nbsp;    public static BufferedImage getCounterEnd() {
+<b class="fc"><i>552</i>&nbsp;        return counterEnd;</b>
+<i>553</i>&nbsp;    }
+<i>554</i>&nbsp;
+<i>555</i>&nbsp;    /**
+<i>556</i>&nbsp;     * @return dog bowl tile.
+<i>557</i>&nbsp;     */
+<i>558</i>&nbsp;    public static BufferedImage getDogBowl() {
+<b class="fc"><i>559</i>&nbsp;        return dogBowl;</b>
+<i>560</i>&nbsp;    }
+<i>561</i>&nbsp;
+<i>562</i>&nbsp;    /**
+<i>563</i>&nbsp;     * @return dog bone tile.
+<i>564</i>&nbsp;     */
+<i>565</i>&nbsp;    public static BufferedImage getDogBone() {
+<b class="fc"><i>566</i>&nbsp;        return dogBone;</b>
+<i>567</i>&nbsp;    }
+<i>568</i>&nbsp;
+<i>569</i>&nbsp;    /**
+<i>570</i>&nbsp;     * @return box tile.
+<i>571</i>&nbsp;     */
+<i>572</i>&nbsp;    public static BufferedImage getBox() {
+<b class="fc"><i>573</i>&nbsp;        return box;</b>
+<i>574</i>&nbsp;    }
+<i>575</i>&nbsp;
+<i>576</i>&nbsp;    /**
+<i>577</i>&nbsp;     * @return fridge top tile.
+<i>578</i>&nbsp;     */
+<i>579</i>&nbsp;    public static BufferedImage getFridgeTop() {
+<b class="fc"><i>580</i>&nbsp;        return fridgeTop;</b>
+<i>581</i>&nbsp;    }
+<i>582</i>&nbsp;
+<i>583</i>&nbsp;    /**
+<i>584</i>&nbsp;     * @return fridge bottom tile.
+<i>585</i>&nbsp;     */
+<i>586</i>&nbsp;    public static BufferedImage getFridgeBot() {
+<b class="fc"><i>587</i>&nbsp;        return fridgeBot;</b>
+<i>588</i>&nbsp;    }
+<i>589</i>&nbsp;
+<i>590</i>&nbsp;    /**
+<i>591</i>&nbsp;     * @return stove top tile.
+<i>592</i>&nbsp;     */
+<i>593</i>&nbsp;    public static BufferedImage getStoveTop() {
+<b class="fc"><i>594</i>&nbsp;        return stoveTop;</b>
+<i>595</i>&nbsp;    }
+<i>596</i>&nbsp;
+<i>597</i>&nbsp;    /**
+<i>598</i>&nbsp;     * @return stove bottom tile.
+<i>599</i>&nbsp;     */
+<i>600</i>&nbsp;    public static BufferedImage getStoveBot() {
+<b class="fc"><i>601</i>&nbsp;        return stoveBot;</b>
+<i>602</i>&nbsp;    }
+<i>603</i>&nbsp;
+<i>604</i>&nbsp;    /**
+<i>605</i>&nbsp;     * @return sink left top tile.
+<i>606</i>&nbsp;     */
+<i>607</i>&nbsp;    public static BufferedImage getSinkLTop() {
+<b class="fc"><i>608</i>&nbsp;        return sinkLTop;</b>
+<i>609</i>&nbsp;    }
+<i>610</i>&nbsp;
+<i>611</i>&nbsp;    /**
+<i>612</i>&nbsp;     * @return sink left bottom tile.
+<i>613</i>&nbsp;     */
+<i>614</i>&nbsp;    public static BufferedImage getSinkLBot() {
+<b class="fc"><i>615</i>&nbsp;        return sinkLBot;</b>
+<i>616</i>&nbsp;    }
+<i>617</i>&nbsp;
+<i>618</i>&nbsp;    /**
+<i>619</i>&nbsp;     * @return sink right top tile.
+<i>620</i>&nbsp;     */
+<i>621</i>&nbsp;    public static BufferedImage getSinkRTop() {
+<b class="fc"><i>622</i>&nbsp;        return sinkRTop;</b>
+<i>623</i>&nbsp;    }
+<i>624</i>&nbsp;
+<i>625</i>&nbsp;    /**
+<i>626</i>&nbsp;     * @return sink right bottom tile.
+<i>627</i>&nbsp;     */
+<i>628</i>&nbsp;    public static BufferedImage getSinkRBot() {
+<b class="fc"><i>629</i>&nbsp;        return sinkRBot;</b>
+<i>630</i>&nbsp;    }
+<i>631</i>&nbsp;
+<i>632</i>&nbsp;    /**
+<i>633</i>&nbsp;     * @return phone tile.
+<i>634</i>&nbsp;     */
+<i>635</i>&nbsp;    public static BufferedImage getPhone() {
+<b class="fc"><i>636</i>&nbsp;        return phone;</b>
+<i>637</i>&nbsp;    }
+<i>638</i>&nbsp;
+<i>639</i>&nbsp;    /**
+<i>640</i>&nbsp;     * @return kitchen rug tile.
+<i>641</i>&nbsp;     */
+<i>642</i>&nbsp;    public static BufferedImage getKitRug() {
+<b class="fc"><i>643</i>&nbsp;        return kitRug;</b>
+<i>644</i>&nbsp;    }
+<i>645</i>&nbsp;
+<i>646</i>&nbsp;    /**
+<i>647</i>&nbsp;     * @return clock tile.
+<i>648</i>&nbsp;     */
+<i>649</i>&nbsp;    public static BufferedImage getClock() {
+<b class="fc"><i>650</i>&nbsp;        return clock;</b>
+<i>651</i>&nbsp;    }
+<i>652</i>&nbsp;
+<i>653</i>&nbsp;    /**
+<i>654</i>&nbsp;     * @return end table tile.
+<i>655</i>&nbsp;     */
+<i>656</i>&nbsp;    public static BufferedImage getEndTable() {
+<b class="fc"><i>657</i>&nbsp;        return endTable;</b>
+<i>658</i>&nbsp;    }
+<i>659</i>&nbsp;
+<i>660</i>&nbsp;    /**
+<i>661</i>&nbsp;     * @return toilet top tile.
+<i>662</i>&nbsp;     */
+<i>663</i>&nbsp;    public static BufferedImage getToiletTop() {
+<b class="fc"><i>664</i>&nbsp;        return toiletTop;</b>
+<i>665</i>&nbsp;    }
+<i>666</i>&nbsp;
+<i>667</i>&nbsp;    /**
+<i>668</i>&nbsp;     * @return toilet bottom tile.
+<i>669</i>&nbsp;     */
+<i>670</i>&nbsp;    public static BufferedImage getToiletBot() {
+<b class="fc"><i>671</i>&nbsp;        return toiletBot;</b>
+<i>672</i>&nbsp;    }
+<i>673</i>&nbsp;
+<i>674</i>&nbsp;    /**
+<i>675</i>&nbsp;     * @return bathroom sink top tile.
+<i>676</i>&nbsp;     */
+<i>677</i>&nbsp;    public static BufferedImage getBathSinkTop() {
+<b class="fc"><i>678</i>&nbsp;        return bathSinkTop;</b>
+<i>679</i>&nbsp;    }
+<i>680</i>&nbsp;
+<i>681</i>&nbsp;    /**
+<i>682</i>&nbsp;     * @return bathroom sink bottom tile.
+<i>683</i>&nbsp;     */
+<i>684</i>&nbsp;    public static BufferedImage getBathSinkBot() {
+<b class="fc"><i>685</i>&nbsp;        return bathSinkBot;</b>
+<i>686</i>&nbsp;    }
+<i>687</i>&nbsp;
+<i>688</i>&nbsp;    /**
+<i>689</i>&nbsp;     * @return shower top tile.
+<i>690</i>&nbsp;     */
+<i>691</i>&nbsp;    public static BufferedImage getShowerTop() {
+<b class="fc"><i>692</i>&nbsp;        return showerTop;</b>
+<i>693</i>&nbsp;    }
+<i>694</i>&nbsp;
+<i>695</i>&nbsp;    /**
+<i>696</i>&nbsp;     * @return shower bottom tile.
+<i>697</i>&nbsp;     */
+<i>698</i>&nbsp;    public static BufferedImage getShowerBot() {
+<b class="fc"><i>699</i>&nbsp;        return showerBot;</b>
+<i>700</i>&nbsp;    }
+<i>701</i>&nbsp;
+<i>702</i>&nbsp;    /**
+<i>703</i>&nbsp;     * @return couch left tile.
+<i>704</i>&nbsp;     */
+<i>705</i>&nbsp;    public static BufferedImage getCouchLeft() {
+<b class="fc"><i>706</i>&nbsp;        return couchLeft;</b>
+<i>707</i>&nbsp;    }
+<i>708</i>&nbsp;
+<i>709</i>&nbsp;    /**
+<i>710</i>&nbsp;     * @return couch right tile.
+<i>711</i>&nbsp;     */
+<i>712</i>&nbsp;    public static BufferedImage getCouchRight() {
+<b class="fc"><i>713</i>&nbsp;        return couchRight;</b>
+<i>714</i>&nbsp;    }
+<i>715</i>&nbsp;
+<i>716</i>&nbsp;    /**
+<i>717</i>&nbsp;     * @return tv top tile.
+<i>718</i>&nbsp;     */
+<i>719</i>&nbsp;    public static BufferedImage getTvTop() {
+<b class="fc"><i>720</i>&nbsp;        return tvTop;</b>
+<i>721</i>&nbsp;    }
+<i>722</i>&nbsp;
+<i>723</i>&nbsp;    /**
+<i>724</i>&nbsp;     * @return tv bottom tile.
+<i>725</i>&nbsp;     */
+<i>726</i>&nbsp;    public static BufferedImage getTvBot() {
+<b class="fc"><i>727</i>&nbsp;        return tvBot;</b>
+<i>728</i>&nbsp;    }
+<i>729</i>&nbsp;
+<i>730</i>&nbsp;    /**
+<i>731</i>&nbsp;     * @return shelf top left tile.
+<i>732</i>&nbsp;     */
+<i>733</i>&nbsp;    public static BufferedImage getShelfTL() {
+<b class="fc"><i>734</i>&nbsp;        return shelfTL;</b>
+<i>735</i>&nbsp;    }
+<i>736</i>&nbsp;
+<i>737</i>&nbsp;    /**
+<i>738</i>&nbsp;     * @return shelf top right tile.
+<i>739</i>&nbsp;     */
+<i>740</i>&nbsp;    public static BufferedImage getShelfTR() {
+<b class="fc"><i>741</i>&nbsp;        return shelfTR;</b>
+<i>742</i>&nbsp;    }
+<i>743</i>&nbsp;
+<i>744</i>&nbsp;    /**
+<i>745</i>&nbsp;     * @return shelf bottom left tile.
+<i>746</i>&nbsp;     */
+<i>747</i>&nbsp;    public static BufferedImage getShelfBL() {
+<b class="fc"><i>748</i>&nbsp;        return shelfBL;</b>
+<i>749</i>&nbsp;    }
+<i>750</i>&nbsp;
+<i>751</i>&nbsp;    /**
+<i>752</i>&nbsp;     * @return shelf bottom right tile.
+<i>753</i>&nbsp;     */
+<i>754</i>&nbsp;    public static BufferedImage getShelfBR() {
+<b class="fc"><i>755</i>&nbsp;        return shelfBR;</b>
+<i>756</i>&nbsp;    }
+<i>757</i>&nbsp;
+<i>758</i>&nbsp;    /**
+<i>759</i>&nbsp;     * @return desk top tile.
+<i>760</i>&nbsp;     */
+<i>761</i>&nbsp;    public static BufferedImage getDeskTop() {
+<b class="fc"><i>762</i>&nbsp;        return deskTop;</b>
+<i>763</i>&nbsp;    }
+<i>764</i>&nbsp;
+<i>765</i>&nbsp;    /**
+<i>766</i>&nbsp;     * @return desk bottom tile.
+<i>767</i>&nbsp;     */
+<i>768</i>&nbsp;    public static BufferedImage getDeskBot() {
+<b class="fc"><i>769</i>&nbsp;        return deskBot;</b>
+<i>770</i>&nbsp;    }
+<i>771</i>&nbsp;
+<i>772</i>&nbsp;    /**
+<i>773</i>&nbsp;     * @return bed top left tile.
+<i>774</i>&nbsp;     */
+<i>775</i>&nbsp;    public static BufferedImage getBedTL() {
+<b class="fc"><i>776</i>&nbsp;        return bedTL;</b>
+<i>777</i>&nbsp;    }
+<i>778</i>&nbsp;
+<i>779</i>&nbsp;    /**
+<i>780</i>&nbsp;     * @return bed top right tile.
+<i>781</i>&nbsp;     */
+<i>782</i>&nbsp;    public static BufferedImage getBedTR() {
+<b class="fc"><i>783</i>&nbsp;        return bedTR;</b>
+<i>784</i>&nbsp;    }
+<i>785</i>&nbsp;
+<i>786</i>&nbsp;    /**
+<i>787</i>&nbsp;     * @return bed center left tile.
+<i>788</i>&nbsp;     */
+<i>789</i>&nbsp;    public static BufferedImage getBedCL() {
+<b class="fc"><i>790</i>&nbsp;        return bedCL;</b>
+<i>791</i>&nbsp;    }
+<i>792</i>&nbsp;
+<i>793</i>&nbsp;    /**
+<i>794</i>&nbsp;     * @return bed center right tile.
+<i>795</i>&nbsp;     */
+<i>796</i>&nbsp;    public static BufferedImage getBedCR() {
+<b class="fc"><i>797</i>&nbsp;        return bedCR;</b>
+<i>798</i>&nbsp;    }
+<i>799</i>&nbsp;
+<i>800</i>&nbsp;    /**
+<i>801</i>&nbsp;     * @return bed bottom left tile.
+<i>802</i>&nbsp;     */
+<i>803</i>&nbsp;    public static BufferedImage getBedBL() {
+<b class="fc"><i>804</i>&nbsp;        return bedBL;</b>
+<i>805</i>&nbsp;    }
+<i>806</i>&nbsp;
+<i>807</i>&nbsp;    /**
+<i>808</i>&nbsp;     * @return bed bottom right tile.
+<i>809</i>&nbsp;     */
+<i>810</i>&nbsp;    public static BufferedImage getBedBR() {
+<b class="fc"><i>811</i>&nbsp;        return bedBR;</b>
+<i>812</i>&nbsp;    }
+<i>813</i>&nbsp;
+<i>814</i>&nbsp;    /**
+<i>815</i>&nbsp;     * @return dining table top left tile.
+<i>816</i>&nbsp;     */
+<i>817</i>&nbsp;    public static BufferedImage getDiningTL() {
+<b class="fc"><i>818</i>&nbsp;        return diningTL;</b>
+<i>819</i>&nbsp;    }
+<i>820</i>&nbsp;
+<i>821</i>&nbsp;    /**
+<i>822</i>&nbsp;     * @return dining table top right tile.
+<i>823</i>&nbsp;     */
+<i>824</i>&nbsp;    public static BufferedImage getDiningTR() {
+<b class="fc"><i>825</i>&nbsp;        return diningTR;</b>
+<i>826</i>&nbsp;    }
+<i>827</i>&nbsp;
+<i>828</i>&nbsp;    /**
+<i>829</i>&nbsp;     * @return dining table bottom left tile.
+<i>830</i>&nbsp;     */
+<i>831</i>&nbsp;    public static BufferedImage getDiningBL() {
+<b class="fc"><i>832</i>&nbsp;        return diningBL;</b>
+<i>833</i>&nbsp;    }
+<i>834</i>&nbsp;
+<i>835</i>&nbsp;    /**
+<i>836</i>&nbsp;     * @return dining table bottom right tile.
+<i>837</i>&nbsp;     */
+<i>838</i>&nbsp;    public static BufferedImage getDiningBR() {
+<b class="fc"><i>839</i>&nbsp;        return diningBR;</b>
+<i>840</i>&nbsp;    }
+<i>841</i>&nbsp;
+<i>842</i>&nbsp;    /**
+<i>843</i>&nbsp;     * @return rug top left tile.
+<i>844</i>&nbsp;     */
+<i>845</i>&nbsp;    public static BufferedImage getRugTL() {
+<b class="fc"><i>846</i>&nbsp;        return rugTL;</b>
+<i>847</i>&nbsp;    }
+<i>848</i>&nbsp;
+<i>849</i>&nbsp;    /**
+<i>850</i>&nbsp;     * @return rug top center tile.
+<i>851</i>&nbsp;     */
+<i>852</i>&nbsp;    public static BufferedImage getRugTC() {
+<b class="fc"><i>853</i>&nbsp;        return rugTC;</b>
+<i>854</i>&nbsp;    }
+<i>855</i>&nbsp;
+<i>856</i>&nbsp;    /**
+<i>857</i>&nbsp;     * @return rug top right tile.
+<i>858</i>&nbsp;     */
+<i>859</i>&nbsp;    public static BufferedImage getRugTR() {
+<b class="fc"><i>860</i>&nbsp;        return rugTR;</b>
+<i>861</i>&nbsp;    }
+<i>862</i>&nbsp;
+<i>863</i>&nbsp;    /**
+<i>864</i>&nbsp;     * @return rug bottom left tile.
+<i>865</i>&nbsp;     */
+<i>866</i>&nbsp;    public static BufferedImage getRugBL() {
+<b class="fc"><i>867</i>&nbsp;        return rugBL;</b>
+<i>868</i>&nbsp;    }
+<i>869</i>&nbsp;
+<i>870</i>&nbsp;    /**
+<i>871</i>&nbsp;     * @return rug bottom center tile.
+<i>872</i>&nbsp;     */
+<i>873</i>&nbsp;    public static BufferedImage getRugBC() {
+<b class="fc"><i>874</i>&nbsp;        return rugBC;</b>
+<i>875</i>&nbsp;    }
+<i>876</i>&nbsp;
+<i>877</i>&nbsp;    /**
+<i>878</i>&nbsp;     * @return rug bottom right tile.
+<i>879</i>&nbsp;     */
+<i>880</i>&nbsp;    public static BufferedImage getRugBR() {
+<b class="fc"><i>881</i>&nbsp;        return rugBR;</b>
+<i>882</i>&nbsp;    }
+<i>883</i>&nbsp;
+<i>884</i>&nbsp;    /**
+<i>885</i>&nbsp;     * @return long grass tile.
+<i>886</i>&nbsp;     */
+<i>887</i>&nbsp;    public static BufferedImage getGrassLong() {
+<b class="fc"><i>888</i>&nbsp;        return grassLong;</b>
+<i>889</i>&nbsp;    }
+<i>890</i>&nbsp;
+<i>891</i>&nbsp;    /**
+<i>892</i>&nbsp;     * @return grass with flowers tile.
+<i>893</i>&nbsp;     */
+<i>894</i>&nbsp;    public static BufferedImage getGrassFlowers() {
+<b class="fc"><i>895</i>&nbsp;        return grassFlowers;</b>
+<i>896</i>&nbsp;    }
+<i>897</i>&nbsp;
+<i>898</i>&nbsp;    /**
+<i>899</i>&nbsp;     * @return grass with rock tile.
+<i>900</i>&nbsp;     */
+<i>901</i>&nbsp;    public static BufferedImage getGrassRock() {
+<b class="fc"><i>902</i>&nbsp;        return grassRock;</b>
+<i>903</i>&nbsp;    }
+<i>904</i>&nbsp;
+<i>905</i>&nbsp;    /**
+<i>906</i>&nbsp;     * @return short grass tile.
+<i>907</i>&nbsp;     */
+<i>908</i>&nbsp;    public static BufferedImage getGrassShort() {
+<b class="fc"><i>909</i>&nbsp;        return grassShort;</b>
+<i>910</i>&nbsp;    }
+<i>911</i>&nbsp;
+<i>912</i>&nbsp;    /**
+<i>913</i>&nbsp;     * @return front door top tile.
+<i>914</i>&nbsp;     */
+<i>915</i>&nbsp;    public static BufferedImage getDoorTop() {
+<b class="fc"><i>916</i>&nbsp;        return doorTop;</b>
+<i>917</i>&nbsp;    }
+<i>918</i>&nbsp;
+<i>919</i>&nbsp;    /**
+<i>920</i>&nbsp;     * @return front door bottom tile.
+<i>921</i>&nbsp;     */
+<i>922</i>&nbsp;    public static BufferedImage getDoorBot() {
+<b class="fc"><i>923</i>&nbsp;        return doorBot;</b>
+<i>924</i>&nbsp;    }
+<i>925</i>&nbsp;
+<i>926</i>&nbsp;    /**
+<i>927</i>&nbsp;     * @return path tile.
+<i>928</i>&nbsp;     */
+<i>929</i>&nbsp;    public static BufferedImage getPath() {
+<b class="fc"><i>930</i>&nbsp;        return path;</b>
+<i>931</i>&nbsp;    }
+<i>932</i>&nbsp;
+<i>933</i>&nbsp;    /**
+<i>934</i>&nbsp;     * @return main menu bottom.
+<i>935</i>&nbsp;     */
+<i>936</i>&nbsp;    public static BufferedImage getMainMenuBot() {
+<b class="fc"><i>937</i>&nbsp;        return mainMenuBot;</b>
+<i>938</i>&nbsp;    }
+<i>939</i>&nbsp;
+<i>940</i>&nbsp;    /**
+<i>941</i>&nbsp;     * @return main menu home top.
+<i>942</i>&nbsp;     */
+<i>943</i>&nbsp;    public static BufferedImage getMainMenuTopReg() {
+<b class="fc"><i>944</i>&nbsp;        return mainMenuTopReg;</b>
+<i>945</i>&nbsp;    }
+<i>946</i>&nbsp;
+<i>947</i>&nbsp;    /**
+<i>948</i>&nbsp;     * @return main menu travel top.
+<i>949</i>&nbsp;     */
+<i>950</i>&nbsp;    public static BufferedImage getMainMenuTopTravel() {
+<b class="fc"><i>951</i>&nbsp;        return mainMenuTopTravel;</b>
+<i>952</i>&nbsp;    }
+<i>953</i>&nbsp;
+<i>954</i>&nbsp;    /**
+<i>955</i>&nbsp;     * @return inventory screen.
+<i>956</i>&nbsp;     */
+<i>957</i>&nbsp;    public static BufferedImage getMenuInventory() {
+<b class="fc"><i>958</i>&nbsp;        return menuInventory;</b>
+<i>959</i>&nbsp;    }
+<i>960</i>&nbsp;
+<i>961</i>&nbsp;    /**
+<i>962</i>&nbsp;     * @return travel screen.
+<i>963</i>&nbsp;     */
+<i>964</i>&nbsp;    public static BufferedImage getMenuTravel() {
+<b class="fc"><i>965</i>&nbsp;        return menuTravel;</b>
+<i>966</i>&nbsp;    }
+<i>967</i>&nbsp;
+<i>968</i>&nbsp;    /**
+<i>969</i>&nbsp;     * @return pause screen.
+<i>970</i>&nbsp;     */
+<i>971</i>&nbsp;    public static BufferedImage getPauseMenu() {
+<b class="fc"><i>972</i>&nbsp;        return pauseMenu;</b>
+<i>973</i>&nbsp;    }
+<i>974</i>&nbsp;
+<i>975</i>&nbsp;    /**
+<i>976</i>&nbsp;     * @return happiness text.
+<i>977</i>&nbsp;     */
+<i>978</i>&nbsp;    public static BufferedImage getHappiness() {
+<b class="fc"><i>979</i>&nbsp;        return happiness;</b>
+<i>980</i>&nbsp;    }
+<i>981</i>&nbsp;
+<i>982</i>&nbsp;    /**
+<i>983</i>&nbsp;     * @return hygene text.
+<i>984</i>&nbsp;     */
+<i>985</i>&nbsp;    public static BufferedImage getHygene() {
+<b class="fc"><i>986</i>&nbsp;        return hygene;</b>
+<i>987</i>&nbsp;    }
+<i>988</i>&nbsp;
+<i>989</i>&nbsp;    /**
+<i>990</i>&nbsp;     * @return hunger text.
+<i>991</i>&nbsp;     */
+<i>992</i>&nbsp;    public static BufferedImage getHunger() {
+<b class="fc"><i>993</i>&nbsp;        return hunger;</b>
+<i>994</i>&nbsp;    }
+<i>995</i>&nbsp;
+<i>996</i>&nbsp;    /**
+<i>997</i>&nbsp;     * @return health text.
+<i>998</i>&nbsp;     */
+<i>999</i>&nbsp;    public static BufferedImage getHealth() {
+<b class="fc"><i>1000</i>&nbsp;        return health;</b>
+<i>1001</i>&nbsp;    }
+<i>1002</i>&nbsp;
+<i>1003</i>&nbsp;    /**
+<i>1004</i>&nbsp;     * @return menu button.
+<i>1005</i>&nbsp;     */
+<i>1006</i>&nbsp;    public static BufferedImage getMenuButton() {
+<b class="fc"><i>1007</i>&nbsp;        return menuButton;</b>
+<i>1008</i>&nbsp;    }
+<i>1009</i>&nbsp;
+<i>1010</i>&nbsp;    /**
+<i>1011</i>&nbsp;     * @return heart image array.
+<i>1012</i>&nbsp;     */
+<i>1013</i>&nbsp;    public static BufferedImage[] getHearts() {
+<b class="fc"><i>1014</i>&nbsp;        return hearts;</b>
+<i>1015</i>&nbsp;    }
+<i>1016</i>&nbsp;
+<i>1017</i>&nbsp;    /**
+<i>1018</i>&nbsp;     * @return emotion image array.
+<i>1019</i>&nbsp;     */
+<i>1020</i>&nbsp;    public static BufferedImage[] getEmotions() {
+<b class="fc"><i>1021</i>&nbsp;        return emotions;</b>
+<i>1022</i>&nbsp;    }
+<i>1023</i>&nbsp;
+<i>1024</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-10-16 22:48</div>
+</div>
+</body>
+</html>
