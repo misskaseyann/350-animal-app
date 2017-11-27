@@ -1,19 +1,24 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Manager;
+import dev.tilegame.display.Display;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.worlds.World;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+
 import dev.tilegame.entities.animals.Pet;
 
 public class SaveState extends State {
+
+    Display display = manager.getGame().getDisplay();
 
     /**
      * SaveState constructor.
@@ -38,7 +43,7 @@ public class SaveState extends State {
             //buggy
         }
         //strip the spaces tho
-        name = name.replaceAll("\\s+","");
+        name = name.replaceAll("\\s+", "");
 
         File file = new File("../350-animal-app/savedData/" + name + ".txt");
 
@@ -57,7 +62,7 @@ public class SaveState extends State {
             writer.println("Hunger: " + pet.getHunger());
 
             writer.close();
-            JOptionPane.showMessageDialog(null, "File "+name+" saved your current game!");
+            JOptionPane.showMessageDialog(null, "File " + name + " saved your current game!");
             State.setState(State.getLastState());
         } catch (IOException ie) {
             ie.printStackTrace();
@@ -67,7 +72,9 @@ public class SaveState extends State {
 
     @Override
     public void render(Graphics g) {
+        g.drawImage(Assets.getPauseMenu(), 0, 0, null);
 
+        g.drawString("This is gona be awesome", 60, 60);
     }
 
     @Override
@@ -78,4 +85,5 @@ public class SaveState extends State {
     public String toString() {
         return "Save State";
     }
+
 }

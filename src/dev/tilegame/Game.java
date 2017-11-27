@@ -255,4 +255,8 @@ public class Game implements Runnable {
     public State getParkState() {
         return parkState;
     }
+
+    public Display getDisplay() {
+        return display;
+    }
 }
