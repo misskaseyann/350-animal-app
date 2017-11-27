@@ -4,6 +4,8 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
+import dev.tilegame.inventory.Inventory;
+import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
 import dev.tilegame.worlds.World;
@@ -20,6 +22,7 @@ public class Manager {
     private Pet pet;
     private StatsManager statsManager;
     private LoopLoader loopLoader;
+    private Player player;
 
     /**
      * Manager constructor.
@@ -124,5 +127,21 @@ public class Manager {
      */
     public void setLoopLoader(LoopLoader loopLoader) {
         this.loopLoader = loopLoader;
+    }
+
+    /**
+     * @return player object.
+     */
+    public Player getPlayer() {
+        return player;
+    }
+
+    /**
+     * Set the player of the game.
+     *
+     * @param player player object.
+     */
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 }
