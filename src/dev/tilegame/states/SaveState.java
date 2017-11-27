@@ -1,18 +1,14 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Manager;
-import dev.tilegame.display.Display;
-import dev.tilegame.gfx.Assets;
 import dev.tilegame.worlds.World;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.awt.*;
-import java.awt.image.BufferStrategy;
+
 
 import dev.tilegame.entities.animals.Pet;
 
@@ -61,12 +57,12 @@ public class SaveState extends State {
             writer.println("Hunger: " + pet.getHunger());
 
             writer.close();
-            JOptionPane.showMessageDialog(null, "File " + name + " saved your current game!");
-            State.setState(State.getLastState());
+
         } catch (IOException ie) {
             ie.printStackTrace();
         }
-
+        JOptionPane.showMessageDialog(null, "File " + name + " saved your current game!");
+        State.setState(State.getLastState());
     }
 
     @Override

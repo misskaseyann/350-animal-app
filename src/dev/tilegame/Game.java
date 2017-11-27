@@ -27,7 +27,7 @@ public class Game implements Runnable {
     private Graphics g;
 
     //States
-    private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState;
+    private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState, saveState;
 
     //Input
     private KeyManager keyManager;
@@ -85,6 +85,7 @@ public class Game implements Runnable {
         travelState = new TravelState(manager);
         parkState = new ParkState(manager);
         storeState = new StoreState(manager);
+        saveState = new SaveState(manager);
         State.setState(titleState);
     }
 
@@ -266,4 +267,12 @@ public class Game implements Runnable {
     public State getStoreState() {
         return storeState;
     }
+
+    /**
+     * @return store state.
+     */
+    public State getSaveState() {
+        return saveState;
+    }
+
 }
