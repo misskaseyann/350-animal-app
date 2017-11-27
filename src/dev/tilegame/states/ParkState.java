@@ -121,4 +121,7 @@ public class ParkState extends State {
      */
     public World getWorld(){ return world;}
 
+    public String toString() {
+        return "Park State";
+    }
 }

@@ -53,4 +53,8 @@ public class InventoryState extends State {
      * @return null/no world in inventory state.
      */
     public World getWorld(){ return null; }
+
+    public String toString() {
+        return "Inventory State";
+    }
 }

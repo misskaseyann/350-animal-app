@@ -72,4 +72,7 @@ public class TitleState extends State {
         g.drawImage(titleAni.getCurrentFrame(), 0, 0, null);
     }
 
+    public String toString() {
+        return "Title State";
+    }
 }

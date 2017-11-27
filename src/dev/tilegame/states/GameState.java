@@ -122,4 +122,8 @@ public class GameState extends State {
      * @return home world.
      */
     public World getWorld(){ return world; }
+
+    public String toString() {
+        return "Game State";
+    }
 }

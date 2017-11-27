@@ -81,4 +81,7 @@ public class TravelState extends State {
      */
     public World getWorld(){ return null;}
 
+    public String toString() {
+        return "Travel State";
+    }
 }

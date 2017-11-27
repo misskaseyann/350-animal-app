@@ -11,11 +11,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import dev.tilegame.entities.animals.Pet;
 
 public class SaveState extends State {
 
     /**
-     * MenuState constructor.
+     * SaveState constructor.
      *
      * @param manager game class manager
      */
@@ -28,7 +29,7 @@ public class SaveState extends State {
         // Set x and y coordinates.
         int x = manager.getMouseManager().getMouseX();
         int y = manager.getMouseManager().getMouseY();
-
+        Pet pet = manager.getPet();
 
         //String name = "hellow is it me youre looking for ";
         String name = JOptionPane.showInputDialog("Enter a name for your file");
@@ -46,13 +47,14 @@ public class SaveState extends State {
 
 //          writer.println("Xloc: "+ State.getCurrentState().manager.getPet().gridLocX());
 //          writer.println("Yloc: "+ State.getCurrentState().manager.getPet().gridLocY());
-            writer.println("State: " + "the room of save or always load from home? applies to above stats");
-            writer.println("Items: ");
-            writer.println("Money: ");
-            writer.println("Health: ");
-            writer.println("Happiness: ");
-            writer.println("Hygene: ");
-            writer.println("Hunger: ");
+            writer.println("State: " + State.getLastState());
+            System.out.print(State.getLastState());
+            writer.println("Items: " + "unkown access yet");
+            writer.println("Money: " + "unkown access yet");
+            writer.println("Health: " + pet.getHealth());
+            writer.println("Happiness: " + pet.getHappiness());
+            writer.println("Hygene: " + pet.getCleanliness());
+            writer.println("Hunger: " + pet.getHunger());
 
             writer.close();
             JOptionPane.showMessageDialog(null, "File "+name+" saved your current game!");
@@ -71,5 +73,9 @@ public class SaveState extends State {
     @Override
     public World getWorld() {
         return null;
+    }
+
+    public String toString() {
+        return "Save State";
     }
 }

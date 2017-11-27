@@ -36,7 +36,6 @@ public class MenuState extends State {
             int x = manager.getMouseManager().getMouseX();
             int y = manager.getMouseManager().getMouseY();
             // Save Button
-            System.out.println("x and y "+ x +" and " + y);
             if ((x > 70 && x < 292) && (y > 204 && y < 268)) {
                 // TODO implement saving the game
                 State.setState(manager.getGame().getSaveState());
@@ -77,5 +76,9 @@ public class MenuState extends State {
      */
     public World getWorld() {
         return null;
+    }
+
+    public String toString() {
+        return "Menu State";
     }
 }

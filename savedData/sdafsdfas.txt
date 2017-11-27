@@ -1,7 +1,0 @@
-State: the room of save or always load from home? applies to above stats
-Items: 
-Money: 
-Health: 
-Happiness: 
-Hygene: 
-Hunger: 
