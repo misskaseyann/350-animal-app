@@ -1,5 +1,6 @@
 package dev.tilegame;
 
+import dev.tilegame.entities.animals.MiniGamePet;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
@@ -18,6 +19,7 @@ public class Manager {
     private Game game;
     private World world;
     private Pet pet;
+    private MiniGamePet miniPet;
     private StatsManager statsManager;
     private LoopLoader loopLoader;
 
@@ -101,6 +103,16 @@ public class Manager {
      * @return pet entity.
      */
     public Pet getPet() { return pet; }
+
+    /**
+     * @param miniPet pet entity.
+     */
+    public void setMiniPet(MiniGamePet miniPet) { this.miniPet = miniPet; }
+
+    /**
+     * @return miniPet entity.
+     */
+    public MiniGamePet getMiniPet() { return miniPet; }
 
     /**
      * @param statsManager stats manager.

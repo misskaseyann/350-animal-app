@@ -20,6 +20,6 @@ public class Dog_Food {
     }
 
     public void quantity(){
-        
+
     }
 }
