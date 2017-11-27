@@ -40,6 +40,7 @@ public class InventoryState extends State {
                 State.setState(State.getLastState());
             }
             // TODO implement item button clicks and inventory loading.
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

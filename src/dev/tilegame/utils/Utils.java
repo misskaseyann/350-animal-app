@@ -1,15 +1,11 @@
 package dev.tilegame.utils;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.io.Reader;
-import java.io.InputStreamReader;
+import java.awt.*;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Utility loader for worlds.
+ * Utility methods for basic IO.
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -48,5 +44,19 @@ public class Utils {
             e.printStackTrace();
             return 0;
         }
+    }
+
+    public static Font createFont(String path) {
+        InputStream stream = null;
+        Font ttf = null;
+        Font pkmfont = null;
+        try {
+            stream = new BufferedInputStream(new FileInputStream(path));
+            ttf = Font.createFont(Font.TRUETYPE_FONT, stream);
+            pkmfont = ttf.deriveFont(Font.PLAIN, 12);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return pkmfont;
     }
 }

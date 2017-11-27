@@ -43,6 +43,7 @@ public class MenuState extends State {
             if ((x > 70 && x < 292) && (y > 392 && y < 456)) {
                 State.setState(State.getLastState());
             }
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

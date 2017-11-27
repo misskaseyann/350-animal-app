@@ -17,7 +17,10 @@ public class ChewToy extends Item {
      * Basic constructor.
      */
     public ChewToy() {
-        super("Chew Toy", 8, Assets.getChewToy(), null);
+        super("Chew Toy",
+                "A chew toy in the style of a kong." +
+                        "\nThis toy brings a lot of" + "\nhappiness to dogs.",
+                8, Assets.getChewToy(), null);
     }
 
     /**

@@ -14,6 +14,7 @@ public abstract class Item {
 
     int cost;
     String name;
+    String description;
     BufferedImage img;
     BufferedImage[] ani;
 
@@ -25,8 +26,9 @@ public abstract class Item {
      * @param img Image object that can be drawn on canvas.
      * @param ani
      */
-    public Item(String name, int cost, BufferedImage img, BufferedImage[] ani) {
+    public Item(String name, String description, int cost, BufferedImage img, BufferedImage[] ani) {
         this.name = name;
+        this.description = description;
         this.cost = cost;
         this.img = img;
         this.ani = ani;
@@ -64,6 +66,14 @@ public abstract class Item {
 
     public void setAni(BufferedImage[] ani) {
         this.ani = ani;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /** Methods **/

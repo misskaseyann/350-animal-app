@@ -63,6 +63,7 @@ public class TravelState extends State {
             if ((x > 70 && x < 294) && (y > 524 && y < 588)) {
                 State.setState(State.getLastState());
             }
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

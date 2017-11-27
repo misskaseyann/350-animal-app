@@ -60,6 +60,7 @@ public class TitleState extends State {
             if ((x > 64 && x < 288) && (y > 545 && y < 609)) {
                 // TODO load functionality
             }
+            manager.getMouseManager().setLeftPress(false);
         }
     }
 

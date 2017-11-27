@@ -16,7 +16,10 @@ public class DogFoodStandard extends Item{
      * Basic constructor.
      */
     public DogFoodStandard() {
-        super("Standard Dog Food", 12, Assets.getDogFoodStandard(), null);
+        super("Standard Dog Food",
+                "Standard Food is nothing special." +
+                        "\nHunger is maxed while happiness" + "\nand health goes up.",
+                12, Assets.getDogFoodStandard(), null);
     }
 
     /**

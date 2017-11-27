@@ -17,7 +17,11 @@ public class TennisBall extends Item {
      * Basic constructor.
      */
     public TennisBall() {
-        super("Tennis Ball", 3, Assets.getTennisBall(), null);
+        super("Tennis Ball",
+                "A bright yellow tennis ball." +
+                        "\nGuaranteed: new and never used!" +
+                        "\nThe perfect affordable toy.",
+                3, Assets.getTennisBall(), null);
     }
 
     /**

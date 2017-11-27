@@ -17,7 +17,11 @@ public class StuffedAnimal extends Item {
      * Basic constructor.
      */
     public StuffedAnimal() {
-        super("Stuffed Animal", 15, Assets.getChewToy(), null);
+        super("Stuffed Animal",
+                "Cute stuffed hippo. Dogs best" +
+                        "\nfriend other than man. This toy" +
+                        "\nmakes your pet very happy!",
+                15, Assets.getStuffedAnimal(), null);
     }
 
     /**

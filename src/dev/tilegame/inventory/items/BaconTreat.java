@@ -17,7 +17,11 @@ public class BaconTreat extends Item {
      * Basic constructor.
      */
     public BaconTreat() {
-        super("Bacon Treat", 10, Assets.getBaconTreat(), null);
+        super("Bacon Treat",
+                "A yummy bacon flavored treat. " +
+                "\nNot healthy but satisfies" + "\nsome hunger.." +
+                "\nDogs love this snack!",
+                10, Assets.getBaconTreat(), null);
     }
 
     /**

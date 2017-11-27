@@ -16,7 +16,10 @@ public class DogFoodPremium extends Item {
      * Basic constructor.
      */
     public DogFoodPremium() {
-        super("Premium Dog Food", 34, Assets.getDogFoodPremium(), null);
+        super("Premium Dog Food",
+                "Premium Food made with natural" + "\ningredients. Very healthy!" +
+                        "\nMaxes out your dogs stats.",
+                34, Assets.getDogFoodPremium(), null);
     }
 
     /**
