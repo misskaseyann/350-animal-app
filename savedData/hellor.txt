@@ -1,8 +1,8 @@
-Xloc:36
+Xloc:11
 Yloc:24
 Items:Dog Biscuit,Dog Biscuit,Dog Biscuit,Dog Biscuit,Dog Biscuit,
 Money:785
 Health:0
 Happiness:6
 Hygene:6
-Hunger:6
+Hunger:5
