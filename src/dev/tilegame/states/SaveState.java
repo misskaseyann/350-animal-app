@@ -42,7 +42,7 @@ public class SaveState extends State {
         if(player.getInventory().getItemList().size() > 0) {
             for (Item item : player.getInventory().getItemList()) {
                 System.out.println(item.getName());
-                itemlist += "," + item.getName();
+                itemlist += item.getName() + ",";
             }
         }
         else {itemlist = "NA";}

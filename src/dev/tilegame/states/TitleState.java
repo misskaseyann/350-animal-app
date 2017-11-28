@@ -59,7 +59,9 @@ public class TitleState extends State {
             // Load Button
             if ((x > 64 && x < 288) && (y > 545 && y < 609)) {
                 // TODO load functionality
+                State.setState(manager.getGame().getGameState());
                 State.setState(manager.getGame().getLoadState());
+
             }
             manager.getMouseManager().setLeftPress(false);
         }

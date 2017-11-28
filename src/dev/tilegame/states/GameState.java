@@ -11,10 +11,12 @@ import java.awt.*;
 
 /**
  * Actual gameplay instantiation and home world.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class GameState extends State {
+
 
     private Pet pet;
     private World world;
@@ -24,13 +26,14 @@ public class GameState extends State {
 
     /**
      * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
+     *
      * @param manager game class manager.
      */
     public GameState(Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world1.txt");
         manager.setWorld(world);
-        pet = new Pet(manager, world.getSpawnX()*32, world.getSpawnY()*32);
+        pet = new Pet(manager, world.getSpawnX() * 32, world.getSpawnY() * 32);
         manager.setPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
@@ -98,6 +101,7 @@ public class GameState extends State {
 
     /**
      * Renders the home world and game menus.
+     *
      * @param g graphics object.
      */
     @Override
@@ -123,5 +127,12 @@ public class GameState extends State {
     /**
      * @return home world.
      */
-    public World getWorld(){ return world; }
+    public World getWorld() {
+        return world;
+    }
+
+    public void setStatsManager(StatsManager statsManager) {
+        this.statsManager = statsManager;
+    }
+
 }
