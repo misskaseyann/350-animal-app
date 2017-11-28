@@ -39,6 +39,7 @@ public class MenuState extends State {
             // Load Button
             if ((x > 70 && x < 292) && (y > 297 && y < 340)) {
                 // TODO implement loading a game
+                State.setState(manager.getGame().getLoadState());
             }
             // Back Button
             if ((x > 70 && x < 292) && (y > 392 && y < 456)) {
