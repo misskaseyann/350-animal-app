@@ -76,6 +76,7 @@ public class Game implements Runnable {
         gameCamera = new GameCamera(this,0,0);
         manager = new Manager(this);
         player = new Player(manager);
+        player.setMoney(20);
         manager.setPlayer(player);
         // Create states of the game.
         gameState = new GameState(manager);

@@ -4,6 +4,8 @@ import dev.tilegame.Manager;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Abstract State class that helps manage each of the game's states.
@@ -34,7 +36,7 @@ public abstract class State {
      * Render any graphics on the screen.
      * @param g graphics object.
      */
-    public abstract void render(Graphics g);
+    public abstract void render(Graphics g) ;
 
     /**
      * @param state current game state.

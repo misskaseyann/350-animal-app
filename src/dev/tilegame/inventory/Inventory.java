@@ -62,4 +62,6 @@ public class Inventory {
     public void setItemList(ArrayList<Item> itemList) {
         this.itemList = itemList;
     }
+
+
 }

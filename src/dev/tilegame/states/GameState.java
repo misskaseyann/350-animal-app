@@ -21,6 +21,7 @@ public class GameState extends State {
     private LoopLoader music;
     private StatsManager statsManager;
 
+
     /**
      * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
      * @param manager game class manager.
