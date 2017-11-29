@@ -13,6 +13,7 @@ import java.awt.image.BufferStrategy;
 
 /**
  * Starts, runs, and closes everything.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -46,8 +47,9 @@ public class Game implements Runnable {
     /**
      * Game constructor.
      * Initializes key and mouse listeners.
-     * @param title title of game window.
-     * @param width width of game window.
+     *
+     * @param title  title of game window.
+     * @param width  width of game window.
      * @param height height of game window.
      */
     public Game(String title, int width, int height) {
@@ -73,7 +75,7 @@ public class Game implements Runnable {
         // Create all game assets.
         Assets.init();
         // Set up game camera and class manager.
-        gameCamera = new GameCamera(this,0,0);
+        gameCamera = new GameCamera(this, 0, 0);
         manager = new Manager(this);
         player = new Player(manager);
         manager.setPlayer(player);
@@ -95,7 +97,7 @@ public class Game implements Runnable {
      */
     private void tick() {
         keyManager.tick();
-        if(State.getCurrentState() != null)
+        if (State.getCurrentState() != null)
             State.getCurrentState().tick();
     }
 
@@ -113,9 +115,9 @@ public class Game implements Runnable {
         // graphics paintbrush
         g = bs.getDrawGraphics();
         // clear screen
-        g.clearRect(0,0,width,height);
+        g.clearRect(0, 0, width, height);
         // draw the state
-        if(State.getCurrentState() != null)
+        if (State.getCurrentState() != null)
             State.getCurrentState().render(g);
         // show what was drawn
         bs.show();
@@ -173,7 +175,7 @@ public class Game implements Runnable {
      * Directly stop thread.
      */
     public synchronized void stop() {
-        if(!running) // if already not running, dont repeat
+        if (!running) // if already not running, dont repeat
             return;
         running = false;
         try {
@@ -283,6 +285,9 @@ public class Game implements Runnable {
         return loadState;
     }
 
+    /**
+     * @return load state.
+     */
     public void setPlayer(Player player) { this.player = player; }
 
 }

@@ -59,7 +59,7 @@ public class TitleState extends State {
             // Load Button
             if ((x > 64 && x < 288) && (y > 545 && y < 609)) {
                 // TODO load functionality
-                State.setState(manager.getGame().getGameState());
+                State.setLastState(State.getCurrentState());
                 State.setState(manager.getGame().getLoadState());
 
             }
