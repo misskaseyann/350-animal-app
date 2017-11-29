@@ -30,5 +30,4 @@ class AnimalTest {
         pet.setHunger(4);
         Assert.assertEquals(4, pet.getHunger());
     }
-
 }
