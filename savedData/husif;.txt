@@ -1,0 +1,8 @@
+Xloc:23
+Yloc:22
+Items:Dog Biscuit,Dog Biscuit,Dog Biscuit,Dog Biscuit,Dog Biscuit,Dog Bone,Dog Bone,Dog Bone,Dog Bone,Dog Bone,Dog Bone,Dog Bone,
+Money:665
+Health:0
+Happiness:2
+Hygene:6
+Hunger:5
