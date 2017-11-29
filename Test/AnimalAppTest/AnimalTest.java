@@ -6,9 +6,7 @@ import dev.tilegame.entities.animals.Animal;
 import dev.tilegame.entities.animals.Pet;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
 /**
  * @author kaseystowell
