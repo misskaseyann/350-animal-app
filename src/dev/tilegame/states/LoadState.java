@@ -8,6 +8,8 @@ import dev.tilegame.inventory.items.*;
 import dev.tilegame.player.Player;
 import dev.tilegame.stats.StatsManager;
 import dev.tilegame.worlds.World;
+
+import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
@@ -117,12 +119,8 @@ public class LoadState extends State {
         // set hunger
         pet.setHunger(hunger);
 
-
         manager.setPet(pet);
         manager.setPlayer(player);
-
-
-
 
         //set game state == new
         State.setState(manager.getGame().getGameState());
@@ -137,6 +135,9 @@ public class LoadState extends State {
     @Override
     public void render(Graphics g) {
         // TODO make menu prettier and add exit to title button
+        JFrame load = new JFrame();
+        final JFileChooser fc = new JFileChooser();
+
     }
 
     /**
