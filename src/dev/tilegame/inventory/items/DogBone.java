@@ -21,7 +21,7 @@ public class DogBone extends Item{
                 "A typical dog bone for chewing." +
                         "\nDogs really love bones!" +
                         "\nSatisfies some hunger.",
-                12, Assets.getChewBone(), null);
+                12, Assets.getChewBone(), Assets.getBoneAni());
     }
 
     /**

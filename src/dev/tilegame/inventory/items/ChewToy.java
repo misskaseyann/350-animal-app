@@ -20,7 +20,7 @@ public class ChewToy extends Item {
         super("Chew Toy",
                 "A chew toy in the style of a kong." +
                         "\nThis toy brings a lot of" + "\nhappiness to dogs.",
-                8, Assets.getChewToy(), null);
+                8, Assets.getChewToy(), Assets.getChewToyAni());
     }
 
     /**

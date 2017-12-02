@@ -19,7 +19,7 @@ public class DogBiscuit extends Item {
         super("Dog Biscuit",
                 "A yummy biscuit in the shape" + "\nof a heart. Not healthy but" +
                         "\nsatisfies some hunger and" + "\ndogs love biscuits!",
-                3, Assets.getDogBiscuit(), null);
+                3, Assets.getDogBiscuit(), Assets.getCookieAni());
     }
 
     /**

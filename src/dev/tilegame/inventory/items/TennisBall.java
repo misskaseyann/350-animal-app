@@ -21,7 +21,7 @@ public class TennisBall extends Item {
                 "A bright yellow tennis ball." +
                         "\nGuaranteed: new and never used!" +
                         "\nThe perfect affordable toy.",
-                3, Assets.getTennisBall(), null);
+                3, Assets.getTennisBall(), Assets.getBallAni());
     }
 
     /**

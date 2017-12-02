@@ -19,7 +19,7 @@ public class DogFoodStandard extends Item{
         super("Standard Dog Food",
                 "Standard Food is nothing special." +
                         "\nHunger is maxed while happiness" + "\nand health goes up.",
-                12, Assets.getDogFoodStandard(), null);
+                12, Assets.getDogFoodStandard(), Assets.getFoodAni());
     }
 
     /**

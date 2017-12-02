@@ -21,7 +21,7 @@ public class BaconTreat extends Item {
                 "A yummy bacon flavored treat. " +
                 "\nNot healthy but satisfies" + "\nsome hunger.." +
                 "\nDogs love this snack!",
-                10, Assets.getBaconTreat(), null);
+                10, Assets.getBaconTreat(), Assets.getBaconAni());
     }
 
     /**
@@ -43,4 +43,6 @@ public class BaconTreat extends Item {
         if (pet.getHunger() < 6)
             pet.setHunger(pet.getHunger() + 1);
     }
+
+
 }
