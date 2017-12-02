@@ -19,7 +19,7 @@ import java.awt.image.BufferedImage;
  * @author brendannahed
  * @version 09.24.2017
  */
-public class Tile {
+public class  Tile {
 
     //STATIC STUFF HERE
     /**
@@ -827,6 +827,15 @@ public class Tile {
       * @return grassShortTile, which is the grass short
       * tile image.
      * */
+    public static Tile getMiniGameGrassShortTile() {
+        return miniGameGrassShortTile;
+    }
+
+    /**
+     * The method that returns the grass short tile.
+     * @return grassShortTile, which is the grass short
+     * tile image.
+     * */
     public static Tile getGrassShortTile() {
         return grassShortTile;
     }
@@ -1244,6 +1253,12 @@ public class Tile {
      * Here is create a pathTile object and it's id is set.
      * */
     public final static  Tile pathTile = new PathTile(89);
+
+    /**
+     * Here is create a grassShortTile object and it's id is set.
+     * This Tile ends the mini game.
+     * */
+    public final static  Tile miniGameGrassShortTile = new MiniGameGrassShortTile(95);
 
     //CLASS
 

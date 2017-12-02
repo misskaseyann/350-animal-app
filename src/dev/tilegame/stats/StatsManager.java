@@ -12,6 +12,8 @@ import java.awt.image.BufferedImage;
  */
 public class StatsManager {
 
+
+
     private Animal pet;
 
     /**

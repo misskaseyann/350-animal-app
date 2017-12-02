@@ -3,11 +3,10 @@ package dev.tilegame.entities.animals;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
 import dev.tilegame.gfx.Assets;
-import dev.tilegame.input.KeyManager;
+import dev.tilegame.states.State;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
 
 /**
  * Pet AI.
@@ -78,25 +77,29 @@ public class MiniGamePet extends Animal {
      * @return animation frame of pet.
      */
     private BufferedImage getCurrentAnimationFrame() {
-            int movement=0;
-            if(manager.getKeyManager().isUp() && manager.getKeyManager().isLeft())
+        if(miniGameOver()){
+            manager.getPlayer().setMoney(100);
+            State.setState(State.getLastState());
+        }
+            int movement = 0;
+            if (manager.getKeyManager().isUp() && manager.getKeyManager().isLeft())
                 movement = 5;
-            else if(manager.getKeyManager().isUp() && manager.getKeyManager().isRight())
+            else if (manager.getKeyManager().isUp() && manager.getKeyManager().isRight())
                 movement = 6;
-            else if(manager.getKeyManager().isDown() && manager.getKeyManager().isLeft())
+            else if (manager.getKeyManager().isDown() && manager.getKeyManager().isLeft())
                 movement = 7;
-            else if(manager.getKeyManager().isDown() && manager.getKeyManager().isRight())
+            else if (manager.getKeyManager().isDown() && manager.getKeyManager().isRight())
                 movement = 8;
-            else if(manager.getKeyManager().isDown())
+            else if (manager.getKeyManager().isDown())
                 movement = 2;
-            else if(manager.getKeyManager().isUp())
+            else if (manager.getKeyManager().isUp())
                 movement = 1;
-            else if(manager.getKeyManager().isLeft())
+            else if (manager.getKeyManager().isLeft())
                 movement = 3;
-            else if(manager.getKeyManager().isRight())
+            else if (manager.getKeyManager().isRight())
                 movement = 4;
 
-        // Find animation for AI movement.
+            // Find animation for AI movement.
             switch (movement) {
                 case 0: //Rest
                     return Assets.getDog();
@@ -155,6 +158,14 @@ public class MiniGamePet extends Animal {
 //            default:
 //                return Assets.getDog();
 //        }
+    }
+
+    public boolean miniGameOver(){
+        int[][] tiles = State.getCurrentState().getWorld().getTiles();
+        if(tiles[gridLocX()][gridLocY()] == 95){
+            return true;
+        }
+        return false;
     }
 
 }

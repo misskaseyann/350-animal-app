@@ -11,25 +11,29 @@ import java.awt.*;
 
 /**
  * Actual gameplay instantiation and home world.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class GameState extends State {
+
 
     private Pet pet;
     private World world;
     private LoopLoader music;
     private StatsManager statsManager;
 
+
     /**
      * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
+     *
      * @param manager game class manager.
      */
     public GameState(Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world1.txt");
         manager.setWorld(world);
-        pet = new Pet(manager, world.getSpawnX()*32, world.getSpawnY()*32);
+        pet = new Pet(manager, world.getSpawnX() * 32, world.getSpawnY() * 32);
         manager.setPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
@@ -62,32 +66,45 @@ public class GameState extends State {
             // Feed Button
             if ((x > 0 && x < 70) && (y > 0 && y < 75)) {
                 // TODO add imcremental method
+                music.load("res/sounds/TOON50.wav");
+                music.play();
                 pet.setHunger(6);
             }
             // Talk Button
             if ((x > 70 && x < 136) && (y > 0 && y < 75)) {
                 // TODO include barking sound clip
+                //chasdog.wav
+                music.load("res/sounds/chasdog.wav");
+                music.play();
                 // TODO add imcremental method
                 pet.setHappiness(6);
             }
             // Clean Button
             if ((x > 136 && x < 204) && (y > 0 && y < 75)) {
                 // TODO add imcremental method
+                music.load("res/sounds/water-splash-3.wav");
+                music.play();
                 pet.setCleanliness(6);
             }
             // Play Button
             if ((x > 204 && x < 252) && (y > 0 && y < 75)) {
                 // TODO implement mini games
+                music.load("res/sounds/squeeze-toy-4.wav");
+                music.play();
                 // TODO add imcremental method
                 pet.setHappiness(6);
             }
             // Inventory Button
             if ((x > 252 && x < 305) && (y > 0 && y < 75)) {
+                music.load("res/sounds/bag-zipper-1.wav");
+                music.play();
                 State.setLastState(this);
                 State.setState(manager.getGame().getInventoryState());
             }
             // Travel Button
             if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
+                music.load("res/sounds/door-10-open.wav");
+                music.play();
                 State.setLastState(this);
                 State.setState(manager.getGame().getTravelState());
             }
@@ -97,6 +114,7 @@ public class GameState extends State {
 
     /**
      * Renders the home world and game menus.
+     *
      * @param g graphics object.
      */
     @Override
@@ -122,5 +140,12 @@ public class GameState extends State {
     /**
      * @return home world.
      */
-    public World getWorld(){ return world; }
+    public World getWorld() {
+        return world;
+    }
+
+    public void setStatsManager(StatsManager statsManager) {
+        this.statsManager = statsManager;
+    }
+
 }
