@@ -21,7 +21,7 @@ public class StuffedAnimal extends Item {
                 "Cute stuffed hippo. Dogs best" +
                         "\nfriend other than man. This toy" +
                         "\nmakes your pet very happy!",
-                15, Assets.getStuffedAnimal(), null);
+                15, Assets.getStuffedAnimal(), Assets.getStuffedAni());
     }
 
     /**

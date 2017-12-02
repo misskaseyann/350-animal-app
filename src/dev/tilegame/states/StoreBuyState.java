@@ -13,15 +13,15 @@ import java.awt.*;
  * @version 11.26.2017
  */
 public class StoreBuyState extends State {
-    private Manager manager;
     private Item item;
     private Player player;
+    private boolean boughtItem;
 
     public StoreBuyState(Manager manager, Item item) {
         super(manager);
-        this.manager = manager;
         this.item = item;
         this.player = manager.getPlayer();
+        this.boughtItem = false;
     }
 
     @Override
@@ -33,12 +33,11 @@ public class StoreBuyState extends State {
             int y = manager.getMouseManager().getMouseY();
             // Buy
             if ((x > 188 && x < 344) && (y > 583 && y < 622)) {
-                if (player.getMoney() >= item.getCost()) {
+                if ((player.getMoney() >= item.getCost()) && (player.getInventory().getSize() < 12)) {
                     player.setMoney(player.getMoney() - item.getCost());
                     player.getInventory().addItem(item);
                     System.out.println("Added " + item.getName());
-                } else {
-                    // deny purchase
+                    boughtItem = true;
                 }
             }
             // Cancel
@@ -52,7 +51,10 @@ public class StoreBuyState extends State {
     @Override
     public void render(Graphics g) {
         FontMetrics fm = g.getFontMetrics();
-        g.drawImage(Assets.getShopBuy(), 0, 0, null);
+        if ((player.getMoney() < 1) || (player.getInventory().getSize() > 11))
+            g.drawImage(Assets.getShopCancel(), 0, 0, null);
+        else
+            g.drawImage(Assets.getShopBuy(), 0, 0, null);
         g.drawImage(item.getImg(), 148, 376, null);
         g.setFont(manager.getFont());
         String money = "Your Money: $" + Integer.toString(player.getMoney());

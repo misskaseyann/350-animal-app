@@ -19,7 +19,7 @@ public class DogFoodPremium extends Item {
         super("Premium Dog Food",
                 "Premium Food made with natural" + "\ningredients. Very healthy!" +
                         "\nMaxes out your dogs stats.",
-                34, Assets.getDogFoodPremium(), null);
+                34, Assets.getDogFoodPremium(), Assets.getFoodAni());
     }
 
     /**

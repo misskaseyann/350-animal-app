@@ -2,6 +2,7 @@ package dev.tilegame.player;
 
 import dev.tilegame.Manager;
 import dev.tilegame.inventory.Inventory;
+import dev.tilegame.inventory.Item;
 
 /**
  * @author kaseystowell
@@ -12,11 +13,13 @@ public class Player {
     Manager manager;
     Inventory inventory;
     int money;
+    Item currItem;
 
     public Player(Manager manager) {
         this.manager = manager;
         inventory = new Inventory(manager);
-        money = 0;
+        money = 100;
+        currItem = null;
     }
 
     public int getMoney() {
@@ -36,5 +39,13 @@ public class Player {
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+
+    public Item getCurrItem() {
+        return currItem;
+    }
+
+    public void setCurrItem(Item currItem) {
+        this.currItem = currItem;
     }
 }

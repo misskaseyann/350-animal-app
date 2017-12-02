@@ -18,7 +18,6 @@ public class StoreState extends State {
     private LoopLoader music;
     private Item selected;
     private State storeBuyState;
-    private Manager manager;
 
     /**
      * StoreState constructor.
@@ -26,7 +25,6 @@ public class StoreState extends State {
      */
     public StoreState(Manager manager) {
         super(manager);
-        this.manager = manager;
     }
 
     /**

@@ -6,6 +6,7 @@ import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
 import dev.tilegame.inventory.Inventory;
+import dev.tilegame.inventory.Item;
 import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
@@ -171,4 +172,5 @@ public class Manager {
     public Font getFont() {
         return font;
     }
+
 }

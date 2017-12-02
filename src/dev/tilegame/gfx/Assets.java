@@ -39,10 +39,11 @@ public class Assets {
             mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
             happiness, hygene, hunger, health, menuButton,
             baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall,
-            shopMenu, shopBuy;
+            shopMenu, shopBuy, shopCancel;
 
     // All animated images rendered on screen.
-    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg;
+    private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg,
+    baconAni, ballAni, boneAni, chewToyAni, cookieAni, foodAni, stuffedAni;
     // Tile size.
     private static final int WIDTH = 32, HEIGHT = 32;
 
@@ -59,6 +60,13 @@ public class Assets {
         SpriteSheet mainMenuTopSheet = new SpriteSheet(ImageLoader.loadImage("/textures/mainmenutop.png"));
         SpriteSheet titleSheet = new SpriteSheet(ImageLoader.loadImage("/textures/titlepic.png"));
         SpriteSheet itemSheet = new SpriteSheet(ImageLoader.loadImage("/textures/items.png"));
+        SpriteSheet baconSheet = new SpriteSheet(ImageLoader.loadImage("/textures/baconani.png"));
+        SpriteSheet ballSheet = new SpriteSheet(ImageLoader.loadImage("/textures/ballani.png"));
+        SpriteSheet boneSheet = new SpriteSheet(ImageLoader.loadImage("/textures/boneani.png"));
+        SpriteSheet chewSheet = new SpriteSheet(ImageLoader.loadImage("/textures/chewtoyani.png"));
+        SpriteSheet foodSheet = new SpriteSheet(ImageLoader.loadImage("/textures/foodani.png"));
+        SpriteSheet stuffedSheet = new SpriteSheet(ImageLoader.loadImage("/textures/stuffedani.png"));
+        SpriteSheet cookieSheet = new SpriteSheet(ImageLoader.loadImage("/textures/cookieani.png"));
 
         // STATS ASSETS
 
@@ -88,6 +96,51 @@ public class Assets {
         health = wordSheet.crop(0, 22, 119, 11);
         happiness = wordSheet.crop(0, 33, 119, 11);
 
+        // ITEM ANIMATIONS
+
+        // Bacon
+        baconAni = new BufferedImage[4];
+        baconAni[0] = baconSheet.crop(0, 0, 360, 639);
+        baconAni[1] = baconSheet.crop(360, 0, 360, 639);
+        baconAni[2] = baconSheet.crop(720, 0, 360, 639);
+        baconAni[3] = baconSheet.crop(1080, 0, 360, 639);
+
+        // Ball
+        ballAni = new BufferedImage[4];
+        ballAni[0] = ballSheet.crop(0, 0, 360, 639);
+        ballAni[1] = ballSheet.crop(360, 0, 360, 639);
+        ballAni[2] = ballSheet.crop(720, 0, 360, 639);
+        ballAni[3] = ballSheet.crop(1080, 0, 360, 639);
+
+        // Bone
+        boneAni = new BufferedImage[2];
+        boneAni[1] = boneSheet.crop(0, 0, 360, 639);
+        boneAni[0] = boneSheet.crop(360, 0, 360, 639);
+
+        // Chewtoy
+        chewToyAni = new BufferedImage[2];
+        chewToyAni[1] = chewSheet.crop(0, 0, 360, 639);
+        chewToyAni[0] = chewSheet.crop(360, 0, 360, 639);
+
+        // Food
+        foodAni = new BufferedImage[4];
+        foodAni[0] = foodSheet.crop(0, 0, 360, 639);
+        foodAni[1] = foodSheet.crop(360, 0, 360, 639);
+        foodAni[2] = foodSheet.crop(720, 0, 360, 639);
+        foodAni[3] = foodSheet.crop(1080, 0, 360, 639);
+
+        // Stuffed Animal
+        stuffedAni = new BufferedImage[2];
+        stuffedAni[1] = stuffedSheet.crop(0, 0, 360, 639);
+        stuffedAni[0] = stuffedSheet.crop(360, 0, 360, 639);
+
+        // Cookie
+        cookieAni = new BufferedImage[4];
+        cookieAni[0] = cookieSheet.crop(0, 0, 360, 639);
+        cookieAni[1] = cookieSheet.crop(360, 0, 360, 639);
+        cookieAni[2] = cookieSheet.crop(720, 0, 360, 639);
+        cookieAni[3] = cookieSheet.crop(1080, 0, 360, 639);
+
         // MENU ASSETS
 
         mainMenuBot = ImageLoader.loadImage("/textures/mainmenubot.png");
@@ -99,6 +152,7 @@ public class Assets {
         menuButton = ImageLoader.loadImage("/textures/menubutton.png");
         shopMenu = ImageLoader.loadImage("/textures/shop.png");
         shopBuy = ImageLoader.loadImage("/textures/shopbuy.png");
+        shopCancel = ImageLoader.loadImage("/textures/shopcancel.png");
 
         // TITLE SCREEN
 
@@ -1107,5 +1161,61 @@ public class Assets {
      */
     public static BufferedImage getShopBuy() {
         return shopBuy;
+    }
+
+    /**
+     * @return shop cancel image.
+     */
+    public static BufferedImage getShopCancel() {
+        return shopCancel;
+    }
+
+    /**
+     * @return bacon animation.
+     */
+    public static BufferedImage[] getBaconAni() {
+        return baconAni;
+    }
+
+    /**
+     * @return ball animation.
+     */
+    public static BufferedImage[] getBallAni() {
+        return ballAni;
+    }
+
+    /**
+     * @return bone animation.
+     */
+    public static BufferedImage[] getBoneAni() {
+        return boneAni;
+    }
+
+    /**
+     * @return chew toy animation.
+     */
+    public static BufferedImage[] getChewToyAni() {
+        return chewToyAni;
+    }
+
+    /**
+     * @return cookie animation.
+     */
+    public static BufferedImage[] getCookieAni() {
+        return cookieAni;
+    }
+
+    /**
+     * @return food animation.
+     */
+    public static BufferedImage[] getFoodAni() {
+        return foodAni;
+    }
+
+    /**
+     * @return stuffed animal animation.
+     */
+    public static BufferedImage[] getStuffedAni() {
+        return stuffedAni;
     }
 }

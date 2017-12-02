@@ -62,4 +62,8 @@ public class Inventory {
     public void setItemList(ArrayList<Item> itemList) {
         this.itemList = itemList;
     }
+
+    public int getSize() {
+        return itemList.size();
+    }
 }
