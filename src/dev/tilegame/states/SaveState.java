@@ -1,24 +1,24 @@
 package dev.tilegame.states;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.player.Player;
 import dev.tilegame.worlds.World;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-
 import dev.tilegame.entities.animals.Pet;
 
+/**
+ * SaveState.
+ *  The state teh gamem enters when the ser wants to save thier data to a file.
+ */
 public class SaveState extends State {
-
-    Game game;
+    /** pet to save the stats of. */
     Pet pet;
+    /** ßPlayer to save the inventory and money from. */
     Player player;
 
     /**
@@ -26,9 +26,8 @@ public class SaveState extends State {
      *
      * @param manager game class manager
      */
-    public SaveState(Manager manager) {
+    public SaveState(final Manager manager) {
         super(manager);
-        game = manager.getGame();
         player = manager.getPlayer();
         pet = manager.getPet();
     }
@@ -44,7 +43,6 @@ public class SaveState extends State {
         String itemlist = "";
         if (player.getInventory().getItemList().size() > 0) {
             for (Item item : player.getInventory().getItemList()) {
-                System.out.println(item.getName());
                 itemlist += item.getName() + ",";
             }
         } else {
@@ -84,7 +82,6 @@ public class SaveState extends State {
                 State.setState(State.getLastState());
             }
         } else {
-            JOptionPane.showMessageDialog(null, "The file did not save. Please try again.");
             State.setState(State.getLastState());
         }
     }
@@ -93,7 +90,7 @@ public class SaveState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
 
     }
 

@@ -1,19 +1,14 @@
 package dev.tilegame.states;
 
-import dev.tilegame.Game;
 import dev.tilegame.Manager;
-import dev.tilegame.display.Display;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Inventory;
 import dev.tilegame.inventory.items.*;
 import dev.tilegame.player.Player;
-import dev.tilegame.stats.StatsManager;
 import dev.tilegame.worlds.World;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.Scanner;
 
@@ -24,21 +19,18 @@ import java.util.Scanner;
  * @version 09.24.2017
  */
 public class LoadState extends State {
-    Game game;
-    Pet pet;
-    Player player;
-    StatsManager statsManager;
-    GameState gs;
-    Display dis;
+    /** the pet needs to be loaded to. */
+    private Pet pet;
+    /** the player needs to be loaded to. */
+    private Player player;
 
     /**
      * MenuState constructor.
      *
      * @param manager game class manager
      */
-    public LoadState(Manager manager) {
+    public LoadState(final Manager manager) {
         super(manager);
-        game = manager.getGame();
         player = manager.getPlayer();
         pet = manager.getPet();
         //statsManager = new StatsManager(pet);
@@ -49,22 +41,15 @@ public class LoadState extends State {
      */
     @Override
     public void tick() {
-        // Did the mouse left click?
-
         String content = null;
-
         String name = JOptionPane.showInputDialog("Enter a name for your file");
-        //strip the spaces tho
         if (name != null) {
-            name = name.replaceAll("\\s+", "");
             if (name == "") {
                 JOptionPane.showMessageDialog(null, "You need to include a name if you would like to save a game");
                 State.setState(State.getLastState());
             }
-
             try {
                 content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt")).useDelimiter("\\Z").next();
-                System.out.println(content);
                 //parse content
                 String[] info = content.split("\n");
                 int xspawn = Integer.parseInt(info[0].substring(info[0].indexOf(':') + 1));
@@ -76,13 +61,8 @@ public class LoadState extends State {
                 int happy = Integer.parseInt(info[5].substring(info[5].indexOf(':') + 1));
                 int clean = Integer.parseInt(info[6].substring(info[6].indexOf(':') + 1));
                 int hunger = Integer.parseInt(info[7].substring(info[7].indexOf(':') + 1));
-                System.out.println(xspawn + " " + yspawn + " " + items + " " + money + " " + health + " " + happy + " " + clean + " " + hunger);
 
                 Inventory inven = new Inventory(manager);
-                //set xspawn and yspawn
-                // pet.setX(xspawn);
-                // pet.setY(yspawn);
-                //set items
                 for (String i : itemList) {
                     if (i.equals("Bacon Treat")) {
                         BaconTreat bt = new BaconTreat();
@@ -122,19 +102,20 @@ public class LoadState extends State {
                 pet.setCleanliness(clean);
                 // set hunger
                 pet.setHunger(hunger);
-
+                //set pet and player to load to
                 manager.setPet(pet);
                 manager.setPlayer(player);
 
                 //set game state == new
                 State.setState(manager.getGame().getGameState());
             } catch (FileNotFoundException e) {
+                //if hte file doesnt exist
                 JOptionPane.showMessageDialog(null, "<html>The file <b>\"" + name + "\"</b> is non-existent. \n The directory \"/350-animal-app/savedData/\" is where the files are saved. \n Please make sure your spelled your file name correctly and that it is in the right directory.");
                 System.out.println(State.getLastState());
                 State.setState(State.getLastState());
             }
         } else {
-            JOptionPane.showMessageDialog(null, "No file loaded.");
+            // if the player hit cancel or exit
             State.setState(State.getLastState());
 
         }
@@ -148,7 +129,7 @@ public class LoadState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         // TODO make menu prettier and add exit to title button
 
     }
