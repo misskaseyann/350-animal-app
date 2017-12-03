@@ -12,8 +12,10 @@ import java.io.PrintWriter;
 import dev.tilegame.entities.animals.Pet;
 
 /**
- * SaveState.
- *  The state teh gamem enters when the ser wants to save thier data to a file.
+ * Save state.
+ *
+ * @author allisonbolen
+ * @version 11.11.2017
  */
 public class SaveState extends State {
     /** pet to save the stats of. */

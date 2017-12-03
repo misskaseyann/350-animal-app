@@ -13,10 +13,10 @@ import java.io.*;
 import java.util.Scanner;
 
 /**
- * Pause/main menu for the game.
+ * Load state.
  *
- * @author kaseystowell
- * @version 09.24.2017
+ * @author allisonbolen
+ * @version 11.10.2017
  */
 public class LoadState extends State {
     /** the pet needs to be loaded to. */
