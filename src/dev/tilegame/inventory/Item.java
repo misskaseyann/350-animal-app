@@ -78,6 +78,10 @@ public abstract class Item {
 
     /** Methods **/
 
+    /**
+     * Use the item with the pet.
+     * @param pet pet entity in the game.
+     */
     public void useItem(Pet pet){
         // do nothing
     }

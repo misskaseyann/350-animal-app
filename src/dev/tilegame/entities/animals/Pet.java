@@ -36,9 +36,9 @@ public class Pet extends Animal {
         super(manager, x, y);
         // Stats
         health = 6;
-        hunger = 6;
-        happiness = 6;
-        cleanliness = 3;
+        hunger = 4;
+        happiness = 4;
+        cleanliness = 4;
         clock--;
         // Animations
         aniDown = new Animation(200, Assets.getDogDown());
