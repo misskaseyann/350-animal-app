@@ -9,21 +9,29 @@ import dev.tilegame.worlds.World;
 import java.awt.*;
 
 /**
+ * Store buy state.
  * @author kaseystowell
  * @version 11.26.2017
  */
 public class StoreBuyState extends State {
     private Item item;
     private Player player;
-    private boolean boughtItem;
 
+    /**
+     * Basic constructor.
+     *
+     * @param manager game manager.
+     * @param item item to be bought.
+     */
     public StoreBuyState(Manager manager, Item item) {
         super(manager);
         this.item = item;
         this.player = manager.getPlayer();
-        this.boughtItem = false;
     }
 
+    /**
+     * Wait for player interaction.
+     */
     @Override
     public void tick() {
         // Did the mouse left click?
@@ -37,7 +45,6 @@ public class StoreBuyState extends State {
                     player.setMoney(player.getMoney() - item.getCost());
                     player.getInventory().addItem(item);
                     System.out.println("Added " + item.getName());
-                    boughtItem = true;
                 }
             }
             // Cancel
@@ -48,6 +55,11 @@ public class StoreBuyState extends State {
         }
     }
 
+    /**
+     * Render the item shop.
+     *
+     * @param g graphics object.
+     */
     @Override
     public void render(Graphics g) {
         FontMetrics fm = g.getFontMetrics();
@@ -67,6 +79,9 @@ public class StoreBuyState extends State {
             g.drawString(line, ((270 - fm.stringWidth(line)) / 2), y += g.getFontMetrics().getHeight());
     }
 
+    /**
+     * @return null / no world.
+     */
     @Override
     public World getWorld() {
         return null;

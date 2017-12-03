@@ -63,6 +63,9 @@ public class Inventory {
         this.itemList = itemList;
     }
 
+    /**
+     * @return size of the inventory.
+     */
     public int getSize() {
         return itemList.size();
     }

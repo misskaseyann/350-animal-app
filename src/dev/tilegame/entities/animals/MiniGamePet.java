@@ -18,7 +18,6 @@ public class MiniGamePet extends Animal {
     //Animations
     private Animation aniDown, aniUp, aniLeft, aniRight;
 
-
     /**
      * Pet AI Constructor.
      * @param manager class manager.
@@ -45,10 +44,6 @@ public class MiniGamePet extends Animal {
         aniLeft.tick();
         aniRight.tick();
     }
-
-    /**
-     * @return int value 100.
-     */
 
     /**
      * Checks if move value collides with a tile.
@@ -160,6 +155,9 @@ public class MiniGamePet extends Animal {
 //        }
     }
 
+    /**
+     * @return True if the game is over.
+     */
     public boolean miniGameOver(){
         int[][] tiles = State.getCurrentState().getWorld().getTiles();
         if(tiles[gridLocX()][gridLocY()] == 95){

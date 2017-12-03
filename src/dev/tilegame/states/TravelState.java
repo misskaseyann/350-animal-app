@@ -53,7 +53,7 @@ public class TravelState extends State {
             }
             // Vet Button
             if ((x > 70 && x < 294) && (y > 327 && y < 389)) {
-                // TODO implement vet state
+                State.setState(manager.getGame().getVetState());
             }
             // Shop Button
             if ((x > 70 && x < 294) && (y > 424 && y < 489)) {

@@ -33,6 +33,9 @@ public class SaveState extends State {
         pet = manager.getPet();
     }
 
+    /**
+     * Waits for mouse clicks.
+     */
     @Override
     public void tick() {
         // Set x and y coordinates.
@@ -86,16 +89,25 @@ public class SaveState extends State {
         }
     }
 
+    /**
+     * @param g graphics object.
+     */
     @Override
     public void render(Graphics g) {
 
     }
 
+    /**
+     * @return current world.
+     */
     @Override
     public World getWorld() {
         return null;
     }
 
+    /**
+     * @return save state string.
+     */
     public String toString() {
         return "Save State";
     }

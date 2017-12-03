@@ -28,7 +28,6 @@ public abstract class Entity  {
         this.y = y;
     }
 
-
     /**
      * X location of entity on 32x32 tile based grid.
      * @return x location of entity on grid.
