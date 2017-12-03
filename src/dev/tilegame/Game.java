@@ -28,7 +28,8 @@ public class Game implements Runnable {
     private Graphics g;
 
     //States
-    private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState, saveState, loadState;
+    private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState,
+            saveState, loadState, vetState;
 
     //Input
     private KeyManager keyManager;
@@ -89,6 +90,7 @@ public class Game implements Runnable {
         storeState = new StoreState(manager);
         saveState = new SaveState(manager);
         loadState = new LoadState(manager);
+        vetState = new VetState(manager);
         State.setState(titleState);
     }
 
@@ -286,8 +288,15 @@ public class Game implements Runnable {
     }
 
     /**
-     * @return load state.
+     * Set the games player.
+     * @param player Player object.
      */
     public void setPlayer(Player player) { this.player = player; }
 
+    /**
+     * @return vet state.
+     */
+    public State getVetState() {
+        return vetState;
+    }
 }

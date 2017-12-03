@@ -1,6 +1,5 @@
 package dev.tilegame.gfx;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -39,7 +38,7 @@ public class Assets {
             mainMenuBot, mainMenuTopReg, mainMenuTopTravel, menuInventory, menuTravel, pauseMenu,
             happiness, hygene, hunger, health, menuButton,
             baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall,
-            shopMenu, shopBuy, shopCancel;
+            shopMenu, shopBuy, shopCancel, vetMenu, vetCancel;
 
     // All animated images rendered on screen.
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg,
@@ -153,6 +152,8 @@ public class Assets {
         shopMenu = ImageLoader.loadImage("/textures/shop.png");
         shopBuy = ImageLoader.loadImage("/textures/shopbuy.png");
         shopCancel = ImageLoader.loadImage("/textures/shopcancel.png");
+        vetMenu = ImageLoader.loadImage("/textures/vet.png");
+        vetCancel = ImageLoader.loadImage("/textures/vetcancel.png");
 
         // TITLE SCREEN
 
@@ -1217,5 +1218,19 @@ public class Assets {
      */
     public static BufferedImage[] getStuffedAni() {
         return stuffedAni;
+    }
+
+    /**
+     * @return vet menu image.
+     */
+    public static BufferedImage getVetMenu() {
+        return vetMenu;
+    }
+
+    /**
+     * @return vet cancel image.
+     */
+    public static BufferedImage getVetCancel() {
+        return vetCancel;
     }
 }

@@ -22,7 +22,7 @@ public class ParkState extends State {
     private Pet pet;
     private Pet_AI pet_ai;
     private World world;
-    private LoopLoader music;
+    private LoopLoader music, sounds;
     private StatsManager statsManager;
 
     /**
@@ -38,6 +38,7 @@ public class ParkState extends State {
         pet_ai = new Pet_AI(manager, 10*32, 10*32);
         statsManager = manager.getStatsManager();
         music = manager.getLoopLoader();
+        sounds = new LoopLoader();
     }
 
     /**
@@ -67,23 +68,28 @@ public class ParkState extends State {
             }
             // Talk Button
             if ((x > 70 && x < 136) && (y > 0 && y < 75)) {
-                // TODO include barking sound clip
-                // TODO add imcremental method
+                sounds.load("res/sounds/chasdog.wav");
+                sounds.play();
                 pet.setHappiness(6);
             }
             // Play Button
             if ((x > 204 && x < 252) && (y > 0 && y < 75)) {
-                // TODO implement mini games
-                // TODO add imcremental method
+                sounds.load("res/sounds/squeeze-toy-4.wav");
+                sounds.play();
                 pet.setHappiness(6);
+                State.setState(new MiniGameState(manager));
             }
             // Inventory Button
             if ((x > 252 && x < 305) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/bag-zipper-1.wav");
+                sounds.play();
                 State.setLastState(this);
                 State.setState(manager.getGame().getInventoryState());
             }
             // Travel Button
             if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/door-10-open.wav");
+                sounds.play();
                 State.setLastState(this);
                 State.setState(manager.getGame().getTravelState());
             }
