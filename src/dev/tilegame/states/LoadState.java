@@ -5,6 +5,7 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Inventory;
 import dev.tilegame.inventory.items.*;
 import dev.tilegame.player.Player;
+import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.worlds.World;
 
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class LoadState extends State {
     private Pet pet;
     /** the player needs to be loaded to. */
     private Player player;
-
+    private LoopLoader music;
     /**
      * MenuState constructor.
      *
@@ -33,6 +34,7 @@ public class LoadState extends State {
         super(manager);
         player = manager.getPlayer();
         pet = manager.getPet();
+        music = manager.getLoopLoader();
         //statsManager = new StatsManager(pet);
     }
 
@@ -107,15 +109,18 @@ public class LoadState extends State {
                 manager.setPlayer(player);
 
                 //set game state == new
+                music.stop();
                 State.setState(manager.getGame().getGameState());
             } catch (FileNotFoundException e) {
                 //if hte file doesnt exist
                 JOptionPane.showMessageDialog(null, "<html>The file <b>\"" + name + "\"</b> is non-existent. \n The directory \"/350-animal-app/savedData/\" is where the files are saved. \n Please make sure your spelled your file name correctly and that it is in the right directory.");
                 System.out.println(State.getLastState());
+                music.stop();
                 State.setState(State.getLastState());
             }
         } else {
             // if the player hit cancel or exit
+            music.stop();
             State.setState(State.getLastState());
 
         }
