@@ -1,8 +1,0 @@
-Xloc:16
-Yloc:14
-Items:Chew Toy,Chew Toy,Chew Toy,Chew Toy,Dog Bone,Dog Bone,Stuffed Animal,
-Money:29
-Health:6
-Happiness:4
-Hygene:4
-Hunger:4

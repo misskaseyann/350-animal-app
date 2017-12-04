@@ -70,4 +70,12 @@ public class Inventory {
         return itemList.size();
     }
 
+    public String getListNames() {
+        String info = "";
+        for (Item item : itemList) {
+            info += item.getName() + ",";
+        }
+        return info;
+    }
+
 }
