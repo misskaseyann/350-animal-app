@@ -18,6 +18,8 @@ public class MiniGamePet extends Animal {
     //Animations
     private Animation aniDown, aniUp, aniLeft, aniRight;
 
+
+
     /**
      * Pet AI Constructor.
      * @param manager class manager.
@@ -31,6 +33,7 @@ public class MiniGamePet extends Animal {
         aniUp = new Animation(200, Assets.getDogUp());
         aniLeft = new Animation(200, Assets.getDogLeft());
         aniRight = new Animation(200, Assets.getDogRight());
+
     }
 
     /**
@@ -43,6 +46,8 @@ public class MiniGamePet extends Animal {
         aniUp.tick();
         aniLeft.tick();
         aniRight.tick();
+        manager.getGameCamera().centerOnEntity(this);
+
     }
 
     /**
@@ -52,7 +57,7 @@ public class MiniGamePet extends Animal {
      */
     private int checkMove(int move){
         if(!super.noCollide(move))
-            return health--;
+            return 0;
         return move;
     }
 
@@ -72,10 +77,6 @@ public class MiniGamePet extends Animal {
      * @return animation frame of pet.
      */
     private BufferedImage getCurrentAnimationFrame() {
-        if(miniGameOver()){
-            manager.getPlayer().setMoney(100);
-            State.setState(State.getLastState());
-        }
             int movement = 0;
             if (manager.getKeyManager().isUp() && manager.getKeyManager().isLeft())
                 movement = 5;
@@ -93,6 +94,8 @@ public class MiniGamePet extends Animal {
                 movement = 3;
             else if (manager.getKeyManager().isRight())
                 movement = 4;
+
+            movement = checkMove(movement);
 
             // Find animation for AI movement.
             switch (movement) {

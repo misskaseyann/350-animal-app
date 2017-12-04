@@ -12,7 +12,7 @@ import java.awt.*;
 public class MiniGameState extends State{
     private MiniGamePet pet;
     private World world;
-    private LoopLoader music;
+    private LoopLoader music, sounds;
     private StatsManager statsManager;
 
     /**
@@ -21,13 +21,14 @@ public class MiniGameState extends State{
      */
     public MiniGameState(Manager manager) {
         super(manager);
-        world = new World(manager, "tbd.txt");
+        world = new World(manager, "res/worlds/world3.txt");
         manager.setWorld(world);
         pet = new MiniGamePet(manager,world.getSpawnX()*32, world.getSpawnY()*32);
         manager.setMiniPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
         music = new LoopLoader();
+        sounds = new LoopLoader();
         manager.setLoopLoader(music);
     }
 
@@ -38,11 +39,29 @@ public class MiniGameState extends State{
     public void tick() {
         world.tick();
         pet.tick();
+        if (pet.miniGameOver()) {
+            music.stop();
+            manager.getPlayer().setMoney(manager.getPlayer().getMoney()+50);
+            State.setState(State.getLastState());
+        }
         // Check if music is playing.
         if (!music.isPlaying()) {
-            music.load("tbd.wav");
+            music.load("res/sounds/doggo2.wav");
             music.play();
         }
+
+        if (manager.getMouseManager().getLeftPress()) {
+            int x = manager.getMouseManager().getMouseX();
+            int y = manager.getMouseManager().getMouseY();
+            if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/door-10-open.wav");
+                sounds.play();
+                music.stop();
+                State.setLastState(this);
+                State.setState(manager.getGame().getTravelState());
+            }
+        }
+        manager.getMouseManager().setLeftPress(false);
 
     }
 
@@ -55,9 +74,7 @@ public class MiniGameState extends State{
         world.render(g);
         pet.render(g);
         // Render top and bottom menu.
-        g.drawImage(Assets.getMainMenuTopReg(), 0, 0, null);
-        g.drawImage(Assets.getMenuButton(), 10, 490, null);
-
+        g.drawImage(Assets.getMainMenuTopTravel(), 0, 0, null);
     }
 
     /**
