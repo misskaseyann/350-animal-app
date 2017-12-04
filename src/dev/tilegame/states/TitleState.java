@@ -28,6 +28,7 @@ public class TitleState extends State {
         titleAni = new Animation(300, Assets.getTitleImg());
         //initialize music
         music = new LoopLoader();
+        manager.setLoopLoader(music);
     }
 
     /**
