@@ -1,9 +1,13 @@
+AnimalAppTest
 dev.tilegame
 dev.tilegame.display
 dev.tilegame.entities
 dev.tilegame.entities.animals
 dev.tilegame.gfx
 dev.tilegame.input
+dev.tilegame.inventory
+dev.tilegame.inventory.items
+dev.tilegame.player
 dev.tilegame.sound
 dev.tilegame.states
 dev.tilegame.stats

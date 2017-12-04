@@ -3,105 +3,105 @@
   <ID>JAVA</ID>
   <OriginalElement>dev.tilegame.Launcher</OriginalElement>
   <nodes>
-    <node x="516.4999999999999" y="290.0">dev.tilegame.sound.LoopLoader</node>
-    <node x="871.1235720389791" y="0.0">dev.tilegame.gfx.ImageLoader</node>
-    <node x="47.5" y="290.0">dev.tilegame.tile.decor</node>
-    <node x="109.87100707118725" y="1090.0">dev.tilegame.states.TitleState</node>
-    <node x="1829.1428028082098" y="0.0">dev.tilegame.entities.Entity</node>
-    <node x="1641.4987770890039" y="290.0">dev.tilegame.tile.dining</node>
-    <node x="1486.4987770890039" y="290.0">dev.tilegame.stats.StatsManager</node>
-    <node x="361.5" y="290.0">dev.tilegame.tile.kitchen</node>
-    <node x="1321.4987770890039" y="290.0">dev.tilegame.tile.bedroom</node>
-    <node x="1821.123228478958" y="510.0">dev.tilegame.Manager</node>
-    <node x="2492.246191086598" y="290.0">dev.tilegame.gfx.GameCamera</node>
-    <node x="1571.723228478958" y="80.0">dev.tilegame.entities.animals.Animal</node>
-    <node x="1876.5259740259737" y="820.0">dev.tilegame.states.State</node>
-    <node x="1907.5461910865981" y="1090.0">dev.tilegame.states.InventoryState</node>
-    <node x="507.3819053723122" y="80.0">dev.tilegame.gfx.Animation</node>
-    <node x="2346.246191086598" y="290.0">dev.tilegame.input.KeyManager</node>
-    <node x="976.4985720389791" y="80.0">dev.tilegame.gfx.Assets</node>
-    <node x="1597.5420244199315" y="510.0">dev.tilegame.utils.Utils</node>
-    <node x="1607.4816747288519" y="680.0">dev.tilegame.worlds.World</node>
-    <node x="1719.0194406001701" y="1090.0">dev.tilegame.states.TravelState</node>
-    <node x="913.498777089004" y="290.0">dev.tilegame.entities.animals.Pet</node>
-    <node x="696.4548890145661" y="680.0">dev.tilegame.entities.animals.Pet_AI</node>
-    <node x="1019.1235720389791" y="0.0">dev.tilegame.gfx.SpriteSheet</node>
-    <node x="2153.326569264069" y="1380.0">dev.tilegame.Launcher</node>
-    <node x="2068.546191086598" y="1090.0">dev.tilegame.states.MenuState</node>
-    <node x="660.4999999999999" y="290.0">dev.tilegame.tile.livingroom</node>
-    <node x="-14.038664323374292" y="274.4991212653779">dev.tilegame.display.Display</node>
-    <node x="1162.4987770890039" y="290.0">dev.tilegame.tile.outdoor</node>
-    <node x="192.5" y="290.0">dev.tilegame.tile.bathroom</node>
-    <node x="1526.7253787878785" y="1090.0">dev.tilegame.states.ParkState</node>
-    <node x="330.91646161664175" y="1090.0">dev.tilegame.states.GameState</node>
-    <node x="1003.498777089004" y="290.0">dev.tilegame.tile.housing</node>
-    <node x="2182.246191086598" y="290.0">dev.tilegame.input.MouseManager</node>
-    <node x="2164.326569264069" y="1300.0">dev.tilegame.Game</node>
+    <node x="4883.0" y="0.0">dev.tilegame.sound.LoopLoader</node>
+    <node x="1849.0" y="5862.0">dev.tilegame.tile.decor</node>
+    <node x="0.0" y="5862.0">dev.tilegame.gfx.ImageLoader</node>
+    <node x="2607.0" y="368.0">dev.tilegame.states.TitleState</node>
+    <node x="590.5" y="0.0">dev.tilegame.entities.Entity</node>
+    <node x="1677.0" y="5862.0">dev.tilegame.tile.dining</node>
+    <node x="4599.0" y="0.0">dev.tilegame.stats.StatsManager</node>
+    <node x="1498.0" y="5862.0">dev.tilegame.tile.kitchen</node>
+    <node x="941.0" y="5862.0">dev.tilegame.tile.bedroom</node>
+    <node x="2857.0" y="0.0">dev.tilegame.Manager</node>
+    <node x="5123.0" y="0.0">dev.tilegame.gfx.GameCamera</node>
+    <node x="588.0" y="281.0">dev.tilegame.entities.animals.Animal</node>
+    <node x="2015.25" y="0.0">dev.tilegame.states.State</node>
+    <node x="2360.0" y="379.0">dev.tilegame.states.InventoryState</node>
+    <node x="4026.0" y="0.0">dev.tilegame.gfx.Animation</node>
+    <node x="3148.0" y="0.0">dev.tilegame.input.KeyManager</node>
+    <node x="0.0" y="0.0">dev.tilegame.gfx.Assets</node>
+    <node x="5775.0" y="0.0">dev.tilegame.utils.Utils</node>
+    <node x="3436.0" y="0.0">dev.tilegame.worlds.World</node>
+    <node x="1909.0000000000002" y="379.0">dev.tilegame.states.TravelState</node>
+    <node x="723.0" y="540.0">dev.tilegame.entities.animals.Pet</node>
+    <node x="363.0" y="562.0">dev.tilegame.entities.animals.Pet_AI</node>
+    <node x="318.0" y="5862.0">dev.tilegame.Launcher</node>
+    <node x="5440.0" y="0.0">dev.tilegame.gfx.SpriteSheet</node>
+    <node x="549.0" y="5862.0">dev.tilegame.tile.livingroom</node>
+    <node x="2135.0" y="379.0">dev.tilegame.states.MenuState</node>
+    <node x="4341.0" y="0.0">dev.tilegame.display.Display</node>
+    <node x="1130.0" y="5862.0">dev.tilegame.tile.outdoor</node>
+    <node x="747.0" y="5862.0">dev.tilegame.tile.bathroom</node>
+    <node x="1646.0000000000002" y="335.0">dev.tilegame.states.ParkState</node>
+    <node x="1399.0000000000002" y="346.0">dev.tilegame.states.GameState</node>
+    <node x="1314.0" y="5862.0">dev.tilegame.tile.housing</node>
+    <node x="3700.0" y="0.0">dev.tilegame.input.MouseManager</node>
+    <node x="1108.0" y="0.0">dev.tilegame.Game</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="dev.tilegame.entities.animals.Pet_AI" target="dev.tilegame.entities.animals.Animal">
-      <point x="17.600000000000023" y="-15.0" />
-      <point x="758.0548890145661" y="570.0" />
-      <point x="856.7499999999999" y="570.0" />
-      <point x="856.7499999999999" y="490.0" />
-      <point x="1821.623228478958" y="490.0" />
-      <point x="1821.623228478958" y="170.0" />
-      <point x="1635.4232284789582" y="170.0" />
-      <point x="18.200000000000045" y="15.0" />
-    </edge>
     <edge source="dev.tilegame.entities.animals.Animal" target="dev.tilegame.entities.Entity">
-      <point x="0.0" y="-15.0" />
-      <point x="1617.223228478958" y="60.0" />
-      <point x="1837.7428028082097" y="60.0" />
-      <point x="-34.39999999999998" y="15.0" />
+      <point x="0.0" y="-104.5" />
+      <point x="0.0" y="115.5" />
     </edge>
-    <edge source="dev.tilegame.states.MenuState" target="dev.tilegame.states.State">
-      <point x="-46.39999999999998" y="-15.0" />
-      <point x="2080.1461910865983" y="1030.0" />
-      <point x="1949.7402597402595" y="1030.0" />
-      <point x="32.214285714285666" y="15.0" />
-    </edge>
-    <edge source="dev.tilegame.states.TravelState" target="dev.tilegame.states.State">
-      <point x="29.75" y="-15.0" />
-      <point x="1808.2694406001701" y="1040.0" />
-      <point x="1914.5974025974024" y="1040.0" />
-      <point x="-2.928571428571445" y="15.0" />
-    </edge>
-    <edge source="dev.tilegame.states.TitleState" target="dev.tilegame.states.State">
-      <point x="36.0" y="-15.0" />
-      <point x="199.87100707118725" y="980.0" />
-      <point x="1879.4545454545453" y="980.0" />
-      <point x="-38.071428571428555" y="15.0" />
-    </edge>
-    <edge source="dev.tilegame.states.InventoryState" target="dev.tilegame.states.State">
-      <point x="-56.0" y="-15.0" />
-      <point x="1921.5461910865981" y="1070.0" />
-      <point x="1932.1688311688308" y="1070.0" />
-      <point x="14.64285714285711" y="15.0" />
+    <edge source="dev.tilegame.entities.animals.Pet_AI" target="dev.tilegame.entities.animals.Animal">
+      <point x="0.0" y="-170.0" />
+      <point x="533.0" y="515.0" />
+      <point x="650.5" y="515.0" />
+      <point x="-62.5" y="104.5" />
     </edge>
     <edge source="dev.tilegame.states.ParkState" target="dev.tilegame.states.State">
-      <point x="40.875" y="-15.0" />
-      <point x="1622.1003787878785" y="1020.0" />
-      <point x="1902.8831168831166" y="1020.0" />
-      <point x="-14.64285714285711" y="15.0" />
+      <point x="0.0" y="-115.5" />
+      <point x="1767.5000000000002" y="305.0" />
+      <point x="2070.0" y="305.0" />
+      <point x="-54.75" y="137.5" />
+    </edge>
+    <edge source="dev.tilegame.states.MenuState" target="dev.tilegame.states.State">
+      <point x="0.0" y="-71.5" />
+      <point x="2237.5" y="315.0" />
+      <point x="2143.0" y="315.0" />
+      <point x="18.25" y="137.5" />
     </edge>
     <edge source="dev.tilegame.states.GameState" target="dev.tilegame.states.State">
-      <point x="45.0" y="-15.0" />
-      <point x="434.41646161664175" y="1000.0" />
-      <point x="1891.1688311688308" y="1000.0" />
-      <point x="-26.35714285714289" y="15.0" />
+      <point x="0.0" y="-104.5" />
+      <point x="1512.5000000000002" y="295.0" />
+      <point x="2033.5" y="295.0" />
+      <point x="-91.25" y="137.5" />
+    </edge>
+    <edge source="dev.tilegame.states.TravelState" target="dev.tilegame.states.State">
+      <point x="-2.2737367544323206E-13" y="-71.5" />
+      <point x="2012.0" y="315.0" />
+      <point x="2106.5" y="315.0" />
+      <point x="-18.25" y="137.5" />
+    </edge>
+    <edge source="dev.tilegame.states.TitleState" target="dev.tilegame.states.State">
+      <point x="0.0" y="-82.5" />
+      <point x="2709.5" y="295.0" />
+      <point x="2216.0" y="295.0" />
+      <point x="91.25" y="137.5" />
+    </edge>
+    <edge source="dev.tilegame.states.InventoryState" target="dev.tilegame.states.State">
+      <point x="0.0" y="-71.5" />
+      <point x="2473.5" y="305.0" />
+      <point x="2179.5" y="305.0" />
+      <point x="54.75" y="137.5" />
     </edge>
     <edge source="dev.tilegame.entities.animals.Pet" target="dev.tilegame.entities.animals.Animal">
-      <point x="26.25" y="-15.0" />
-      <point x="974.748777089004" y="250.0" />
-      <point x="1580.823228478958" y="250.0" />
-      <point x="-36.39999999999998" y="15.0" />
+      <point x="0.0" y="-192.0" />
+      <point x="893.0" y="515.0" />
+      <point x="775.5" y="515.0" />
+      <point x="62.5" y="104.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.49912280701754386" x="578.0" y="560.0" />
+  <settings layout="Hierarchic Group" zoom="0.1" x="1638.6347903976466" y="328.6779329712608" />
   <SelectedNodes />
-  <Categories />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>
