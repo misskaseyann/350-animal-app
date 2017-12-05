@@ -870,402 +870,403 @@ public class  Tile {
     /**
      * Here is create a WoodFloorTile object and it's id is set.
      * */
-    public final static Tile  woodFloorTile = new WoodFloorTile(10);
+    public static final Tile  woodFloorTile = new WoodFloorTile(10);
     /**
      * Here is create a kitchenFloorTile object and it's id is set.
      * */
-    public final static  Tile kitchenFloorTile = new KitchenFloorTile(11);
+    public static final  Tile kitchenFloorTile = new KitchenFloorTile(11);
     /**
      * Here is create a bathFloorTile object and it's id is set.
      * */
-    public final static  Tile bathFloorTile = new BathFloorTile(12);
+    public static final  Tile bathFloorTile = new BathFloorTile(12);
     /**
      * Here is create a stoneFloorTile object and it's id is set.
      * */
-    public final static  Tile stoneFloorTile = new StoneFloorTile(13);
+    public static final  Tile stoneFloorTile = new StoneFloorTile(13);
 
     /**
      *  Here is create a wallLeftTile object and it's id is set.
      * */
-    public final static  Tile wallLeftTile = new WallLeftTile(14);
+    public static final  Tile wallLeftTile = new WallLeftTile(14);
     /**
      *  Here is create a wallCenterTile object and it's id is set.
      * */
-    public final static  Tile wallCenterTile = new WallCenterTile(15);
+    public static final  Tile wallCenterTile = new WallCenterTile(15);
     /**
      *  Here is create a wallRightTile object and it's id is set.
      * */
-    public final static  Tile wallRightTile = new WallRightTile(16);
+    public static final  Tile wallRightTile = new WallRightTile(16);
     /**
      *  Here is create a wallEndTile object and it's id is set.
      * */
-    public final static  Tile wallEndTile = new WallEndTile(17);
+    public static final  Tile wallEndTile = new WallEndTile(17);
 
     /**
      *  Here is create a ceilingLeftTile object and it's id is set.
      * */
-    public final static  Tile ceilingLeftTile = new CeilingLeftTile(18);
+    public static final  Tile ceilingLeftTile = new CeilingLeftTile(18);
     /**
      *  Here is create a ceilingCenterTile object and it's id is set.
      * */
-    public final static  Tile ceilingCenterTile = new CeilingCenterTile(19);
+    public static final  Tile ceilingCenterTile = new CeilingCenterTile(19);
 
     /**
      *  Here is create a ceilingRightTile object and it's id is set.
      * */
-    public final static  Tile ceilingRightTile = new CeilingRightTile(20);
+    public static final  Tile ceilingRightTile = new CeilingRightTile(20);
     /**
      *  Here is create a ceilingEndTile object and it's id is set.
      * */
-    public final static  Tile ceilingEndTile = new CeilingEndTile(21);
+    public static final  Tile ceilingEndTile = new CeilingEndTile(21);
     /**
      *  Here is create a ceilingDownTile object and it's id is set.
      * */
-    public final static  Tile ceilingDownTile = new CeilingDownTile(22);
+    public static final  Tile ceilingDownTile = new CeilingDownTile(22);
     /**
      *  Here is create a ceilingBCLTile object and it's id is set.
      * */
-    public final static  Tile ceilingBCLTile = new CeilingBCLTile(23);
+    public static final  Tile ceilingBCLTile = new CeilingBCLTile(23);
     /**
      *  Here is create a ceilingBCRTile object and it's id is set.
      * */
-    public final static  Tile ceilingBCRTile = new CeilingBCRTile(24);
+    public static final  Tile ceilingBCRTile = new CeilingBCRTile(24);
     /**
      *  Here is create a ceilingTCLTile object and it's id is set.
      * */
-    public final static  Tile ceilingTCLTile = new CeilingTCLTile(25);
+    public static final  Tile ceilingTCLTile = new CeilingTCLTile(25);
     /**
      *  Here is create a ceilingTCRTile object and it's id is set.
      * */
-    public final static  Tile ceilingTCRTile = new CeilingTCRTile(26);
+    public static final  Tile ceilingTCRTile = new CeilingTCRTile(26);
     /**
      *  Here is create a ceilingPDownTile object and it's id is set.
      * */
-    public final static  Tile ceilingPDownTile = new CeilingPDownTile(92);
+    public static final  Tile ceilingPDownTile = new CeilingPDownTile(92);
     /**
      *  Here is create a ceilingPRightTile object and it's id is set.
      * */
-    public final static  Tile ceilingPRightTile = new CeilingPRightTile(93);
+    public static final  Tile ceilingPRightTile = new CeilingPRightTile(93);
     /**
      *  Here is create a ceilingPLeftTile object and it's id is set.
      * */
-    public final static  Tile ceilingPLeftTile = new CeilingPLeftTile(94);
+    public static final  Tile ceilingPLeftTile = new CeilingPLeftTile(94);
 
     /**
      *  Here is create a outWallTLTile object and it's id is set.
      * */
-    public final static  Tile outWallTLTile = new OutWallTLTile(01);
+    public static final  Tile outWallTLTile = new OutWallTLTile(01);
     /**
      *  Here is create a outWallTCTile object and it's id is set.
      * */
-    public final static  Tile outWallTCTile = new OutWallTCTile(02);
+    public static final  Tile outWallTCTile = new OutWallTCTile(02);
     /**
      *  Here is create a outWallTRTile object and it's id is set.
      * */
-    public final static  Tile outWallTRTile = new OutWallTRTile(03);
+    public static final  Tile outWallTRTile = new OutWallTRTile(03);
     /**
      *  Here is create a outWallBLTile object and it's id is set.
      * */
-    public final static  Tile outWallBLTile = new OutWallBLTile(04);
+    public static final  Tile outWallBLTile = new OutWallBLTile(04);
     /**
      * Here is create a outWallBCTile object and it's id is set.
      * */
-    public final static  Tile outWallBCTile = new OutWallBCTile(05);
+    public static final  Tile outWallBCTile = new OutWallBCTile(05);
     /**
      *Here is create a outWallBRTile object and it's id is set.
      * */
-    public final static  Tile outWallBRTile = new OutWallBRTile(06);
+    public static final  Tile outWallBRTile = new OutWallBRTile(06);
 
     /**
      * Here is create a plantTopTile object and it's id is set.
      * */
-    public final static  Tile plantTopTile = new PlantTopTile(27);
+    public static final  Tile plantTopTile = new PlantTopTile(27);
     /**
      * Here is create a plantBotTile object and it's id is set.
      * */
-    public final static  Tile plantBotTile = new PlantBotTile(28);
+    public static final  Tile plantBotTile = new PlantBotTile(28);
 
     /**
      * Here is create a kitTableTLTile object and it's id is set.
      * */
-    public final static  Tile kitTableTLTile = new KitTableTLTile(29);
+    public static final  Tile kitTableTLTile = new KitTableTLTile(29);
     /**
      * Here is create a kitTableTRTile object and it's id is set.
      * */
-    public final static  Tile kitTableTRTile = new KitTableTRTile(30);
+    public static final  Tile kitTableTRTile = new KitTableTRTile(30);
     /**
      * Here is create a kitTableBLTile object and it's id is set.
      * */
-    public final static  Tile kitTableBLTile = new KitTableBLTile(31);
+    public static final  Tile kitTableBLTile = new KitTableBLTile(31);
     /**
      * Here is create a kitTableBRTile object and it's id is set.
      * */
-    public final static  Tile kitTableBRTile = new KitTableBRTile(32);
+    public static final  Tile kitTableBRTile = new KitTableBRTile(32);
 
     /**
      * Here is create a chairLeftTile object and it's id is set.
      * */
-    public final static  Tile chairLeftTile = new ChairLeftTile(33);
+    public static final  Tile chairLeftTile = new ChairLeftTile(33);
     /**
      * Here is create a chairRightTile object and it's id is set.
      * */
-    public final static  Tile chairRightTile = new ChairRightTile(34);
+    public static final  Tile chairRightTile = new ChairRightTile(34);
 
     /**
      * Here is create a counterCenterTile object and it's id is set.
      * */
-    public final static  Tile counterCenterTile = new CounterCenterTile(35);
+    public static final  Tile counterCenterTile = new CounterCenterTile(35);
     /**
      *Here is create a counterCornerTile object and it's id is set.
      * */
-    public final static  Tile counterCornerTile = new CounterCornerTile(36);
+    public static final  Tile counterCornerTile = new CounterCornerTile(36);
     /**
      * Here is create a counterEndTile object and it's id is set.
      * */
-    public final static  Tile counterEndTile = new CounterEndTile(37);
+    public static final  Tile counterEndTile = new CounterEndTile(37);
 
     /**
      * Here is create a dogBowlTile object and it's id is set.
      * */
-    public final static  Tile dogBowlTile = new DogBowlTile(38);
+    public static final  Tile dogBowlTile = new DogBowlTile(38);
     /**
      * Here is create a dogBoneTile object and it's id is set.
      * */
-    public final static  Tile dogBoneTile = new DogBoneTile(39);
+    public static final  Tile dogBoneTile = new DogBoneTile(39);
     /**
      * Here is create a boxTile object and it's id is set.
      * */
-    public final static  Tile boxTile = new BoxTile(40);
+    public static final  Tile boxTile = new BoxTile(40);
 
     /**
      * Here is create a fridgeTopTile object and it's id is set.
      * */
-    public final static  Tile fridgeTopTile = new FridgeTopTile(41);
+    public static final  Tile fridgeTopTile = new FridgeTopTile(41);
     /**
      * Here is create a fridgeBotTile object and it's id is set.
      * */
-    public final static  Tile fridgeBotTile = new FridgeBotTile(42);
+    public static final  Tile fridgeBotTile = new FridgeBotTile(42);
     /**
      * Here is create a stoveTopTile object and it's id is set.
      * */
-    public final static  Tile stoveTopTile = new StoveTopTile(43);
+    public static final  Tile stoveTopTile = new StoveTopTile(43);
     /**
      * Here is create a stoveBotTile object and it's id is set.
      * */
-    public final static  Tile stoveBotTile = new StoveBotTile(44);
+    public static final  Tile stoveBotTile = new StoveBotTile(44);
     /**
      * Here is create a sinkLTopTile object and it's id is set.
      * */
-    public final static  Tile sinkLTopTile = new SinkLTopTile(45);
+    public static final  Tile sinkLTopTile = new SinkLTopTile(45);
     /**
      * Here is create a sinkLBotTile object and it's id is set.
      * */
-    public final static  Tile sinkLBotTile = new SinkLBotTile(46);
+    public static final  Tile sinkLBotTile = new SinkLBotTile(46);
     /**
      * Here is create a sinkRTopTile object and it's id is set.
      * */
-    public final static  Tile sinkRTopTile = new SinkRTopTile(47);
+    public static final  Tile sinkRTopTile = new SinkRTopTile(47);
     /**
      * Here is create a sinkRBotTile object and it's id is set.
      * */
-    public final static  Tile sinkRBotTile = new SinkRBotTile(48);
+    public static final  Tile sinkRBotTile = new SinkRBotTile(48);
 
     /**
      * Here is create a phoneTile object and it's id is set.
      * */
-    public final static  Tile phoneTile = new PhoneTile(49);
+    public static final  Tile phoneTile = new PhoneTile(49);
     /**
      * Here is create a kitRugTile object and it's id is set.
      * */
-    public final static  Tile kitRugTile = new KitRugTile(50);
+    public static final  Tile kitRugTile = new KitRugTile(50);
     /**
      * Here is create a clockTile object and it's id is set.
      * */
-    public final static  Tile clockTile = new ClockTile(51);
+    public static final  Tile clockTile = new ClockTile(51);
     /**
      * Here is create a endTableTile object and it's id is set.
      * */
-    public final static  Tile endTableTile = new EndTableTile(52);
+    public static final  Tile endTableTile = new EndTableTile(52);
 
     /**
      * Here is create a toiletTopTile object and it's id is set.
      * */
-    public final static  Tile toiletTopTile = new ToiletTopTile(53);
+    public static final  Tile toiletTopTile = new ToiletTopTile(53);
     /**
      * Here is create a toiletBotTile object and it's id is set.
      * */
-    public final static  Tile toiletBotTile = new ToiletBotTile(54);
+    public static final   Tile toiletBotTile = new ToiletBotTile(54);
     /**
      * Here is create a bathSinkTopTile object and it's id is set.
      * */
-    public final static  Tile bathSinkTopTile = new BathSinkTopTile(55);
+    public static final  Tile bathSinkTopTile = new BathSinkTopTile(55);
     /**
      * Here is create a bathSinkBotTile object and it's id is set.
      * */
-    public final static  Tile bathSinkBotTile = new BathSinkBotTile(56);
+    public static final  Tile bathSinkBotTile = new BathSinkBotTile(56);
     /**
      * Here is create a showerTopTile object and it's id is set.
      * */
-    public final static  Tile showerTopTile = new ShowerTopTile(57);
+    public static final  Tile showerTopTile = new ShowerTopTile(57);
     /**
      * Here is create a showerBotTile object and it's id is set.
      * */
-    public final static  Tile showerBotTile = new ShowerBotTile(58);
+    public static final  Tile showerBotTile = new ShowerBotTile(58);
 
     /**
      * Here is create a couchLeftTile object and it's id is set.
      * */
-    public final static  Tile couchLeftTile = new CouchLeftTile(59);
+    public static final  Tile couchLeftTile = new CouchLeftTile(59);
     /**
      * Here is create a couchRightTile object and it's id is set.
      * */
-    public final static  Tile couchRightTile = new CouchRightTile(60);
+    public static final  Tile couchRightTile = new CouchRightTile(60);
     /**
      * Here is create a tvTopTile object and it's id is set.
      * */
-    public final static  Tile tvTopTile = new TVTopTile(61);
+    public static final  Tile tvTopTile = new TVTopTile(61);
     /**
      * Here is create a tvBotTile object and it's id is set.
      * */
-    public final static  Tile tvBotTile = new TVBotTile(62);
+    public static final  Tile tvBotTile = new TVBotTile(62);
 
     /**
      * Here is create a shelfTLTile object and it's id is set.
      * */
-    public final static  Tile shelfTLTile = new ShelfTLTile(63);
+    public static final  Tile shelfTLTile = new ShelfTLTile(63);
     /**
      * Here is create a shelfTRTile object and it's id is set.
      * */
-    public final static  Tile shelfTRTile = new ShelfTRTile(64);
+    public static final  Tile shelfTRTile = new ShelfTRTile(64);
     /**
      * Here is create a shelfBLTile object and it's id is set.
      * */
-    public final static  Tile shelfBLTile = new ShelfBLTile(65);
+    public static final  Tile shelfBLTile = new ShelfBLTile(65);
     /**
      * Here is create a shelfBRTile object and it's id is set.
      * */
-    public final static  Tile shelfBRTile = new ShelfBRTile(66);
+    public static final  Tile shelfBRTile = new ShelfBRTile(66);
 
     /**
      * Here is create a deskTopTile object and it's id is set.
      * */
-    public final static  Tile deskTopTile = new DeskTopTile(67);
+    public static final  Tile deskTopTile = new DeskTopTile(67);
     /**
      * Here is create a deskBotTile object and it's id is set.
      * */
-    public final static  Tile deskBotTile = new DeskBotTile(68);
+    public static final  Tile deskBotTile = new DeskBotTile(68);
 
     /**
      * Here is create a bedTLTile object and it's id is set.
      * */
-    public final static  Tile bedTLTile = new BedTLTile(69);
+    public static final  Tile bedTLTile = new BedTLTile(69);
     /**
      * Here is create a bedTRTile object and it's id is set.
      * */
-     public final static  Tile bedTRTile = new BedTRTile(70);
+    public static final  Tile bedTRTile = new BedTRTile(70);
 
      /**
      * Here is create a bedCLTile object and it's id is set.
      * */
-     public final static  Tile bedCLTile = new BedCLTile(90);
+     public static final  Tile bedCLTile = new BedCLTile(90);
     /**
      * Here is create a bedCRTile object and it's id is set.
      * */
-    public final static  Tile bedCRTile = new BedCRTile(91);
+    public static final  Tile bedCRTile = new BedCRTile(91);
     /**
      * Here is create a bedBLTile object and it's id is set.
      * */
-    public final static  Tile bedBLTile = new BedBLTile(71);
+    public static final  Tile bedBLTile = new BedBLTile(71);
     /**
      * Here is create a bedBRTile object and it's id is set.
      * */
-    public final static  Tile bedBRTile = new BedBRTile(72);
+    public static final  Tile bedBRTile = new BedBRTile(72);
 
     /**
      * Here is create a diningTLTile object and it's id is set.
      * */
-    public final static  Tile diningTLTile = new DiningTLTile(73);
+    public static final  Tile diningTLTile = new DiningTLTile(73);
     /**
      * Here is create a diningTRTile object and it's id is set.
      * */
-    public final static  Tile diningTRTile = new DiningTRTile(74);
+    public static final  Tile diningTRTile = new DiningTRTile(74);
     /**
      * Here is create a diningBLTile object and it's id is set.
      * */
-    public final static  Tile diningBLTile = new DiningBLTile(75);
+    public static final  Tile diningBLTile = new DiningBLTile(75);
     /**
      * Here is create a diningBRTile object and it's id is set.
      * */
-    public final static  Tile diningBRTile = new DiningBRTile(76);
+    public static final  Tile diningBRTile = new DiningBRTile(76);
 
     /**
      * Here is create a rugTLTile object and it's id is set.
      * */
-    public final static  Tile rugTLTile = new RugTLTile(77);
+    public static final  Tile rugTLTile = new RugTLTile(77);
     /**
      * Here is create a rugTCTile object and it's id is set.
      * */
-    public final static  Tile rugTCTile = new RugTCTile(78);
+    public static final  Tile rugTCTile = new RugTCTile(78);
     /**
      * Here is create a rugTRTile object and it's id is set.
      * */
-    public final static  Tile rugTRTile = new RugTRTile(79);
+    public static final  Tile rugTRTile = new RugTRTile(79);
     /**
      * Here is create a rugBLTile object and it's id is set.
      * */
-    public final static  Tile rugBLTile = new RugBLTile(80);
+    public static final  Tile rugBLTile = new RugBLTile(80);
     /**
      * Here is create a rugBCTile object and it's id is set.
      * */
-    public final static  Tile rugBCTile = new RugBCTile(81);
+    public static final  Tile rugBCTile = new RugBCTile(81);
     /**
      * Here is create a rugBRTile object and it's id is set.
      * */
-    public final static  Tile rugBRTile = new RugBRTile(82);
+    public static final  Tile rugBRTile = new RugBRTile(82);
 
     /**
      * Here is create a grassLongTile object and it's id is set.
      * */
-    public final static  Tile grassLongTile = new GrassLongTile(83);
+    public static final  Tile grassLongTile = new GrassLongTile(83);
     /**
      * Here is create a grassFlowersTile object and it's id is set.
      * */
-    public final static  Tile grassFlowersTile = new GrassFlowersTile(84);
+    public static final  Tile grassFlowersTile = new GrassFlowersTile(84);
     /**
      * Here is create a grassRockTile object and it's id is set.
      * */
-    public final static  Tile grassRockTile = new GrassRockTile(85);
+    public static final  Tile grassRockTile = new GrassRockTile(85);
     /**
      * Here is create a grassShortTile object and it's id is set.
      * */
-    public final static  Tile grassShortTile = new GrassShortTile(86);
+    public static final  Tile grassShortTile = new GrassShortTile(86);
 
     /**
      * Here is create a doorTopTile object and it's id is set.
      * */
-    public final static  Tile doorTopTile = new DoorTopTile(87);
+    public static final  Tile doorTopTile = new DoorTopTile(87);
     /**
      * Here is create a doorBotTile object and it's id is set.
      * */
-    public final static  Tile doorBotTile = new DoorBotTile(88);
+    public static final  Tile doorBotTile = new DoorBotTile(88);
 
     /**
      * Here is create a pathTile object and it's id is set.
      * */
-    public final static  Tile pathTile = new PathTile(89);
+    public static final  Tile pathTile = new PathTile(89);
 
     /**
      * Here is create a grassShortTile object and it's id is set.
      * This Tile ends the mini game.
      * */
-    public final static  Tile miniGameGrassShortTile = new MiniGameGrassShortTile(95);
+    public static final  Tile miniGameGrassShortTile
+            = new MiniGameGrassShortTile(95);
 
     //CLASS
 
     /**
      * filler
      * */
-    public final static int TILEWIDTH = 32, TILEHEIGHT = 32;
+    public static final int TILEWIDTH = 32, TILEHEIGHT = 32;
 
     protected BufferedImage texture;
     protected final int id;
@@ -1276,7 +1277,7 @@ public class  Tile {
      * @param id integer id.
      * @param texture BufferedImage object.
      * */
-    public Tile(BufferedImage texture, int id) {
+    public Tile(final BufferedImage texture, int id) {
         this.texture = texture;
         this.id = id;
 
@@ -1284,7 +1285,7 @@ public class  Tile {
     }
 
     /**
-     * filler
+     * filler.
      * */
     public void tick() {
 
@@ -1297,7 +1298,8 @@ public class  Tile {
      * @param y int of the y value to render the image.
      * */
     public void render(Graphics g, int x, int y) {
-        g.drawImage(texture,x,y,TILEWIDTH,TILEHEIGHT,null);
+
+        g.drawImage(texture, x, y, TILEWIDTH, TILEHEIGHT,null);
     }
 
     /**
