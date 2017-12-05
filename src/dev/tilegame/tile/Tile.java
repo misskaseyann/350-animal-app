@@ -1226,10 +1226,13 @@ public class  Tile {
 
     /**
      * Here is create a grassLongTile object and it's id is set.
+     * */
+
     public static final Tile grassLongTile = new GrassLongTile(83);
     /**
      * Here is create a grassFlowersTile object and it's id is set.
      * */
+
     public static final Tile grassFlowersTile = new GrassFlowersTile(84);
     /**
      * Here is create a grassRockTile object and it's id is set.
