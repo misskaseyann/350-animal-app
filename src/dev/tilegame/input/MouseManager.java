@@ -3,16 +3,21 @@ package dev.tilegame.input;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.Timer;
 
 /**
  * Listens for mouse clicks and mouse movement.
+ *
  * @author kaseystowell
  * @version 10.02.2017
  */
 public class MouseManager implements MouseListener, MouseMotionListener {
-
+    /**
+     * clicking a button.
+     */
     private boolean leftPress, rightPress;
+    /**
+     * location of click.
+     */
     private int mouseX, mouseY;
 
     /**
@@ -26,39 +31,43 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      * @param e mouse event.
      */
     @Override
-    public void mouseClicked(MouseEvent e) {
-        if(e.getButton() == MouseEvent.BUTTON1)
+    public void mouseClicked(final MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1) {
             leftPress = true;
-        else if(e.getButton() == MouseEvent.BUTTON3)
+        } else if (e.getButton() == MouseEvent.BUTTON3) {
             rightPress = true;
+        }
     }
 
     /**
      * Verify if mouse button is being pressed.
+     *
      * @param e mouse event.
      */
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(final MouseEvent e) {
         // do nothing
     }
 
     /**
      * Verify if mouse button is being released.
+     *
      * @param e mouse event.
      */
     @Override
-    public void mouseReleased(MouseEvent e) {
-        if(e.getButton() == MouseEvent.BUTTON1)
+    public void mouseReleased(final MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON1) {
             leftPress = false;
-        else if(e.getButton() == MouseEvent.BUTTON3)
+        } else if (e.getButton() == MouseEvent.BUTTON3) {
             rightPress = false;
+        }
     }
 
     /**
      * @param e mouse event.
      */
     @Override
-    public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(final MouseEvent e) {
         // do nothing
     }
 
@@ -66,7 +75,7 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      * @param e mouse event.
      */
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void mouseExited(final MouseEvent e) {
         // do nothing
     }
 
@@ -74,16 +83,17 @@ public class MouseManager implements MouseListener, MouseMotionListener {
      * @param e mouse event.
      */
     @Override
-    public void mouseDragged(MouseEvent e) {
+    public void mouseDragged(final MouseEvent e) {
         // do nothing
     }
 
     /**
      * Get position of mouse on the screen.
+     *
      * @param e mouse event.
      */
     @Override
-    public void mouseMoved(MouseEvent e) {
+    public void mouseMoved(final MouseEvent e) {
         mouseX = e.getX();
         mouseY = e.getY();
     }
@@ -96,9 +106,10 @@ public class MouseManager implements MouseListener, MouseMotionListener {
     public boolean getLeftPress() {
         return leftPress;
     }
-
-    public void setLeftPress(boolean leftPress) {
-        this.leftPress = leftPress;
+    /**left press.
+     * @param inLeftPress */
+    public void setLeftPress(final boolean inLeftPress) {
+        this.leftPress = inLeftPress;
     }
 
     /**

@@ -9,13 +9,13 @@ import java.io.IOException;
  * @author kaseystowell
  * @version 09.24.2017
  */
-public class ImageLoader {
+public final class ImageLoader {
 
     /**
      * @param path string path to image.
      * @return buffered image.
      */
-    public static BufferedImage loadImage(String path) {
+    public static BufferedImage loadImage(final String path) {
         try {
             return ImageIO.read(ImageLoader.class.getResource(path));
         } catch (IOException e) {

@@ -3,4 +3,4 @@
  * @author kaseystowell
  * @version 12.02.2017
  */
-package dev.tilegame.inventory;
+package dev.tilegame.inventory.items;

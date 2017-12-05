@@ -4,23 +4,21 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Dog bone object.
  *
  * @author kaseystowell
  * @version 11.26.2017
  */
-public class DogBone extends Item{
+public class DogBone extends Item {
     /**
      * Basic constructor.
      */
     public DogBone() {
         super("Dog Bone",
-                "A typical dog bone for chewing." +
-                        "\nDogs really love bones!" +
-                        "\nSatisfies some hunger.",
+                "A typical dog bone for chewing."
+                        + "\nDogs really love bones!"
+                        + "\nSatisfies some hunger.",
                 12, Assets.getChewBone(), Assets.getBoneAni());
     }
 
@@ -32,12 +30,14 @@ public class DogBone extends Item{
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
-        if (pet.getHappiness() < 5)
+    public void useItem(final Pet pet) {
+        if (pet.getHappiness() < 5) {
             pet.setHappiness(pet.getHappiness() + 2);
-        else
+        } else {
             pet.setHappiness(6);
-        if (pet.getHunger() < 6)
+        }
+        if (pet.getHunger() < 6) {
             pet.setHunger(pet.getHunger() + 1);
+        }
     }
 }

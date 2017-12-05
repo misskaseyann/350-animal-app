@@ -16,10 +16,13 @@ import java.awt.*;
  * @version 09.24.2017
  */
 public class GameState extends State {
-
+    /**pet for the game state.*/
     private Pet pet;
+    /** world for the game state. */
     private World world;
+    /** music and sounds for the game state.*/
     private LoopLoader music, sounds;
+    /**stats manager for the game state. */
     private StatsManager statsManager;
 
     /**
@@ -27,7 +30,7 @@ public class GameState extends State {
      *
      * @param manager game class manager.
      */
-    public GameState(Manager manager) {
+    public GameState(final Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world1.txt");
         manager.setWorld(world);
@@ -113,7 +116,7 @@ public class GameState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         world.render(g);
         pet.render(g);
         // Render top and bottom menu.
@@ -140,10 +143,10 @@ public class GameState extends State {
     }
 
     /**
-     * @param statsManager stats manager object.
+     * @param inStatsManager stats manager object.
      */
-    public void setStatsManager(StatsManager statsManager) {
-        this.statsManager = statsManager;
+    public void setStatsManager(final StatsManager inStatsManager) {
+        this.statsManager = inStatsManager;
     }
 
 }

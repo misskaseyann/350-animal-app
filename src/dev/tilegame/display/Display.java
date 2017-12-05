@@ -9,22 +9,25 @@ import java.awt.*;
  * @version 09.24.2017
  */
 public class Display {
-
+    /** jframe for display. */
     private JFrame frame;
+    /** canvas for jframe. */
     private Canvas canvas;
+    /** string title for jframe. */
     private String title;
+    /** width and height. */
     private int width, height; // in terms of pixels
 
     /**
      * Display constructor that sets up width and height of the game.
-     * @param title string title of game.
-     * @param width int width of window.
-     * @param height int height of window.
+     * @param inTitle string title of game.
+     * @param inWidth int width of window.
+     * @param inHeight int height of window.
      */
-    public Display(String title, int width, int height) {
-        this.title = title;
-        this.width = width;
-        this.height = height;
+    public Display(final String inTitle, final int inWidth, final int inHeight) {
+        this.title = inTitle;
+        this.width = inWidth;
+        this.height = inHeight;
         createDisplay();
     }
 

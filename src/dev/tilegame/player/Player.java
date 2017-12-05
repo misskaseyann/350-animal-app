@@ -11,18 +11,32 @@ import dev.tilegame.inventory.Item;
  * @version 11.14.2017
  */
 public class Player {
-
-    Inventory inventory;
-    int money;
-    Item currItem;
+    /**
+     * manager.
+     */
+    protected Manager manager;
+    /**
+     * inventory.
+     */
+    protected Inventory inventory;
+    /**
+     * money.
+     */
+    protected int money;
+    /**
+     * current item .
+     */
+    protected Item currItem;
 
     /**
      * Basic player constructor that instantiates an inventory,
      * money set to 100 gold, and the current held item is null.
-     * @param manager game manager.
+     *
+     * @param inManager game manager.
      */
-    public Player(Manager manager) {
-        inventory = new Inventory(manager);
+    public Player(final Manager inManager) {
+        this.manager = inManager;
+        inventory = new Inventory(inManager);
         money = 100;
         currItem = null;
     }
@@ -35,13 +49,14 @@ public class Player {
     }
 
     /**
-     * @param money the amount of money the player will have.
+     * @param inMoney the amount of money the player will have.
      */
-    public void setMoney(int money) {
-        if (money < 0)
+    public void setMoney(final int inMoney) {
+        if (money < 0) {
             this.money = 0;
-        else
-            this.money = money;
+        } else {
+            this.money = inMoney;
+        }
     }
 
     /**
@@ -52,10 +67,10 @@ public class Player {
     }
 
     /**
-     * @param inventory inventory of items for the player.
+     * @param inInventory inventory of items for the player.
      */
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setInventory(final Inventory inInventory) {
+        this.inventory = inInventory;
     }
 
     /**
@@ -66,10 +81,10 @@ public class Player {
     }
 
     /**
-     * @param currItem current item the player will hold.
+     * @param inCurrItem current item the player will hold.
      */
-    public void setCurrItem(Item currItem) {
-        this.currItem = currItem;
+    public void setCurrItem(final Item inCurrItem) {
+        this.currItem = inCurrItem;
     }
 
 }

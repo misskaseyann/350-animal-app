@@ -4,8 +4,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Premium dog food object.
  * @author kaseystowell
@@ -17,8 +15,9 @@ public class DogFoodPremium extends Item {
      */
     public DogFoodPremium() {
         super("Premium Dog Food",
-                "Premium Food made with natural" + "\ningredients. Very healthy!" +
-                        "\nMaxes out your dogs stats.",
+                "Premium Food made with natural"
+                        + "\ningredients. Very healthy!"
+                        + "\nMaxes out your dogs stats.",
                 34, Assets.getDogFoodPremium(), Assets.getFoodAni());
     }
 
@@ -31,7 +30,7 @@ public class DogFoodPremium extends Item {
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
+    public void useItem(final Pet pet) {
         pet.setHappiness(6);
         pet.setHealth(6);
         pet.setHunger(6);

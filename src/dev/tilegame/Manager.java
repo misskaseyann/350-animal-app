@@ -5,8 +5,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
-import dev.tilegame.inventory.Inventory;
-import dev.tilegame.inventory.Item;
 import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
@@ -17,26 +15,51 @@ import java.awt.*;
 
 /**
  * Allows easier management of our classes.
+ *
  * @author kaseystowell
  * @version 10.02.2017
  */
 public class Manager {
-
+    /**
+     * game for the manager.
+     */
     private Game game;
+    /**
+     * manager for the game.
+     */
     private World world;
+    /**
+     * manager for the pet.
+     */
     private Pet pet;
+    /**
+     * mini game for manager.
+     */
     private MiniGamePet miniPet;
+    /**
+     * stats manager for manager.
+     */
     private StatsManager statsManager;
+    /**
+     * looploader for manager.
+     */
     private LoopLoader loopLoader;
+    /**
+     * player for manager.
+     */
     private Player player;
+    /**
+     * font for manager.
+     */
     private Font font = null;
 
     /**
      * Manager constructor.
-     * @param game game object.
+     *
+     * @param inGame game object.
      */
-    public Manager(Game game) {
-        this.game = game;
+    public Manager(final Game inGame) {
+        this.game = inGame;
         try {
             if (font == null) {
                 font = Utils.createFont("res/fonts/PokemonClassic.ttf");
@@ -89,10 +112,10 @@ public class Manager {
     }
 
     /**
-     * @param game game object.
+     * @param inGame game object.
      */
-    public void setGame(Game game) {
-        this.game = game;
+    public void setGame(final Game inGame) {
+        this.game = inGame;
     }
 
     /**
@@ -103,41 +126,53 @@ public class Manager {
     }
 
     /**
-     * @param world game world.
+     * @param inWorld game world.
      */
-    public void setWorld(World world) {
-        this.world = world;
+    public void setWorld(final World inWorld) {
+        this.world = inWorld;
     }
-
-    /**
-     * @param pet pet entity.
-     */
-    public void setPet(Pet pet) { this.pet = pet; }
 
     /**
      * @return pet entity.
      */
-    public Pet getPet() { return pet; }
+    public Pet getPet() {
+        return pet;
+    }
 
     /**
-     * @param miniPet pet entity.
+     * @param inPet pet entity.
      */
-    public void setMiniPet(MiniGamePet miniPet) { this.miniPet = miniPet; }
+    public void setPet(final Pet inPet) {
+        this.pet = inPet;
+    }
 
     /**
      * @return miniPet entity.
      */
-    public MiniGamePet getMiniPet() { return miniPet; }
+    public MiniGamePet getMiniPet() {
+        return miniPet;
+    }
 
     /**
-     * @param statsManager stats manager.
+     * @param inMiniPet pet entity.
      */
-    public void setStatsManager(StatsManager statsManager) { this.statsManager = statsManager; }
+    public void setMiniPet(final MiniGamePet inMiniPet) {
+        this.miniPet = inMiniPet;
+    }
 
     /**
      * @return stats manager.
      */
-    public StatsManager getStatsManager() { return statsManager; }
+    public StatsManager getStatsManager() {
+        return statsManager;
+    }
+
+    /**
+     * @param inStatsManager stats manager.
+     */
+    public void setStatsManager(final StatsManager inStatsManager) {
+        this.statsManager = inStatsManager;
+    }
 
     /**
      * @return loop loader.
@@ -147,10 +182,10 @@ public class Manager {
     }
 
     /**
-     * @param loopLoader loop loader.
+     * @param inLoopLoader loop loader.
      */
-    public void setLoopLoader(LoopLoader loopLoader) {
-        this.loopLoader = loopLoader;
+    public void setLoopLoader(final LoopLoader inLoopLoader) {
+        this.loopLoader = inLoopLoader;
     }
 
     /**
@@ -163,12 +198,13 @@ public class Manager {
     /**
      * Set the player of the game.
      *
-     * @param player player object.
+     * @param inPlayer player object.
      */
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setPlayer(final Player inPlayer) {
+        this.player = inPlayer;
     }
-
+    /** get the font.
+     * @return font*/
     public Font getFont() {
         return font;
     }
