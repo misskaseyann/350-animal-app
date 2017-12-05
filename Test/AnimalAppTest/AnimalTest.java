@@ -18,6 +18,7 @@ class AnimalTest {
 
     Pet pet;
     Manager manager;
+    World world;
 
     @Before
     void initialize() {

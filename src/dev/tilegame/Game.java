@@ -6,6 +6,7 @@ import dev.tilegame.gfx.GameCamera;
 import dev.tilegame.input.KeyManager;
 import dev.tilegame.input.MouseManager;
 import dev.tilegame.player.Player;
+import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.states.*;
 
 import java.awt.*;
@@ -44,6 +45,8 @@ public class Game implements Runnable {
     //Player
     private Player player;
 
+    private LoopLoader music;
+
 
     /**
      * Game constructor.
@@ -80,6 +83,9 @@ public class Game implements Runnable {
         manager = new Manager(this);
         player = new Player(manager);
         manager.setPlayer(player);
+        // music
+        music = new LoopLoader();
+        manager.setLoopLoader(music);
         // Create states of the game.
         gameState = new GameState(manager);
         menuState = new MenuState(manager);
