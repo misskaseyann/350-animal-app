@@ -4,8 +4,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Stuffed animal object.
  *
@@ -18,23 +16,24 @@ public class StuffedAnimal extends Item {
      */
     public StuffedAnimal() {
         super("Stuffed Animal",
-                "Cute stuffed hippo. Dogs best" +
-                        "\nfriend other than man. This toy" +
-                        "\nmakes your pet very happy!",
+                "Cute stuffed hippo. Dogs best"
+                        + "\nfriend other than man. This toy"
+                        + "\nmakes your pet very happy!",
                 15, Assets.getStuffedAnimal(), Assets.getStuffedAni());
     }
 
     /**
-     * When player uses a stuffed animal:
-     * happiness goes up three points,
+     * When player uses a stuffed animal.
+     * happiness goes up three points.
      *
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
-        if (pet.getHappiness() < 4)
+    public void useItem(final Pet pet) {
+        if (pet.getHappiness() < 4) {
             pet.setHappiness(pet.getHappiness() + 3);
-        else
+        } else {
             pet.setHappiness(6);
+        }
     }
 }
