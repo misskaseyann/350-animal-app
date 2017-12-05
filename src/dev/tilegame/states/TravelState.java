@@ -46,9 +46,9 @@ public class TravelState extends State {
             }
             // Park Button
             if ((x > 70 && x < 294) && (y > 227 && y < 291)) {
-                music.stop();
                 manager.getPet().setY(manager.getGame().getParkState().getWorld().getSpawnY() * 32);
                 manager.getPet().setX(manager.getGame().getParkState().getWorld().getSpawnX() * 32);
+                music.stop();
                 State.setState(manager.getGame().getParkState());
             }
             // Vet Button

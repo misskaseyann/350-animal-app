@@ -3,6 +3,7 @@ package dev.tilegame.states;
 import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Inventory;
+import dev.tilegame.inventory.Item;
 import dev.tilegame.inventory.items.*;
 import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
@@ -11,6 +12,7 @@ import dev.tilegame.worlds.World;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -24,7 +26,7 @@ public class LoadState extends State {
     private Pet pet;
     /** the player needs to be loaded to. */
     private Player player;
-    /** music controller */
+    /** music controller. */
     private LoopLoader music;
 
     /**
@@ -53,11 +55,9 @@ public class LoadState extends State {
                 State.setState(manager.getGame().getMenuState());
             }
             try {
-                content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt")).useDelimiter("\\Z").next();
+                content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt"),"UTF-8").useDelimiter("\\Z").next();
                 //parse content
                 String[] info = content.split("\n");
-                int xspawn = Integer.parseInt(info[0].substring(info[0].indexOf(':') + 1));
-                int yspawn = Integer.parseInt(info[1].substring(info[1].indexOf(':') + 1));
                 String items = info[2].substring(info[2].indexOf(':') + 1);
                 String[] itemList = items.split(",");
                 int money = Integer.parseInt(info[3].substring(info[3].indexOf(':') + 1));
@@ -66,36 +66,36 @@ public class LoadState extends State {
                 int clean = Integer.parseInt(info[6].substring(info[6].indexOf(':') + 1));
                 int hunger = Integer.parseInt(info[7].substring(info[7].indexOf(':') + 1));
 
-                Inventory inven = new Inventory(manager);
                 for (String i : itemList) {
                     if (i.equals("Bacon Treat")) {
                         BaconTreat bt = new BaconTreat();
-                        inven.addItem(bt);
+                        player.getInventory().addItem(bt);
                     } else if (i.equals("Chew Toy")) {
                         ChewToy ct = new ChewToy();
-                        inven.addItem(ct);
+                        player.getInventory().addItem(ct);
                     } else if (i.equals("Dog Biscuit")) {
                         DogBiscuit db = new DogBiscuit();
-                        inven.addItem(db);
+                        player.getInventory().addItem(db);
                     } else if (i.equals("Dog Bone")) {
                         DogBone dbo = new DogBone();
-                        inven.addItem(dbo);
+                        player.getInventory().addItem(dbo);
                     } else if (i.equals("Dog Food Premium")) {
                         DogFoodPremium dfp = new DogFoodPremium();
-                        inven.addItem(dfp);
+                        player.getInventory().addItem(dfp);
                     } else if (i.equals("Dog Food Standard")) {
                         DogFoodStandard dfs = new DogFoodStandard();
-                        inven.addItem(dfs);
+                        player.getInventory().addItem(dfs);
                     } else if (i.equals("Stuffed Animal")) {
                         StuffedAnimal sa = new StuffedAnimal();
-                        inven.addItem(sa);
+                        player.getInventory().addItem(sa);
                     } else if (i.equals("Tennis Ball")) {
                         TennisBall tb = new TennisBall();
-                        inven.addItem(tb);
+                        player.getInventory().addItem(tb);
                     }
                 }
                 //set inventory
-                player.setInventory(inven);
+//                inven.setItemList(itemgroup);
+//                player.setInventory(inven);
                 //set money
                 player.setMoney(money);
                 //set health
@@ -116,6 +116,7 @@ public class LoadState extends State {
                     State.setState(manager.getGame().getMenuState());
                 else
                     State.setState(manager.getGame().getGameState());
+
             } catch (FileNotFoundException e) {
                 //if hte file doesnt exist
                 JOptionPane.showMessageDialog(null, "<html>The file <b>\"" + name + "\"</b> is non-existent. \n The directory \"/350-animal-app/savedData/\" is where the files are saved. \n Please make sure your spelled your file name correctly and that it is in the right directory.");

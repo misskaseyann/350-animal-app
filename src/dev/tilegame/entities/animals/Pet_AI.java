@@ -21,7 +21,7 @@ public class Pet_AI extends Animal {
     private Random random;
     private int count = 0;
     private int randomInt;
-    private final int RESET_COUNT = 100;
+    private final static int RESET_COUNT = 100;
 
     /**
      * Pet AI Constructor.

@@ -19,13 +19,12 @@ class AnimalTest {
 
     Pet pet;
     Manager manager;
-    Game game;
     World world;
     Player player;
 
     @Before
     void initialize() {
-        manager = new Manager(game);
+        manager = new Manager(new Game("Animal Test", 360, 640));
         pet = new Pet(manager, 15, 15);
         player = new Player(manager);
     }

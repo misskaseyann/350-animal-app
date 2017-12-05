@@ -70,4 +70,12 @@ public class Inventory {
         return itemList.size();
     }
 
+    public String getListNames() {
+        StringBuffer buf = new StringBuffer();
+        for (Item item : itemList) {
+            buf.append(item.getName() + ",");
+        }
+        return buf.toString();
+    }
+
 }

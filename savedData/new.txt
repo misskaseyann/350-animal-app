@@ -1,0 +1,8 @@
+Xloc:25
+Yloc:33
+Items:Stuffed Animal,Dog Biscuit,
+Money:60
+Health:4
+Happiness:6
+Hygene:4
+Hunger:6

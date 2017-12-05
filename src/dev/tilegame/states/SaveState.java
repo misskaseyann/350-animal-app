@@ -40,14 +40,13 @@ public class SaveState extends State {
      */
     @Override
     public void tick() {
-        // Set x and y coordinates.
-        int x = manager.getMouseManager().getMouseX();
-        int y = manager.getMouseManager().getMouseY();
-        String itemlist = "";
+        String itemlist;
+        StringBuffer buf = new StringBuffer();
         if (player.getInventory().getItemList().size() > 0) {
             for (Item item : player.getInventory().getItemList()) {
-                itemlist += item.getName() + ",";
+                buf.append(item.getName() + ",");
             }
+            itemlist = buf.toString();
         } else {
             itemlist = "NA";
         }
@@ -62,9 +61,7 @@ public class SaveState extends State {
             } else {
                 File file = new File("../350-animal-app/savedData/" + name + ".txt");
                 try {
-                    PrintWriter writer = new PrintWriter("../350-animal-app/savedData/" + name + ".txt");
-
-                    //writer.println("State: " + State.getLastState()); will always load to game state with the following data
+                    PrintWriter writer = new PrintWriter(file, "UTF-8");
                     writer.println("Xloc:" + State.getCurrentState().manager.getPet().gridLocX());
                     writer.println("Yloc:" + State.getCurrentState().manager.getPet().gridLocY());
                     writer.println("Items:" + itemlist);
