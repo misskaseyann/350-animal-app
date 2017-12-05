@@ -323,6 +323,8 @@ public class Assets {
      * @return title screen animation images.
      */
     public static BufferedImage[] getTitleImg() {
+        BufferedImage[] titleImg = new BufferedImage[Assets.titleImg.length];
+        System.arraycopy(Assets.titleImg, 0, titleImg, 0, Assets.titleImg.length);
         return titleImg;
     }
 
@@ -1085,6 +1087,8 @@ public class Assets {
      * @return heart image array.
      */
     public static BufferedImage[] getHearts() {
+        BufferedImage[] hearts = new BufferedImage[Assets.hearts.length];
+        System.arraycopy(Assets.hearts, 0, hearts, 0, Assets.hearts.length);
         return hearts;
     }
 
@@ -1092,6 +1096,8 @@ public class Assets {
      * @return emotion image array.
      */
     public static BufferedImage[] getEmotions() {
+        BufferedImage[] emotions = new BufferedImage[Assets.emotions.length];
+        System.arraycopy(Assets.emotions, 0, emotions, 0, Assets.emotions.length);
         return emotions;
     }
 
@@ -1176,6 +1182,8 @@ public class Assets {
      * @return bacon animation.
      */
     public static BufferedImage[] getBaconAni() {
+        BufferedImage[] baconAni = new BufferedImage[Assets.baconAni.length];
+        System.arraycopy(Assets.baconAni, 0, baconAni, 0, Assets.baconAni.length);
         return baconAni;
     }
 
@@ -1183,6 +1191,8 @@ public class Assets {
      * @return ball animation.
      */
     public static BufferedImage[] getBallAni() {
+        BufferedImage[] ballAni = new BufferedImage[Assets.ballAni.length];
+        System.arraycopy(Assets.ballAni, 0, ballAni, 0, Assets.ballAni.length);
         return ballAni;
     }
 
@@ -1190,6 +1200,8 @@ public class Assets {
      * @return bone animation.
      */
     public static BufferedImage[] getBoneAni() {
+        BufferedImage[] boneAni = new BufferedImage[Assets.boneAni.length];
+        System.arraycopy(Assets.boneAni, 0, boneAni, 0, Assets.boneAni.length);
         return boneAni;
     }
 
@@ -1197,6 +1209,8 @@ public class Assets {
      * @return chew toy animation.
      */
     public static BufferedImage[] getChewToyAni() {
+        BufferedImage[] chewToyAni = new BufferedImage[Assets.chewToyAni.length];
+        System.arraycopy(Assets.chewToyAni, 0, chewToyAni, 0, Assets.chewToyAni.length);
         return chewToyAni;
     }
 
@@ -1204,6 +1218,8 @@ public class Assets {
      * @return cookie animation.
      */
     public static BufferedImage[] getCookieAni() {
+        BufferedImage[] cookieAni = new BufferedImage[Assets.cookieAni.length];
+        System.arraycopy(Assets.cookieAni, 0, cookieAni, 0, Assets.cookieAni.length);
         return cookieAni;
     }
 
@@ -1211,6 +1227,8 @@ public class Assets {
      * @return food animation.
      */
     public static BufferedImage[] getFoodAni() {
+        BufferedImage[] foodAni = new BufferedImage[Assets.foodAni.length];
+        System.arraycopy(Assets.foodAni, 0, foodAni, 0, Assets.foodAni.length);
         return foodAni;
     }
 
@@ -1218,6 +1236,8 @@ public class Assets {
      * @return stuffed animal animation.
      */
     public static BufferedImage[] getStuffedAni() {
+        BufferedImage[] stuffedAni = new BufferedImage[Assets.stuffedAni.length];
+        System.arraycopy(Assets.stuffedAni, 0, stuffedAni, 0, Assets.stuffedAni.length);
         return stuffedAni;
     }
 

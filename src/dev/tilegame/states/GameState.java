@@ -38,8 +38,8 @@ public class GameState extends State {
         manager.setPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
-        music = new LoopLoader();
-        manager.setLoopLoader(music);
+        music = manager.getLoopLoader();
+        //manager.setLoopLoader(music);
         sounds = new LoopLoader();
     }
 

@@ -1,15 +1,16 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Manager;
+import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.player.Player;
 import dev.tilegame.worlds.World;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import dev.tilegame.entities.animals.Pet;
 
 /**
  * Save state.
@@ -39,14 +40,13 @@ public class SaveState extends State {
      */
     @Override
     public void tick() {
-        // Set x and y coordinates.
-        int x = manager.getMouseManager().getMouseX();
-        int y = manager.getMouseManager().getMouseY();
-        String itemlist = "";
+        String itemlist;
+        StringBuffer buf = new StringBuffer();
         if (player.getInventory().getItemList().size() > 0) {
             for (Item item : player.getInventory().getItemList()) {
-                itemlist += item.getName() + ",";
+                buf.append(item.getName() + ",");
             }
+            itemlist = buf.toString();
         } else {
             itemlist = "NA";
         }
@@ -57,13 +57,11 @@ public class SaveState extends State {
             name = name.replaceAll("\\s+", "");
             if (name.equals("")) {
                 JOptionPane.showMessageDialog(null, "You need to include a name if you would like to save a game");
-                State.setState(State.getLastState());
+                State.setState(manager.getGame().getMenuState());
             } else {
                 File file = new File("../350-animal-app/savedData/" + name + ".txt");
                 try {
-                    PrintWriter writer = new PrintWriter("../350-animal-app/savedData/" + name + ".txt");
-
-                    //writer.println("State: " + State.getLastState()); will always load to game state with the following data
+                    PrintWriter writer = new PrintWriter(file, "UTF-8");
                     writer.println("Xloc:" + State.getCurrentState().manager.getPet().gridLocX());
                     writer.println("Yloc:" + State.getCurrentState().manager.getPet().gridLocY());
                     writer.println("Items:" + itemlist);
@@ -81,10 +79,10 @@ public class SaveState extends State {
 
                 JOptionPane.showMessageDialog(null, "<html>File <b>" + name + "</b> saved your current game! </html>");
 
-                State.setState(State.getLastState());
+                State.setState(manager.getGame().getMenuState());
             }
         } else {
-            State.setState(State.getLastState());
+            State.setState(manager.getGame().getMenuState());
         }
     }
 

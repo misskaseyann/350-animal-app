@@ -42,6 +42,7 @@ public class MenuState extends State {
             if ((x > 70 && x < 292) && (y > 204 && y < 268)) {
                 // TODO implement saving the game
                 State.setState(manager.getGame().getSaveState());
+
             }
             // Load Button
             if ((x > 70 && x < 292) && (y > 297 && y < 340)) {

@@ -50,18 +50,18 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    80%
   </span>
   <span class="absValue">
-    (4/ 4)
+    (4/ 5)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    100%
+    97.1%
   </span>
   <span class="absValue">
-    (52/ 52)
+    (68/ 70)
   </span>
 </td>
 </tr>
@@ -85,124 +85,148 @@
 <i>11</i>&nbsp;
 <i>12</i>&nbsp;/**
 <i>13</i>&nbsp; * Actual gameplay instantiation and home world.
-<i>14</i>&nbsp; * @author kaseystowell
-<i>15</i>&nbsp; * @version 09.24.2017
-<i>16</i>&nbsp; */
-<i>17</i>&nbsp;public class GameState extends State {
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    private Pet pet;
-<i>20</i>&nbsp;    private World world;
-<i>21</i>&nbsp;    private LoopLoader music;
-<i>22</i>&nbsp;    private StatsManager statsManager;
-<i>23</i>&nbsp;
-<i>24</i>&nbsp;    /**
-<i>25</i>&nbsp;     * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
-<i>26</i>&nbsp;     * @param manager game class manager.
-<i>27</i>&nbsp;     */
-<i>28</i>&nbsp;    public GameState(Manager manager) {
-<b class="fc"><i>29</i>&nbsp;        super(manager);</b>
-<b class="fc"><i>30</i>&nbsp;        world = new World(manager, &quot;res/worlds/world1.txt&quot;);</b>
-<b class="fc"><i>31</i>&nbsp;        manager.setWorld(world);</b>
-<b class="fc"><i>32</i>&nbsp;        pet = new Pet(manager, world.getSpawnX()*32, world.getSpawnY()*32);</b>
-<b class="fc"><i>33</i>&nbsp;        manager.setPet(pet);</b>
-<b class="fc"><i>34</i>&nbsp;        statsManager = new StatsManager(pet);</b>
-<b class="fc"><i>35</i>&nbsp;        manager.setStatsManager(statsManager);</b>
-<b class="fc"><i>36</i>&nbsp;        music = new LoopLoader();</b>
-<b class="fc"><i>37</i>&nbsp;        manager.setLoopLoader(music);</b>
-<b class="fc"><i>38</i>&nbsp;    }</b>
-<i>39</i>&nbsp;
-<i>40</i>&nbsp;    /**
-<i>41</i>&nbsp;     * Ticks the world and pet, checks for music playing, and listens for button clicks.
-<i>42</i>&nbsp;     */
-<i>43</i>&nbsp;    @Override
-<i>44</i>&nbsp;    public void tick() {
-<b class="fc"><i>45</i>&nbsp;        world.tick();</b>
-<b class="fc"><i>46</i>&nbsp;        pet.tick();</b>
-<i>47</i>&nbsp;        // Check if music is playing.
-<b class="fc"><i>48</i>&nbsp;        if (!music.isPlaying()) {</b>
-<b class="fc"><i>49</i>&nbsp;            music.load(&quot;res/sounds/house.wav&quot;);</b>
-<b class="fc"><i>50</i>&nbsp;            music.play();</b>
-<i>51</i>&nbsp;        }
-<i>52</i>&nbsp;        // Was the left mouse button pressed?
-<b class="fc"><i>53</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
-<i>54</i>&nbsp;            // Set x and y coordinates.
-<b class="fc"><i>55</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
-<b class="fc"><i>56</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
-<i>57</i>&nbsp;            // Main Menu Button
-<b class="fc"><i>58</i>&nbsp;            if ((x &gt; 10 &amp;&amp; x &lt; 74) &amp;&amp; (y &gt; 490 &amp;&amp; y &lt; 554)) {</b>
-<b class="fc"><i>59</i>&nbsp;                State.setLastState(this);</b>
-<b class="fc"><i>60</i>&nbsp;                State.setState(manager.getGame().getMenuState());</b>
-<i>61</i>&nbsp;            }
-<i>62</i>&nbsp;            // Feed Button
-<b class="fc"><i>63</i>&nbsp;            if ((x &gt; 0 &amp;&amp; x &lt; 70) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<i>64</i>&nbsp;                // TODO add imcremental method
-<b class="fc"><i>65</i>&nbsp;                pet.setHunger(6);</b>
-<i>66</i>&nbsp;            }
-<i>67</i>&nbsp;            // Talk Button
-<b class="fc"><i>68</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 136) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<i>69</i>&nbsp;                // TODO include barking sound clip
-<i>70</i>&nbsp;                // TODO add imcremental method
-<b class="fc"><i>71</i>&nbsp;                pet.setHappiness(6);</b>
-<i>72</i>&nbsp;            }
-<i>73</i>&nbsp;            // Clean Button
-<b class="fc"><i>74</i>&nbsp;            if ((x &gt; 136 &amp;&amp; x &lt; 204) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<i>75</i>&nbsp;                // TODO add imcremental method
-<b class="fc"><i>76</i>&nbsp;                pet.setCleanliness(6);</b>
-<i>77</i>&nbsp;            }
-<i>78</i>&nbsp;            // Play Button
-<b class="fc"><i>79</i>&nbsp;            if ((x &gt; 204 &amp;&amp; x &lt; 252) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<i>80</i>&nbsp;                // TODO implement mini games
-<i>81</i>&nbsp;                // TODO add imcremental method
-<b class="fc"><i>82</i>&nbsp;                pet.setHappiness(6);</b>
-<i>83</i>&nbsp;            }
-<i>84</i>&nbsp;            // Inventory Button
-<b class="fc"><i>85</i>&nbsp;            if ((x &gt; 252 &amp;&amp; x &lt; 305) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<b class="fc"><i>86</i>&nbsp;                State.setLastState(this);</b>
-<b class="fc"><i>87</i>&nbsp;                State.setState(manager.getGame().getInventoryState());</b>
-<i>88</i>&nbsp;            }
-<i>89</i>&nbsp;            // Travel Button
-<b class="fc"><i>90</i>&nbsp;            if ((x &gt; 305 &amp;&amp; x &lt; 360) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
-<b class="fc"><i>91</i>&nbsp;                State.setLastState(this);</b>
-<b class="fc"><i>92</i>&nbsp;                State.setState(manager.getGame().getTravelState());</b>
-<i>93</i>&nbsp;            }
-<i>94</i>&nbsp;        }
-<b class="fc"><i>95</i>&nbsp;    }</b>
-<i>96</i>&nbsp;
-<i>97</i>&nbsp;    /**
-<i>98</i>&nbsp;     * Renders the home world and game menus.
-<i>99</i>&nbsp;     * @param g graphics object.
-<i>100</i>&nbsp;     */
-<i>101</i>&nbsp;    @Override
-<i>102</i>&nbsp;    public void render(Graphics g) {
-<b class="fc"><i>103</i>&nbsp;        world.render(g);</b>
-<b class="fc"><i>104</i>&nbsp;        pet.render(g);</b>
-<i>105</i>&nbsp;        // Render top and bottom menu.
-<b class="fc"><i>106</i>&nbsp;        g.drawImage(Assets.getMainMenuTopReg(), 0, 0, null);</b>
-<b class="fc"><i>107</i>&nbsp;        g.drawImage(Assets.getMainMenuBot(), 0, 475, null);</b>
-<b class="fc"><i>108</i>&nbsp;        g.drawImage(Assets.getMenuButton(), 10, 490, null);</b>
-<i>109</i>&nbsp;        // Render pet stats.
-<b class="fc"><i>110</i>&nbsp;        g.drawImage(statsManager.emojiBox(), 10, 564, null); //implement later. doesnt look pretty.</b>
-<b class="fc"><i>111</i>&nbsp;        g.drawImage(Assets.getHealth(), 95, 497, null);</b>
-<b class="fc"><i>112</i>&nbsp;        g.drawImage(statsManager.healthBar(), 90, 513, null);</b>
-<b class="fc"><i>113</i>&nbsp;        g.drawImage(Assets.getHunger(), 95, 569, null);</b>
-<b class="fc"><i>114</i>&nbsp;        g.drawImage(statsManager.hungerBar(), 90, 585, null);</b>
-<b class="fc"><i>115</i>&nbsp;        g.drawImage(Assets.getHappiness(), 230, 497, null);</b>
-<b class="fc"><i>116</i>&nbsp;        g.drawImage(statsManager.happyBar(), 225, 513, null);</b>
-<b class="fc"><i>117</i>&nbsp;        g.drawImage(Assets.getHygene(), 230, 569, null);</b>
-<b class="fc"><i>118</i>&nbsp;        g.drawImage(statsManager.cleanBar(), 225, 585, null);</b>
-<b class="fc"><i>119</i>&nbsp;    }</b>
-<i>120</i>&nbsp;
-<i>121</i>&nbsp;    /**
-<i>122</i>&nbsp;     * @return home world.
-<i>123</i>&nbsp;     */
-<b class="fc"><i>124</i>&nbsp;    public World getWorld(){ return world; }</b>
-<i>125</i>&nbsp;}
+<i>14</i>&nbsp; *
+<i>15</i>&nbsp; * @author kaseystowell
+<i>16</i>&nbsp; * @version 09.24.2017
+<i>17</i>&nbsp; */
+<i>18</i>&nbsp;public class GameState extends State {
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    private Pet pet;
+<i>21</i>&nbsp;    private World world;
+<i>22</i>&nbsp;    private LoopLoader music, sounds;
+<i>23</i>&nbsp;    private StatsManager statsManager;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
+<i>27</i>&nbsp;     *
+<i>28</i>&nbsp;     * @param manager game class manager.
+<i>29</i>&nbsp;     */
+<i>30</i>&nbsp;    public GameState(Manager manager) {
+<b class="fc"><i>31</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>32</i>&nbsp;        world = new World(manager, &quot;res/worlds/world1.txt&quot;);</b>
+<b class="fc"><i>33</i>&nbsp;        manager.setWorld(world);</b>
+<b class="fc"><i>34</i>&nbsp;        pet = new Pet(manager, world.getSpawnX() * 32, world.getSpawnY() * 32);</b>
+<b class="fc"><i>35</i>&nbsp;        manager.setPet(pet);</b>
+<b class="fc"><i>36</i>&nbsp;        statsManager = new StatsManager(pet);</b>
+<b class="fc"><i>37</i>&nbsp;        manager.setStatsManager(statsManager);</b>
+<b class="fc"><i>38</i>&nbsp;        music = manager.getLoopLoader();</b>
+<i>39</i>&nbsp;        //manager.setLoopLoader(music);
+<b class="fc"><i>40</i>&nbsp;        sounds = new LoopLoader();</b>
+<b class="fc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    /**
+<i>44</i>&nbsp;     * Ticks the world and pet, checks for music playing, and listens for button clicks.
+<i>45</i>&nbsp;     */
+<i>46</i>&nbsp;    @Override
+<i>47</i>&nbsp;    public void tick() {
+<b class="fc"><i>48</i>&nbsp;        world.tick();</b>
+<b class="fc"><i>49</i>&nbsp;        pet.tick();</b>
+<i>50</i>&nbsp;        // Check if music is playing.
+<b class="fc"><i>51</i>&nbsp;        if (!music.isPlaying()) {</b>
+<b class="fc"><i>52</i>&nbsp;            music.load(&quot;res/sounds/house.wav&quot;);</b>
+<b class="fc"><i>53</i>&nbsp;            music.play();</b>
+<i>54</i>&nbsp;        }
+<i>55</i>&nbsp;        // Was the left mouse button pressed?
+<b class="fc"><i>56</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
+<i>57</i>&nbsp;            // Set x and y coordinates.
+<b class="fc"><i>58</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
+<b class="fc"><i>59</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
+<i>60</i>&nbsp;            // Main Menu Button
+<b class="fc"><i>61</i>&nbsp;            if ((x &gt; 10 &amp;&amp; x &lt; 74) &amp;&amp; (y &gt; 490 &amp;&amp; y &lt; 554)) {</b>
+<b class="fc"><i>62</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>63</i>&nbsp;                State.setState(manager.getGame().getMenuState());</b>
+<i>64</i>&nbsp;            }
+<i>65</i>&nbsp;            // Feed Button
+<b class="fc"><i>66</i>&nbsp;            if ((x &gt; 0 &amp;&amp; x &lt; 70) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>67</i>&nbsp;                sounds.load(&quot;res/sounds/TOON50.wav&quot;);</b>
+<b class="fc"><i>68</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>69</i>&nbsp;                pet.setHunger(6);</b>
+<i>70</i>&nbsp;            }
+<i>71</i>&nbsp;            // Talk Button
+<b class="fc"><i>72</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 136) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>73</i>&nbsp;                sounds.load(&quot;res/sounds/chasdog.wav&quot;);</b>
+<b class="fc"><i>74</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>75</i>&nbsp;                pet.setHappiness(6);</b>
+<i>76</i>&nbsp;            }
+<i>77</i>&nbsp;            // Clean Button
+<b class="fc"><i>78</i>&nbsp;            if ((x &gt; 136 &amp;&amp; x &lt; 204) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>79</i>&nbsp;                sounds.load(&quot;res/sounds/water-splash-3.wav&quot;);</b>
+<b class="fc"><i>80</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>81</i>&nbsp;                pet.setCleanliness(6);</b>
+<i>82</i>&nbsp;            }
+<i>83</i>&nbsp;            // Play Button
+<b class="fc"><i>84</i>&nbsp;            if ((x &gt; 204 &amp;&amp; x &lt; 252) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>85</i>&nbsp;                sounds.load(&quot;res/sounds/squeeze-toy-4.wav&quot;);</b>
+<b class="fc"><i>86</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>87</i>&nbsp;                pet.setHappiness(6);</b>
+<b class="fc"><i>88</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>89</i>&nbsp;                music.stop();</b>
+<b class="fc"><i>90</i>&nbsp;                State.setState(new MiniGameState(manager));</b>
+<i>91</i>&nbsp;            }
+<i>92</i>&nbsp;            // Inventory Button
+<b class="fc"><i>93</i>&nbsp;            if ((x &gt; 252 &amp;&amp; x &lt; 305) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>94</i>&nbsp;                sounds.load(&quot;res/sounds/bag-zipper-1.wav&quot;);</b>
+<b class="fc"><i>95</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>96</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>97</i>&nbsp;                State.setState(manager.getGame().getInventoryState());</b>
+<i>98</i>&nbsp;            }
+<i>99</i>&nbsp;            // Travel Button
+<b class="fc"><i>100</i>&nbsp;            if ((x &gt; 305 &amp;&amp; x &lt; 360) &amp;&amp; (y &gt; 0 &amp;&amp; y &lt; 75)) {</b>
+<b class="fc"><i>101</i>&nbsp;                sounds.load(&quot;res/sounds/door-10-open.wav&quot;);</b>
+<b class="fc"><i>102</i>&nbsp;                sounds.play();</b>
+<b class="fc"><i>103</i>&nbsp;                State.setLastState(this);</b>
+<b class="fc"><i>104</i>&nbsp;                State.setState(manager.getGame().getTravelState());</b>
+<i>105</i>&nbsp;            }
+<b class="fc"><i>106</i>&nbsp;            manager.getMouseManager().setLeftPress(false);</b>
+<i>107</i>&nbsp;        }
+<b class="fc"><i>108</i>&nbsp;    }</b>
+<i>109</i>&nbsp;
+<i>110</i>&nbsp;    /**
+<i>111</i>&nbsp;     * Renders the home world and game menus.
+<i>112</i>&nbsp;     *
+<i>113</i>&nbsp;     * @param g graphics object.
+<i>114</i>&nbsp;     */
+<i>115</i>&nbsp;    @Override
+<i>116</i>&nbsp;    public void render(Graphics g) {
+<b class="fc"><i>117</i>&nbsp;        world.render(g);</b>
+<b class="fc"><i>118</i>&nbsp;        pet.render(g);</b>
+<i>119</i>&nbsp;        // Render top and bottom menu.
+<b class="fc"><i>120</i>&nbsp;        g.drawImage(Assets.getMainMenuTopReg(), 0, 0, null);</b>
+<b class="fc"><i>121</i>&nbsp;        g.drawImage(Assets.getMainMenuBot(), 0, 475, null);</b>
+<b class="fc"><i>122</i>&nbsp;        g.drawImage(Assets.getMenuButton(), 10, 490, null);</b>
+<i>123</i>&nbsp;        // Render pet stats.
+<b class="fc"><i>124</i>&nbsp;        g.drawImage(statsManager.emojiBox(), 10, 564, null); //implement later. doesnt look pretty.</b>
+<b class="fc"><i>125</i>&nbsp;        g.drawImage(Assets.getHealth(), 95, 497, null);</b>
+<b class="fc"><i>126</i>&nbsp;        g.drawImage(statsManager.healthBar(), 90, 513, null);</b>
+<b class="fc"><i>127</i>&nbsp;        g.drawImage(Assets.getHunger(), 95, 569, null);</b>
+<b class="fc"><i>128</i>&nbsp;        g.drawImage(statsManager.hungerBar(), 90, 585, null);</b>
+<b class="fc"><i>129</i>&nbsp;        g.drawImage(Assets.getHappiness(), 230, 497, null);</b>
+<b class="fc"><i>130</i>&nbsp;        g.drawImage(statsManager.happyBar(), 225, 513, null);</b>
+<b class="fc"><i>131</i>&nbsp;        g.drawImage(Assets.getHygene(), 230, 569, null);</b>
+<b class="fc"><i>132</i>&nbsp;        g.drawImage(statsManager.cleanBar(), 225, 585, null);</b>
+<b class="fc"><i>133</i>&nbsp;    }</b>
+<i>134</i>&nbsp;
+<i>135</i>&nbsp;    /**
+<i>136</i>&nbsp;     * @return home world.
+<i>137</i>&nbsp;     */
+<i>138</i>&nbsp;    public World getWorld() {
+<b class="fc"><i>139</i>&nbsp;        return world;</b>
+<i>140</i>&nbsp;    }
+<i>141</i>&nbsp;
+<i>142</i>&nbsp;    /**
+<i>143</i>&nbsp;     * @param statsManager stats manager object.
+<i>144</i>&nbsp;     */
+<i>145</i>&nbsp;    public void setStatsManager(StatsManager statsManager) {
+<b class="nc"><i>146</i>&nbsp;        this.statsManager = statsManager;</b>
+<b class="nc"><i>147</i>&nbsp;    }</b>
+<i>148</i>&nbsp;
+<i>149</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

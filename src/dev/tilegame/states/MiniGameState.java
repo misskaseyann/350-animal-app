@@ -10,14 +10,15 @@ import dev.tilegame.worlds.World;
 import java.awt.*;
 
 /**
- * mini game handler.
- * @author Brendan Nahed
- * @version 11.23.17
+ * Mini Game world.
+ * Generates a top menu for travel.
+ * Generates a maze for the user to solve.
+ * @author brendannahed
+ * @version 12.03.2017
  */
-public class MiniGameState extends State {
-    /**
-     * minigame pet for state.
-     */
+
+public class MiniGameState extends State{
+
     private MiniGamePet pet;
     /**
      * World.
@@ -45,9 +46,8 @@ public class MiniGameState extends State {
         manager.setMiniPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
-        music = new LoopLoader();
+        music = manager.getLoopLoader();
         sounds = new LoopLoader();
-        manager.setLoopLoader(music);
     }
 
     /**
@@ -74,7 +74,6 @@ public class MiniGameState extends State {
             if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
                 sounds.load("res/sounds/door-10-open.wav");
                 sounds.play();
-                music.stop();
                 State.setLastState(this);
                 State.setState(manager.getGame().getTravelState());
             }

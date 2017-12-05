@@ -36,7 +36,7 @@ public class ItemState extends State {
         // Did the mouse left click?
         if (manager.getMouseManager().getLeftPress()) {
             // Move out of the item state.
-            State.setState(manager.getGame().getGameState());
+            State.setState(State.getLastState());
         }
     }
 

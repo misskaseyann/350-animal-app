@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    94.7%
+    86.4%
   </span>
   <span class="absValue">
-    (18/ 19)
+    (19/ 22)
   </span>
 </td>
 </tr>
@@ -93,66 +93,71 @@
 <i>19</i>&nbsp;    private LoopLoader music;
 <i>20</i>&nbsp;
 <i>21</i>&nbsp;    /**
-<b class="fc"><i>22</i>&nbsp;     * TitleState constructor.</b>
-<b class="fc"><i>23</i>&nbsp;     * Sets up the tile states.</b>
+<i>22</i>&nbsp;     * TitleState constructor.
+<i>23</i>&nbsp;     * Sets up the tile states.
 <i>24</i>&nbsp;     * @param manager game class manager.
-<b class="fc"><i>25</i>&nbsp;     */</b>
-<b class="fc"><i>26</i>&nbsp;    public TitleState(Manager manager) {</b>
-<i>27</i>&nbsp;        super(manager);
-<b class="nc"><i>28</i>&nbsp;        titleAni = new Animation(300, Assets.getTitleImg());</b>
+<i>25</i>&nbsp;     */
+<i>26</i>&nbsp;    public TitleState(Manager manager) {
+<b class="fc"><i>27</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>28</i>&nbsp;        titleAni = new Animation(300, Assets.getTitleImg());</b>
 <i>29</i>&nbsp;        //initialize music
-<i>30</i>&nbsp;        music = new LoopLoader();
-<i>31</i>&nbsp;    }
-<b class="fc"><i>32</i>&nbsp;</b>
-<b class="fc"><i>33</i>&nbsp;    /**</b>
-<b class="fc"><i>34</i>&nbsp;     * getWorld returns the world.</b>
-<b class="fc"><i>35</i>&nbsp;     * @return null</b>
-<i>36</i>&nbsp;     */
-<i>37</i>&nbsp;    public World getWorld(){ return null; }
-<b class="fc"><i>38</i>&nbsp;</b>
-<i>39</i>&nbsp;    /**
-<b class="fc"><i>40</i>&nbsp;     * Checks for button presses.</b>
-<b class="fc"><i>41</i>&nbsp;     */</b>
-<i>42</i>&nbsp;    @Override
-<b class="fc"><i>43</i>&nbsp;    public void tick() {</b>
-<b class="fc"><i>44</i>&nbsp;        titleAni.tick();</b>
-<b class="fc"><i>45</i>&nbsp;        if (!music.isPlaying()) {</b>
-<i>46</i>&nbsp;            music.load(&quot;res/sounds/title.wav&quot;);
-<i>47</i>&nbsp;            music.play();
-<b class="fc"><i>48</i>&nbsp;        }</b>
-<i>49</i>&nbsp;        // Did the mouse left click?
-<i>50</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {
-<i>51</i>&nbsp;            // Set x and y coordinates.
-<b class="fc"><i>52</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
-<i>53</i>&nbsp;            int y = manager.getMouseManager().getMouseY();
-<i>54</i>&nbsp;            // New Button
-<i>55</i>&nbsp;            if ((x &gt; 64 &amp;&amp; x &lt; 288) &amp;&amp; (y &gt; 451 &amp;&amp; y &lt; 515)) {
-<i>56</i>&nbsp;                music.stop();
-<i>57</i>&nbsp;                State.setState(manager.getGame().getGameState());
-<i>58</i>&nbsp;            }
-<i>59</i>&nbsp;            // Load Button
-<b class="fc"><i>60</i>&nbsp;            if ((x &gt; 64 &amp;&amp; x &lt; 288) &amp;&amp; (y &gt; 545 &amp;&amp; y &lt; 609)) {</b>
-<b class="fc"><i>61</i>&nbsp;                // TODO load functionality</b>
-<i>62</i>&nbsp;            }
-<i>63</i>&nbsp;        }
-<i>64</i>&nbsp;    }
+<b class="fc"><i>30</i>&nbsp;        music = manager.getLoopLoader();</b>
+<i>31</i>&nbsp;        //manager.setLoopLoader(music);
+<b class="fc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    /**
+<i>35</i>&nbsp;     * getWorld returns the world.
+<i>36</i>&nbsp;     * @return null
+<i>37</i>&nbsp;     */
+<b class="nc"><i>38</i>&nbsp;    public World getWorld(){ return null; }</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /**
+<i>41</i>&nbsp;     * Checks for button presses.
+<i>42</i>&nbsp;     */
+<i>43</i>&nbsp;    @Override
+<i>44</i>&nbsp;    public void tick() {
+<b class="fc"><i>45</i>&nbsp;        titleAni.tick();</b>
+<b class="fc"><i>46</i>&nbsp;        if (!music.isPlaying()) {</b>
+<b class="fc"><i>47</i>&nbsp;            music.load(&quot;res/sounds/title.wav&quot;);</b>
+<b class="fc"><i>48</i>&nbsp;            music.play();</b>
+<i>49</i>&nbsp;        }
+<i>50</i>&nbsp;        // Did the mouse left click?
+<b class="fc"><i>51</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
+<i>52</i>&nbsp;            // Set x and y coordinates.
+<b class="fc"><i>53</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
+<b class="fc"><i>54</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
+<i>55</i>&nbsp;            // New Button
+<b class="fc"><i>56</i>&nbsp;            if ((x &gt; 64 &amp;&amp; x &lt; 288) &amp;&amp; (y &gt; 451 &amp;&amp; y &lt; 515)) {</b>
+<b class="fc"><i>57</i>&nbsp;                music.stop();</b>
+<b class="fc"><i>58</i>&nbsp;                State.setState(manager.getGame().getGameState());</b>
+<i>59</i>&nbsp;            }
+<i>60</i>&nbsp;            // Load Button
+<b class="fc"><i>61</i>&nbsp;            if ((x &gt; 64 &amp;&amp; x &lt; 288) &amp;&amp; (y &gt; 545 &amp;&amp; y &lt; 609)) {</b>
+<i>62</i>&nbsp;                // TODO load functionality
+<b class="nc"><i>63</i>&nbsp;                State.setLastState(State.getCurrentState());</b>
+<b class="nc"><i>64</i>&nbsp;                State.setState(manager.getGame().getLoadState());</b>
 <i>65</i>&nbsp;
-<i>66</i>&nbsp;    /**
-<i>67</i>&nbsp;     * Render the title screen.
-<i>68</i>&nbsp;     * @param g graphics object.
-<i>69</i>&nbsp;     */
-<i>70</i>&nbsp;    @Override
-<i>71</i>&nbsp;    public void render(Graphics g) {
-<i>72</i>&nbsp;        g.drawImage(titleAni.getCurrentFrame(), 0, 0, null);
-<i>73</i>&nbsp;    }
-<i>74</i>&nbsp;
-<i>75</i>&nbsp;}
+<i>66</i>&nbsp;            }
+<b class="fc"><i>67</i>&nbsp;            manager.getMouseManager().setLeftPress(false);</b>
+<i>68</i>&nbsp;        }
+<b class="fc"><i>69</i>&nbsp;    }</b>
+<i>70</i>&nbsp;
+<i>71</i>&nbsp;    /**
+<i>72</i>&nbsp;     * Render the title screen.
+<i>73</i>&nbsp;     * @param g graphics object.
+<i>74</i>&nbsp;     */
+<i>75</i>&nbsp;    @Override
+<i>76</i>&nbsp;    public void render(Graphics g) {
+<b class="fc"><i>77</i>&nbsp;        g.drawImage(titleAni.getCurrentFrame(), 0, 0, null);</b>
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class Pet extends Animal {
     /**
      * reset count for moves.
      */
-    private final int RESET_COUNT = 100;
+    private static final int RESET_COUNT = 100;
     // Pet Animations
     /**
      * animation for ai pet.

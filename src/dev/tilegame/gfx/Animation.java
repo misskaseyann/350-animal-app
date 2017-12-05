@@ -30,7 +30,8 @@ public class Animation {
      */
     public Animation(final int inSpeed, final BufferedImage[] inFrames) {
         this.speed = inSpeed;
-        this.frames = inFrames;
+        this.frames = new BufferedImage[inFrames.length];
+        System.arraycopy(inFrames, 0, this.frames, 0, inFrames.length);
         index = 0;
         timer = 0;
         // Set last time to current system time in milliseconds.

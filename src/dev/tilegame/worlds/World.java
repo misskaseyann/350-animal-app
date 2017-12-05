@@ -70,7 +70,7 @@ public class World {
 
     /**
      * Loads the world, identifies its size and start location of entity.
-     * @param path string path of world .txt.
+     * @param path string path of world.txt.
      */
     private void loadWorld(final String path) {
         String file = Utils.loadFileAsString(path);

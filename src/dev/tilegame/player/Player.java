@@ -36,7 +36,7 @@ public class Player {
      */
     public Player(final Manager inManager) {
         this.manager = inManager;
-        inventory = new Inventory(manager);
+        inventory = new Inventory(inManager);
         money = 100;
         currItem = null;
     }

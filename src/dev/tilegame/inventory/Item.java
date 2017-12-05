@@ -36,7 +36,9 @@ public abstract class Item {
         this.description = inDescription;
         this.cost = inCost;
         this.img = inImg;
-        this.ani = inAni;
+        this.ani = new BufferedImage[inAni.length];
+        for (int i = 0; i < inAni.length; i++)
+            this.ani[i] = inAni[i];
     }
 
     /** Getters and Setters. **/
@@ -73,12 +75,17 @@ public abstract class Item {
     /** getting the animation.
      * @return ani of the item */
     public BufferedImage[] getAni() {
+        BufferedImage[] ani = new BufferedImage[this.ani.length];
+        for (int i = 0; i < this.ani.length; i++)
+            ani[i] = this.ani[i];
         return ani;
     }
     /**set animation.
      * @param inAni the animation for the item*/
     public void setAni(final BufferedImage[] inAni) {
-        this.ani = inAni;
+        this.ani = new BufferedImage[inAni.length];
+        for (int i = 0; i < inAni.length; i++)
+            this.ani[i] = inAni[i];
     }
     /** the description of the item.
      * @return description of item */

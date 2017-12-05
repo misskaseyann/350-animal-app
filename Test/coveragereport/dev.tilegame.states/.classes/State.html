@@ -78,74 +78,76 @@
 <i>4</i>&nbsp;import dev.tilegame.worlds.World;
 <i>5</i>&nbsp;
 <i>6</i>&nbsp;import java.awt.*;
-<i>7</i>&nbsp;
-<i>8</i>&nbsp;/**
-<i>9</i>&nbsp; * Abstract State class that helps manage each of the game&#39;s states.
-<i>10</i>&nbsp; * @author kaseystowell
-<i>11</i>&nbsp; * @version 09.24.2017
-<i>12</i>&nbsp; */
-<i>13</i>&nbsp;public abstract class State {
-<i>14</i>&nbsp;
-<b class="fc"><i>15</i>&nbsp;    private static State currentState = null;</b>
-<b class="fc"><i>16</i>&nbsp;    private static State lastState = null;</b>
-<i>17</i>&nbsp;    protected Manager manager;
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    /**
-<i>20</i>&nbsp;     * State constructor.
-<i>21</i>&nbsp;     * Sets up the class manager.
-<i>22</i>&nbsp;     * @param manager class mananger.
-<i>23</i>&nbsp;     */
-<b class="fc"><i>24</i>&nbsp;    public State(Manager manager) {</b>
-<b class="fc"><i>25</i>&nbsp;        this.manager = manager;</b>
-<b class="fc"><i>26</i>&nbsp;    }</b>
-<i>27</i>&nbsp;
-<i>28</i>&nbsp;    /**
-<i>29</i>&nbsp;     * Tick the game.
-<i>30</i>&nbsp;     */
-<i>31</i>&nbsp;    public abstract void tick();
-<i>32</i>&nbsp;
-<i>33</i>&nbsp;    /**
-<i>34</i>&nbsp;     * Render any graphics on the screen.
-<i>35</i>&nbsp;     * @param g graphics object.
-<i>36</i>&nbsp;     */
-<i>37</i>&nbsp;    public abstract void render(Graphics g);
-<i>38</i>&nbsp;
-<i>39</i>&nbsp;    /**
-<i>40</i>&nbsp;     * @param state current game state.
-<i>41</i>&nbsp;     */
-<i>42</i>&nbsp;    public static void setState(State state) {
-<b class="fc"><i>43</i>&nbsp;        currentState = state;</b>
-<b class="fc"><i>44</i>&nbsp;    }</b>
-<i>45</i>&nbsp;
-<i>46</i>&nbsp;    /**
-<i>47</i>&nbsp;     * @return current game state.
-<i>48</i>&nbsp;     */
-<i>49</i>&nbsp;    public static State getCurrentState() {
-<b class="fc"><i>50</i>&nbsp;        return currentState;</b>
-<i>51</i>&nbsp;    }
-<i>52</i>&nbsp;
-<i>53</i>&nbsp;    /**
-<i>54</i>&nbsp;     * @return last launched game state.
-<i>55</i>&nbsp;     */
-<b class="fc"><i>56</i>&nbsp;    public static State getLastState() { return lastState; }</b>
-<i>57</i>&nbsp;
-<i>58</i>&nbsp;    /**
-<i>59</i>&nbsp;     * @param state last launched game state.
-<i>60</i>&nbsp;     */
-<b class="fc"><i>61</i>&nbsp;    public static void setLastState(State state) { lastState = state; }</b>
-<i>62</i>&nbsp;
-<i>63</i>&nbsp;    /**
-<i>64</i>&nbsp;     * @return current world rendered on screen.
-<i>65</i>&nbsp;     */
-<i>66</i>&nbsp;    public abstract World getWorld();
-<i>67</i>&nbsp;
-<i>68</i>&nbsp;}
+<i>7</i>&nbsp;import java.io.FileNotFoundException;
+<i>8</i>&nbsp;import java.io.IOException;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * Abstract State class that helps manage each of the game&#39;s states.
+<i>12</i>&nbsp; * @author kaseystowell
+<i>13</i>&nbsp; * @version 09.24.2017
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;public abstract class State {
+<i>16</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;    private static State currentState = null;</b>
+<b class="fc"><i>18</i>&nbsp;    private static State lastState = null;</b>
+<i>19</i>&nbsp;    protected Manager manager;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    /**
+<i>22</i>&nbsp;     * State constructor.
+<i>23</i>&nbsp;     * Sets up the class manager.
+<i>24</i>&nbsp;     * @param manager class mananger.
+<i>25</i>&nbsp;     */
+<b class="fc"><i>26</i>&nbsp;    public State(Manager manager) {</b>
+<b class="fc"><i>27</i>&nbsp;        this.manager = manager;</b>
+<b class="fc"><i>28</i>&nbsp;    }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    /**
+<i>31</i>&nbsp;     * Tick the game.
+<i>32</i>&nbsp;     */
+<i>33</i>&nbsp;    public abstract void tick();
+<i>34</i>&nbsp;
+<i>35</i>&nbsp;    /**
+<i>36</i>&nbsp;     * Render any graphics on the screen.
+<i>37</i>&nbsp;     * @param g graphics object.
+<i>38</i>&nbsp;     */
+<i>39</i>&nbsp;    public abstract void render(Graphics g) ;
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    /**
+<i>42</i>&nbsp;     * @param state current game state.
+<i>43</i>&nbsp;     */
+<i>44</i>&nbsp;    public static void setState(State state) {
+<b class="fc"><i>45</i>&nbsp;        currentState = state;</b>
+<b class="fc"><i>46</i>&nbsp;    }</b>
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    /**
+<i>49</i>&nbsp;     * @return current game state.
+<i>50</i>&nbsp;     */
+<i>51</i>&nbsp;    public static State getCurrentState() {
+<b class="fc"><i>52</i>&nbsp;        return currentState;</b>
+<i>53</i>&nbsp;    }
+<i>54</i>&nbsp;
+<i>55</i>&nbsp;    /**
+<i>56</i>&nbsp;     * @return last launched game state.
+<i>57</i>&nbsp;     */
+<b class="fc"><i>58</i>&nbsp;    public static State getLastState() { return lastState; }</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    /**
+<i>61</i>&nbsp;     * @param state last launched game state.
+<i>62</i>&nbsp;     */
+<b class="fc"><i>63</i>&nbsp;    public static void setLastState(State state) { lastState = state; }</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    /**
+<i>66</i>&nbsp;     * @return current world rendered on screen.
+<i>67</i>&nbsp;     */
+<i>68</i>&nbsp;    public abstract World getWorld();
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

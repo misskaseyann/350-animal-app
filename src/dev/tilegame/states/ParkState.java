@@ -54,6 +54,7 @@ public class ParkState extends State {
         petAI = new PetAI(manager, 10 * 32, 10 * 32);
         statsManager = manager.getStatsManager();
         music = manager.getLoopLoader();
+        //manager.setLoopLoader(music);
         sounds = new LoopLoader();
     }
 
@@ -93,6 +94,7 @@ public class ParkState extends State {
                 sounds.load("res/sounds/squeeze-toy-4.wav");
                 sounds.play();
                 pet.setHappiness(6);
+                State.setLastState(this);
                 State.setState(new MiniGameState(manager));
             }
             // Inventory Button

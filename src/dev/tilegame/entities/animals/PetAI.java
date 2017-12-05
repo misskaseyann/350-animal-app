@@ -15,11 +15,6 @@ import java.util.Random;
  * @version 10.08.2017
  */
 public class PetAI extends Animal {
-
-    /**
-     * reset count.
-     */
-    private final int RESET_COUNT = 100;
     // Random Movement
     /**
      * animation for the pet.
@@ -37,6 +32,10 @@ public class PetAI extends Animal {
      * randint.
      */
     private int randomInt;
+    /**
+     * Reset count.
+     */
+    private final static int RESET_COUNT = 100;
 
     /**
      * Pet AI Constructor.

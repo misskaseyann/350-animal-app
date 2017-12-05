@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    70%
+    77.8%
   </span>
   <span class="absValue">
-    (14/ 20)
+    (14/ 18)
   </span>
 </td>
 </tr>
@@ -110,43 +110,41 @@
 <b class="fc"><i>36</i>&nbsp;            stream = new AudioStream(input);</b>
 <b class="nc"><i>37</i>&nbsp;        } catch (FileNotFoundException e) {</b>
 <b class="nc"><i>38</i>&nbsp;            e.printStackTrace();</b>
-<b class="nc"><i>39</i>&nbsp;            System.exit(1);</b>
-<b class="nc"><i>40</i>&nbsp;        } catch (IOException error) {</b>
-<b class="nc"><i>41</i>&nbsp;            error.printStackTrace();</b>
-<b class="nc"><i>42</i>&nbsp;            System.exit(1);</b>
-<b class="fc"><i>43</i>&nbsp;        }</b>
-<b class="fc"><i>44</i>&nbsp;    }</b>
-<i>45</i>&nbsp;
-<i>46</i>&nbsp;    /**
-<i>47</i>&nbsp;     * Play music.
-<i>48</i>&nbsp;     */
-<i>49</i>&nbsp;    public void play() {
-<b class="fc"><i>50</i>&nbsp;        AudioPlayer.player.start(stream);</b>
-<b class="fc"><i>51</i>&nbsp;        isPlaying = true;</b>
-<b class="fc"><i>52</i>&nbsp;    }</b>
-<i>53</i>&nbsp;
-<i>54</i>&nbsp;    /**
-<i>55</i>&nbsp;     * Stop music.
-<i>56</i>&nbsp;     */
-<i>57</i>&nbsp;    public void stop() {
-<b class="fc"><i>58</i>&nbsp;        AudioPlayer.player.stop(stream);</b>
-<b class="fc"><i>59</i>&nbsp;        isPlaying = false;</b>
-<b class="fc"><i>60</i>&nbsp;    }</b>
-<i>61</i>&nbsp;
-<i>62</i>&nbsp;    /**
-<i>63</i>&nbsp;     * @return true if music is playing.
-<i>64</i>&nbsp;     */
-<i>65</i>&nbsp;    public boolean isPlaying() {
-<b class="fc"><i>66</i>&nbsp;        return isPlaying;</b>
-<i>67</i>&nbsp;    }
-<i>68</i>&nbsp;
-<i>69</i>&nbsp;}
+<b class="nc"><i>39</i>&nbsp;        } catch (IOException error) {</b>
+<b class="nc"><i>40</i>&nbsp;            error.printStackTrace();</b>
+<b class="fc"><i>41</i>&nbsp;        }</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    /**
+<i>45</i>&nbsp;     * Play music.
+<i>46</i>&nbsp;     */
+<i>47</i>&nbsp;    public void play() {
+<b class="fc"><i>48</i>&nbsp;        AudioPlayer.player.start(stream);</b>
+<b class="fc"><i>49</i>&nbsp;        isPlaying = true;</b>
+<b class="fc"><i>50</i>&nbsp;    }</b>
+<i>51</i>&nbsp;
+<i>52</i>&nbsp;    /**
+<i>53</i>&nbsp;     * Stop music.
+<i>54</i>&nbsp;     */
+<i>55</i>&nbsp;    public void stop() {
+<b class="fc"><i>56</i>&nbsp;        AudioPlayer.player.stop(stream);</b>
+<b class="fc"><i>57</i>&nbsp;        isPlaying = false;</b>
+<b class="fc"><i>58</i>&nbsp;    }</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    /**
+<i>61</i>&nbsp;     * @return true if music is playing.
+<i>62</i>&nbsp;     */
+<i>63</i>&nbsp;    public boolean isPlaying() {
+<b class="fc"><i>64</i>&nbsp;        return isPlaying;</b>
+<i>65</i>&nbsp;    }
+<i>66</i>&nbsp;
+<i>67</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

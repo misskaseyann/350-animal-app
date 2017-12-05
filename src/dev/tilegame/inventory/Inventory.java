@@ -84,11 +84,11 @@ public class Inventory {
      * @return the list of names of items
      */
     public String getListNames() {
-        String info = "";
+        StringBuffer buf = new StringBuffer();
         for (Item item : itemList) {
-            info += item.getName() + ",";
+            buf.append(item.getName() + ",");
         }
-        return info;
+        return buf.toString();
     }
 
     /**
