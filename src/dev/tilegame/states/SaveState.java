@@ -1,15 +1,16 @@
 package dev.tilegame.states;
 
 import dev.tilegame.Manager;
+import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.player.Player;
 import dev.tilegame.worlds.World;
+
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import dev.tilegame.entities.animals.Pet;
 
 /**
  * Save state.
@@ -56,7 +57,7 @@ public class SaveState extends State {
             name = name.replaceAll("\\s+", "");
             if (name.equals("")) {
                 JOptionPane.showMessageDialog(null, "You need to include a name if you would like to save a game");
-                State.setState(State.getLastState());
+                State.setState(manager.getGame().getMenuState());
             } else {
                 File file = new File("../350-animal-app/savedData/" + name + ".txt");
                 try {
@@ -78,10 +79,10 @@ public class SaveState extends State {
 
                 JOptionPane.showMessageDialog(null, "<html>File <b>" + name + "</b> saved your current game! </html>");
 
-                State.setState(State.getLastState());
+                State.setState(manager.getGame().getMenuState());
             }
         } else {
-            State.setState(State.getLastState());
+            State.setState(manager.getGame().getMenuState());
         }
     }
 

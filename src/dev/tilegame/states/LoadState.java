@@ -52,7 +52,7 @@ public class LoadState extends State {
         if (name != null) {
             if (name == "") {
                 JOptionPane.showMessageDialog(null, "You need to include a name if you would like to save a game");
-                State.setState(State.getLastState());
+                State.setState(manager.getGame().getMenuState());
             }
             try {
                 content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt"),"UTF-8").useDelimiter("\\Z").next();
@@ -112,17 +112,26 @@ public class LoadState extends State {
 
                 //set game state == new
                 music.stop();
-                System.out.println(player.getInventory().getListNames());
-                State.setState(manager.getGame().getGameState());
+                if(!(State.getLastState() == manager.getGame().getTitleState()))
+                    State.setState(manager.getGame().getMenuState());
+                else
+                    State.setState(manager.getGame().getGameState());
+
             } catch (FileNotFoundException e) {
                 //if hte file doesnt exist
                 JOptionPane.showMessageDialog(null, "<html>The file <b>\"" + name + "\"</b> is non-existent. \n The directory \"/350-animal-app/savedData/\" is where the files are saved. \n Please make sure your spelled your file name correctly and that it is in the right directory.");
                 System.out.println(State.getLastState());
-                State.setState(State.getLastState());
+                if(!(State.getLastState() == manager.getGame().getTitleState()))
+                    State.setState(manager.getGame().getMenuState());
+                else
+                    State.setState(manager.getGame().getTitleState());
             }
         } else {
             // if the player hit cancel or exit
-            State.setState(State.getLastState());
+            if(!(State.getLastState() == manager.getGame().getTitleState()))
+                State.setState(manager.getGame().getMenuState());
+            else
+                State.setState(manager.getGame().getTitleState());
 
         }
 

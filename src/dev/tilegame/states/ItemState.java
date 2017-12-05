@@ -2,7 +2,6 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
-import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.worlds.World;
 
@@ -36,7 +35,7 @@ public class ItemState extends State {
         // Did the mouse left click?
         if (manager.getMouseManager().getLeftPress()) {
             // Move out of the item state.
-            State.setState(manager.getGame().getGameState());
+            State.setState(State.getLastState());
         }
     }
 

@@ -3,6 +3,7 @@ package dev.tilegame.states;
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.player.Player;
+import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
@@ -13,6 +14,7 @@ import java.awt.*;
  */
 public class VetState extends State {
     private Player player;
+    private LoopLoader music;
 
     /**
      * StoreState constructor.

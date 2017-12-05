@@ -58,6 +58,7 @@ public class ParkState extends State {
             music.play();
         }
         // Did the mouse left click?
+
         if (manager.getMouseManager().getLeftPress()) {
             // Set x and y coordinates.
             int x = manager.getMouseManager().getMouseX();
