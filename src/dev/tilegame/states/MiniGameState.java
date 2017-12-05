@@ -9,6 +9,14 @@ import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
+/**
+ * Mini Game world.
+ * Generates a top menu for travel.
+ * Generates a maze for the user to solve.
+ * @author brendannahed
+ * @version 12.03.2017
+ */
+
 public class MiniGameState extends State{
     private MiniGamePet pet;
     private World world;
