@@ -72,7 +72,7 @@ public class ParkState extends State {
                     sounds.play();
                     pet.setHappiness(6);
                 }
-                // Play Button
+                // MiniGame Button
                 if ((x > 204 && x < 252) && (y > 0 && y < 75)) {
                     sounds.load("res/sounds/squeeze-toy-4.wav");
                     sounds.play();

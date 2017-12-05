@@ -5,6 +5,7 @@ import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.inventory.items.BaconTreat;
+import dev.tilegame.player.Player;
 import dev.tilegame.worlds.World;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,11 +21,13 @@ class AnimalTest {
     Manager manager;
     Game game;
     World world;
+    Player player;
 
     @Before
     void initialize() {
         manager = new Manager(game);
         pet = new Pet(manager, 15, 15);
+        player = new Player(manager);
     }
 
     @Test
@@ -71,5 +74,14 @@ class AnimalTest {
         bacon.useItem(pet);
         Assert.assertEquals(6,pet.getHappiness());
     }
+
+    @Test
+    void setMoney(){
+        initialize();
+        player.setMoney(150);
+        Assert.assertEquals(150, player.getMoney());
+    }
+
+
 
 }
