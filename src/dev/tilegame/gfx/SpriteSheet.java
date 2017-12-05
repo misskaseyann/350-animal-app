@@ -9,14 +9,17 @@ import java.awt.image.BufferedImage;
  */
 public class SpriteSheet {
 
-    private BufferedImage sheet;
+    /**
+     * Sprite sheet image.
+     */
+    private final BufferedImage sheet;
 
     /**
      * SpriteSheet constructor.
-     * @param sheet buffered image.e
+     * @param inSheet buffered image.e
      */
-    public SpriteSheet(BufferedImage sheet) {
-        this.sheet = sheet;
+    public SpriteSheet(final BufferedImage inSheet) {
+        this.sheet = inSheet;
     }
 
     /**
@@ -27,8 +30,8 @@ public class SpriteSheet {
      * @param height height of image in pixels.
      * @return buffered image of crop.
      */
-    public BufferedImage crop(int x, int y, int width, int height) {
-        return sheet.getSubimage(x,y,width,height);
+    public BufferedImage crop(final int x, final int y, final int width, final int height) {
+        return sheet.getSubimage(x, y, width, height);
     }
 
 }
