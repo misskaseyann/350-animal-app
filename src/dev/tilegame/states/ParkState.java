@@ -2,7 +2,7 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
-import dev.tilegame.entities.animals.Pet_AI;
+import dev.tilegame.entities.animals.PetAI;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.stats.StatsManager;
@@ -14,28 +14,44 @@ import java.awt.*;
  * Park world.
  * Generates a top menu for taking care of your pet but eliminates the option for feeding and cleaning.
  * Generates a bottom menu for monitoring your pets stats and accessing main menu.
+ *
  * @author kaseystowell
  * @version 10.14.2017
  */
 public class ParkState extends State {
-
+    /**
+     * pet for park.
+     */
     private Pet pet;
-    private Pet_AI pet_ai;
+    /**
+     * pet AI for park.
+     */
+    private PetAI petAI;
+    /**
+     * pet for world.
+     */
     private World world;
+    /**
+     * pet park loop loader.
+     */
     private LoopLoader music, sounds;
+    /**
+     * stats manager for pet park.
+     */
     private StatsManager statsManager;
 
     /**
      * Park state constructor.
      * Sets up the park world, loads the pet and its stats, and sets up music with current loop loader.
+     *
      * @param manager game class manager.
      */
-    public ParkState(Manager manager) {
+    public ParkState(final Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world2.txt");
         manager.setWorld(world);
         pet = manager.getPet();
-        pet_ai = new Pet_AI(manager, 10*32, 10*32);
+        petAI = new PetAI(manager, 10 * 32, 10 * 32);
         statsManager = manager.getStatsManager();
         music = manager.getLoopLoader();
         //manager.setLoopLoader(music);
@@ -51,14 +67,13 @@ public class ParkState extends State {
     public void tick() {
         world.tick();
         pet.tick();
-        pet_ai.tick();
+        petAI.tick();
         // Check for park music.
         if (!music.isPlaying()) {
             music.load("res/sounds/doggo2.wav");
             music.play();
         }
         // Did the mouse left click?
-
         if (manager.getMouseManager().getLeftPress()) {
             // Set x and y coordinates.
             int x = manager.getMouseManager().getMouseX();
@@ -106,10 +121,10 @@ public class ParkState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         world.render(g);
         pet.render(g);
-        pet_ai.render(g);
+        petAI.render(g);
         // Draw menus.
         g.drawImage(Assets.getMainMenuTopTravel(), 0, 0, null);
         g.drawImage(Assets.getMainMenuBot(), 0, 475, null);
@@ -129,6 +144,8 @@ public class ParkState extends State {
     /**
      * @return park world.
      */
-    public World getWorld(){ return world;}
+    public World getWorld() {
+        return world;
+    }
 
 }

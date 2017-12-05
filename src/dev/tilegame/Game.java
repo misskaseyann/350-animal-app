@@ -19,30 +19,67 @@ import java.awt.image.BufferStrategy;
  * @version 09.24.2017
  */
 public class Game implements Runnable {
-
+    /**
+     * Game display.
+     */
     private Display display;
+    /**
+     * game width and height.
+     */
     private int width, height;
+    /**
+     * title of the game.
+     */
     private String title;
+    /**
+     * running for the game.
+     */
     private boolean running = false;
+    /**
+     * thread for game organization.
+     */
     private Thread thread;
+    /**
+     * BufferStrategy.
+     */
     private BufferStrategy bs;
+    /**
+     * game graphics.
+     */
     private Graphics g;
 
-    //States
+    /**
+     * Game states for entering in different scenarios.
+     */
     private State gameState, menuState, titleState, inventoryState, travelState, parkState, storeState,
             saveState, loadState, vetState;
 
     //Input
+    /**
+     * key manager for the game.
+     */
     private KeyManager keyManager;
+    /**
+     * mouse manager for the game.
+     */
     private MouseManager mouseManager;
 
     //Camera
+    /**
+     * Camera.
+     */
     private GameCamera gameCamera;
 
     // Manager
+    /**
+     * manager for the game.
+     */
     private Manager manager;
 
     //Player
+    /**
+     * player of the game.
+     */
     private Player player;
 
     private LoopLoader music;
@@ -52,14 +89,14 @@ public class Game implements Runnable {
      * Game constructor.
      * Initializes key and mouse listeners.
      *
-     * @param title  title of game window.
-     * @param width  width of game window.
-     * @param height height of game window.
+     * @param inTitle  title of game window.
+     * @param inWidth  width of game window.
+     * @param inHeight height of game window.
      */
-    public Game(String title, int width, int height) {
-        this.width = width;
-        this.height = height;
-        this.title = title;
+    public Game(final String inTitle, final int inWidth, final int inHeight) {
+        this.width = inWidth;
+        this.height = inHeight;
+        this.title = inTitle;
         keyManager = new KeyManager();
         mouseManager = new MouseManager();
     }
@@ -105,8 +142,9 @@ public class Game implements Runnable {
      */
     private void tick() {
         keyManager.tick();
-        if (State.getCurrentState() != null)
+        if (State.getCurrentState() != null) {
             State.getCurrentState().tick();
+        }
     }
 
     /**
@@ -125,8 +163,9 @@ public class Game implements Runnable {
         // clear screen
         g.clearRect(0, 0, width, height);
         // draw the state
-        if (State.getCurrentState() != null)
+        if (State.getCurrentState() != null) {
             State.getCurrentState().render(g);
+        }
         // show what was drawn
         bs.show();
         // elimate graphics properly
@@ -174,8 +213,9 @@ public class Game implements Runnable {
      * Directly start thread.
      */
     public synchronized void start() {
-        if (running) // if already running, dont repeat
+        if (running) { // if already running, dont repeat
             return;
+        }
         running = true;
         thread = new Thread(this); // run game class on the thread
         thread.start(); // starts run method
@@ -185,8 +225,9 @@ public class Game implements Runnable {
      * Directly stop thread.
      */
     public synchronized void stop() {
-        if (!running) // if already not running, dont repeat
+        if (!running) { // if already not running, dont repeat
             return;
+        }
         running = false;
         try {
             thread.join();
@@ -297,9 +338,12 @@ public class Game implements Runnable {
 
     /**
      * Set the games player.
-     * @param player Player object.
+     *
+     * @param inPlayer Player object.
      */
-    public void setPlayer(Player player) { this.player = player; }
+    public void setPlayer(final Player inPlayer) {
+        this.player = inPlayer;
+    }
 
     /**
      * @return vet state.

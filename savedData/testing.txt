@@ -1,8 +1,0 @@
-Xloc:27
-Yloc:20
-Items:Bacon Treat,Stuffed Animal,Dog Bone,Dog Biscuit,
-Money:60
-Health:6
-Happiness:4
-Hygene:4
-Hunger:4

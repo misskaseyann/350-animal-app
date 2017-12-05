@@ -4,8 +4,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Bacon treat object.
  *
@@ -18,9 +16,10 @@ public class BaconTreat extends Item {
      */
     public BaconTreat() {
         super("Bacon Treat",
-                "A yummy bacon flavored treat. " +
-                "\nNot healthy but satisfies" + "\nsome hunger.." +
-                "\nDogs love this snack!",
+                "A yummy bacon flavored treat. "
+                        + "\nNot healthy but satisfies"
+                        + "\nsome hunger.."
+                        + "\nDogs love this snack!",
                 10, Assets.getBaconTreat(), Assets.getBaconAni());
     }
 
@@ -33,15 +32,18 @@ public class BaconTreat extends Item {
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
-        if (pet.getHealth() > 0)
+    public void useItem(final Pet pet) {
+        if (pet.getHealth() > 0) {
             pet.setHealth(pet.getHealth() - 1);
-        if (pet.getHappiness() < 5)
+        }
+        if (pet.getHappiness() < 5) {
             pet.setHappiness(pet.getHappiness() + 2);
-        else
+        } else {
             pet.setHappiness(6);
-        if (pet.getHunger() < 6)
+        }
+        if (pet.getHunger() < 6) {
             pet.setHunger(pet.getHunger() + 1);
+        }
     }
 
 

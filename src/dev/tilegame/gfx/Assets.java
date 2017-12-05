@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
     // All images that are rendered on screen.
+    /** the assest for rendering on screen. */
     private static BufferedImage
             dog,
             woodFloor, kitchenFloor, bathFloor, stoneFloor,
@@ -40,10 +41,10 @@ public class Assets {
             baconTreat, chewToy, dogBiscuit, chewBone, dogFoodPremium, dogFoodStandard, stuffedAnimal, tennisBall,
             shopMenu, shopBuy, shopCancel, vetMenu, vetCancel;
 
-    // All animated images rendered on screen.
+    /** all animated images rendered on screen. */
     private static BufferedImage[] dogDown, dogLeft, dogRight, dogUp, hearts, emotions, titleImg,
     baconAni, ballAni, boneAni, chewToyAni, cookieAni, foodAni, stuffedAni;
-    // Tile size.
+    /** Tile size. */
     private static final int WIDTH = 32, HEIGHT = 32;
 
     /**

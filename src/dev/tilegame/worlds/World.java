@@ -13,10 +13,13 @@ import java.awt.*;
  * @version 09.24.2017
  */
 public class World {
-
-    private Manager manager;
+    /** manager for world. */
+    private Manager worldManager;
+    /** width and height for world. */
     private int width, height;
+    /** spawn x and spawn y for the world. */
     private int spawnX, spawnY;
+    /** tiles holding array. */
     private int[][] tiles;
 
     /**
@@ -24,8 +27,8 @@ public class World {
      * @param manager game class manager.
      * @param path string path of world txt file.
      */
-    public World(Manager manager, String path) {
-        this.manager = manager;
+    public World(final Manager manager, final String path) {
+        this.worldManager = manager;
         loadWorld(path);
     }
 
@@ -41,12 +44,12 @@ public class World {
      * Renders the world tiles.
      * @param g graphics object.
      */
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                getTile(x,y).render(g,
-                        (int) (x * Tile.TILEWIDTH - manager.getGameCamera().getxOffset()),
-                        (int) (y * Tile.TILEHEIGHT - manager.getGameCamera().getyOffset()));
+                getTile(x, y).render(g,
+                        (int) (x * Tile.TILEWIDTH - worldManager.getGameCamera().getxOffset()),
+                        (int) (y * Tile.TILEHEIGHT - worldManager.getGameCamera().getyOffset()));
             }
         }
     }
@@ -57,10 +60,11 @@ public class World {
      * @param y location in 2d array.
      * @return tile in x,y location.
      */
-    public Tile getTile(int x, int y) {
+    public Tile getTile(final int x, final int y) {
         Tile t = Tile.getTiles()[tiles[x][y]];
-        if (t == null)
+        if (t == null) {
             return Tile.woodFloorTile;
+        }
         return t;
     }
 
@@ -68,7 +72,7 @@ public class World {
      * Loads the world, identifies its size and start location of entity.
      * @param path string path of world.txt.
      */
-    private void loadWorld(String path) {
+    private void loadWorld(final String path) {
         String file = Utils.loadFileAsString(path);
         String[] tokens = file.split("\\s+");
         width = Utils.parseInt(tokens[0]);
@@ -87,21 +91,21 @@ public class World {
      * @return tiles array.
      */
     public int[][] getTiles() {
-        int[][] tiles1;
-        return  tiles1 = tiles;
+        //int[][] tiles1;
+        return   tiles;
     }
 
     /**
      * @return spawn x location of entity.
      */
-    public int getSpawnX(){
+    public int getSpawnX() {
         return spawnX;
     }
 
     /**
      * @return spawn y location of entity.
      */
-    public int getSpawnY(){
+    public int getSpawnY() {
         return spawnY;
     }
 }

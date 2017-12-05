@@ -9,27 +9,28 @@ import dev.tilegame.entities.Entity;
  * @version 09.25.2017
  */
 public class GameCamera {
-
+    /** Game for the camera. */
     private Game game;
+    /** xOffset and yOffset for the game camera. */
     private float xOffset, yOffset;
 
     /**
      * GameCamera constructor.
-     * @param game a game object.
-     * @param xOffset x offset of camera in pixels.
-     * @param yOffset y offset of camera in pixels.
+     * @param inGame a game object.
+     * @param xOff x offset of camera in pixels.
+     * @param yOff y offset of camera in pixels.
      */
-    public GameCamera(Game game, float xOffset, float yOffset) {
-        this.game = game;
-        this.xOffset = xOffset;
-        this.yOffset = yOffset;
+    public GameCamera(final Game inGame, final float xOff, final float yOff) {
+        this.game = inGame;
+        this.xOffset = xOff;
+        this.yOffset = yOff;
     }
 
     /**
      * Centers on an entity that is 32x32 pixels large.
      * @param e entity object.
      */
-    public void centerOnEntity(Entity e) {
+    public void centerOnEntity(final Entity e) {
         xOffset = (float) (e.getX() - game.getWidth() / 2.0 + 16);
         yOffset = (float) (e.getY() - game.getHeight() / 2.0 + 16);
     }

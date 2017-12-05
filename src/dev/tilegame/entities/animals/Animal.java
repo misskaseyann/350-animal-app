@@ -9,19 +9,25 @@ import dev.tilegame.entities.Entity;
  * @version 09.24.2017
  */
 public abstract class Animal extends Entity {
-
+    /** health for the pet. */
     protected int health;
+    /** clock for pet. */
     protected int clock = 9000; // Every 2.5 minutes.
-    protected int [] even = {1800, 3600, 5400, 7200, 9000}; // Every 30 seconds.
+    /** calculation for movement. */
+    protected int[] even = {1800, 3600, 5400, 7200, 9000}; // Every 30 seconds.
+    /** pet hunger. */
     protected int hunger;
+    /** pet happiness. */
     protected int happiness;
+    /** pet cleanliness. */
     protected int cleanliness;
-
 
     /**
      * Reset clock to 2.5 minutes.
      */
-    protected void resetClock(){ clock = 9000; }
+    protected void resetClock() {
+        clock = 9000;
+    }
 
     /**
      * Animal constructor.
@@ -29,54 +35,65 @@ public abstract class Animal extends Entity {
      * @param x float x value on canvas.
      * @param y float y value on canvas.
      */
-    public Animal(final Manager manager, final float x, final float y) { super(manager, x, y); }
+    public Animal(final Manager manager, final float x, final float y) {
+        super(manager, x, y);
+    }
 
     /**
      * @return health of animal.
      */
-    public int getHealth() { return health; }
+    public int getHealth() {
+        return health;
+    }
 
     /**
-     * @param health health of animal value from 0-6.
+     * @param inHealth health of animal value from 0-6.
      */
-    public void setHealth(int health) {
-        this.health = health;
+    public void setHealth(final int inHealth) {
+
+        this.health = inHealth;
     }
 
     /**
      * @return hunger of animal.
      */
-    public int getHunger() { return hunger; }
+    public int getHunger() {
+        return hunger;
+    }
 
     /**
-     * @param hunger hunger of animal value from 0-6.
+     * @param inHunger hunger of animal value from 0-6.
      */
-    public void setHunger(final int hunger) {
-        this.hunger = hunger;
+    public void setHunger(final int inHunger) {
+        this.hunger = inHunger;
     }
 
     /**
      * @return happiness of animal.
      */
-    public int getHappiness() { return happiness; }
+    public int getHappiness() {
+        return happiness;
+    }
 
     /**
-     * @param happiness happiness of animal value from 0-6.
+     * @param inHappiness happiness of animal value from 0-6.
      */
-    public void setHappiness(int happiness) {
-        this.happiness = happiness;
+    public void setHappiness(final int inHappiness) {
+        this.happiness = inHappiness;
     }
 
     /**
      * @return cleanliness of animal.
      */
-    public int getCleanliness() { return cleanliness; }
+    public int getCleanliness() {
+        return cleanliness;
+    }
 
     /**
-     * @param cleanliness cleanliness of animal value from 0-6.
+     * @param inCleanliness cleanliness of animal value from 0-6.
      */
-    public void setCleanliness(int cleanliness) {
-        this.cleanliness = cleanliness;
+    public void setCleanliness(final int inCleanliness) {
+        this.cleanliness = inCleanliness;
     }
 
 }

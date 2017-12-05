@@ -4,8 +4,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Chew toy object.
  *
@@ -18,8 +16,9 @@ public class ChewToy extends Item {
      */
     public ChewToy() {
         super("Chew Toy",
-                "A chew toy in the style of a kong." +
-                        "\nThis toy brings a lot of" + "\nhappiness to dogs.",
+                "A chew toy in the style of a kong."
+                        + "\nThis toy brings a lot of"
+                        + "\nhappiness to dogs.",
                 8, Assets.getChewToy(), Assets.getChewToyAni());
     }
 
@@ -30,10 +29,11 @@ public class ChewToy extends Item {
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
-        if (pet.getHappiness() < 5)
+    public void useItem(final Pet pet) {
+        if (pet.getHappiness() < 5) {
             pet.setHappiness(pet.getHappiness() + 2);
-        else
+        } else {
             pet.setHappiness(6);
+        }
     }
 }
