@@ -2,9 +2,7 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
-import dev.tilegame.inventory.Item;
 import dev.tilegame.inventory.items.*;
-import dev.tilegame.sound.LoopLoader;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
@@ -15,13 +13,16 @@ import java.awt.*;
  */
 public class StoreState extends State {
 
+    /**
+     * Store buy game state.
+     */
     private State storeBuyState;
 
     /**
      * StoreState constructor.
      * @param manager game class manager.
      */
-    public StoreState(Manager manager) {
+    public StoreState(final Manager manager) {
         super(manager);
     }
 
@@ -88,7 +89,7 @@ public class StoreState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         FontMetrics fm = g.getFontMetrics();
         g.drawImage(Assets.getShopMenu(), 0, 0, null);
         String money = "Your Money: $" + Integer.toString(manager.getPlayer().getMoney());
@@ -99,6 +100,7 @@ public class StoreState extends State {
     /**
      * @return null/no world in this state
      */
-    public World getWorld(){ return null;}
+    public World getWorld() {
+        return null; }
 
 }
