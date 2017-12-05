@@ -4,8 +4,7 @@ import dev.tilegame.Manager;
 import dev.tilegame.worlds.World;
 
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 
 /**
  * Abstract State class that helps manage each of the game's states.
@@ -13,18 +12,20 @@ import java.io.IOException;
  * @version 09.24.2017
  */
 public abstract class State {
-
+    /**currentState holds the State the user is currently at.*/
     private static State currentState = null;
+    /**lastState holds the previous State the user was at.*/
     private static State lastState = null;
+    /**manager is the Game's manager.*/
     protected Manager manager;
 
     /**
      * State constructor.
      * Sets up the class manager.
-     * @param manager class mananger.
+     * @param inManager class mananger.
      */
-    public State(Manager manager) {
-        this.manager = manager;
+    public State(final Manager inManager) {
+        this.manager = inManager;
     }
 
     /**
@@ -36,12 +37,12 @@ public abstract class State {
      * Render any graphics on the screen.
      * @param g graphics object.
      */
-    public abstract void render(Graphics g) ;
+    public abstract void render(Graphics g);
 
     /**
      * @param state current game state.
      */
-    public static void setState(State state) {
+    public static void setState(final State state) {
         currentState = state;
     }
 
@@ -55,12 +56,14 @@ public abstract class State {
     /**
      * @return last launched game state.
      */
-    public static State getLastState() { return lastState; }
+    public static State getLastState() {
+        return lastState; }
 
     /**
      * @param state last launched game state.
      */
-    public static void setLastState(State state) { lastState = state; }
+    public static void setLastState(final State state) {
+        lastState = state; }
 
     /**
      * @return current world rendered on screen.
