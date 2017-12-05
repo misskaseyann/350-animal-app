@@ -53,11 +53,9 @@ public class LoadState extends State {
                 State.setState(State.getLastState());
             }
             try {
-                content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt")).useDelimiter("\\Z").next();
+                content = new Scanner(new File("../350-animal-app/savedData/" + name + ".txt"),"UTF-8").useDelimiter("\\Z").next();
                 //parse content
                 String[] info = content.split("\n");
-                int xspawn = Integer.parseInt(info[0].substring(info[0].indexOf(':') + 1));
-                int yspawn = Integer.parseInt(info[1].substring(info[1].indexOf(':') + 1));
                 String items = info[2].substring(info[2].indexOf(':') + 1);
                 String[] itemList = items.split(",");
                 int money = Integer.parseInt(info[3].substring(info[3].indexOf(':') + 1));

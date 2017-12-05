@@ -1,0 +1,8 @@
+Xloc:18
+Yloc:33
+Items:Standard Dog Food,Standard Dog Food,
+Money:76
+Health:6
+Happiness:4
+Hygene:4
+Hunger:4
