@@ -1226,7 +1226,6 @@ public class  Tile {
 
     /**
      * Here is create a grassLongTile object and it's id is set.
-     * */
     public static final Tile grassLongTile = new GrassLongTile(83);
     /**
      * Here is create a grassFlowersTile object and it's id is set.
@@ -1241,14 +1240,18 @@ public class  Tile {
      * */
     public static final Tile grassShortTile = new GrassShortTile(86);
 
+
+
     /**
      * Here is create a doorTopTile object and it's id is set.
      * */
+
     public static final Tile doorTopTile = new DoorTopTile(87);
     /**
      * Here is create a doorBotTile object and it's id is set.
      * */
     public static final Tile doorBotTile = new DoorBotTile(88);
+
 
     /**
      * Here is create a pathTile object and it's id is set.
@@ -1264,8 +1267,8 @@ public class  Tile {
     //CLASS
 
     /**
-     * Default width of a 32x32 pixel tile.
-     */
+     * filler.
+     * */
     public static final int TILEWIDTH = 32, TILEHEIGHT = 32;
 
     /**
@@ -1283,15 +1286,15 @@ public class  Tile {
      * @param inId integer id.
      * @param inTexture BufferedImage object.
      * */
+
     public Tile(BufferedImage inTexture, int inId) {
         this.texture = inTexture;
         this.id = inId;
-
         tiles[inId] = this;
     }
 
     /**
-     * filler
+     * filler.
      * */
     public void tick() {
 
@@ -1303,6 +1306,7 @@ public class  Tile {
      * @param x int of the x value to render the image.
      * @param y int of the y value to render the image.
      * */
+
     public void render(final Graphics g, final int x, final int y) {
         g.drawImage(texture, x, y, TILEWIDTH, TILEHEIGHT, null);
     }

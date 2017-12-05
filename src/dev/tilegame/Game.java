@@ -200,7 +200,6 @@ public class Game implements Runnable {
                 }
                 // if timer running for one second... see FPS
                 if (timer >= 1000000000) {
-                    System.out.println("Ticks and Frames: " + ticks);
                     ticks = 0;
                     timer = 0;
                 }

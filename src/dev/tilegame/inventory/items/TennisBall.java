@@ -4,8 +4,6 @@ import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 
-import java.awt.image.BufferedImage;
-
 /**
  * Tennis ball object.
  *
@@ -18,9 +16,9 @@ public class TennisBall extends Item {
      */
     public TennisBall() {
         super("Tennis Ball",
-                "A bright yellow tennis ball." +
-                        "\nGuaranteed: new and never used!" +
-                        "\nThe perfect affordable toy.",
+                "A bright yellow tennis ball."
+                        + "\nGuaranteed: new and never used!"
+                        + "\nThe perfect affordable toy.",
                 3, Assets.getTennisBall(), Assets.getBallAni());
     }
 
@@ -31,8 +29,9 @@ public class TennisBall extends Item {
      * @param pet Pet object in the game.
      */
     @Override
-    public void useItem(Pet pet) {
-        if (pet.getHappiness() < 6)
+    public void useItem(final Pet pet) {
+        if (pet.getHappiness() < 6) {
             pet.setHappiness(pet.getHappiness() + 1);
+        }
     }
 }

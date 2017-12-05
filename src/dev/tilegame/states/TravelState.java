@@ -10,19 +10,21 @@ import java.awt.*;
 /**
  * Travel menu.
  * Options include: Home, park, vet, shop, and back.
+ *
  * @author kaseystowell
  * @version 10.10.2017
  */
 public class TravelState extends State {
-
+    /** looploader music for this state.*/
     private LoopLoader music;
 
     /**
      * TravelState constructor.
      * Sets up music to current loop loader.
+     *
      * @param manager game class manager.
      */
-    public TravelState(Manager manager) {
+    public TravelState(final Manager manager) {
         super(manager);
         music = manager.getLoopLoader();
     }
@@ -69,10 +71,11 @@ public class TravelState extends State {
 
     /**
      * Renders the travel menu screen.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         // TODO make a prettier menu
         g.drawImage(Assets.getMenuTravel(), 0, 0, null);
     }
@@ -80,6 +83,8 @@ public class TravelState extends State {
     /**
      * @return null/no world in this state
      */
-    public World getWorld(){ return null;}
+    public World getWorld() {
+        return null;
+    }
 
 }
