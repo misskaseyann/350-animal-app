@@ -5,25 +5,26 @@ import dev.tilegame.Manager;
 import dev.tilegame.gfx.Assets;
 import dev.tilegame.worlds.World;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Pause/main menu for the game.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class MenuState extends State {
-
-    Game game = manager.getGame();;
+    /**
+     * game for menu state.
+     */
+    protected Game game = manager.getGame();
 
     /**
      * MenuState constructor.
+     *
      * @param manager game class manager
      */
-    public MenuState(Manager manager) {
+    public MenuState(final Manager manager) {
         super(manager);
     }
 
@@ -57,10 +58,11 @@ public class MenuState extends State {
 
     /**
      * Render main menu screen.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         // TODO make menu prettier and add exit to title button
         g.drawImage(Assets.getPauseMenu(), 0, 0, null);
 
@@ -69,5 +71,7 @@ public class MenuState extends State {
     /**
      * @return null/no world in this state
      */
-    public World getWorld(){ return null; }
+    public World getWorld() {
+        return null;
+    }
 }

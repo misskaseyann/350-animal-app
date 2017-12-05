@@ -2,10 +2,13 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement>dev.tilegame.Launcher</OriginalElement>
-  <nodes />
+  <nodes>
+    <node x="-1116.0" y="1067.0">dev.tilegame.worlds</node>
+    <node x="-829.9981900710358" y="970.6566017150107">dev.tilegame.Game</node>
+  </nodes>
   <notes />
   <edges />
-  <settings layout="Hierarchic Group" zoom="0.1" x="1789.0" y="1527.0" />
+  <settings layout="Hierarchic Group" zoom="0.7026579740922951" x="-672.7381801170526" y="994.8504494002389" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>

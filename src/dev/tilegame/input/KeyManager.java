@@ -9,8 +9,9 @@ import java.awt.event.KeyListener;
  * @version 09.24.2017
  */
 public class KeyManager implements KeyListener {
-
+    /** keys for the actions.*/
     private boolean[] keys;
+    /**keys for the actions.*/
     private boolean enter, esc, up, down, left, right;
 
     /**
@@ -37,7 +38,7 @@ public class KeyManager implements KeyListener {
      * @param e key event.
      */
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(final KeyEvent e) {
         // do nothing
     }
 
@@ -46,7 +47,7 @@ public class KeyManager implements KeyListener {
      * @param e key event.
      */
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(final KeyEvent e) {
         keys[e.getKeyCode()] = true;
     }
 
@@ -55,7 +56,7 @@ public class KeyManager implements KeyListener {
      * @param e key event.
      */
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(final KeyEvent e) {
         keys[e.getKeyCode()] = false;
     }
 

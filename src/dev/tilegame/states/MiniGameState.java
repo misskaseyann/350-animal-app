@@ -9,21 +9,39 @@ import dev.tilegame.worlds.World;
 
 import java.awt.*;
 
-public class MiniGameState extends State{
+/**
+ * mini game handler.
+ * @author Brendan Nahed
+ * @version 11.23.17
+ */
+public class MiniGameState extends State {
+    /**
+     * minigame pet for state.
+     */
     private MiniGamePet pet;
+    /**
+     * World.
+     */
     private World world;
+    /**
+     * looploader music and sound.
+     */
     private LoopLoader music, sounds;
+    /**
+     * statsmanager manager.
+     */
     private StatsManager statsManager;
 
     /**
      * Creates game state with a home world, pet, fresh stats, and instantiates a music loader.
+     *
      * @param manager game class manager.
      */
-    public MiniGameState(Manager manager) {
+    public MiniGameState(final Manager manager) {
         super(manager);
         world = new World(manager, "res/worlds/world3.txt");
         manager.setWorld(world);
-        pet = new MiniGamePet(manager,world.getSpawnX()*32, world.getSpawnY()*32);
+        pet = new MiniGamePet(manager, world.getSpawnX() * 32, world.getSpawnY() * 32);
         manager.setMiniPet(pet);
         statsManager = new StatsManager(pet);
         manager.setStatsManager(statsManager);
@@ -41,7 +59,7 @@ public class MiniGameState extends State{
         pet.tick();
         if (pet.miniGameOver()) {
             music.stop();
-            manager.getPlayer().setMoney(manager.getPlayer().getMoney()+50);
+            manager.getPlayer().setMoney(manager.getPlayer().getMoney() + 50);
             State.setState(State.getLastState());
         }
         // Check if music is playing.
@@ -67,10 +85,11 @@ public class MiniGameState extends State{
 
     /**
      * Renders the home world and game menus.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         world.render(g);
         pet.render(g);
         // Render top and bottom menu.
@@ -80,5 +99,7 @@ public class MiniGameState extends State{
     /**
      * @return home world.
      */
-    public World getWorld(){ return world; }
+    public World getWorld() {
+        return world;
+    }
 }

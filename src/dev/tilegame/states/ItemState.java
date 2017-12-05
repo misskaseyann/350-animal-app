@@ -14,6 +14,7 @@ import java.awt.*;
  * @version 12.01.2017
  */
 public class ItemState extends State {
+    /**animation for the item state*/
     private Animation animation;
 
     /**

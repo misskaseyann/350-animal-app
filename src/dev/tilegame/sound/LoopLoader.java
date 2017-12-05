@@ -14,9 +14,10 @@ import java.io.InputStream;
  * @version 10.03.2017
  */
 public class LoopLoader {
-
-    AudioStream stream;
-    boolean isPlaying;
+    /** stream for audio. */
+    protected AudioStream stream;
+    /** isplaying if its playing */
+    protected boolean isPlaying;
 
     /**
      * LoopLoader constuctor.
@@ -30,7 +31,7 @@ public class LoopLoader {
      * Loads an audio stream from a string path.
      * @param path string path of .wav music.
      */
-    public void load(String path) {
+    public void load(final String path) {
         try {
             InputStream input = new FileInputStream(path);
             stream = new AudioStream(input);

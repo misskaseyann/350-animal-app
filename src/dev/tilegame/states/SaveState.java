@@ -19,9 +19,9 @@ import dev.tilegame.entities.animals.Pet;
  */
 public class SaveState extends State {
     /** pet to save the stats of. */
-    Pet pet;
+    protected Pet pet;
     /** ßPlayer to save the inventory and money from. */
-    Player player;
+    protected Player player;
 
     /**
      * SaveState constructor.

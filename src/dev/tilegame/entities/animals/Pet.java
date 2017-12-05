@@ -4,33 +4,48 @@ import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
 import dev.tilegame.gfx.Assets;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-import java.awt.*;
-
 
 /**
  * Pet Animal.
+ *
  * @author kaseystowell
  * @author allisonbolen
  * @author brendannahed
  * @version 09.24.2017
  */
 public class Pet extends Animal {
-
+    /**
+     * reset count for moves.
+     */
+    private final int RESET_COUNT = 100;
     // Pet Animations
+    /**
+     * animation for ai pet.
+     */
     private Animation aniDown, aniUp, aniLeft, aniRight;
     // Random Movement
+    /**
+     * random gen.
+     */
     private Random random;
+    /**
+     * count.
+     */
     private int count = 0;
+    /**
+     * randInt.
+     */
     private int randomInt;
-    private final int RESET_COUNT = 100;
 
     /**
      * Pet constructor.
+     *
      * @param manager game class manager.
-     * @param x float x value on canvas.
-     * @param y float y value on canvas.
+     * @param x       float x value on canvas.
+     * @param y       float y value on canvas.
      */
     public Pet(final Manager manager, final float x, final float y) {
         super(manager, x, y);
@@ -73,35 +88,41 @@ public class Pet extends Animal {
 
     /**
      * Checks if an integer in an array matches the desired number.
+     *
      * @param list int array.
-     * @param num int number.
+     * @param num  int number.
      * @return true if num is equal to value in array list.
      */
-    private boolean isEqual(int[] list, int num) {
-        for (int i = 0; i < list.length; i++)
-            if (num == list[i])
+    private boolean isEqual(final int[] list, final int num) {
+        for (int i = 0; i < list.length; i++) {
+            if (num == list[i]) {
                 return true;
+            }
+        }
         return false;
     }
 
     /**
      * Checks if move value collides with a tile.
+     *
      * @param move integer value.
      * @return same value if the move will cause collision.
      */
-    private int checkMove(int move) {
+    private int checkMove(final int move) {
         random = new Random();
-        if (!super.noCollide(move))
+        if (!super.noCollide(move)) {
             return checkMove(random.nextInt(9));
+        }
         return move;
     }
 
     /**
      * Renders the current pet animation and centers camera on pet.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         g.drawImage(getCurrentAnimationFrame(),
                 (int) (getX() - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
@@ -109,6 +130,7 @@ public class Pet extends Animal {
 
     /**
      * Check pet movement and animate.
+     *
      * @return animation frame of pet.
      */
     private BufferedImage getCurrentAnimationFrame() {
@@ -188,24 +210,33 @@ public class Pet extends Animal {
      * Decrease the pet stats.
      */
     private void decreaseStats() {
-        if (clock == 0)
+        if (clock == 0) {
             resetClock();
+        }
         // Reduce health if any of the pets stats are low.
-        if ((hunger == 0 || happiness == 0 || cleanliness == 0) && isEqual(even, clock))
-            if (!(health == 0))
+        if ((hunger == 0 || happiness == 0 || cleanliness == 0) && isEqual(even, clock)) {
+            if (!(health == 0)) {
                 health--;
+            }
+        }
         // Hunger decreases over time.
-        if (isEqual(even, clock))
-            if (!(hunger == 0))
+        if (isEqual(even, clock)) {
+            if (!(hunger == 0)) {
                 hunger--;
+            }
+        }
         // Cleanliness decreases over time.
-        if (even[2] == clock)
-            if (!(cleanliness == 0))
+        if (even[2] == clock) {
+            if (!(cleanliness == 0)) {
                 cleanliness--;
+            }
+        }
         // Happiness decreases over time.
-        if ((hunger < 3 || cleanliness < 3) && isEqual(even, clock))
-            if (!(happiness == 0))
+        if ((hunger < 3 || cleanliness < 3) && isEqual(even, clock)) {
+            if (!(happiness == 0)) {
                 happiness--;
+            }
+        }
         clock--;
     }
 }

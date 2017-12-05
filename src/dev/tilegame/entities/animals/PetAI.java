@@ -10,26 +10,42 @@ import java.util.Random;
 
 /**
  * Pet AI.
+ *
  * @author brendannahed
  * @version 10.08.2017
  */
-public class Pet_AI extends Animal {
+public class PetAI extends Animal {
 
-    //Animations
-    private Animation aniDown, aniUp, aniLeft, aniRight;
-    // Random Movement
-    private Random random;
-    private int count = 0;
-    private int randomInt;
+    /**
+     * reset count.
+     */
     private final int RESET_COUNT = 100;
+    // Random Movement
+    /**
+     * animation for the pet.
+     */
+    private Animation aniDown, aniUp, aniLeft, aniRight;
+    /**
+     * random.
+     */
+    private Random random;
+    /**
+     * count.
+     */
+    private int count = 0;
+    /**
+     * randint.
+     */
+    private int randomInt;
 
     /**
      * Pet AI Constructor.
+     *
      * @param manager class manager.
-     * @param x float x value on canvas.
-     * @param y float y value on canvas.
+     * @param x       float x value on canvas.
+     * @param y       float y value on canvas.
      */
-    public Pet_AI(Manager manager, float x, float y) {
+    public PetAI(final Manager manager, final float x, final float y) {
         super(manager, x, y);
         // Animations
         aniDown = new Animation(200, Assets.getDogDown());
@@ -53,26 +69,31 @@ public class Pet_AI extends Animal {
     /**
      * @return int value 100.
      */
-    private int resetCount(){ return RESET_COUNT; }
+    private int resetCount() {
+        return RESET_COUNT;
+    }
 
     /**
      * Checks if move value collides with a tile.
+     *
      * @param move integer value.
      * @return same value if the move will cause collision.
      */
-    private int checkMove(int move){
+    private int checkMove(final int move) {
         random = new Random();
-        if(!super.noCollide(move))
+        if (!super.noCollide(move)) {
             return checkMove(random.nextInt(9));
+        }
         return move;
     }
 
     /**
      * Renders the current pet AI animation.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         g.drawImage(getCurrentAnimationFrame(),
                 (int) (x - manager.getGameCamera().getxOffset()),
                 (int) (y - manager.getGameCamera().getyOffset()), null);
@@ -80,22 +101,22 @@ public class Pet_AI extends Animal {
 
     /**
      * Check pet movement and animate.
+     *
      * @return animation frame of pet.
      */
     private BufferedImage getCurrentAnimationFrame() {
         random = new Random();
         // Random movement for Pet AI.
-        if(count == 0) {
+        if (count == 0) {
             randomInt = random.nextInt(9);
             randomInt = checkMove(randomInt);
             count = resetCount();
-        }
-        else {
+        } else {
             randomInt = checkMove(randomInt);
             count--;
         }
         // Find animation for AI movement.
-        if((count % 2) == 0) {
+        if ((count % 2) == 0) {
             switch (randomInt) {
                 case 0: //Rest
                     return Assets.getDog();

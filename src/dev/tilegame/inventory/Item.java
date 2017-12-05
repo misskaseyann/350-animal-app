@@ -46,7 +46,7 @@ public abstract class Item {
         return cost;
     }
     /** set cost.
-     * @param inCost*/
+     * @param inCost of item*/
     public void setCost(final int inCost) {
         this.cost = inCost;
     }
@@ -66,9 +66,9 @@ public abstract class Item {
         return img;
     }
     /** set image.
-     * @param img the item image*/
-    public void setImg(final BufferedImage img) {
-        this.img = img;
+     * @param inImg the item image*/
+    public void setImg(final BufferedImage inImg) {
+        this.img = inImg;
     }
     /** getting the animation.
      * @return ani of the item */
@@ -76,9 +76,9 @@ public abstract class Item {
         return ani;
     }
     /**set animation.
-     * @param ani the animation for the item*/
-    public void setAni(final BufferedImage[] ani) {
-        this.ani = ani;
+     * @param inAni the animation for the item*/
+    public void setAni(final BufferedImage[] inAni) {
+        this.ani = inAni;
     }
     /** the description of the item.
      * @return description of item */
@@ -86,9 +86,9 @@ public abstract class Item {
         return description;
     }
     /**set description.
-     * @param description of item*/
-    public void setDescription(final String description) {
-        this.description = description;
+     * @param inDescription of item*/
+    public void setDescription(final String inDescription) {
+        this.description = inDescription;
     }
 
     /** Methods **/
@@ -97,8 +97,7 @@ public abstract class Item {
      * Use the item with the pet.
      * @param pet pet entity in the game.
      */
-    public void useItem(Pet pet){
+    public void useItem(final Pet pet) {
         // do nothing
     }
-
 }
