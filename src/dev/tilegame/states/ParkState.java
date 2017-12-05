@@ -38,6 +38,7 @@ public class ParkState extends State {
         pet_ai = new Pet_AI(manager, 10*32, 10*32);
         statsManager = manager.getStatsManager();
         music = manager.getLoopLoader();
+        //manager.setLoopLoader(music);
         sounds = new LoopLoader();
     }
 
@@ -57,42 +58,42 @@ public class ParkState extends State {
             music.play();
         }
         // Did the mouse left click?
-            if (manager.getMouseManager().getLeftPress()) {
-                // Set x and y coordinates.
-                int x = manager.getMouseManager().getMouseX();
-                int y = manager.getMouseManager().getMouseY();
-                // Main Menu Button
-                if ((x > 10 && x < 74) && (y > 490 && y < 554)) {
-                    State.setLastState(this);
-                    State.setState(manager.getGame().getMenuState());
-                }
-                // Talk Button
-                if ((x > 70 && x < 136) && (y > 0 && y < 75)) {
-                    sounds.load("res/sounds/chasdog.wav");
-                    sounds.play();
-                    pet.setHappiness(6);
-                }
-                // Play Button
-                if ((x > 204 && x < 252) && (y > 0 && y < 75)) {
-                    sounds.load("res/sounds/squeeze-toy-4.wav");
-                    sounds.play();
-                    pet.setHappiness(6);
-                    State.setState(new MiniGameState(manager));
-                }
-                // Inventory Button
-                if ((x > 252 && x < 305) && (y > 0 && y < 75)) {
-                    sounds.load("res/sounds/bag-zipper-1.wav");
-                    sounds.play();
-                    State.setLastState(this);
-                    State.setState(manager.getGame().getInventoryState());
-                }
-                // Travel Button
-                if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
-                    sounds.load("res/sounds/door-10-open.wav");
-                    sounds.play();
-                    State.setLastState(this);
-                    State.setState(manager.getGame().getTravelState());
-                }
+        if (manager.getMouseManager().getLeftPress()) {
+            // Set x and y coordinates.
+            int x = manager.getMouseManager().getMouseX();
+            int y = manager.getMouseManager().getMouseY();
+            // Main Menu Button
+            if ((x > 10 && x < 74) && (y > 490 && y < 554)) {
+                State.setLastState(this);
+                State.setState(manager.getGame().getMenuState());
+            }
+            // Talk Button
+            if ((x > 70 && x < 136) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/chasdog.wav");
+                sounds.play();
+                pet.setHappiness(6);
+            }
+            // Play Button
+            if ((x > 204 && x < 252) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/squeeze-toy-4.wav");
+                sounds.play();
+                pet.setHappiness(6);
+                State.setState(new MiniGameState(manager));
+            }
+            // Inventory Button
+            if ((x > 252 && x < 305) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/bag-zipper-1.wav");
+                sounds.play();
+                State.setLastState(this);
+                State.setState(manager.getGame().getInventoryState());
+            }
+            // Travel Button
+            if ((x > 305 && x < 360) && (y > 0 && y < 75)) {
+                sounds.load("res/sounds/door-10-open.wav");
+                sounds.play();
+                State.setLastState(this);
+                State.setState(manager.getGame().getTravelState());
+            }
             manager.getMouseManager().setLeftPress(false);
         }
     }
