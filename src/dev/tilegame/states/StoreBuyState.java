@@ -63,7 +63,7 @@ public class StoreBuyState extends State {
     @Override
     public void render(Graphics g) {
         FontMetrics fm = g.getFontMetrics();
-        if ((player.getMoney() < 1) || (player.getInventory().getSize() > 11))
+        if ((player.getMoney() < item.getCost()) || (player.getInventory().getSize() > 11))
             g.drawImage(Assets.getShopCancel(), 0, 0, null);
         else
             g.drawImage(Assets.getShopBuy(), 0, 0, null);

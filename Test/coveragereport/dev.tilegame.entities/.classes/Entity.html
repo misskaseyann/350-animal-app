@@ -102,156 +102,155 @@
 <b class="fc"><i>28</i>&nbsp;        this.y = y;</b>
 <b class="fc"><i>29</i>&nbsp;    }</b>
 <i>30</i>&nbsp;
-<i>31</i>&nbsp;
-<i>32</i>&nbsp;    /**
-<i>33</i>&nbsp;     * X location of entity on 32x32 tile based grid.
-<i>34</i>&nbsp;     * @return x location of entity on grid.
-<i>35</i>&nbsp;     */
-<i>36</i>&nbsp;    public int gridLocX() {
-<b class="fc"><i>37</i>&nbsp;        int X = Math.round(x/32);</b>
-<b class="fc"><i>38</i>&nbsp;        return X;</b>
-<i>39</i>&nbsp;    }
-<i>40</i>&nbsp;
-<i>41</i>&nbsp;    /**
-<i>42</i>&nbsp;     * Y location of entity on 32x32 tile based grid.
-<i>43</i>&nbsp;     * @return y location of entity on grid.
-<i>44</i>&nbsp;     */
-<i>45</i>&nbsp;    public int gridLocY() {
-<b class="fc"><i>46</i>&nbsp;        int Y = Math.round(y/32);</b>
-<b class="fc"><i>47</i>&nbsp;        return Y;</b>
-<i>48</i>&nbsp;    }
-<i>49</i>&nbsp;
-<i>50</i>&nbsp;    /**
-<i>51</i>&nbsp;     * Checks for entity collision in world.
-<i>52</i>&nbsp;     * @param move int value of entity movement.
-<i>53</i>&nbsp;     * @return false if entity will run into solid tile.
-<i>54</i>&nbsp;     */
-<i>55</i>&nbsp;    public boolean noCollide(final int move) {
-<i>56</i>&nbsp;        // Up to left.
-<b class="fc"><i>57</i>&nbsp;        if  (move == 5) {</b>
-<b class="fc"><i>58</i>&nbsp;            int gridx = gridLocX() -  1;</b>
-<b class="fc"><i>59</i>&nbsp;            int gridy = gridLocY() -  1;</b>
-<b class="fc"><i>60</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>61</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>62</i>&nbsp;                return false;</b>
-<b class="fc"><i>63</i>&nbsp;            return true;</b>
-<i>64</i>&nbsp;        }
-<i>65</i>&nbsp;        // Up to right.
-<b class="fc"><i>66</i>&nbsp;        if  (move == 6) {</b>
-<b class="fc"><i>67</i>&nbsp;            int gridx = gridLocX() +  1;</b>
-<b class="fc"><i>68</i>&nbsp;            int gridy = gridLocY() -  1;</b>
-<b class="fc"><i>69</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>70</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>71</i>&nbsp;                return false;</b>
-<b class="fc"><i>72</i>&nbsp;            return true;</b>
-<i>73</i>&nbsp;        }
-<i>74</i>&nbsp;        // Down to left.
-<b class="fc"><i>75</i>&nbsp;        if (move == 7) {</b>
-<b class="fc"><i>76</i>&nbsp;            int gridx = gridLocX() -  1;</b>
-<b class="fc"><i>77</i>&nbsp;            int gridy = gridLocY() +  1;</b>
-<b class="fc"><i>78</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>79</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>80</i>&nbsp;                return false;</b>
-<b class="fc"><i>81</i>&nbsp;            return true;</b>
-<i>82</i>&nbsp;        }
-<i>83</i>&nbsp;        // Down to right.
-<b class="fc"><i>84</i>&nbsp;        if (move == 8) {</b>
-<b class="fc"><i>85</i>&nbsp;            int gridx = gridLocX() +  1;</b>
-<b class="fc"><i>86</i>&nbsp;            int gridy = gridLocY() +  1;</b>
-<b class="fc"><i>87</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>88</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>89</i>&nbsp;                return false;</b>
-<b class="fc"><i>90</i>&nbsp;            return true;</b>
-<i>91</i>&nbsp;        }
-<i>92</i>&nbsp;        // Up.
-<b class="fc"><i>93</i>&nbsp;        if (move ==   1) {</b>
-<b class="fc"><i>94</i>&nbsp;            int gridx = gridLocX();</b>
-<b class="fc"><i>95</i>&nbsp;            int gridy = gridLocY() -  1;</b>
-<b class="fc"><i>96</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>97</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>98</i>&nbsp;                return false;</b>
-<b class="fc"><i>99</i>&nbsp;            return true;</b>
-<i>100</i>&nbsp;        }
-<i>101</i>&nbsp;        // Down.
-<b class="fc"><i>102</i>&nbsp;        if (move == 2) {</b>
-<b class="fc"><i>103</i>&nbsp;            int gridx = gridLocX();</b>
-<b class="fc"><i>104</i>&nbsp;            int gridy = gridLocY() +  1;</b>
-<b class="fc"><i>105</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>106</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>107</i>&nbsp;                return false;</b>
-<b class="fc"><i>108</i>&nbsp;            return true;</b>
-<i>109</i>&nbsp;        }
-<i>110</i>&nbsp;        // Left.
-<b class="fc"><i>111</i>&nbsp;        if  (move == 3) {</b>
-<b class="fc"><i>112</i>&nbsp;            int gridx = gridLocX() -  1;</b>
-<b class="fc"><i>113</i>&nbsp;            int gridy = gridLocY();</b>
-<b class="fc"><i>114</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>115</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>116</i>&nbsp;                return false;</b>
-<b class="fc"><i>117</i>&nbsp;            return true;</b>
-<i>118</i>&nbsp;        }
-<i>119</i>&nbsp;        // Right.
-<b class="fc"><i>120</i>&nbsp;        if  (move == 4) {</b>
-<b class="fc"><i>121</i>&nbsp;            int gridx = gridLocX() +  1;</b>
-<b class="fc"><i>122</i>&nbsp;            int gridy = gridLocY();</b>
-<b class="fc"><i>123</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
-<b class="fc"><i>124</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
-<b class="fc"><i>125</i>&nbsp;                return false;</b>
-<b class="fc"><i>126</i>&nbsp;            return true;</b>
-<i>127</i>&nbsp;        }
-<i>128</i>&nbsp;        // No movement.
-<b class="fc"><i>129</i>&nbsp;        if  (move == 0)</b>
-<b class="fc"><i>130</i>&nbsp;            return true;</b>
-<i>131</i>&nbsp;        // All else return false.
-<b class="nc"><i>132</i>&nbsp;        return false;</b>
-<i>133</i>&nbsp;    }
-<i>134</i>&nbsp;
-<i>135</i>&nbsp;    /**
-<i>136</i>&nbsp;     * Tick entity.
-<i>137</i>&nbsp;     */
-<i>138</i>&nbsp;    public abstract void tick();
-<i>139</i>&nbsp;
-<i>140</i>&nbsp;    /**
-<i>141</i>&nbsp;     * Render entity on tick.
-<i>142</i>&nbsp;     * @param g graphics object.
-<i>143</i>&nbsp;     */
-<i>144</i>&nbsp;    public abstract void render(Graphics g);
-<i>145</i>&nbsp;
-<i>146</i>&nbsp;    /**
-<i>147</i>&nbsp;     * @return x location of entity.
-<i>148</i>&nbsp;     */
-<i>149</i>&nbsp;    public float getX()  {
-<b class="fc"><i>150</i>&nbsp;        return x;</b>
-<i>151</i>&nbsp;    }
-<i>152</i>&nbsp;
-<i>153</i>&nbsp;    /**
-<i>154</i>&nbsp;     * @param x set x location of entity.
-<i>155</i>&nbsp;     */
-<i>156</i>&nbsp;    public void setX(final float x)  {
-<b class="fc"><i>157</i>&nbsp;        this.x = x;</b>
-<b class="fc"><i>158</i>&nbsp;    }</b>
-<i>159</i>&nbsp;
-<i>160</i>&nbsp;    /**
-<i>161</i>&nbsp;     * @return y location of entity.
-<i>162</i>&nbsp;     */
-<i>163</i>&nbsp;    public float getY()  {
-<b class="fc"><i>164</i>&nbsp;        return y;</b>
-<i>165</i>&nbsp;    }
-<i>166</i>&nbsp;
-<i>167</i>&nbsp;    /**
-<i>168</i>&nbsp;     * @param y set y location of entity.
-<i>169</i>&nbsp;     */
-<i>170</i>&nbsp;    public void setY(final float y)  {
-<b class="fc"><i>171</i>&nbsp;        this.y = y;</b>
-<b class="fc"><i>172</i>&nbsp;    }</b>
-<i>173</i>&nbsp;
-<i>174</i>&nbsp;}
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * X location of entity on 32x32 tile based grid.
+<i>33</i>&nbsp;     * @return x location of entity on grid.
+<i>34</i>&nbsp;     */
+<i>35</i>&nbsp;    public int gridLocX() {
+<b class="fc"><i>36</i>&nbsp;        int X = Math.round(x/32);</b>
+<b class="fc"><i>37</i>&nbsp;        return X;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /**
+<i>41</i>&nbsp;     * Y location of entity on 32x32 tile based grid.
+<i>42</i>&nbsp;     * @return y location of entity on grid.
+<i>43</i>&nbsp;     */
+<i>44</i>&nbsp;    public int gridLocY() {
+<b class="fc"><i>45</i>&nbsp;        int Y = Math.round(y/32);</b>
+<b class="fc"><i>46</i>&nbsp;        return Y;</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    /**
+<i>50</i>&nbsp;     * Checks for entity collision in world.
+<i>51</i>&nbsp;     * @param move int value of entity movement.
+<i>52</i>&nbsp;     * @return false if entity will run into solid tile.
+<i>53</i>&nbsp;     */
+<i>54</i>&nbsp;    public boolean noCollide(final int move) {
+<i>55</i>&nbsp;        // Up to left.
+<b class="fc"><i>56</i>&nbsp;        if  (move == 5) {</b>
+<b class="fc"><i>57</i>&nbsp;            int gridx = gridLocX() -  1;</b>
+<b class="fc"><i>58</i>&nbsp;            int gridy = gridLocY() -  1;</b>
+<b class="fc"><i>59</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>60</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>61</i>&nbsp;                return false;</b>
+<b class="fc"><i>62</i>&nbsp;            return true;</b>
+<i>63</i>&nbsp;        }
+<i>64</i>&nbsp;        // Up to right.
+<b class="fc"><i>65</i>&nbsp;        if  (move == 6) {</b>
+<b class="fc"><i>66</i>&nbsp;            int gridx = gridLocX() +  1;</b>
+<b class="fc"><i>67</i>&nbsp;            int gridy = gridLocY() -  1;</b>
+<b class="fc"><i>68</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>69</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>70</i>&nbsp;                return false;</b>
+<b class="fc"><i>71</i>&nbsp;            return true;</b>
+<i>72</i>&nbsp;        }
+<i>73</i>&nbsp;        // Down to left.
+<b class="fc"><i>74</i>&nbsp;        if (move == 7) {</b>
+<b class="fc"><i>75</i>&nbsp;            int gridx = gridLocX() -  1;</b>
+<b class="fc"><i>76</i>&nbsp;            int gridy = gridLocY() +  1;</b>
+<b class="fc"><i>77</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>78</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>79</i>&nbsp;                return false;</b>
+<b class="fc"><i>80</i>&nbsp;            return true;</b>
+<i>81</i>&nbsp;        }
+<i>82</i>&nbsp;        // Down to right.
+<b class="fc"><i>83</i>&nbsp;        if (move == 8) {</b>
+<b class="fc"><i>84</i>&nbsp;            int gridx = gridLocX() +  1;</b>
+<b class="fc"><i>85</i>&nbsp;            int gridy = gridLocY() +  1;</b>
+<b class="fc"><i>86</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>87</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>88</i>&nbsp;                return false;</b>
+<b class="fc"><i>89</i>&nbsp;            return true;</b>
+<i>90</i>&nbsp;        }
+<i>91</i>&nbsp;        // Up.
+<b class="fc"><i>92</i>&nbsp;        if (move ==   1) {</b>
+<b class="fc"><i>93</i>&nbsp;            int gridx = gridLocX();</b>
+<b class="fc"><i>94</i>&nbsp;            int gridy = gridLocY() -  1;</b>
+<b class="fc"><i>95</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>96</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>97</i>&nbsp;                return false;</b>
+<b class="fc"><i>98</i>&nbsp;            return true;</b>
+<i>99</i>&nbsp;        }
+<i>100</i>&nbsp;        // Down.
+<b class="fc"><i>101</i>&nbsp;        if (move == 2) {</b>
+<b class="fc"><i>102</i>&nbsp;            int gridx = gridLocX();</b>
+<b class="fc"><i>103</i>&nbsp;            int gridy = gridLocY() +  1;</b>
+<b class="fc"><i>104</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>105</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>106</i>&nbsp;                return false;</b>
+<b class="fc"><i>107</i>&nbsp;            return true;</b>
+<i>108</i>&nbsp;        }
+<i>109</i>&nbsp;        // Left.
+<b class="fc"><i>110</i>&nbsp;        if  (move == 3) {</b>
+<b class="fc"><i>111</i>&nbsp;            int gridx = gridLocX() -  1;</b>
+<b class="fc"><i>112</i>&nbsp;            int gridy = gridLocY();</b>
+<b class="fc"><i>113</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>114</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>115</i>&nbsp;                return false;</b>
+<b class="fc"><i>116</i>&nbsp;            return true;</b>
+<i>117</i>&nbsp;        }
+<i>118</i>&nbsp;        // Right.
+<b class="fc"><i>119</i>&nbsp;        if  (move == 4) {</b>
+<b class="fc"><i>120</i>&nbsp;            int gridx = gridLocX() +  1;</b>
+<b class="fc"><i>121</i>&nbsp;            int gridy = gridLocY();</b>
+<b class="fc"><i>122</i>&nbsp;            int[][] tiles = State.getCurrentState().getWorld().getTiles();</b>
+<b class="fc"><i>123</i>&nbsp;            if  (Tile.getTiles()[tiles[gridx][gridy]].isSolid())</b>
+<b class="fc"><i>124</i>&nbsp;                return false;</b>
+<b class="fc"><i>125</i>&nbsp;            return true;</b>
+<i>126</i>&nbsp;        }
+<i>127</i>&nbsp;        // No movement.
+<b class="fc"><i>128</i>&nbsp;        if  (move == 0)</b>
+<b class="fc"><i>129</i>&nbsp;            return true;</b>
+<i>130</i>&nbsp;        // All else return false.
+<b class="nc"><i>131</i>&nbsp;        return false;</b>
+<i>132</i>&nbsp;    }
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;    /**
+<i>135</i>&nbsp;     * Tick entity.
+<i>136</i>&nbsp;     */
+<i>137</i>&nbsp;    public abstract void tick();
+<i>138</i>&nbsp;
+<i>139</i>&nbsp;    /**
+<i>140</i>&nbsp;     * Render entity on tick.
+<i>141</i>&nbsp;     * @param g graphics object.
+<i>142</i>&nbsp;     */
+<i>143</i>&nbsp;    public abstract void render(Graphics g);
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;    /**
+<i>146</i>&nbsp;     * @return x location of entity.
+<i>147</i>&nbsp;     */
+<i>148</i>&nbsp;    public float getX()  {
+<b class="fc"><i>149</i>&nbsp;        return x;</b>
+<i>150</i>&nbsp;    }
+<i>151</i>&nbsp;
+<i>152</i>&nbsp;    /**
+<i>153</i>&nbsp;     * @param x set x location of entity.
+<i>154</i>&nbsp;     */
+<i>155</i>&nbsp;    public void setX(final float x)  {
+<b class="fc"><i>156</i>&nbsp;        this.x = x;</b>
+<b class="fc"><i>157</i>&nbsp;    }</b>
+<i>158</i>&nbsp;
+<i>159</i>&nbsp;    /**
+<i>160</i>&nbsp;     * @return y location of entity.
+<i>161</i>&nbsp;     */
+<i>162</i>&nbsp;    public float getY()  {
+<b class="fc"><i>163</i>&nbsp;        return y;</b>
+<i>164</i>&nbsp;    }
+<i>165</i>&nbsp;
+<i>166</i>&nbsp;    /**
+<i>167</i>&nbsp;     * @param y set y location of entity.
+<i>168</i>&nbsp;     */
+<i>169</i>&nbsp;    public void setY(final float y)  {
+<b class="fc"><i>170</i>&nbsp;        this.y = y;</b>
+<b class="fc"><i>171</i>&nbsp;    }</b>
+<i>172</i>&nbsp;
+<i>173</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

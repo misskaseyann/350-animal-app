@@ -50,18 +50,18 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    18.2%
+    81.8%
   </span>
   <span class="absValue">
-    (2/ 11)
+    (9/ 11)
   </span>
 </td>
 <td class="coverageStat">
   <span class="percent">
-    47.6%
+    90.5%
   </span>
   <span class="absValue">
-    (10/ 21)
+    (19/ 21)
   </span>
 </td>
 </tr>
@@ -113,7 +113,7 @@
 <i>39</i>&nbsp;    @Override
 <i>40</i>&nbsp;    public void keyTyped(KeyEvent e) {
 <i>41</i>&nbsp;        // do nothing
-<b class="nc"><i>42</i>&nbsp;    }</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
 <i>43</i>&nbsp;
 <i>44</i>&nbsp;    /**
 <i>45</i>&nbsp;     * If a key is pressed, set to true.
@@ -121,8 +121,8 @@
 <i>47</i>&nbsp;     */
 <i>48</i>&nbsp;    @Override
 <i>49</i>&nbsp;    public void keyPressed(KeyEvent e) {
-<b class="nc"><i>50</i>&nbsp;        keys[e.getKeyCode()] = true;</b>
-<b class="nc"><i>51</i>&nbsp;    }</b>
+<b class="fc"><i>50</i>&nbsp;        keys[e.getKeyCode()] = true;</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
 <i>52</i>&nbsp;
 <i>53</i>&nbsp;    /**
 <i>54</i>&nbsp;     * If a key is released, set to false.
@@ -130,8 +130,8 @@
 <i>56</i>&nbsp;     */
 <i>57</i>&nbsp;    @Override
 <i>58</i>&nbsp;    public void keyReleased(KeyEvent e) {
-<b class="nc"><i>59</i>&nbsp;        keys[e.getKeyCode()] = false;</b>
-<b class="nc"><i>60</i>&nbsp;    }</b>
+<b class="fc"><i>59</i>&nbsp;        keys[e.getKeyCode()] = false;</b>
+<b class="fc"><i>60</i>&nbsp;    }</b>
 <i>61</i>&nbsp;
 <i>62</i>&nbsp;    // KEY GETTERS
 <i>63</i>&nbsp;
@@ -153,28 +153,28 @@
 <i>79</i>&nbsp;     * @return true if w key is being pressed.
 <i>80</i>&nbsp;     */
 <i>81</i>&nbsp;    public boolean isUp() {
-<b class="nc"><i>82</i>&nbsp;        return up;</b>
+<b class="fc"><i>82</i>&nbsp;        return up;</b>
 <i>83</i>&nbsp;    }
 <i>84</i>&nbsp;
 <i>85</i>&nbsp;    /**
 <i>86</i>&nbsp;     * @return true if s key is being pressed.
 <i>87</i>&nbsp;     */
 <i>88</i>&nbsp;    public boolean isDown() {
-<b class="nc"><i>89</i>&nbsp;        return down;</b>
+<b class="fc"><i>89</i>&nbsp;        return down;</b>
 <i>90</i>&nbsp;    }
 <i>91</i>&nbsp;
 <i>92</i>&nbsp;    /**
 <i>93</i>&nbsp;     * @return true if a key is being pressed.
 <i>94</i>&nbsp;     */
 <i>95</i>&nbsp;    public boolean isLeft() {
-<b class="nc"><i>96</i>&nbsp;        return left;</b>
+<b class="fc"><i>96</i>&nbsp;        return left;</b>
 <i>97</i>&nbsp;    }
 <i>98</i>&nbsp;
 <i>99</i>&nbsp;    /**
 <i>100</i>&nbsp;     * @return true if d key is being pressed.
 <i>101</i>&nbsp;     */
 <i>102</i>&nbsp;    public boolean isRight() {
-<b class="nc"><i>103</i>&nbsp;        return right;</b>
+<b class="fc"><i>103</i>&nbsp;        return right;</b>
 <i>104</i>&nbsp;    }
 <i>105</i>&nbsp;
 <i>106</i>&nbsp;}
@@ -183,7 +183,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

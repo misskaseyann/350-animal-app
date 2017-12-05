@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (16/ 16)
+    (17/ 17)
   </span>
 </td>
 </tr>
@@ -94,45 +94,46 @@
 <i>20</i>&nbsp;     */
 <b class="fc"><i>21</i>&nbsp;    public Animation(final int speed, final BufferedImage[] frames) {</b>
 <b class="fc"><i>22</i>&nbsp;        this.speed = speed;</b>
-<b class="fc"><i>23</i>&nbsp;        this.frames = frames;</b>
-<b class="fc"><i>24</i>&nbsp;        index = 0;</b>
-<b class="fc"><i>25</i>&nbsp;        timer = 0;</b>
-<i>26</i>&nbsp;        // Set last time to current system time in milliseconds.
-<b class="fc"><i>27</i>&nbsp;        lastTime = System.currentTimeMillis();</b>
-<b class="fc"><i>28</i>&nbsp;    }</b>
-<i>29</i>&nbsp;
-<i>30</i>&nbsp;    /**
-<i>31</i>&nbsp;     * Tracks time passed in milliseconds.
-<i>32</i>&nbsp;     * Sets animation frame based on speed of animation.
-<i>33</i>&nbsp;     */
-<i>34</i>&nbsp;    public void tick() {
-<i>35</i>&nbsp;        // Time in milliseconds since the last tick method called.
-<b class="fc"><i>36</i>&nbsp;        timer += System.currentTimeMillis() - lastTime;</b>
-<i>37</i>&nbsp;        // Reset to the time this tick method is called.
-<b class="fc"><i>38</i>&nbsp;        lastTime = System.currentTimeMillis();</b>
-<i>39</i>&nbsp;        // Once timer exceeds speed, we reset timer and increment index variable of animation image.
-<b class="fc"><i>40</i>&nbsp;        if (timer &gt; speed) {</b>
-<b class="fc"><i>41</i>&nbsp;            index++;</b>
-<b class="fc"><i>42</i>&nbsp;            timer = 0;</b>
-<b class="fc"><i>43</i>&nbsp;            if (index &gt;= frames.length)</b>
-<b class="fc"><i>44</i>&nbsp;                index = 0;</b>
-<i>45</i>&nbsp;        }
-<b class="fc"><i>46</i>&nbsp;    }</b>
-<i>47</i>&nbsp;
-<i>48</i>&nbsp;    /**
-<i>49</i>&nbsp;     * @return current animation image.
-<i>50</i>&nbsp;     */
-<i>51</i>&nbsp;    public BufferedImage getCurrentFrame() {
-<b class="fc"><i>52</i>&nbsp;        return frames[index];</b>
-<i>53</i>&nbsp;    }
-<i>54</i>&nbsp;
-<i>55</i>&nbsp;}
+<b class="fc"><i>23</i>&nbsp;        this.frames = new BufferedImage[frames.length];</b>
+<b class="fc"><i>24</i>&nbsp;        System.arraycopy(frames, 0, this.frames, 0, frames.length);</b>
+<b class="fc"><i>25</i>&nbsp;        index = 0;</b>
+<b class="fc"><i>26</i>&nbsp;        timer = 0;</b>
+<i>27</i>&nbsp;        // Set last time to current system time in milliseconds.
+<b class="fc"><i>28</i>&nbsp;        lastTime = System.currentTimeMillis();</b>
+<b class="fc"><i>29</i>&nbsp;    }</b>
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;    /**
+<i>32</i>&nbsp;     * Tracks time passed in milliseconds.
+<i>33</i>&nbsp;     * Sets animation frame based on speed of animation.
+<i>34</i>&nbsp;     */
+<i>35</i>&nbsp;    public void tick() {
+<i>36</i>&nbsp;        // Time in milliseconds since the last tick method called.
+<b class="fc"><i>37</i>&nbsp;        timer += System.currentTimeMillis() - lastTime;</b>
+<i>38</i>&nbsp;        // Reset to the time this tick method is called.
+<b class="fc"><i>39</i>&nbsp;        lastTime = System.currentTimeMillis();</b>
+<i>40</i>&nbsp;        // Once timer exceeds speed, we reset timer and increment index variable of animation image.
+<b class="fc"><i>41</i>&nbsp;        if (timer &gt; speed) {</b>
+<b class="fc"><i>42</i>&nbsp;            index++;</b>
+<b class="fc"><i>43</i>&nbsp;            timer = 0;</b>
+<b class="fc"><i>44</i>&nbsp;            if (index &gt;= frames.length)</b>
+<b class="fc"><i>45</i>&nbsp;                index = 0;</b>
+<i>46</i>&nbsp;        }
+<b class="fc"><i>47</i>&nbsp;    }</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;    /**
+<i>50</i>&nbsp;     * @return current animation image.
+<i>51</i>&nbsp;     */
+<i>52</i>&nbsp;    public BufferedImage getCurrentFrame() {
+<b class="fc"><i>53</i>&nbsp;        return frames[index];</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

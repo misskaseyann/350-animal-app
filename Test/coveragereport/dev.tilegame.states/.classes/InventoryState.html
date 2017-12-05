@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    90.9%
+    63.6%
   </span>
   <span class="absValue">
-    (10/ 11)
+    (75/ 118)
   </span>
 </td>
 </tr>
@@ -76,64 +76,214 @@
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import dev.tilegame.Manager;
 <i>4</i>&nbsp;import dev.tilegame.gfx.Assets;
-<i>5</i>&nbsp;import dev.tilegame.worlds.World;
-<i>6</i>&nbsp;
-<i>7</i>&nbsp;import java.awt.*;
+<i>5</i>&nbsp;import dev.tilegame.inventory.Inventory;
+<i>6</i>&nbsp;import dev.tilegame.inventory.Item;
+<i>7</i>&nbsp;import dev.tilegame.worlds.World;
 <i>8</i>&nbsp;
-<i>9</i>&nbsp;/**
-<i>10</i>&nbsp; * Inventory menu for the game.
-<i>11</i>&nbsp; * @author kaseystowell
-<i>12</i>&nbsp; * @version 10.10.2017
-<i>13</i>&nbsp; */
-<i>14</i>&nbsp;public class InventoryState extends State {
-<i>15</i>&nbsp;
-<i>16</i>&nbsp;    /**
-<i>17</i>&nbsp;     * Inventory state constructor.
-<i>18</i>&nbsp;     * @param manager game class manager.
-<i>19</i>&nbsp;     */
-<i>20</i>&nbsp;    public InventoryState(Manager manager) {
-<b class="fc"><i>21</i>&nbsp;        super(manager);</b>
-<b class="fc"><i>22</i>&nbsp;    }</b>
-<i>23</i>&nbsp;
-<i>24</i>&nbsp;    /**
-<i>25</i>&nbsp;     * Checks for button clicks.
-<i>26</i>&nbsp;     */
-<i>27</i>&nbsp;    @Override
-<i>28</i>&nbsp;    public void tick() {
-<i>29</i>&nbsp;        // Did the mouse left click?
-<b class="fc"><i>30</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
-<i>31</i>&nbsp;            // Set x and y coordinates.
-<b class="fc"><i>32</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
-<b class="fc"><i>33</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
-<i>34</i>&nbsp;            // Back Button
-<b class="fc"><i>35</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 559 &amp;&amp; y &lt; 623)) {</b>
-<b class="fc"><i>36</i>&nbsp;                State.setState(State.getLastState());</b>
-<i>37</i>&nbsp;            }
-<i>38</i>&nbsp;            // TODO implement item button clicks and inventory loading.
-<i>39</i>&nbsp;        }
-<b class="fc"><i>40</i>&nbsp;    }</b>
-<i>41</i>&nbsp;
-<i>42</i>&nbsp;    /**
-<i>43</i>&nbsp;     * Renders the inventory menu.
-<i>44</i>&nbsp;     * @param g graphics object.
-<i>45</i>&nbsp;     */
-<i>46</i>&nbsp;    @Override
-<i>47</i>&nbsp;    public void render(Graphics g) {
-<i>48</i>&nbsp;        // TODO make the inventory menu prettier
-<b class="fc"><i>49</i>&nbsp;        g.drawImage(Assets.getMenuInventory(), 0, 0, null);</b>
-<b class="fc"><i>50</i>&nbsp;    }</b>
-<i>51</i>&nbsp;
-<i>52</i>&nbsp;    /**
-<i>53</i>&nbsp;     * @return null/no world in inventory state.
-<i>54</i>&nbsp;     */
-<b class="nc"><i>55</i>&nbsp;    public World getWorld(){ return null; }</b>
-<i>56</i>&nbsp;}
+<i>9</i>&nbsp;import java.awt.*;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;/**
+<i>12</i>&nbsp; * Inventory menu for the game.
+<i>13</i>&nbsp; * @author kaseystowell
+<i>14</i>&nbsp; * @version 10.10.2017
+<i>15</i>&nbsp; */
+<i>16</i>&nbsp;public class InventoryState extends State {
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    Inventory inventory;
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    /**
+<i>21</i>&nbsp;     * Inventory state constructor.
+<i>22</i>&nbsp;     * @param manager game class manager.
+<i>23</i>&nbsp;     */
+<i>24</i>&nbsp;    public InventoryState(Manager manager) {
+<b class="fc"><i>25</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>26</i>&nbsp;        inventory = manager.getPlayer().getInventory();</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * Checks for button clicks.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    public void tick() {
+<i>34</i>&nbsp;        // Did the mouse left click?
+<b class="fc"><i>35</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
+<i>36</i>&nbsp;            // Set x and y coordinates.
+<b class="fc"><i>37</i>&nbsp;            int x = manager.getMouseManager().getMouseX();</b>
+<b class="fc"><i>38</i>&nbsp;            int y = manager.getMouseManager().getMouseY();</b>
+<b class="fc"><i>39</i>&nbsp;            int size = inventory.getSize();</b>
+<i>40</i>&nbsp;            Item item;
+<i>41</i>&nbsp;            State state;
+<i>42</i>&nbsp;            // Inventory 1X1
+<b class="fc"><i>43</i>&nbsp;            if ((x &gt; 38 &amp;&amp; x &lt; 102) &amp;&amp; (y &gt; 131 &amp;&amp; y &lt; 195)) {</b>
+<b class="fc"><i>44</i>&nbsp;                if (size &gt; 0) {</b>
+<b class="fc"><i>45</i>&nbsp;                    item = inventory.getItemList().get(0);</b>
+<b class="fc"><i>46</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>47</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>48</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>49</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>50</i>&nbsp;                    State.setState(state);</b>
+<i>51</i>&nbsp;                }
+<i>52</i>&nbsp;            }
+<i>53</i>&nbsp;            // Inventory 1X2
+<b class="fc"><i>54</i>&nbsp;            if ((x &gt; 151 &amp;&amp; x &lt; 215) &amp;&amp; (y &gt; 131 &amp;&amp; y &lt; 195)) {</b>
+<b class="fc"><i>55</i>&nbsp;                if (size &gt; 1) {</b>
+<b class="fc"><i>56</i>&nbsp;                    item = inventory.getItemList().get(1);</b>
+<b class="fc"><i>57</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>58</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>59</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>60</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>61</i>&nbsp;                    State.setState(state);</b>
+<i>62</i>&nbsp;                }
+<i>63</i>&nbsp;            }
+<i>64</i>&nbsp;            // Inventory 1X3
+<b class="fc"><i>65</i>&nbsp;            if ((x &gt; 260 &amp;&amp; x &lt; 324) &amp;&amp; (y &gt; 131 &amp;&amp; y &lt; 195)) {</b>
+<b class="fc"><i>66</i>&nbsp;                if (size &gt; 2) {</b>
+<b class="fc"><i>67</i>&nbsp;                    item = inventory.getItemList().get(2);</b>
+<b class="fc"><i>68</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>69</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>70</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>71</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>72</i>&nbsp;                    State.setState(state);</b>
+<i>73</i>&nbsp;                }
+<i>74</i>&nbsp;            }
+<i>75</i>&nbsp;            // Inventory 2X1
+<b class="fc"><i>76</i>&nbsp;            if ((x &gt; 38 &amp;&amp; x &lt; 102) &amp;&amp; (y &gt; 239 &amp;&amp; y &lt; 303)) {</b>
+<b class="fc"><i>77</i>&nbsp;                if (size &gt; 3) {</b>
+<b class="fc"><i>78</i>&nbsp;                    item = inventory.getItemList().get(3);</b>
+<b class="fc"><i>79</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>80</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>81</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>82</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>83</i>&nbsp;                    State.setState(state);</b>
+<i>84</i>&nbsp;                }
+<i>85</i>&nbsp;            }
+<i>86</i>&nbsp;            // Inventory 2X2
+<b class="fc"><i>87</i>&nbsp;            if ((x &gt; 151 &amp;&amp; x &lt; 215) &amp;&amp; (y &gt; 239 &amp;&amp; y &lt; 303)) {</b>
+<b class="fc"><i>88</i>&nbsp;                if (size &gt; 4) {</b>
+<b class="fc"><i>89</i>&nbsp;                    item = inventory.getItemList().get(4);</b>
+<b class="fc"><i>90</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>91</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>92</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>93</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>94</i>&nbsp;                    State.setState(state);</b>
+<i>95</i>&nbsp;                }
+<i>96</i>&nbsp;            }
+<i>97</i>&nbsp;            // Inventory 2X3
+<b class="fc"><i>98</i>&nbsp;            if ((x &gt; 260 &amp;&amp; x &lt; 324) &amp;&amp; (y &gt; 239 &amp;&amp; y &lt; 303)) {</b>
+<b class="nc"><i>99</i>&nbsp;                if (size &gt; 5) {</b>
+<b class="nc"><i>100</i>&nbsp;                    item = inventory.getItemList().get(5);</b>
+<b class="nc"><i>101</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>102</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>103</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>104</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>105</i>&nbsp;                    State.setState(state);</b>
+<i>106</i>&nbsp;                }
+<i>107</i>&nbsp;            }
+<i>108</i>&nbsp;            // Inventory 3X1
+<b class="fc"><i>109</i>&nbsp;            if ((x &gt; 38 &amp;&amp; x &lt; 102) &amp;&amp; (y &gt; 346 &amp;&amp; y &lt; 410)) {</b>
+<b class="fc"><i>110</i>&nbsp;                if (size &gt; 6) {</b>
+<b class="fc"><i>111</i>&nbsp;                    item = inventory.getItemList().get(6);</b>
+<b class="fc"><i>112</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="fc"><i>113</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="fc"><i>114</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="fc"><i>115</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="fc"><i>116</i>&nbsp;                    State.setState(state);</b>
+<i>117</i>&nbsp;                }
+<i>118</i>&nbsp;            }
+<i>119</i>&nbsp;            // Inventory 3X2
+<b class="fc"><i>120</i>&nbsp;            if ((x &gt; 151 &amp;&amp; x &lt; 215) &amp;&amp; (y &gt; 346 &amp;&amp; y &lt; 410)) {</b>
+<b class="nc"><i>121</i>&nbsp;                if (size &gt; 7) {</b>
+<b class="nc"><i>122</i>&nbsp;                    item = inventory.getItemList().get(7);</b>
+<b class="nc"><i>123</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>124</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>125</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>126</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>127</i>&nbsp;                    State.setState(state);</b>
+<i>128</i>&nbsp;                }
+<i>129</i>&nbsp;            }
+<i>130</i>&nbsp;            // Inventory 3X3
+<b class="fc"><i>131</i>&nbsp;            if ((x &gt; 260 &amp;&amp; x &lt; 324) &amp;&amp; (y &gt; 346 &amp;&amp; y &lt; 410)) {</b>
+<b class="nc"><i>132</i>&nbsp;                if (size &gt; 8) {</b>
+<b class="nc"><i>133</i>&nbsp;                    item = inventory.getItemList().get(8);</b>
+<b class="nc"><i>134</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>135</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>136</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>137</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>138</i>&nbsp;                    State.setState(state);</b>
+<i>139</i>&nbsp;                }
+<i>140</i>&nbsp;            }
+<i>141</i>&nbsp;            // Inventory 4X1
+<b class="fc"><i>142</i>&nbsp;            if ((x &gt; 38 &amp;&amp; x &lt; 102) &amp;&amp; (y &gt; 454 &amp;&amp; y &lt; 518)) {</b>
+<b class="nc"><i>143</i>&nbsp;                if (size &gt; 9) {</b>
+<b class="nc"><i>144</i>&nbsp;                    item = inventory.getItemList().get(9);</b>
+<b class="nc"><i>145</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>146</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>147</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>148</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>149</i>&nbsp;                    State.setState(state);</b>
+<i>150</i>&nbsp;                }
+<i>151</i>&nbsp;            }
+<i>152</i>&nbsp;            // Inventory 4X2
+<b class="fc"><i>153</i>&nbsp;            if ((x &gt; 151 &amp;&amp; x &lt; 215) &amp;&amp; (y &gt; 454 &amp;&amp; y &lt; 518)) {</b>
+<b class="nc"><i>154</i>&nbsp;                if (size &gt; 10) {</b>
+<b class="nc"><i>155</i>&nbsp;                    item = inventory.getItemList().get(10);</b>
+<b class="nc"><i>156</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>157</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>158</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>159</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>160</i>&nbsp;                    State.setState(state);</b>
+<i>161</i>&nbsp;                }
+<i>162</i>&nbsp;            }
+<i>163</i>&nbsp;            // Inventory 4X3
+<b class="fc"><i>164</i>&nbsp;            if ((x &gt; 260 &amp;&amp; x &lt; 324) &amp;&amp; (y &gt; 454 &amp;&amp; y &lt; 518)) {</b>
+<b class="nc"><i>165</i>&nbsp;                if (size &gt; 11) {</b>
+<b class="nc"><i>166</i>&nbsp;                    item = inventory.getItemList().get(11);</b>
+<b class="nc"><i>167</i>&nbsp;                    manager.getPlayer().setCurrItem(item);</b>
+<b class="nc"><i>168</i>&nbsp;                    item.useItem(manager.getPet());</b>
+<b class="nc"><i>169</i>&nbsp;                    state = new ItemState(manager, item);</b>
+<b class="nc"><i>170</i>&nbsp;                    inventory.deleteItem(item);</b>
+<b class="nc"><i>171</i>&nbsp;                    State.setState(state);</b>
+<i>172</i>&nbsp;                }
+<i>173</i>&nbsp;            }
+<i>174</i>&nbsp;            // Back Button
+<b class="fc"><i>175</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 559 &amp;&amp; y &lt; 623)) {</b>
+<b class="fc"><i>176</i>&nbsp;                State.setState(State.getLastState());</b>
+<i>177</i>&nbsp;            }
+<b class="fc"><i>178</i>&nbsp;            manager.getMouseManager().setLeftPress(false);</b>
+<i>179</i>&nbsp;        }
+<b class="fc"><i>180</i>&nbsp;    }</b>
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;    /**
+<i>183</i>&nbsp;     * Renders the inventory menu.
+<i>184</i>&nbsp;     * @param g graphics object.
+<i>185</i>&nbsp;     */
+<i>186</i>&nbsp;    @Override
+<i>187</i>&nbsp;    public void render(Graphics g) {
+<b class="fc"><i>188</i>&nbsp;        g.drawImage(Assets.getMenuInventory(), 0, 0, null);</b>
+<b class="fc"><i>189</i>&nbsp;        int x = 38;</b>
+<b class="fc"><i>190</i>&nbsp;        int y = 131;</b>
+<b class="fc"><i>191</i>&nbsp;        for (int i = 0; i &lt; inventory.getSize(); i++) {</b>
+<b class="fc"><i>192</i>&nbsp;            g.drawImage(inventory.getItemList().get(i).getImg(), x, y, null);</b>
+<b class="fc"><i>193</i>&nbsp;            if ((i + 1) % 3 == 0) {</b>
+<b class="fc"><i>194</i>&nbsp;                y += 108;</b>
+<b class="fc"><i>195</i>&nbsp;                x = 38;</b>
+<i>196</i>&nbsp;            } else {
+<b class="fc"><i>197</i>&nbsp;                x += 112;</b>
+<i>198</i>&nbsp;            }
+<i>199</i>&nbsp;        }
+<b class="fc"><i>200</i>&nbsp;    }</b>
+<i>201</i>&nbsp;
+<i>202</i>&nbsp;    /**
+<i>203</i>&nbsp;     * @return null/no world in inventory state.
+<i>204</i>&nbsp;     */
+<b class="nc"><i>205</i>&nbsp;    public World getWorld(){ return null; }</b>
+<i>206</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>
