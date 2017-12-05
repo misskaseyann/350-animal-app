@@ -7,21 +7,21 @@ import java.awt.image.BufferedImage;
 
 /**
  * Manages stats display.
+ *
  * @author kaseystowell
  * @version 10.10.2017
  */
 public class StatsManager {
-
-
-
+    /** pet for statsmanager */
     private Animal pet;
 
     /**
      * StatsManager constructor.
-     * @param pet entity with stats.
+     *
+     * @param inPet entity with stats.
      */
-    public StatsManager(Animal pet) {
-        this.pet = pet;
+    public StatsManager(final Animal inPet) {
+        this.pet = inPet;
     }
 
     /**

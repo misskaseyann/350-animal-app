@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Utility methods for basic IO.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
@@ -13,18 +14,20 @@ public class Utils {
 
     /**
      * Loads .txt file and turns into one large string.
+     *
      * @param path file path to .txt file.
      * @return combined string of .txt file.
      */
-    public static String loadFileAsString(String path) {
+    public static String loadFileAsString(final String path) {
         StringBuilder builder = new StringBuilder();
         try {
             InputStream in = new FileInputStream(path);
             Reader reader = new InputStreamReader(in, StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(reader);
             String line;
-            while ((line = br.readLine()) != null)
+            while ((line = br.readLine()) != null) {
                 builder.append(line + "\n");
+            }
             br.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,19 +37,24 @@ public class Utils {
 
     /**
      * Changes a value from string to integer.
+     *
      * @param number string of a number.
      * @return integer value of the number.
      */
-    public static int parseInt(String number) {
+    public static int parseInt(final String number) {
         try {
             return Integer.parseInt(number);
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             e.printStackTrace();
             return 0;
         }
     }
-
-    public static Font createFont(String path) {
+    /***
+     * create the font.
+     * @param path for font
+     * @return pkmfont font
+     */
+    public static Font createFont(final String path) {
         InputStream stream = null;
         Font ttf = null;
         Font pkmfont = null;

@@ -10,20 +10,27 @@ import java.awt.*;
 
 /**
  * Title screen state.
+ *
  * @author kaseystowell
  * @version 09.24.2017
  */
 public class TitleState extends State {
-
+    /**
+     * animation.
+     */
     private Animation titleAni;
+    /**
+     * music.
+     */
     private LoopLoader music;
 
     /**
      * TitleState constructor.
      * Sets up the tile states.
+     *
      * @param manager game class manager.
      */
-    public TitleState(Manager manager) {
+    public TitleState(final Manager manager) {
         super(manager);
         titleAni = new Animation(300, Assets.getTitleImg());
         //initialize music
@@ -33,9 +40,12 @@ public class TitleState extends State {
 
     /**
      * getWorld returns the world.
+     *
      * @return null
      */
-    public World getWorld(){ return null; }
+    public World getWorld() {
+        return null;
+    }
 
     /**
      * Checks for button presses.
@@ -70,10 +80,11 @@ public class TitleState extends State {
 
     /**
      * Render the title screen.
+     *
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         g.drawImage(titleAni.getCurrentFrame(), 0, 0, null);
     }
 
