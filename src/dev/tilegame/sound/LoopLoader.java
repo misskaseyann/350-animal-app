@@ -36,10 +36,8 @@ public class LoopLoader {
             stream = new AudioStream(input);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.exit(1);
         } catch (IOException error) {
             error.printStackTrace();
-            System.exit(1);
         }
     }
 

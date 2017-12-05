@@ -17,8 +17,6 @@ import java.awt.event.ActionListener;
  */
 public class MenuState extends State {
 
-    Game game = manager.getGame();;
-
     /**
      * MenuState constructor.
      * @param manager game class manager

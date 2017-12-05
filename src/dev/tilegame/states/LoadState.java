@@ -66,8 +66,6 @@ public class LoadState extends State {
                 int clean = Integer.parseInt(info[6].substring(info[6].indexOf(':') + 1));
                 int hunger = Integer.parseInt(info[7].substring(info[7].indexOf(':') + 1));
 
-                Inventory inven = new Inventory(manager);
-                ArrayList<Item> itemgroup = new ArrayList<Item>();
                 for (String i : itemList) {
                     if (i.equals("Bacon Treat")) {
                         BaconTreat bt = new BaconTreat();
