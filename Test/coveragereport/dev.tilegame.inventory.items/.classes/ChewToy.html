@@ -1,0 +1,122 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ChewToy</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.inventory.items</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ChewToy (dev.tilegame.inventory.items)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ChewToy</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    85.7%
+  </span>
+  <span class="absValue">
+    (6/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.inventory.items;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import dev.tilegame.entities.animals.Pet;
+<i>4</i>&nbsp;import dev.tilegame.gfx.Assets;
+<i>5</i>&nbsp;import dev.tilegame.inventory.Item;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.awt.image.BufferedImage;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<i>10</i>&nbsp; * Chew toy object.
+<i>11</i>&nbsp; *
+<i>12</i>&nbsp; * @author kaseystowell
+<i>13</i>&nbsp; * @version 11.26.2017
+<i>14</i>&nbsp; */
+<i>15</i>&nbsp;public class ChewToy extends Item {
+<i>16</i>&nbsp;    /**
+<i>17</i>&nbsp;     * Basic constructor.
+<i>18</i>&nbsp;     */
+<i>19</i>&nbsp;    public ChewToy() {
+<b class="fc"><i>20</i>&nbsp;        super(&quot;Chew Toy&quot;,</b>
+<i>21</i>&nbsp;                &quot;A chew toy in the style of a kong.&quot; +
+<i>22</i>&nbsp;                        &quot;\nThis toy brings a lot of&quot; + &quot;\nhappiness to dogs.&quot;,
+<b class="fc"><i>23</i>&nbsp;                8, Assets.getChewToy(), Assets.getChewToyAni());</b>
+<b class="fc"><i>24</i>&nbsp;    }</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /**
+<i>27</i>&nbsp;     * When player uses a chew toy:
+<i>28</i>&nbsp;     * happiness goes up two points.
+<i>29</i>&nbsp;     *
+<i>30</i>&nbsp;     * @param pet Pet object in the game.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    public void useItem(Pet pet) {
+<b class="fc"><i>34</i>&nbsp;        if (pet.getHappiness() &lt; 5)</b>
+<b class="nc"><i>35</i>&nbsp;            pet.setHappiness(pet.getHappiness() + 2);</b>
+<i>36</i>&nbsp;        else
+<b class="fc"><i>37</i>&nbsp;            pet.setHappiness(6);</b>
+<b class="fc"><i>38</i>&nbsp;    }</b>
+<i>39</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
+</div>
+</body>
+</html>

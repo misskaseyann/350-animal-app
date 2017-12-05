@@ -58,10 +58,10 @@
 </td>
 <td class="coverageStat">
   <span class="percent">
-    95.8%
+    96.3%
   </span>
   <span class="absValue">
-    (23/ 24)
+    (26/ 27)
   </span>
 </td>
 </tr>
@@ -120,48 +120,49 @@
 <i>46</i>&nbsp;            }
 <i>47</i>&nbsp;            // Park Button
 <b class="fc"><i>48</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 227 &amp;&amp; y &lt; 291)) {</b>
-<b class="fc"><i>49</i>&nbsp;                music.stop();</b>
-<b class="fc"><i>50</i>&nbsp;                manager.getPet().setY(manager.getGame().getParkState().getWorld().getSpawnY() * 32);</b>
-<b class="fc"><i>51</i>&nbsp;                manager.getPet().setX(manager.getGame().getParkState().getWorld().getSpawnX() * 32);</b>
+<b class="fc"><i>49</i>&nbsp;                manager.getPet().setY(manager.getGame().getParkState().getWorld().getSpawnY() * 32);</b>
+<b class="fc"><i>50</i>&nbsp;                manager.getPet().setX(manager.getGame().getParkState().getWorld().getSpawnX() * 32);</b>
+<b class="fc"><i>51</i>&nbsp;                music.stop();</b>
 <b class="fc"><i>52</i>&nbsp;                State.setState(manager.getGame().getParkState());</b>
 <i>53</i>&nbsp;            }
 <i>54</i>&nbsp;            // Vet Button
 <b class="fc"><i>55</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 327 &amp;&amp; y &lt; 389)) {</b>
-<i>56</i>&nbsp;                // TODO implement vet state
+<b class="fc"><i>56</i>&nbsp;                State.setState(manager.getGame().getVetState());</b>
 <i>57</i>&nbsp;            }
 <i>58</i>&nbsp;            // Shop Button
 <b class="fc"><i>59</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 424 &amp;&amp; y &lt; 489)) {</b>
-<i>60</i>&nbsp;                // TODO implement shop state
+<b class="fc"><i>60</i>&nbsp;                State.setState(manager.getGame().getStoreState());</b>
 <i>61</i>&nbsp;            }
 <i>62</i>&nbsp;            // Back Button
 <b class="fc"><i>63</i>&nbsp;            if ((x &gt; 70 &amp;&amp; x &lt; 294) &amp;&amp; (y &gt; 524 &amp;&amp; y &lt; 588)) {</b>
 <b class="fc"><i>64</i>&nbsp;                State.setState(State.getLastState());</b>
 <i>65</i>&nbsp;            }
-<i>66</i>&nbsp;        }
-<b class="fc"><i>67</i>&nbsp;    }</b>
-<i>68</i>&nbsp;
-<i>69</i>&nbsp;    /**
-<i>70</i>&nbsp;     * Renders the travel menu screen.
-<i>71</i>&nbsp;     * @param g graphics object.
-<i>72</i>&nbsp;     */
-<i>73</i>&nbsp;    @Override
-<i>74</i>&nbsp;    public void render(Graphics g) {
-<i>75</i>&nbsp;        // TODO make a prettier menu
-<b class="fc"><i>76</i>&nbsp;        g.drawImage(Assets.getMenuTravel(), 0, 0, null);</b>
-<b class="fc"><i>77</i>&nbsp;    }</b>
-<i>78</i>&nbsp;
-<i>79</i>&nbsp;    /**
-<i>80</i>&nbsp;     * @return null/no world in this state
-<i>81</i>&nbsp;     */
-<b class="nc"><i>82</i>&nbsp;    public World getWorld(){ return null;}</b>
-<i>83</i>&nbsp;
-<i>84</i>&nbsp;}
+<b class="fc"><i>66</i>&nbsp;            manager.getMouseManager().setLeftPress(false);</b>
+<i>67</i>&nbsp;        }
+<b class="fc"><i>68</i>&nbsp;    }</b>
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    /**
+<i>71</i>&nbsp;     * Renders the travel menu screen.
+<i>72</i>&nbsp;     * @param g graphics object.
+<i>73</i>&nbsp;     */
+<i>74</i>&nbsp;    @Override
+<i>75</i>&nbsp;    public void render(Graphics g) {
+<i>76</i>&nbsp;        // TODO make a prettier menu
+<b class="fc"><i>77</i>&nbsp;        g.drawImage(Assets.getMenuTravel(), 0, 0, null);</b>
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    /**
+<i>81</i>&nbsp;     * @return null/no world in this state
+<i>82</i>&nbsp;     */
+<b class="nc"><i>83</i>&nbsp;    public World getWorld(){ return null;}</b>
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

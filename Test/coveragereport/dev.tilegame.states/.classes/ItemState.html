@@ -1,0 +1,141 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ItemState</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.states</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ItemState (dev.tilegame.states)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ItemState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (9/ 10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.states;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import dev.tilegame.Manager;
+<i>4</i>&nbsp;import dev.tilegame.gfx.Animation;
+<i>5</i>&nbsp;import dev.tilegame.inventory.Item;
+<i>6</i>&nbsp;import dev.tilegame.worlds.World;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import java.awt.*;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;/**
+<i>11</i>&nbsp; * Item state.
+<i>12</i>&nbsp; *
+<i>13</i>&nbsp; * @author kaseystowell
+<i>14</i>&nbsp; * @version 12.01.2017
+<i>15</i>&nbsp; */
+<i>16</i>&nbsp;public class ItemState extends State {
+<i>17</i>&nbsp;    private Animation animation;
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    /**
+<i>20</i>&nbsp;     * Basic constructor for an item object.
+<i>21</i>&nbsp;     * @param manager game manager.
+<i>22</i>&nbsp;     * @param item item being viewed in the state.
+<i>23</i>&nbsp;     */
+<i>24</i>&nbsp;    public ItemState(Manager manager, Item item) {
+<b class="fc"><i>25</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>26</i>&nbsp;        animation = new Animation(300, item.getAni());</b>
+<b class="fc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    /**
+<i>30</i>&nbsp;     * Check for mouse clicks.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    public void tick() {
+<b class="fc"><i>34</i>&nbsp;        animation.tick();</b>
+<i>35</i>&nbsp;        // Did the mouse left click?
+<b class="fc"><i>36</i>&nbsp;        if (manager.getMouseManager().getLeftPress()) {</b>
+<i>37</i>&nbsp;            // Move out of the item state.
+<b class="fc"><i>38</i>&nbsp;            State.setState(State.getLastState());</b>
+<i>39</i>&nbsp;        }
+<b class="fc"><i>40</i>&nbsp;    }</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    /**
+<i>43</i>&nbsp;     * Render item animation.
+<i>44</i>&nbsp;     * @param g graphics object.
+<i>45</i>&nbsp;     */
+<i>46</i>&nbsp;    @Override
+<i>47</i>&nbsp;    public void render(Graphics g) {
+<b class="fc"><i>48</i>&nbsp;        g.drawImage(animation.getCurrentFrame(), 0, 0, null);</b>
+<b class="fc"><i>49</i>&nbsp;    }</b>
+<i>50</i>&nbsp;
+<i>51</i>&nbsp;    /**
+<i>52</i>&nbsp;     * @return game world/null because there is no world in this state.
+<i>53</i>&nbsp;     */
+<i>54</i>&nbsp;    @Override
+<i>55</i>&nbsp;    public World getWorld() {
+<b class="nc"><i>56</i>&nbsp;        return null;</b>
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
+</div>
+</body>
+</html>

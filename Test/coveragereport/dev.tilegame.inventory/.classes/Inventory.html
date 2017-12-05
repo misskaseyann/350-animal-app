@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Inventory</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.inventory</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Inventory (dev.tilegame.inventory)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Inventory</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71.4%
+  </span>
+  <span class="absValue">
+    (5/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (12/ 20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.inventory;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import dev.tilegame.Manager;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;import java.util.ArrayList;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;/**
+<i>8</i>&nbsp; * Inventory class.
+<i>9</i>&nbsp; *
+<i>10</i>&nbsp; * @author kaseystowell
+<i>11</i>&nbsp; * @version 11.14.2017
+<i>12</i>&nbsp; */
+<i>13</i>&nbsp;public class Inventory {
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    ArrayList&lt;Item&gt; itemList;
+<i>16</i>&nbsp;    Manager manager;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    /**
+<i>19</i>&nbsp;     * Creates the inventory list.
+<i>20</i>&nbsp;     */
+<b class="fc"><i>21</i>&nbsp;    public Inventory(Manager manager) {</b>
+<b class="fc"><i>22</i>&nbsp;        this.manager = manager;</b>
+<b class="fc"><i>23</i>&nbsp;        itemList = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i>24</i>&nbsp;    }</b>
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    /**
+<i>27</i>&nbsp;     * Adds an item to the inventory.
+<i>28</i>&nbsp;     *
+<i>29</i>&nbsp;     * @param item item to be added.
+<i>30</i>&nbsp;     * @return true if the item was added, false if it could not be added.
+<i>31</i>&nbsp;     */
+<i>32</i>&nbsp;    public boolean addItem(Item item) {
+<b class="fc"><i>33</i>&nbsp;        if (itemList.size() &lt; 12) {</b>
+<b class="fc"><i>34</i>&nbsp;            itemList.add(item);</b>
+<b class="fc"><i>35</i>&nbsp;            return true;</b>
+<i>36</i>&nbsp;        }
+<b class="nc"><i>37</i>&nbsp;        return false;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /**
+<i>41</i>&nbsp;     * Deletes an item from the inventory.
+<i>42</i>&nbsp;     *
+<i>43</i>&nbsp;     * @param item deletes the given item.
+<i>44</i>&nbsp;     */
+<i>45</i>&nbsp;    public void deleteItem(Item item) {
+<b class="fc"><i>46</i>&nbsp;        itemList.get(itemList.indexOf(item)).useItem(manager.getPet());</b>
+<b class="fc"><i>47</i>&nbsp;        itemList.remove(item);</b>
+<b class="fc"><i>48</i>&nbsp;    }</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    /**
+<i>51</i>&nbsp;     * @return inventory list.
+<i>52</i>&nbsp;     */
+<i>53</i>&nbsp;    public ArrayList&lt;Item&gt; getItemList() {
+<b class="fc"><i>54</i>&nbsp;        return itemList;</b>
+<i>55</i>&nbsp;    }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    /**
+<i>58</i>&nbsp;     * Set the inventory list.
+<i>59</i>&nbsp;     *
+<i>60</i>&nbsp;     * @param itemList inventory array list.
+<i>61</i>&nbsp;     */
+<i>62</i>&nbsp;    public void setItemList(ArrayList&lt;Item&gt; itemList) {
+<b class="nc"><i>63</i>&nbsp;        this.itemList = itemList;</b>
+<b class="nc"><i>64</i>&nbsp;    }</b>
+<i>65</i>&nbsp;
+<i>66</i>&nbsp;    /**
+<i>67</i>&nbsp;     * @return size of the inventory.
+<i>68</i>&nbsp;     */
+<i>69</i>&nbsp;    public int getSize() {
+<b class="fc"><i>70</i>&nbsp;        return itemList.size();</b>
+<i>71</i>&nbsp;    }
+<i>72</i>&nbsp;
+<i>73</i>&nbsp;    public String getListNames() {
+<b class="nc"><i>74</i>&nbsp;        StringBuffer buf = new StringBuffer();</b>
+<b class="nc"><i>75</i>&nbsp;        for (Item item : itemList) {</b>
+<b class="nc"><i>76</i>&nbsp;            buf.append(item.getName() + &quot;,&quot;);</b>
+<b class="nc"><i>77</i>&nbsp;        }</b>
+<b class="nc"><i>78</i>&nbsp;        return buf.toString();</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
+</div>
+</body>
+</html>

@@ -53,7 +53,7 @@
     5.1%
   </span>
   <span class="absValue">
-    (5/ 98)
+    (5/ 99)
   </span>
 </td>
 <td class="coverageStat">
@@ -61,7 +61,7 @@
     52.3%
   </span>
   <span class="absValue">
-    (102/ 195)
+    (103/ 197)
   </span>
 </td>
 </tr>
@@ -93,24 +93,24 @@
 <i>19</i>&nbsp; * @author brendannahed
 <i>20</i>&nbsp; * @version 09.24.2017
 <i>21</i>&nbsp; */
-<i>22</i>&nbsp;public class Tile {
+<i>22</i>&nbsp;public class  Tile {
 <i>23</i>&nbsp;
 <i>24</i>&nbsp;    //STATIC STUFF HERE
 <i>25</i>&nbsp;    /**
-<b class="fc"><i>26</i>&nbsp;     * getTiles returns the tile list.</b>
-<b class="fc"><i>27</i>&nbsp;     * @return tiles1 which is a copy of</b>
+<i>26</i>&nbsp;     * getTiles returns the tile list.
+<i>27</i>&nbsp;     * @return tiles1 which is a copy of
 <i>28</i>&nbsp;     * the tile list.
 <i>29</i>&nbsp;     * */
 <i>30</i>&nbsp;    public static Tile[] getTiles() {
-<i>31</i>&nbsp;        Tile[] tiles1 = tiles;
-<i>32</i>&nbsp;        return tiles1;
-<b class="fc"><i>33</i>&nbsp;    }</b>
+<b class="fc"><i>31</i>&nbsp;        Tile[] tiles1 = tiles;</b>
+<b class="fc"><i>32</i>&nbsp;        return tiles1;</b>
+<i>33</i>&nbsp;    }
 <i>34</i>&nbsp;
 <i>35</i>&nbsp;    /**
 <i>36</i>&nbsp;     * The initial tiles list.
 <i>37</i>&nbsp;     * */
-<i>38</i>&nbsp;    private static Tile[] tiles = new Tile[256];
-<b class="nc"><i>39</i>&nbsp;</b>
+<b class="fc"><i>38</i>&nbsp;    private static Tile[] tiles = new Tile[256];</b>
+<i>39</i>&nbsp;
 <i>40</i>&nbsp;     /**
 <i>41</i>&nbsp;     * The method that returns the wood floor tile.
 <i>42</i>&nbsp;      * @return woodFloorTile, which is
@@ -124,56 +124,56 @@
 <i>50</i>&nbsp;     * The method that returns the wood floor tile.
 <i>51</i>&nbsp;      * @return kitchenFloorTile, which is
 <i>52</i>&nbsp;      * the kitchen floor tile image.
-<b class="nc"><i>53</i>&nbsp;     * */</b>
+<i>53</i>&nbsp;     * */
 <i>54</i>&nbsp;    public static Tile getKitchenFloorTile() {
-<i>55</i>&nbsp;        return kitchenFloorTile;
+<b class="nc"><i>55</i>&nbsp;        return kitchenFloorTile;</b>
 <i>56</i>&nbsp;    }
 <i>57</i>&nbsp;
 <i>58</i>&nbsp;     /**
 <i>59</i>&nbsp;     * The method that returns the wood floor tile.
-<b class="nc"><i>60</i>&nbsp;      * @return bathFloorTile, which is the</b>
+<i>60</i>&nbsp;      * @return bathFloorTile, which is the
 <i>61</i>&nbsp;      * bathroom floor tile image.
 <i>62</i>&nbsp;     * */
 <i>63</i>&nbsp;    public static Tile getBathFloorTile() {
-<i>64</i>&nbsp;        return bathFloorTile;
+<b class="nc"><i>64</i>&nbsp;        return bathFloorTile;</b>
 <i>65</i>&nbsp;    }
 <i>66</i>&nbsp;
-<b class="nc"><i>67</i>&nbsp;     /**</b>
+<i>67</i>&nbsp;     /**
 <i>68</i>&nbsp;     * The method that returns the stone tile.
 <i>69</i>&nbsp;      * @return stoneFloorTile, which is the
 <i>70</i>&nbsp;      * stone floor tile image.
 <i>71</i>&nbsp;     * */
 <i>72</i>&nbsp;    public static Tile getStoneFloorTile() {
-<i>73</i>&nbsp;        return stoneFloorTile;
-<b class="nc"><i>74</i>&nbsp;    }</b>
+<b class="nc"><i>73</i>&nbsp;        return stoneFloorTile;</b>
+<i>74</i>&nbsp;    }
 <i>75</i>&nbsp;
 <i>76</i>&nbsp;     /**
 <i>77</i>&nbsp;     * The method that returns the wall left tile.
 <i>78</i>&nbsp;      * @return wallLeftTile, which is the
 <i>79</i>&nbsp;      * wall left tile image.
 <i>80</i>&nbsp;     * */
-<b class="nc"><i>81</i>&nbsp;    public static Tile getWallLeftTile() {</b>
-<i>82</i>&nbsp;        return wallLeftTile;
+<i>81</i>&nbsp;    public static Tile getWallLeftTile() {
+<b class="nc"><i>82</i>&nbsp;        return wallLeftTile;</b>
 <i>83</i>&nbsp;    }
 <i>84</i>&nbsp;
 <i>85</i>&nbsp;     /**
 <i>86</i>&nbsp;     * The method that returns the wall center tile.
 <i>87</i>&nbsp;      * @return wallCenterTIle, which is the wall
-<b class="nc"><i>88</i>&nbsp;      * center tile image.</b>
+<i>88</i>&nbsp;      * center tile image.
 <i>89</i>&nbsp;     * */
 <i>90</i>&nbsp;    public static Tile getWallCenterTile() {
-<i>91</i>&nbsp;        return wallCenterTile;
+<b class="nc"><i>91</i>&nbsp;        return wallCenterTile;</b>
 <i>92</i>&nbsp;    }
 <i>93</i>&nbsp;
 <i>94</i>&nbsp;     /**
-<b class="nc"><i>95</i>&nbsp;     * The method that returns the wall right tile.</b>
+<i>95</i>&nbsp;     * The method that returns the wall right tile.
 <i>96</i>&nbsp;      * @return wallRightTile, which is the wall
 <i>97</i>&nbsp;      * center tile image.
 <i>98</i>&nbsp;     * */
 <i>99</i>&nbsp;    public static Tile getWallRightTile() {
-<i>100</i>&nbsp;        return wallRightTile;
+<b class="nc"><i>100</i>&nbsp;        return wallRightTile;</b>
 <i>101</i>&nbsp;    }
-<b class="nc"><i>102</i>&nbsp;</b>
+<i>102</i>&nbsp;
 <i>103</i>&nbsp;     /**
 <i>104</i>&nbsp;     * The method that returns the wall end tile.
 <i>105</i>&nbsp;      * @return wallEndTile, which is the wall
@@ -187,56 +187,56 @@
 <i>113</i>&nbsp;     * The method that returns the ceiling left tile.
 <i>114</i>&nbsp;      * @return ceilingLeftTile, which is the ceiling
 <i>115</i>&nbsp;      * left tile image.
-<b class="nc"><i>116</i>&nbsp;     * */</b>
+<i>116</i>&nbsp;     * */
 <i>117</i>&nbsp;    public static Tile getCeilingLeftTile() {
-<i>118</i>&nbsp;        return ceilingLeftTile;
+<b class="nc"><i>118</i>&nbsp;        return ceilingLeftTile;</b>
 <i>119</i>&nbsp;    }
 <i>120</i>&nbsp;
 <i>121</i>&nbsp;     /**
 <i>122</i>&nbsp;      * The method that returns the ceiling center tile.
-<b class="nc"><i>123</i>&nbsp;      * @return ceilingCenterTile, which is the ceiling</b>
+<i>123</i>&nbsp;      * @return ceilingCenterTile, which is the ceiling
 <i>124</i>&nbsp;      * center tile image.
 <i>125</i>&nbsp;      * */
 <i>126</i>&nbsp;    public static Tile getCeilingCenterTile() {
-<i>127</i>&nbsp;        return ceilingCenterTile;
+<b class="nc"><i>127</i>&nbsp;        return ceilingCenterTile;</b>
 <i>128</i>&nbsp;    }
 <i>129</i>&nbsp;
-<b class="nc"><i>130</i>&nbsp;     /**</b>
+<i>130</i>&nbsp;     /**
 <i>131</i>&nbsp;      * The method that returns the ceiling right tile.
 <i>132</i>&nbsp;      * @return ceilingRightTile, which is the ceiling
 <i>133</i>&nbsp;      * right tile image.
 <i>134</i>&nbsp;     * */
 <i>135</i>&nbsp;    public static Tile getCeilingRightTile() {
-<i>136</i>&nbsp;        return ceilingRightTile;
-<b class="nc"><i>137</i>&nbsp;    }</b>
+<b class="nc"><i>136</i>&nbsp;        return ceilingRightTile;</b>
+<i>137</i>&nbsp;    }
 <i>138</i>&nbsp;
 <i>139</i>&nbsp;     /**
 <i>140</i>&nbsp;     * The method that returns the ceiling end tile.
 <i>141</i>&nbsp;      * @return ceilingEndTile, which is the ceiling
 <i>142</i>&nbsp;      * end tile image.
 <i>143</i>&nbsp;     * */
-<b class="nc"><i>144</i>&nbsp;    public static Tile getCeilingEndTile() {</b>
-<i>145</i>&nbsp;        return ceilingEndTile;
+<i>144</i>&nbsp;    public static Tile getCeilingEndTile() {
+<b class="nc"><i>145</i>&nbsp;        return ceilingEndTile;</b>
 <i>146</i>&nbsp;    }
 <i>147</i>&nbsp;
 <i>148</i>&nbsp;     /**
 <i>149</i>&nbsp;     * The method that returns the ceiling down tile.
 <i>150</i>&nbsp;      * @return ceilingDownTile, which is the ceiling
-<b class="nc"><i>151</i>&nbsp;      * down tile image.</b>
+<i>151</i>&nbsp;      * down tile image.
 <i>152</i>&nbsp;     * */
 <i>153</i>&nbsp;    public static Tile getCeilingDownTile() {
-<i>154</i>&nbsp;        return ceilingDownTile;
+<b class="nc"><i>154</i>&nbsp;        return ceilingDownTile;</b>
 <i>155</i>&nbsp;    }
 <i>156</i>&nbsp;
 <i>157</i>&nbsp;     /**
-<b class="nc"><i>158</i>&nbsp;     * The method that returns the ceiling BCL tile.</b>
+<i>158</i>&nbsp;     * The method that returns the ceiling BCL tile.
 <i>159</i>&nbsp;      * @return ceilingBCLTile, which is the ceiling
 <i>160</i>&nbsp;      * BCL tile image.
 <i>161</i>&nbsp;     * */
 <i>162</i>&nbsp;    public static Tile getCeilingBCLTile() {
-<i>163</i>&nbsp;        return ceilingBCLTile;
+<b class="nc"><i>163</i>&nbsp;        return ceilingBCLTile;</b>
 <i>164</i>&nbsp;    }
-<b class="nc"><i>165</i>&nbsp;</b>
+<i>165</i>&nbsp;
 <i>166</i>&nbsp;     /**
 <i>167</i>&nbsp;     * The method that returns the ceiling BCR tile.
 <i>168</i>&nbsp;      * @return ceilingBCRTile, which is the ceiling
@@ -250,56 +250,56 @@
 <i>176</i>&nbsp;     * The method that returns the ceiling TCL tile.
 <i>177</i>&nbsp;      * @return ceilingTCLTile, which is the ceiling
 <i>178</i>&nbsp;      * TCL tile image.
-<b class="nc"><i>179</i>&nbsp;     * */</b>
+<i>179</i>&nbsp;     * */
 <i>180</i>&nbsp;    public static Tile getCeilingTCLTile() {
-<i>181</i>&nbsp;        return ceilingTCLTile;
+<b class="nc"><i>181</i>&nbsp;        return ceilingTCLTile;</b>
 <i>182</i>&nbsp;    }
 <i>183</i>&nbsp;
 <i>184</i>&nbsp;     /**
 <i>185</i>&nbsp;     * The method that returns the ceiling TCR tile.
-<b class="nc"><i>186</i>&nbsp;      * @return ceilingTCRTile, which is the ceiling</b>
+<i>186</i>&nbsp;      * @return ceilingTCRTile, which is the ceiling
 <i>187</i>&nbsp;      * TCR tile image.
 <i>188</i>&nbsp;     * */
 <i>189</i>&nbsp;    public static Tile getCeilingTCRTile() {
-<i>190</i>&nbsp;        return ceilingTCRTile;
+<b class="nc"><i>190</i>&nbsp;        return ceilingTCRTile;</b>
 <i>191</i>&nbsp;    }
 <i>192</i>&nbsp;
-<b class="nc"><i>193</i>&nbsp;     /**</b>
+<i>193</i>&nbsp;     /**
 <i>194</i>&nbsp;     * The method that returns the ceiling PDown tile.
 <i>195</i>&nbsp;      * @return ceilingPDownTile, which is the ceiling
 <i>196</i>&nbsp;      * PDown tile image.
 <i>197</i>&nbsp;     * */
 <i>198</i>&nbsp;    public static Tile getCeilingPDownTile() {
-<i>199</i>&nbsp;        return ceilingPDownTile;
-<b class="nc"><i>200</i>&nbsp;    }</b>
+<b class="nc"><i>199</i>&nbsp;        return ceilingPDownTile;</b>
+<i>200</i>&nbsp;    }
 <i>201</i>&nbsp;
 <i>202</i>&nbsp;     /**
 <i>203</i>&nbsp;     * The method that returns the ceiling PRight tile.
 <i>204</i>&nbsp;      * @return ceilingPRightTile, which is the ceiling
 <i>205</i>&nbsp;      * PRight tile image.
 <i>206</i>&nbsp;     * */
-<b class="nc"><i>207</i>&nbsp;    public static Tile getCeilingPRightTile() {</b>
-<i>208</i>&nbsp;        return ceilingPRightTile;
+<i>207</i>&nbsp;    public static Tile getCeilingPRightTile() {
+<b class="nc"><i>208</i>&nbsp;        return ceilingPRightTile;</b>
 <i>209</i>&nbsp;    }
 <i>210</i>&nbsp;
 <i>211</i>&nbsp;     /**
 <i>212</i>&nbsp;     * The method that returns the ceiling PLeft tile.
 <i>213</i>&nbsp;      * @return ceilingPLeftTile, which is the ceiling
-<b class="nc"><i>214</i>&nbsp;      * PLeft tile image.</b>
+<i>214</i>&nbsp;      * PLeft tile image.
 <i>215</i>&nbsp;     * */
 <i>216</i>&nbsp;    public static Tile getCeilingPLeftTile() {
-<i>217</i>&nbsp;        return ceilingPLeftTile;
+<b class="nc"><i>217</i>&nbsp;        return ceilingPLeftTile;</b>
 <i>218</i>&nbsp;    }
 <i>219</i>&nbsp;
 <i>220</i>&nbsp;     /**
-<b class="nc"><i>221</i>&nbsp;     * The method that returns the out wall TL tile.</b>
+<i>221</i>&nbsp;     * The method that returns the out wall TL tile.
 <i>222</i>&nbsp;      * @return outWallTLTile, which is the out wall
 <i>223</i>&nbsp;      * TL tile image.
 <i>224</i>&nbsp;     * */
 <i>225</i>&nbsp;    public static Tile getOutWallTLTile() {
-<i>226</i>&nbsp;        return outWallTLTile;
+<b class="nc"><i>226</i>&nbsp;        return outWallTLTile;</b>
 <i>227</i>&nbsp;    }
-<b class="nc"><i>228</i>&nbsp;</b>
+<i>228</i>&nbsp;
 <i>229</i>&nbsp;     /**
 <i>230</i>&nbsp;     * The method that returns the out wall TC tile.
 <i>231</i>&nbsp;      * @return outWallTCTile, which is the out wall
@@ -313,77 +313,77 @@
 <i>239</i>&nbsp;     * The method that returns the out wall TR tile.
 <i>240</i>&nbsp;      * @return outWallTRTile, which is the out wall
 <i>241</i>&nbsp;      * TR tile image.
-<b class="nc"><i>242</i>&nbsp;     * */</b>
+<i>242</i>&nbsp;     * */
 <i>243</i>&nbsp;    public static Tile getOutWallTRTile() {
-<i>244</i>&nbsp;        return outWallTRTile;
+<b class="nc"><i>244</i>&nbsp;        return outWallTRTile;</b>
 <i>245</i>&nbsp;    }
 <i>246</i>&nbsp;
 <i>247</i>&nbsp;     /**
 <i>248</i>&nbsp;     * The method that returns the out wall BL tile.
-<b class="nc"><i>249</i>&nbsp;      * @return outWallBLTile, which is the out wall</b>
+<i>249</i>&nbsp;      * @return outWallBLTile, which is the out wall
 <i>250</i>&nbsp;      * BL tile image.
 <i>251</i>&nbsp;     * */
 <i>252</i>&nbsp;    public static Tile getOutWallBLTile() {
-<i>253</i>&nbsp;        return outWallBLTile;
+<b class="nc"><i>253</i>&nbsp;        return outWallBLTile;</b>
 <i>254</i>&nbsp;    }
 <i>255</i>&nbsp;
-<b class="nc"><i>256</i>&nbsp;     /**</b>
+<i>256</i>&nbsp;     /**
 <i>257</i>&nbsp;     * The method that returns the out wall BC tile.
 <i>258</i>&nbsp;      * @return outWallBCTile, which is the out wall
 <i>259</i>&nbsp;      * BC tile image.
 <i>260</i>&nbsp;     * */
 <i>261</i>&nbsp;    public static Tile getOutWallBCTile() {
-<i>262</i>&nbsp;        return outWallBCTile;
-<b class="nc"><i>263</i>&nbsp;    }</b>
+<b class="nc"><i>262</i>&nbsp;        return outWallBCTile;</b>
+<i>263</i>&nbsp;    }
 <i>264</i>&nbsp;
 <i>265</i>&nbsp;     /**
 <i>266</i>&nbsp;     * The method that returns the out wall BR tile.
 <i>267</i>&nbsp;      * @return outWallBRTile, which is the out wall
 <i>268</i>&nbsp;      * BR tile image.
 <i>269</i>&nbsp;     * */
-<b class="nc"><i>270</i>&nbsp;    public static Tile getOutWallBRTile() {</b>
-<i>271</i>&nbsp;        return outWallBRTile;
+<i>270</i>&nbsp;    public static Tile getOutWallBRTile() {
+<b class="nc"><i>271</i>&nbsp;        return outWallBRTile;</b>
 <i>272</i>&nbsp;    }
 <i>273</i>&nbsp;
 <i>274</i>&nbsp;     /**
 <i>275</i>&nbsp;     * The method that returns the plant top file.
 <i>276</i>&nbsp;      * @return plantTopTile, which is the plant top
-<b class="nc"><i>277</i>&nbsp;      * tile image.</b>
+<i>277</i>&nbsp;      * tile image.
 <i>278</i>&nbsp;     * */
 <i>279</i>&nbsp;    public static Tile getPlantTopTile() {
-<i>280</i>&nbsp;        return plantTopTile;
+<b class="nc"><i>280</i>&nbsp;        return plantTopTile;</b>
 <i>281</i>&nbsp;    }
 <i>282</i>&nbsp;
 <i>283</i>&nbsp;     /**
-<b class="nc"><i>284</i>&nbsp;     * The method that returns the plant bottom file.</b>
+<i>284</i>&nbsp;     * The method that returns the plant bottom file.
 <i>285</i>&nbsp;      * @return plantBotTile, which is the plant bottom
 <i>286</i>&nbsp;      * tile image.
 <i>287</i>&nbsp;     * */
 <i>288</i>&nbsp;    public static Tile getPlantBotTile() {
-<i>289</i>&nbsp;        return plantBotTile;
+<b class="nc"><i>289</i>&nbsp;        return plantBotTile;</b>
 <i>290</i>&nbsp;    }
-<b class="nc"><i>291</i>&nbsp;</b>
+<i>291</i>&nbsp;
 <i>292</i>&nbsp;     /**
 <i>293</i>&nbsp;     * The method that returns the Kitchen table
 <i>294</i>&nbsp;      * TL tile.
 <i>295</i>&nbsp;      * @return kitTableTLTile, which is the Kitchen Table
 <i>296</i>&nbsp;      * TL tile image.
 <i>297</i>&nbsp;     * */
-<b class="nc"><i>298</i>&nbsp;    public static Tile getKitTableTLTile() {</b>
-<i>299</i>&nbsp;        return kitTableTLTile;
+<i>298</i>&nbsp;    public static Tile getKitTableTLTile() {
+<b class="nc"><i>299</i>&nbsp;        return kitTableTLTile;</b>
 <i>300</i>&nbsp;    }
 <i>301</i>&nbsp;
 <i>302</i>&nbsp;     /**
 <i>303</i>&nbsp;     * The method that returns the Kitchen table
 <i>304</i>&nbsp;      * TR tile.
-<b class="nc"><i>305</i>&nbsp;      * @return kitTableTRTile, which is the Kitchen Table</b>
+<i>305</i>&nbsp;      * @return kitTableTRTile, which is the Kitchen Table
 <i>306</i>&nbsp;      * TR tile image.
 <i>307</i>&nbsp;     * */
 <i>308</i>&nbsp;    public static Tile getKitTableTRTile() {
-<i>309</i>&nbsp;        return kitTableTRTile;
+<b class="nc"><i>309</i>&nbsp;        return kitTableTRTile;</b>
 <i>310</i>&nbsp;    }
 <i>311</i>&nbsp;
-<b class="nc"><i>312</i>&nbsp;     /**</b>
+<i>312</i>&nbsp;     /**
 <i>313</i>&nbsp;     * fThe method that returns the Kitchen table
 <i>314</i>&nbsp;      * BL tile.
 <i>315</i>&nbsp;      * @return kitTableBLTile, which is the Kitchen Table
@@ -397,21 +397,21 @@
 <i>323</i>&nbsp;     * The method that returns the Kitchen table
 <i>324</i>&nbsp;      * BR tile.
 <i>325</i>&nbsp;      * @return kitTableBRTile, which is the Kitchen Table
-<b class="nc"><i>326</i>&nbsp;      * BR tile image.</b>
+<i>326</i>&nbsp;      * BR tile image.
 <i>327</i>&nbsp;     * */
 <i>328</i>&nbsp;    public static Tile getKitTableBRTile() {
-<i>329</i>&nbsp;        return kitTableBRTile;
+<b class="nc"><i>329</i>&nbsp;        return kitTableBRTile;</b>
 <i>330</i>&nbsp;    }
 <i>331</i>&nbsp;
 <i>332</i>&nbsp;     /**
-<b class="nc"><i>333</i>&nbsp;     * The method that returns the chair left tile.</b>
+<i>333</i>&nbsp;     * The method that returns the chair left tile.
 <i>334</i>&nbsp;      * @return chairLeftTile, which is the chair left
 <i>335</i>&nbsp;      * tile image.
 <i>336</i>&nbsp;     * */
 <i>337</i>&nbsp;    public static Tile getChairLeftTile() {
-<i>338</i>&nbsp;        return chairLeftTile;
+<b class="nc"><i>338</i>&nbsp;        return chairLeftTile;</b>
 <i>339</i>&nbsp;    }
-<b class="nc"><i>340</i>&nbsp;</b>
+<i>340</i>&nbsp;
 <i>341</i>&nbsp;     /**
 <i>342</i>&nbsp;     * The method that returns the chair right tile.
 <i>343</i>&nbsp;      * @return chairRightTile, which is the chair right
@@ -425,56 +425,56 @@
 <i>351</i>&nbsp;     * The method that returns the counter center tile.
 <i>352</i>&nbsp;      * @return counterCenterTile, which is the counter
 <i>353</i>&nbsp;      * center tile image.
-<b class="nc"><i>354</i>&nbsp;     * */</b>
+<i>354</i>&nbsp;     * */
 <i>355</i>&nbsp;    public static Tile getCounterCenterTile() {
-<i>356</i>&nbsp;        return counterCenterTile;
+<b class="nc"><i>356</i>&nbsp;        return counterCenterTile;</b>
 <i>357</i>&nbsp;    }
 <i>358</i>&nbsp;
 <i>359</i>&nbsp;     /**
 <i>360</i>&nbsp;     * The method that returns the counter corner tile.
-<b class="nc"><i>361</i>&nbsp;      * @return counterCornerTile, which is the counter</b>
+<i>361</i>&nbsp;      * @return counterCornerTile, which is the counter
 <i>362</i>&nbsp;      * corner tile image.
 <i>363</i>&nbsp;     * */
 <i>364</i>&nbsp;    public static Tile getCounterCornerTile() {
-<i>365</i>&nbsp;        return counterCornerTile;
+<b class="nc"><i>365</i>&nbsp;        return counterCornerTile;</b>
 <i>366</i>&nbsp;    }
 <i>367</i>&nbsp;
-<b class="nc"><i>368</i>&nbsp;     /**</b>
+<i>368</i>&nbsp;     /**
 <i>369</i>&nbsp;     * The method that returns the counter end tile.
 <i>370</i>&nbsp;      * @return counterEndTile, which is the counter
 <i>371</i>&nbsp;      * end tile image.
 <i>372</i>&nbsp;     * */
 <i>373</i>&nbsp;    public static Tile getCounterEndTile() {
-<i>374</i>&nbsp;        return counterEndTile;
-<b class="nc"><i>375</i>&nbsp;    }</b>
+<b class="nc"><i>374</i>&nbsp;        return counterEndTile;</b>
+<i>375</i>&nbsp;    }
 <i>376</i>&nbsp;
 <i>377</i>&nbsp;     /**
 <i>378</i>&nbsp;     * The method that returns the dog bowl tile.
 <i>379</i>&nbsp;      * @return dogBowlTile, which is the counter
 <i>380</i>&nbsp;      * bowl tile image.
 <i>381</i>&nbsp;     * */
-<b class="nc"><i>382</i>&nbsp;    public static Tile getDogBowlTile() {</b>
-<i>383</i>&nbsp;        return dogBowlTile;
+<i>382</i>&nbsp;    public static Tile getDogBowlTile() {
+<b class="nc"><i>383</i>&nbsp;        return dogBowlTile;</b>
 <i>384</i>&nbsp;    }
 <i>385</i>&nbsp;
 <i>386</i>&nbsp;     /**
 <i>387</i>&nbsp;     * The method that returns the dog bone tile.
 <i>388</i>&nbsp;      * @return dogBoneTile, which is the counter
-<b class="nc"><i>389</i>&nbsp;      * bone tile image.</b>
+<i>389</i>&nbsp;      * bone tile image.
 <i>390</i>&nbsp;     * */
 <i>391</i>&nbsp;    public static Tile getDogBoneTile() {
-<i>392</i>&nbsp;        return dogBoneTile;
+<b class="nc"><i>392</i>&nbsp;        return dogBoneTile;</b>
 <i>393</i>&nbsp;    }
 <i>394</i>&nbsp;
 <i>395</i>&nbsp;     /**
-<b class="nc"><i>396</i>&nbsp;     * The method that returns the box tile.</b>
+<i>396</i>&nbsp;     * The method that returns the box tile.
 <i>397</i>&nbsp;      * @return boxTile, which is the box
 <i>398</i>&nbsp;      * tile image.
 <i>399</i>&nbsp;     * */
 <i>400</i>&nbsp;    public static Tile getBoxTile() {
-<i>401</i>&nbsp;        return boxTile;
+<b class="nc"><i>401</i>&nbsp;        return boxTile;</b>
 <i>402</i>&nbsp;    }
-<b class="nc"><i>403</i>&nbsp;</b>
+<i>403</i>&nbsp;
 <i>404</i>&nbsp;     /**
 <i>405</i>&nbsp;     *  The method that returns the fridge top tile.
 <i>406</i>&nbsp;      * @return fridgeTopTile, which is the fridge top
@@ -488,56 +488,56 @@
 <i>414</i>&nbsp;     * The method that returns the fridge bottom tile.
 <i>415</i>&nbsp;      * @return fridgeBOtTile, which is the fridge bottom
 <i>416</i>&nbsp;      * tile image.
-<b class="nc"><i>417</i>&nbsp;     * */</b>
+<i>417</i>&nbsp;     * */
 <i>418</i>&nbsp;    public static Tile getFridgeBotTile() {
-<i>419</i>&nbsp;        return fridgeBotTile;
+<b class="nc"><i>419</i>&nbsp;        return fridgeBotTile;</b>
 <i>420</i>&nbsp;    }
 <i>421</i>&nbsp;
 <i>422</i>&nbsp;     /**
 <i>423</i>&nbsp;     *  The method that returns the stove top tile.
-<b class="nc"><i>424</i>&nbsp;      * @return stoveTopTile, which is the stove top</b>
+<i>424</i>&nbsp;      * @return stoveTopTile, which is the stove top
 <i>425</i>&nbsp;      * tile image.
 <i>426</i>&nbsp;     * */
 <i>427</i>&nbsp;    public static Tile getStoveTopTile() {
-<i>428</i>&nbsp;        return stoveTopTile;
+<b class="nc"><i>428</i>&nbsp;        return stoveTopTile;</b>
 <i>429</i>&nbsp;    }
 <i>430</i>&nbsp;
-<b class="nc"><i>431</i>&nbsp;     /**</b>
+<i>431</i>&nbsp;     /**
 <i>432</i>&nbsp;     * The method that returns the stove bottom tile.
 <i>433</i>&nbsp;      * @return stoveBotTile, which is the stove bottom
 <i>434</i>&nbsp;      * tile image.
 <i>435</i>&nbsp;     * */
 <i>436</i>&nbsp;    public static Tile getStoveBotTile() {
-<i>437</i>&nbsp;        return stoveBotTile;
-<b class="nc"><i>438</i>&nbsp;    }</b>
+<b class="nc"><i>437</i>&nbsp;        return stoveBotTile;</b>
+<i>438</i>&nbsp;    }
 <i>439</i>&nbsp;
 <i>440</i>&nbsp;     /**
 <i>441</i>&nbsp;     * The method that returns the sink left top tile.
 <i>442</i>&nbsp;      * @return sinkLTopTile, which is the sink left top
 <i>443</i>&nbsp;      * tile image.
 <i>444</i>&nbsp;     * */
-<b class="nc"><i>445</i>&nbsp;    public static Tile getSinkLTopTile() {</b>
-<i>446</i>&nbsp;        return sinkLTopTile;
+<i>445</i>&nbsp;    public static Tile getSinkLTopTile() {
+<b class="nc"><i>446</i>&nbsp;        return sinkLTopTile;</b>
 <i>447</i>&nbsp;    }
 <i>448</i>&nbsp;
 <i>449</i>&nbsp;     /**
 <i>450</i>&nbsp;     * The method that returns the sink left bottom tile.
 <i>451</i>&nbsp;      * @return sinkLBotTile, which is the sink left bottom
-<b class="nc"><i>452</i>&nbsp;      * tile image.</b>
+<i>452</i>&nbsp;      * tile image.
 <i>453</i>&nbsp;     * */
 <i>454</i>&nbsp;    public static Tile getSinkLBotTile() {
-<i>455</i>&nbsp;        return sinkLBotTile;
+<b class="nc"><i>455</i>&nbsp;        return sinkLBotTile;</b>
 <i>456</i>&nbsp;    }
 <i>457</i>&nbsp;
 <i>458</i>&nbsp;     /**
-<b class="nc"><i>459</i>&nbsp;     * The method that returns the sink right top tile.</b>
+<i>459</i>&nbsp;     * The method that returns the sink right top tile.
 <i>460</i>&nbsp;      * @return sinkRTopTile, which is the sink right top
 <i>461</i>&nbsp;      * tile image.
 <i>462</i>&nbsp;     * */
 <i>463</i>&nbsp;    public static Tile getSinkRTopTile() {
-<i>464</i>&nbsp;        return sinkRTopTile;
+<b class="nc"><i>464</i>&nbsp;        return sinkRTopTile;</b>
 <i>465</i>&nbsp;    }
-<b class="nc"><i>466</i>&nbsp;</b>
+<i>466</i>&nbsp;
 <i>467</i>&nbsp;     /**
 <i>468</i>&nbsp;     * The method that returns the sink right bottom tile.
 <i>469</i>&nbsp;      * @return sinkRBotTile, which is the sink right bottom
@@ -551,56 +551,56 @@
 <i>477</i>&nbsp;     * The method that returns the phone tile.
 <i>478</i>&nbsp;      * @return phoneTile, which is the phone
 <i>479</i>&nbsp;      * tile image.
-<b class="nc"><i>480</i>&nbsp;     * */</b>
+<i>480</i>&nbsp;     * */
 <i>481</i>&nbsp;    public static Tile getPhoneTile() {
-<i>482</i>&nbsp;        return phoneTile;
+<b class="nc"><i>482</i>&nbsp;        return phoneTile;</b>
 <i>483</i>&nbsp;    }
 <i>484</i>&nbsp;
 <i>485</i>&nbsp;     /**
 <i>486</i>&nbsp;     * The method that returns the kitchen rug  tile.
-<b class="nc"><i>487</i>&nbsp;      * @return kitRugTile, which is the kitchen rug</b>
+<i>487</i>&nbsp;      * @return kitRugTile, which is the kitchen rug
 <i>488</i>&nbsp;      * tile image.
 <i>489</i>&nbsp;     * */
 <i>490</i>&nbsp;    public static Tile getKitRugTile() {
-<i>491</i>&nbsp;        return kitRugTile;
+<b class="nc"><i>491</i>&nbsp;        return kitRugTile;</b>
 <i>492</i>&nbsp;    }
 <i>493</i>&nbsp;
-<b class="nc"><i>494</i>&nbsp;     /**</b>
+<i>494</i>&nbsp;     /**
 <i>495</i>&nbsp;     * The method that returns the clock tile.
 <i>496</i>&nbsp;      * @return clockTile, which is the clock
 <i>497</i>&nbsp;      * tile image.
 <i>498</i>&nbsp;     * */
 <i>499</i>&nbsp;    public static Tile getClockTile() {
-<i>500</i>&nbsp;        return clockTile;
-<b class="nc"><i>501</i>&nbsp;    }</b>
+<b class="nc"><i>500</i>&nbsp;        return clockTile;</b>
+<i>501</i>&nbsp;    }
 <i>502</i>&nbsp;
 <i>503</i>&nbsp;     /**
 <i>504</i>&nbsp;     * The method that returns the end table tile.
 <i>505</i>&nbsp;      * @return endTableTile, which is the end table
 <i>506</i>&nbsp;      * tile image.
 <i>507</i>&nbsp;     * */
-<b class="nc"><i>508</i>&nbsp;    public static Tile getEndTableTile() {</b>
-<i>509</i>&nbsp;        return endTableTile;
+<i>508</i>&nbsp;    public static Tile getEndTableTile() {
+<b class="nc"><i>509</i>&nbsp;        return endTableTile;</b>
 <i>510</i>&nbsp;    }
 <i>511</i>&nbsp;
 <i>512</i>&nbsp;     /**
 <i>513</i>&nbsp;     *The method that returns the toilet top tile.
 <i>514</i>&nbsp;      * @return toiletTopTile, which is the toilet top
-<b class="nc"><i>515</i>&nbsp;      * tile image.</b>
+<i>515</i>&nbsp;      * tile image.
 <i>516</i>&nbsp;     * */
 <i>517</i>&nbsp;    public static Tile getToiletTopTile() {
-<i>518</i>&nbsp;        return toiletTopTile;
+<b class="nc"><i>518</i>&nbsp;        return toiletTopTile;</b>
 <i>519</i>&nbsp;    }
 <i>520</i>&nbsp;
 <i>521</i>&nbsp;     /**
-<b class="nc"><i>522</i>&nbsp;     * The method that returns the toilet bottom tile.</b>
+<i>522</i>&nbsp;     * The method that returns the toilet bottom tile.
 <i>523</i>&nbsp;      * @return toiletBotTile, which is the toilet bottom
 <i>524</i>&nbsp;      * tile image.
 <i>525</i>&nbsp;     * */
 <i>526</i>&nbsp;    public static Tile getToiletBotTile() {
-<i>527</i>&nbsp;        return toiletBotTile;
+<b class="nc"><i>527</i>&nbsp;        return toiletBotTile;</b>
 <i>528</i>&nbsp;    }
-<b class="nc"><i>529</i>&nbsp;</b>
+<i>529</i>&nbsp;
 <i>530</i>&nbsp;     /**
 <i>531</i>&nbsp;     * The method that returns the bathroom sink top tile.
 <i>532</i>&nbsp;      * @return bathSinkTopTile, which is the bathroom sink top
@@ -614,28 +614,28 @@
 <i>540</i>&nbsp;     * The method that returns the bathroom sink bottom tile.
 <i>541</i>&nbsp;      * @return bathSinkBotTile, which is the bathroom sink bottom
 <i>542</i>&nbsp;      * tile image.
-<b class="nc"><i>543</i>&nbsp;     * */</b>
+<i>543</i>&nbsp;     * */
 <i>544</i>&nbsp;    public static Tile getBathSinkBotTile() {
-<i>545</i>&nbsp;        return bathSinkBotTile;
+<b class="nc"><i>545</i>&nbsp;        return bathSinkBotTile;</b>
 <i>546</i>&nbsp;    }
 <i>547</i>&nbsp;
 <i>548</i>&nbsp;     /**
 <i>549</i>&nbsp;     * The method that returns the shower top tile.
-<b class="nc"><i>550</i>&nbsp;      * @return showerTopTile, which is the shower top</b>
+<i>550</i>&nbsp;      * @return showerTopTile, which is the shower top
 <i>551</i>&nbsp;      * tile image.
 <i>552</i>&nbsp;     * */
 <i>553</i>&nbsp;    public static Tile getShowerTopTile() {
-<i>554</i>&nbsp;        return showerTopTile;
+<b class="nc"><i>554</i>&nbsp;        return showerTopTile;</b>
 <i>555</i>&nbsp;    }
 <i>556</i>&nbsp;
-<b class="nc"><i>557</i>&nbsp;     /**</b>
+<i>557</i>&nbsp;     /**
 <i>558</i>&nbsp;     * The method that returns the shower bottom tile.
 <i>559</i>&nbsp;      * @return showerBotTile, which is the shower bottom
 <i>560</i>&nbsp;      * tile image.
 <i>561</i>&nbsp;     * */
 <i>562</i>&nbsp;    public static Tile getShowerBotTile() {
-<i>563</i>&nbsp;        return showerBotTile;
-<b class="nc"><i>564</i>&nbsp;    }</b>
+<b class="nc"><i>563</i>&nbsp;        return showerBotTile;</b>
+<i>564</i>&nbsp;    }
 <i>565</i>&nbsp;
 <i>566</i>&nbsp;     /**
 <i>567</i>&nbsp;     * The method that returns the couch left tile.
@@ -649,28 +649,28 @@
 <i>575</i>&nbsp;      * @return couchRightTile, which is the couch right tile
 <i>576</i>&nbsp;      * tile image.
 <i>577</i>&nbsp;     * */
-<b class="nc"><i>578</i>&nbsp;    public static Tile getCouchRightTile() {</b>
-<i>579</i>&nbsp;        return couchRightTile;
+<i>578</i>&nbsp;    public static Tile getCouchRightTile() {
+<b class="nc"><i>579</i>&nbsp;        return couchRightTile;</b>
 <i>580</i>&nbsp;    }
 <i>581</i>&nbsp;
 <i>582</i>&nbsp;     /**
 <i>583</i>&nbsp;     * The method that returns the Tv top tile.
 <i>584</i>&nbsp;      * @return tvTopTile, which is the Tv top tile
-<b class="nc"><i>585</i>&nbsp;      * tile image.</b>
+<i>585</i>&nbsp;      * tile image.
 <i>586</i>&nbsp;     * */
 <i>587</i>&nbsp;    public static Tile getTvTopTile() {
-<i>588</i>&nbsp;        return tvTopTile;
+<b class="nc"><i>588</i>&nbsp;        return tvTopTile;</b>
 <i>589</i>&nbsp;    }
 <i>590</i>&nbsp;
 <i>591</i>&nbsp;     /**
-<b class="nc"><i>592</i>&nbsp;     * The method that returns the Tv bottom tile.</b>
+<i>592</i>&nbsp;     * The method that returns the Tv bottom tile.
 <i>593</i>&nbsp;      * @return tvBotTile, which is the Tv bottom tile
 <i>594</i>&nbsp;      * tile image.
 <i>595</i>&nbsp;     * */
 <i>596</i>&nbsp;    public static Tile getTvBotTile() {
-<i>597</i>&nbsp;        return tvBotTile;
+<b class="nc"><i>597</i>&nbsp;        return tvBotTile;</b>
 <i>598</i>&nbsp;    }
-<b class="nc"><i>599</i>&nbsp;</b>
+<i>599</i>&nbsp;
 <i>600</i>&nbsp;     /**
 <i>601</i>&nbsp;     * The method that returns the shelf top left tile.
 <i>602</i>&nbsp;      * @return shelfTLTile, which is the shelf top left
@@ -684,56 +684,56 @@
 <i>610</i>&nbsp;     * The method that returns the shelf top right tile.
 <i>611</i>&nbsp;      * @return shelfTRTile, which is the shelf top right
 <i>612</i>&nbsp;      * tile image.
-<b class="nc"><i>613</i>&nbsp;     * */</b>
+<i>613</i>&nbsp;     * */
 <i>614</i>&nbsp;    public static Tile getShelfTRTile() {
-<i>615</i>&nbsp;        return shelfTRTile;
+<b class="nc"><i>615</i>&nbsp;        return shelfTRTile;</b>
 <i>616</i>&nbsp;    }
 <i>617</i>&nbsp;
 <i>618</i>&nbsp;     /**
 <i>619</i>&nbsp;     * The method that returns the shelf bottom left tile.
-<b class="nc"><i>620</i>&nbsp;      * @return shelfBLTile, which is the shelf bottom left</b>
+<i>620</i>&nbsp;      * @return shelfBLTile, which is the shelf bottom left
 <i>621</i>&nbsp;      * tile image.
 <i>622</i>&nbsp;     * */
 <i>623</i>&nbsp;    public static Tile getShelfBLTile() {
-<i>624</i>&nbsp;        return shelfBLTile;
+<b class="nc"><i>624</i>&nbsp;        return shelfBLTile;</b>
 <i>625</i>&nbsp;    }
 <i>626</i>&nbsp;
-<b class="nc"><i>627</i>&nbsp;     /**</b>
+<i>627</i>&nbsp;     /**
 <i>628</i>&nbsp;     * The method that returns the shelf bottom right tile.
 <i>629</i>&nbsp;      * @return shelfBRTile, which is the shelf bottom right
 <i>630</i>&nbsp;      * tile image.
 <i>631</i>&nbsp;     * */
 <i>632</i>&nbsp;    public static Tile getShelfBRTile() {
-<i>633</i>&nbsp;        return shelfBRTile;
-<b class="nc"><i>634</i>&nbsp;    }</b>
+<b class="nc"><i>633</i>&nbsp;        return shelfBRTile;</b>
+<i>634</i>&nbsp;    }
 <i>635</i>&nbsp;
 <i>636</i>&nbsp;     /**
 <i>637</i>&nbsp;     * The method that returns the Desk top tile.
 <i>638</i>&nbsp;      * @return deskTopTile, which is the desk top
 <i>639</i>&nbsp;      * tile image.
 <i>640</i>&nbsp;     * */
-<b class="nc"><i>641</i>&nbsp;    public static Tile getDeskTopTile() {</b>
-<i>642</i>&nbsp;        return deskTopTile;
+<i>641</i>&nbsp;    public static Tile getDeskTopTile() {
+<b class="nc"><i>642</i>&nbsp;        return deskTopTile;</b>
 <i>643</i>&nbsp;    }
 <i>644</i>&nbsp;
 <i>645</i>&nbsp;     /**
 <i>646</i>&nbsp;     * The method that returns the Desk bottom tile.
 <i>647</i>&nbsp;      * @return deskBotTile, which is the desk bottom
-<b class="nc"><i>648</i>&nbsp;      * tile image.</b>
+<i>648</i>&nbsp;      * tile image.
 <i>649</i>&nbsp;     * */
 <i>650</i>&nbsp;    public static Tile getDeskBotTile() {
-<i>651</i>&nbsp;        return deskBotTile;
+<b class="nc"><i>651</i>&nbsp;        return deskBotTile;</b>
 <i>652</i>&nbsp;    }
 <i>653</i>&nbsp;
 <i>654</i>&nbsp;     /**
-<b class="nc"><i>655</i>&nbsp;     * The method that returns the bed top left tile.</b>
+<i>655</i>&nbsp;     * The method that returns the bed top left tile.
 <i>656</i>&nbsp;      * @return bedTLTile, which is the bed top left
 <i>657</i>&nbsp;      * tile image.
 <i>658</i>&nbsp;     * */
 <i>659</i>&nbsp;    public static Tile getBedTLTile() {
-<i>660</i>&nbsp;        return bedTLTile;
+<b class="nc"><i>660</i>&nbsp;        return bedTLTile;</b>
 <i>661</i>&nbsp;    }
-<b class="nc"><i>662</i>&nbsp;</b>
+<i>662</i>&nbsp;
 <i>663</i>&nbsp;     /**
 <i>664</i>&nbsp;     * The method that returns the bed top right tile.
 <i>665</i>&nbsp;      * @return bedTRTile, which is the bed top right
@@ -746,642 +746,657 @@
 <i>672</i>&nbsp;     /**
 <i>673</i>&nbsp;     * The method that returns the bed center left tile.
 <i>674</i>&nbsp;      * @return bedCLTile, which is the bed center left
-<b class="fc"><i>675</i>&nbsp;      * tile image.</b>
+<i>675</i>&nbsp;      * tile image.
 <i>676</i>&nbsp;     * */
 <i>677</i>&nbsp;    public static Tile getBedCLTile() {
-<i>678</i>&nbsp;        return bedCLTile;
-<b class="fc"><i>679</i>&nbsp;    }</b>
+<b class="nc"><i>678</i>&nbsp;        return bedCLTile;</b>
+<i>679</i>&nbsp;    }
 <i>680</i>&nbsp;
 <i>681</i>&nbsp;     /**
 <i>682</i>&nbsp;     * The method that returns the bed center right tile.
-<b class="fc"><i>683</i>&nbsp;      * @return bedCRTile, which is the bed center right</b>
+<i>683</i>&nbsp;      * @return bedCRTile, which is the bed center right
 <i>684</i>&nbsp;      * tile image.
 <i>685</i>&nbsp;     * */
 <i>686</i>&nbsp;    public static Tile getBedCRTile() {
-<b class="fc"><i>687</i>&nbsp;        return bedCRTile;</b>
+<b class="nc"><i>687</i>&nbsp;        return bedCRTile;</b>
 <i>688</i>&nbsp;    }
 <i>689</i>&nbsp;
 <i>690</i>&nbsp;     /**
 <i>691</i>&nbsp;     * The method that returns the bed bottom left tile.
-<b class="fc"><i>692</i>&nbsp;      * @return bedBLTile, which is the bed bottom left</b>
+<i>692</i>&nbsp;      * @return bedBLTile, which is the bed bottom left
 <i>693</i>&nbsp;      * tile image.
 <i>694</i>&nbsp;     * */
 <i>695</i>&nbsp;    public static Tile getBedBLTile() {
-<b class="fc"><i>696</i>&nbsp;        return bedBLTile;</b>
+<b class="nc"><i>696</i>&nbsp;        return bedBLTile;</b>
 <i>697</i>&nbsp;    }
 <i>698</i>&nbsp;
 <i>699</i>&nbsp;     /**
-<b class="fc"><i>700</i>&nbsp;     * The method that returns the bed bottom right tile.</b>
+<i>700</i>&nbsp;     * The method that returns the bed bottom right tile.
 <i>701</i>&nbsp;      * @return bedBRTile, which is the bed bottom right
 <i>702</i>&nbsp;      * tile image.
 <i>703</i>&nbsp;     * */
-<b class="fc"><i>704</i>&nbsp;    public static Tile getBedBRTile() {</b>
-<i>705</i>&nbsp;        return bedBRTile;
+<i>704</i>&nbsp;    public static Tile getBedBRTile() {
+<b class="nc"><i>705</i>&nbsp;        return bedBRTile;</b>
 <i>706</i>&nbsp;    }
 <i>707</i>&nbsp;
 <i>708</i>&nbsp;     /**
-<b class="fc"><i>709</i>&nbsp;     * The method that returns the dining top left tile.</b>
+<i>709</i>&nbsp;     * The method that returns the dining top left tile.
 <i>710</i>&nbsp;      * @return diningTLTile, which is the dining top left
 <i>711</i>&nbsp;      * tile image.
 <i>712</i>&nbsp;     * */
-<b class="fc"><i>713</i>&nbsp;    public static Tile getDiningTLTile() {</b>
-<i>714</i>&nbsp;        return diningTLTile;
+<i>713</i>&nbsp;    public static Tile getDiningTLTile() {
+<b class="nc"><i>714</i>&nbsp;        return diningTLTile;</b>
 <i>715</i>&nbsp;    }
 <i>716</i>&nbsp;
 <i>717</i>&nbsp;     /**
-<b class="fc"><i>718</i>&nbsp;     * The method that returns the dining top right tile.</b>
+<i>718</i>&nbsp;     * The method that returns the dining top right tile.
 <i>719</i>&nbsp;      * @return diningTRTile, which is the dining top right
 <i>720</i>&nbsp;      * tile image.
 <i>721</i>&nbsp;     * */
-<b class="fc"><i>722</i>&nbsp;    public static Tile getDiningTRTile() {</b>
-<i>723</i>&nbsp;        return diningTRTile;
+<i>722</i>&nbsp;    public static Tile getDiningTRTile() {
+<b class="nc"><i>723</i>&nbsp;        return diningTRTile;</b>
 <i>724</i>&nbsp;    }
 <i>725</i>&nbsp;
-<b class="fc"><i>726</i>&nbsp;     /**</b>
+<i>726</i>&nbsp;     /**
 <i>727</i>&nbsp;     * The method that returns the dining bottom left tile.
 <i>728</i>&nbsp;      * @return diningBLTile, which is the dining bottom left
 <i>729</i>&nbsp;      * tile image.
-<b class="fc"><i>730</i>&nbsp;     * */</b>
+<i>730</i>&nbsp;     * */
 <i>731</i>&nbsp;    public static Tile getDiningBLTile() {
-<i>732</i>&nbsp;        return diningBLTile;
+<b class="nc"><i>732</i>&nbsp;        return diningBLTile;</b>
 <i>733</i>&nbsp;    }
-<b class="fc"><i>734</i>&nbsp;</b>
+<i>734</i>&nbsp;
 <i>735</i>&nbsp;     /**
 <i>736</i>&nbsp;     * The method that returns the dining bottom right tile.
 <i>737</i>&nbsp;      * @return diningBRTile, which is the dining bottom right
-<b class="fc"><i>738</i>&nbsp;      * tile image.</b>
+<i>738</i>&nbsp;      * tile image.
 <i>739</i>&nbsp;     * */
 <i>740</i>&nbsp;    public static Tile getDiningBRTile() {
-<i>741</i>&nbsp;        return diningBRTile;
-<b class="fc"><i>742</i>&nbsp;    }</b>
+<b class="nc"><i>741</i>&nbsp;        return diningBRTile;</b>
+<i>742</i>&nbsp;    }
 <i>743</i>&nbsp;
 <i>744</i>&nbsp;     /**
 <i>745</i>&nbsp;     * The method that returns the rug top left tile.
-<b class="fc"><i>746</i>&nbsp;      * @return rugTLTile, which is the rug top left</b>
+<i>746</i>&nbsp;      * @return rugTLTile, which is the rug top left
 <i>747</i>&nbsp;      * tile image.
 <i>748</i>&nbsp;     * */
 <i>749</i>&nbsp;    public static Tile getRugTLTile() {
-<b class="fc"><i>750</i>&nbsp;        return rugTLTile;</b>
+<b class="nc"><i>750</i>&nbsp;        return rugTLTile;</b>
 <i>751</i>&nbsp;    }
 <i>752</i>&nbsp;
 <i>753</i>&nbsp;     /**
-<b class="fc"><i>754</i>&nbsp;     * The method that returns the rug top center tile.</b>
+<i>754</i>&nbsp;     * The method that returns the rug top center tile.
 <i>755</i>&nbsp;      * @return rugTCTile, which is the rug top center
 <i>756</i>&nbsp;      * tile image.
 <i>757</i>&nbsp;     * */
 <i>758</i>&nbsp;    public static Tile getRugTCTile() {
-<b class="fc"><i>759</i>&nbsp;        return rugTCTile;</b>
+<b class="nc"><i>759</i>&nbsp;        return rugTCTile;</b>
 <i>760</i>&nbsp;    }
 <i>761</i>&nbsp;
 <i>762</i>&nbsp;     /**
-<b class="fc"><i>763</i>&nbsp;     * The method that returns the rug top right tile.</b>
+<i>763</i>&nbsp;     * The method that returns the rug top right tile.
 <i>764</i>&nbsp;      * @return rugTRTile, which is the rug top right
 <i>765</i>&nbsp;      * tile image.
 <i>766</i>&nbsp;     * */
-<b class="fc"><i>767</i>&nbsp;    public static Tile getRugTRTile() {</b>
-<i>768</i>&nbsp;        return rugTRTile;
+<i>767</i>&nbsp;    public static Tile getRugTRTile() {
+<b class="nc"><i>768</i>&nbsp;        return rugTRTile;</b>
 <i>769</i>&nbsp;    }
 <i>770</i>&nbsp;
-<b class="fc"><i>771</i>&nbsp;     /**</b>
+<i>771</i>&nbsp;     /**
 <i>772</i>&nbsp;     * The method that returns the rug bottom left tile.
 <i>773</i>&nbsp;      * @return rugBLTile, which is the rug bottom left
 <i>774</i>&nbsp;      * tile image.
-<b class="fc"><i>775</i>&nbsp;     * */</b>
+<i>775</i>&nbsp;     * */
 <i>776</i>&nbsp;    public static Tile getRugBLTile() {
-<i>777</i>&nbsp;        return rugBLTile;
+<b class="nc"><i>777</i>&nbsp;        return rugBLTile;</b>
 <i>778</i>&nbsp;    }
-<b class="fc"><i>779</i>&nbsp;</b>
+<i>779</i>&nbsp;
 <i>780</i>&nbsp;     /**
 <i>781</i>&nbsp;     * The method that returns the rug bottom center tile.
 <i>782</i>&nbsp;      * @return rugBCTile, which is the rug bottom center
 <i>783</i>&nbsp;      * tile image.
-<b class="fc"><i>784</i>&nbsp;     * */</b>
+<i>784</i>&nbsp;     * */
 <i>785</i>&nbsp;    public static Tile getRugBCTile() {
-<i>786</i>&nbsp;        return rugBCTile;
+<b class="nc"><i>786</i>&nbsp;        return rugBCTile;</b>
 <i>787</i>&nbsp;    }
-<b class="fc"><i>788</i>&nbsp;</b>
+<i>788</i>&nbsp;
 <i>789</i>&nbsp;     /**
 <i>790</i>&nbsp;     * The method that returns the rug bottom right tile.
 <i>791</i>&nbsp;      * @return rugBRTile, which is the rug bottom right
 <i>792</i>&nbsp;      * tile image.
-<b class="fc"><i>793</i>&nbsp;     * */</b>
+<i>793</i>&nbsp;     * */
 <i>794</i>&nbsp;    public static Tile getRugBRTile() {
-<i>795</i>&nbsp;        return rugBRTile;
+<b class="nc"><i>795</i>&nbsp;        return rugBRTile;</b>
 <i>796</i>&nbsp;    }
-<b class="fc"><i>797</i>&nbsp;</b>
+<i>797</i>&nbsp;
 <i>798</i>&nbsp;     /**
 <i>799</i>&nbsp;     * The method that returns the grass long tile.
 <i>800</i>&nbsp;      * @return grassLongTile, which is the grass long
-<b class="fc"><i>801</i>&nbsp;      * tile image.</b>
+<i>801</i>&nbsp;      * tile image.
 <i>802</i>&nbsp;     * */
 <i>803</i>&nbsp;    public static Tile getGrassLongTile() {
-<i>804</i>&nbsp;        return grassLongTile;
-<b class="fc"><i>805</i>&nbsp;    }</b>
+<b class="nc"><i>804</i>&nbsp;        return grassLongTile;</b>
+<i>805</i>&nbsp;    }
 <i>806</i>&nbsp;
 <i>807</i>&nbsp;     /**
 <i>808</i>&nbsp;     * The method that returns the grass flowers tile.
 <i>809</i>&nbsp;      * @return grassFlowersTile, which is the grass flowers
-<b class="fc"><i>810</i>&nbsp;      * tile image.</b>
+<i>810</i>&nbsp;      * tile image.
 <i>811</i>&nbsp;     * */
 <i>812</i>&nbsp;    public static Tile getGrassFlowersTile() {
-<i>813</i>&nbsp;        return grassFlowersTile;
-<b class="fc"><i>814</i>&nbsp;    }</b>
+<b class="nc"><i>813</i>&nbsp;        return grassFlowersTile;</b>
+<i>814</i>&nbsp;    }
 <i>815</i>&nbsp;
 <i>816</i>&nbsp;     /**
 <i>817</i>&nbsp;     * The method that returns the grass rock tile.
 <i>818</i>&nbsp;      * @return grassRockTile, which is the grass rock
-<b class="fc"><i>819</i>&nbsp;      * tile image.</b>
+<i>819</i>&nbsp;      * tile image.
 <i>820</i>&nbsp;     * */
 <i>821</i>&nbsp;    public static Tile getGrassRockTile() {
-<i>822</i>&nbsp;        return grassRockTile;
-<b class="fc"><i>823</i>&nbsp;    }</b>
+<b class="nc"><i>822</i>&nbsp;        return grassRockTile;</b>
+<i>823</i>&nbsp;    }
 <i>824</i>&nbsp;
 <i>825</i>&nbsp;     /**
 <i>826</i>&nbsp;     * The method that returns the grass short tile.
-<b class="fc"><i>827</i>&nbsp;      * @return grassShortTile, which is the grass short</b>
+<i>827</i>&nbsp;      * @return grassShortTile, which is the grass short
 <i>828</i>&nbsp;      * tile image.
 <i>829</i>&nbsp;     * */
-<i>830</i>&nbsp;    public static Tile getGrassShortTile() {
-<i>831</i>&nbsp;        return grassShortTile;
-<b class="fc"><i>832</i>&nbsp;    }</b>
+<i>830</i>&nbsp;    public static Tile getMiniGameGrassShortTile() {
+<b class="nc"><i>831</i>&nbsp;        return miniGameGrassShortTile;</b>
+<i>832</i>&nbsp;    }
 <i>833</i>&nbsp;
-<i>834</i>&nbsp;     /**
-<i>835</i>&nbsp;     * The method that returns the door top tile.
-<b class="fc"><i>836</i>&nbsp;      * @return doorTopTile, which is the door top</b>
-<i>837</i>&nbsp;      * tile image.
+<i>834</i>&nbsp;    /**
+<i>835</i>&nbsp;     * The method that returns the grass short tile.
+<i>836</i>&nbsp;     * @return grassShortTile, which is the grass short
+<i>837</i>&nbsp;     * tile image.
 <i>838</i>&nbsp;     * */
-<i>839</i>&nbsp;    public static Tile getDoorTopTile() {
-<b class="fc"><i>840</i>&nbsp;        return doorTopTile;</b>
+<i>839</i>&nbsp;    public static Tile getGrassShortTile() {
+<b class="nc"><i>840</i>&nbsp;        return grassShortTile;</b>
 <i>841</i>&nbsp;    }
 <i>842</i>&nbsp;
 <i>843</i>&nbsp;     /**
-<i>844</i>&nbsp;     * The method that returns the door bottom tile.
-<b class="fc"><i>845</i>&nbsp;      * @return doorBotTile, which is the door bottom</b>
+<i>844</i>&nbsp;     * The method that returns the door top tile.
+<i>845</i>&nbsp;      * @return doorTopTile, which is the door top
 <i>846</i>&nbsp;      * tile image.
 <i>847</i>&nbsp;     * */
-<i>848</i>&nbsp;    public static Tile getDoorBotTile() {
-<b class="fc"><i>849</i>&nbsp;        return doorBotTile;</b>
+<i>848</i>&nbsp;    public static Tile getDoorTopTile() {
+<b class="nc"><i>849</i>&nbsp;        return doorTopTile;</b>
 <i>850</i>&nbsp;    }
 <i>851</i>&nbsp;
 <i>852</i>&nbsp;     /**
-<b class="fc"><i>853</i>&nbsp;     * The method that returns the path tile.</b>
-<i>854</i>&nbsp;      * @return pathTile, which is the path
+<i>853</i>&nbsp;     * The method that returns the door bottom tile.
+<i>854</i>&nbsp;      * @return doorBotTile, which is the door bottom
 <i>855</i>&nbsp;      * tile image.
 <i>856</i>&nbsp;     * */
-<b class="fc"><i>857</i>&nbsp;    public static Tile getPathTile() {</b>
-<i>858</i>&nbsp;        return pathTile;
+<i>857</i>&nbsp;    public static Tile getDoorBotTile() {
+<b class="nc"><i>858</i>&nbsp;        return doorBotTile;</b>
 <i>859</i>&nbsp;    }
 <i>860</i>&nbsp;
-<b class="fc"><i>861</i>&nbsp;    /**</b>
-<i>862</i>&nbsp;     * Here is create a WoodFloorTile object and it&#39;s id is set.
-<i>863</i>&nbsp;     * */
-<i>864</i>&nbsp;    public final static Tile  woodFloorTile = new WoodFloorTile(10);
-<b class="fc"><i>865</i>&nbsp;    /**</b>
-<i>866</i>&nbsp;     * Here is create a kitchenFloorTile object and it&#39;s id is set.
-<i>867</i>&nbsp;     * */
-<i>868</i>&nbsp;    public final static  Tile kitchenFloorTile = new KitchenFloorTile(11);
-<b class="fc"><i>869</i>&nbsp;    /**</b>
-<i>870</i>&nbsp;     * Here is create a bathFloorTile object and it&#39;s id is set.
-<i>871</i>&nbsp;     * */
-<i>872</i>&nbsp;    public final static  Tile bathFloorTile = new BathFloorTile(12);
-<b class="fc"><i>873</i>&nbsp;    /**</b>
-<i>874</i>&nbsp;     * Here is create a stoneFloorTile object and it&#39;s id is set.
-<i>875</i>&nbsp;     * */
-<i>876</i>&nbsp;    public final static  Tile stoneFloorTile = new StoneFloorTile(13);
-<i>877</i>&nbsp;
-<b class="fc"><i>878</i>&nbsp;    /**</b>
-<i>879</i>&nbsp;     *  Here is create a wallLeftTile object and it&#39;s id is set.
+<i>861</i>&nbsp;     /**
+<i>862</i>&nbsp;     * The method that returns the path tile.
+<i>863</i>&nbsp;      * @return pathTile, which is the path
+<i>864</i>&nbsp;      * tile image.
+<i>865</i>&nbsp;     * */
+<i>866</i>&nbsp;    public static Tile getPathTile() {
+<b class="nc"><i>867</i>&nbsp;        return pathTile;</b>
+<i>868</i>&nbsp;    }
+<i>869</i>&nbsp;
+<i>870</i>&nbsp;    /**
+<i>871</i>&nbsp;     * Here is create a WoodFloorTile object and it&#39;s id is set.
+<i>872</i>&nbsp;     * */
+<b class="fc"><i>873</i>&nbsp;    public final static Tile  woodFloorTile = new WoodFloorTile(10);</b>
+<i>874</i>&nbsp;    /**
+<i>875</i>&nbsp;     * Here is create a kitchenFloorTile object and it&#39;s id is set.
+<i>876</i>&nbsp;     * */
+<b class="fc"><i>877</i>&nbsp;    public final static  Tile kitchenFloorTile = new KitchenFloorTile(11);</b>
+<i>878</i>&nbsp;    /**
+<i>879</i>&nbsp;     * Here is create a bathFloorTile object and it&#39;s id is set.
 <i>880</i>&nbsp;     * */
-<i>881</i>&nbsp;    public final static  Tile wallLeftTile = new WallLeftTile(14);
-<b class="fc"><i>882</i>&nbsp;    /**</b>
-<i>883</i>&nbsp;     *  Here is create a wallCenterTile object and it&#39;s id is set.
+<b class="fc"><i>881</i>&nbsp;    public final static  Tile bathFloorTile = new BathFloorTile(12);</b>
+<i>882</i>&nbsp;    /**
+<i>883</i>&nbsp;     * Here is create a stoneFloorTile object and it&#39;s id is set.
 <i>884</i>&nbsp;     * */
-<i>885</i>&nbsp;    public final static  Tile wallCenterTile = new WallCenterTile(15);
-<b class="fc"><i>886</i>&nbsp;    /**</b>
-<i>887</i>&nbsp;     *  Here is create a wallRightTile object and it&#39;s id is set.
-<i>888</i>&nbsp;     * */
-<i>889</i>&nbsp;    public final static  Tile wallRightTile = new WallRightTile(16);
-<b class="fc"><i>890</i>&nbsp;    /**</b>
-<i>891</i>&nbsp;     *  Here is create a wallEndTile object and it&#39;s id is set.
-<i>892</i>&nbsp;     * */
-<i>893</i>&nbsp;    public final static  Tile wallEndTile = new WallEndTile(17);
-<i>894</i>&nbsp;
-<b class="fc"><i>895</i>&nbsp;    /**</b>
-<i>896</i>&nbsp;     *  Here is create a ceilingLeftTile object and it&#39;s id is set.
+<b class="fc"><i>885</i>&nbsp;    public final static  Tile stoneFloorTile = new StoneFloorTile(13);</b>
+<i>886</i>&nbsp;
+<i>887</i>&nbsp;    /**
+<i>888</i>&nbsp;     *  Here is create a wallLeftTile object and it&#39;s id is set.
+<i>889</i>&nbsp;     * */
+<b class="fc"><i>890</i>&nbsp;    public final static  Tile wallLeftTile = new WallLeftTile(14);</b>
+<i>891</i>&nbsp;    /**
+<i>892</i>&nbsp;     *  Here is create a wallCenterTile object and it&#39;s id is set.
+<i>893</i>&nbsp;     * */
+<b class="fc"><i>894</i>&nbsp;    public final static  Tile wallCenterTile = new WallCenterTile(15);</b>
+<i>895</i>&nbsp;    /**
+<i>896</i>&nbsp;     *  Here is create a wallRightTile object and it&#39;s id is set.
 <i>897</i>&nbsp;     * */
-<i>898</i>&nbsp;    public final static  Tile ceilingLeftTile = new CeilingLeftTile(18);
-<b class="fc"><i>899</i>&nbsp;    /**</b>
-<i>900</i>&nbsp;     *  Here is create a ceilingCenterTile object and it&#39;s id is set.
+<b class="fc"><i>898</i>&nbsp;    public final static  Tile wallRightTile = new WallRightTile(16);</b>
+<i>899</i>&nbsp;    /**
+<i>900</i>&nbsp;     *  Here is create a wallEndTile object and it&#39;s id is set.
 <i>901</i>&nbsp;     * */
-<i>902</i>&nbsp;    public final static  Tile ceilingCenterTile = new CeilingCenterTile(19);
-<b class="fc"><i>903</i>&nbsp;</b>
+<b class="fc"><i>902</i>&nbsp;    public final static  Tile wallEndTile = new WallEndTile(17);</b>
+<i>903</i>&nbsp;
 <i>904</i>&nbsp;    /**
-<i>905</i>&nbsp;     *  Here is create a ceilingRightTile object and it&#39;s id is set.
+<i>905</i>&nbsp;     *  Here is create a ceilingLeftTile object and it&#39;s id is set.
 <i>906</i>&nbsp;     * */
-<b class="fc"><i>907</i>&nbsp;    public final static  Tile ceilingRightTile = new CeilingRightTile(20);</b>
+<b class="fc"><i>907</i>&nbsp;    public final static  Tile ceilingLeftTile = new CeilingLeftTile(18);</b>
 <i>908</i>&nbsp;    /**
-<i>909</i>&nbsp;     *  Here is create a ceilingEndTile object and it&#39;s id is set.
+<i>909</i>&nbsp;     *  Here is create a ceilingCenterTile object and it&#39;s id is set.
 <i>910</i>&nbsp;     * */
-<b class="fc"><i>911</i>&nbsp;    public final static  Tile ceilingEndTile = new CeilingEndTile(21);</b>
-<i>912</i>&nbsp;    /**
-<i>913</i>&nbsp;     *  Here is create a ceilingDownTile object and it&#39;s id is set.
-<i>914</i>&nbsp;     * */
-<b class="fc"><i>915</i>&nbsp;    public final static  Tile ceilingDownTile = new CeilingDownTile(22);</b>
-<i>916</i>&nbsp;    /**
-<i>917</i>&nbsp;     *  Here is create a ceilingBCLTile object and it&#39;s id is set.
-<i>918</i>&nbsp;     * */
-<i>919</i>&nbsp;    public final static  Tile ceilingBCLTile = new CeilingBCLTile(23);
-<b class="fc"><i>920</i>&nbsp;    /**</b>
-<i>921</i>&nbsp;     *  Here is create a ceilingBCRTile object and it&#39;s id is set.
-<i>922</i>&nbsp;     * */
-<i>923</i>&nbsp;    public final static  Tile ceilingBCRTile = new CeilingBCRTile(24);
-<b class="fc"><i>924</i>&nbsp;    /**</b>
-<i>925</i>&nbsp;     *  Here is create a ceilingTCLTile object and it&#39;s id is set.
-<i>926</i>&nbsp;     * */
-<i>927</i>&nbsp;    public final static  Tile ceilingTCLTile = new CeilingTCLTile(25);
-<b class="fc"><i>928</i>&nbsp;    /**</b>
-<i>929</i>&nbsp;     *  Here is create a ceilingTCRTile object and it&#39;s id is set.
-<i>930</i>&nbsp;     * */
-<i>931</i>&nbsp;    public final static  Tile ceilingTCRTile = new CeilingTCRTile(26);
-<b class="fc"><i>932</i>&nbsp;    /**</b>
-<i>933</i>&nbsp;     *  Here is create a ceilingPDownTile object and it&#39;s id is set.
-<i>934</i>&nbsp;     * */
-<i>935</i>&nbsp;    public final static  Tile ceilingPDownTile = new CeilingPDownTile(92);
-<i>936</i>&nbsp;    /**
-<b class="fc"><i>937</i>&nbsp;     *  Here is create a ceilingPRightTile object and it&#39;s id is set.</b>
-<i>938</i>&nbsp;     * */
-<i>939</i>&nbsp;    public final static  Tile ceilingPRightTile = new CeilingPRightTile(93);
-<i>940</i>&nbsp;    /**
-<b class="fc"><i>941</i>&nbsp;     *  Here is create a ceilingPLeftTile object and it&#39;s id is set.</b>
-<i>942</i>&nbsp;     * */
-<i>943</i>&nbsp;    public final static  Tile ceilingPLeftTile = new CeilingPLeftTile(94);
-<i>944</i>&nbsp;
-<b class="fc"><i>945</i>&nbsp;    /**</b>
-<i>946</i>&nbsp;     *  Here is create a outWallTLTile object and it&#39;s id is set.
+<b class="fc"><i>911</i>&nbsp;    public final static  Tile ceilingCenterTile = new CeilingCenterTile(19);</b>
+<i>912</i>&nbsp;
+<i>913</i>&nbsp;    /**
+<i>914</i>&nbsp;     *  Here is create a ceilingRightTile object and it&#39;s id is set.
+<i>915</i>&nbsp;     * */
+<b class="fc"><i>916</i>&nbsp;    public final static  Tile ceilingRightTile = new CeilingRightTile(20);</b>
+<i>917</i>&nbsp;    /**
+<i>918</i>&nbsp;     *  Here is create a ceilingEndTile object and it&#39;s id is set.
+<i>919</i>&nbsp;     * */
+<b class="fc"><i>920</i>&nbsp;    public final static  Tile ceilingEndTile = new CeilingEndTile(21);</b>
+<i>921</i>&nbsp;    /**
+<i>922</i>&nbsp;     *  Here is create a ceilingDownTile object and it&#39;s id is set.
+<i>923</i>&nbsp;     * */
+<b class="fc"><i>924</i>&nbsp;    public final static  Tile ceilingDownTile = new CeilingDownTile(22);</b>
+<i>925</i>&nbsp;    /**
+<i>926</i>&nbsp;     *  Here is create a ceilingBCLTile object and it&#39;s id is set.
+<i>927</i>&nbsp;     * */
+<b class="fc"><i>928</i>&nbsp;    public final static  Tile ceilingBCLTile = new CeilingBCLTile(23);</b>
+<i>929</i>&nbsp;    /**
+<i>930</i>&nbsp;     *  Here is create a ceilingBCRTile object and it&#39;s id is set.
+<i>931</i>&nbsp;     * */
+<b class="fc"><i>932</i>&nbsp;    public final static  Tile ceilingBCRTile = new CeilingBCRTile(24);</b>
+<i>933</i>&nbsp;    /**
+<i>934</i>&nbsp;     *  Here is create a ceilingTCLTile object and it&#39;s id is set.
+<i>935</i>&nbsp;     * */
+<b class="fc"><i>936</i>&nbsp;    public final static  Tile ceilingTCLTile = new CeilingTCLTile(25);</b>
+<i>937</i>&nbsp;    /**
+<i>938</i>&nbsp;     *  Here is create a ceilingTCRTile object and it&#39;s id is set.
+<i>939</i>&nbsp;     * */
+<b class="fc"><i>940</i>&nbsp;    public final static  Tile ceilingTCRTile = new CeilingTCRTile(26);</b>
+<i>941</i>&nbsp;    /**
+<i>942</i>&nbsp;     *  Here is create a ceilingPDownTile object and it&#39;s id is set.
+<i>943</i>&nbsp;     * */
+<b class="fc"><i>944</i>&nbsp;    public final static  Tile ceilingPDownTile = new CeilingPDownTile(92);</b>
+<i>945</i>&nbsp;    /**
+<i>946</i>&nbsp;     *  Here is create a ceilingPRightTile object and it&#39;s id is set.
 <i>947</i>&nbsp;     * */
-<i>948</i>&nbsp;    public final static  Tile outWallTLTile = new OutWallTLTile(01);
-<b class="fc"><i>949</i>&nbsp;    /**</b>
-<i>950</i>&nbsp;     *  Here is create a outWallTCTile object and it&#39;s id is set.
+<b class="fc"><i>948</i>&nbsp;    public final static  Tile ceilingPRightTile = new CeilingPRightTile(93);</b>
+<i>949</i>&nbsp;    /**
+<i>950</i>&nbsp;     *  Here is create a ceilingPLeftTile object and it&#39;s id is set.
 <i>951</i>&nbsp;     * */
-<i>952</i>&nbsp;    public final static  Tile outWallTCTile = new OutWallTCTile(02);
-<i>953</i>&nbsp;    /**
-<b class="fc"><i>954</i>&nbsp;     *  Here is create a outWallTRTile object and it&#39;s id is set.</b>
-<i>955</i>&nbsp;     * */
-<i>956</i>&nbsp;    public final static  Tile outWallTRTile = new OutWallTRTile(03);
-<i>957</i>&nbsp;    /**
-<b class="fc"><i>958</i>&nbsp;     *  Here is create a outWallBLTile object and it&#39;s id is set.</b>
-<i>959</i>&nbsp;     * */
-<i>960</i>&nbsp;    public final static  Tile outWallBLTile = new OutWallBLTile(04);
-<i>961</i>&nbsp;    /**
-<i>962</i>&nbsp;     * Here is create a outWallBCTile object and it&#39;s id is set.
-<b class="fc"><i>963</i>&nbsp;     * */</b>
-<i>964</i>&nbsp;    public final static  Tile outWallBCTile = new OutWallBCTile(05);
-<i>965</i>&nbsp;    /**
-<i>966</i>&nbsp;     *Here is create a outWallBRTile object and it&#39;s id is set.
-<b class="fc"><i>967</i>&nbsp;     * */</b>
-<i>968</i>&nbsp;    public final static  Tile outWallBRTile = new OutWallBRTile(06);
-<i>969</i>&nbsp;
+<b class="fc"><i>952</i>&nbsp;    public final static  Tile ceilingPLeftTile = new CeilingPLeftTile(94);</b>
+<i>953</i>&nbsp;
+<i>954</i>&nbsp;    /**
+<i>955</i>&nbsp;     *  Here is create a outWallTLTile object and it&#39;s id is set.
+<i>956</i>&nbsp;     * */
+<b class="fc"><i>957</i>&nbsp;    public final static  Tile outWallTLTile = new OutWallTLTile(01);</b>
+<i>958</i>&nbsp;    /**
+<i>959</i>&nbsp;     *  Here is create a outWallTCTile object and it&#39;s id is set.
+<i>960</i>&nbsp;     * */
+<b class="fc"><i>961</i>&nbsp;    public final static  Tile outWallTCTile = new OutWallTCTile(02);</b>
+<i>962</i>&nbsp;    /**
+<i>963</i>&nbsp;     *  Here is create a outWallTRTile object and it&#39;s id is set.
+<i>964</i>&nbsp;     * */
+<b class="fc"><i>965</i>&nbsp;    public final static  Tile outWallTRTile = new OutWallTRTile(03);</b>
+<i>966</i>&nbsp;    /**
+<i>967</i>&nbsp;     *  Here is create a outWallBLTile object and it&#39;s id is set.
+<i>968</i>&nbsp;     * */
+<b class="fc"><i>969</i>&nbsp;    public final static  Tile outWallBLTile = new OutWallBLTile(04);</b>
 <i>970</i>&nbsp;    /**
-<i>971</i>&nbsp;     * Here is create a plantTopTile object and it&#39;s id is set.
-<b class="fc"><i>972</i>&nbsp;     * */</b>
-<i>973</i>&nbsp;    public final static  Tile plantTopTile = new PlantTopTile(27);
+<i>971</i>&nbsp;     * Here is create a outWallBCTile object and it&#39;s id is set.
+<i>972</i>&nbsp;     * */
+<b class="fc"><i>973</i>&nbsp;    public final static  Tile outWallBCTile = new OutWallBCTile(05);</b>
 <i>974</i>&nbsp;    /**
-<i>975</i>&nbsp;     * Here is create a plantBotTile object and it&#39;s id is set.
-<b class="fc"><i>976</i>&nbsp;     * */</b>
-<i>977</i>&nbsp;    public final static  Tile plantBotTile = new PlantBotTile(28);
+<i>975</i>&nbsp;     *Here is create a outWallBRTile object and it&#39;s id is set.
+<i>976</i>&nbsp;     * */
+<b class="fc"><i>977</i>&nbsp;    public final static  Tile outWallBRTile = new OutWallBRTile(06);</b>
 <i>978</i>&nbsp;
 <i>979</i>&nbsp;    /**
-<b class="fc"><i>980</i>&nbsp;     * Here is create a kitTableTLTile object and it&#39;s id is set.</b>
+<i>980</i>&nbsp;     * Here is create a plantTopTile object and it&#39;s id is set.
 <i>981</i>&nbsp;     * */
-<i>982</i>&nbsp;    public final static  Tile kitTableTLTile = new KitTableTLTile(29);
+<b class="fc"><i>982</i>&nbsp;    public final static  Tile plantTopTile = new PlantTopTile(27);</b>
 <i>983</i>&nbsp;    /**
-<b class="fc"><i>984</i>&nbsp;     * Here is create a kitTableTRTile object and it&#39;s id is set.</b>
+<i>984</i>&nbsp;     * Here is create a plantBotTile object and it&#39;s id is set.
 <i>985</i>&nbsp;     * */
-<i>986</i>&nbsp;    public final static  Tile kitTableTRTile = new KitTableTRTile(30);
-<i>987</i>&nbsp;    /**
-<i>988</i>&nbsp;     * Here is create a kitTableBLTile object and it&#39;s id is set.
-<b class="fc"><i>989</i>&nbsp;     * */</b>
-<i>990</i>&nbsp;    public final static  Tile kitTableBLTile = new KitTableBLTile(31);
-<i>991</i>&nbsp;    /**
-<i>992</i>&nbsp;     * Here is create a kitTableBRTile object and it&#39;s id is set.
-<b class="fc"><i>993</i>&nbsp;     * */</b>
-<i>994</i>&nbsp;    public final static  Tile kitTableBRTile = new KitTableBRTile(32);
-<i>995</i>&nbsp;
+<b class="fc"><i>986</i>&nbsp;    public final static  Tile plantBotTile = new PlantBotTile(28);</b>
+<i>987</i>&nbsp;
+<i>988</i>&nbsp;    /**
+<i>989</i>&nbsp;     * Here is create a kitTableTLTile object and it&#39;s id is set.
+<i>990</i>&nbsp;     * */
+<b class="fc"><i>991</i>&nbsp;    public final static  Tile kitTableTLTile = new KitTableTLTile(29);</b>
+<i>992</i>&nbsp;    /**
+<i>993</i>&nbsp;     * Here is create a kitTableTRTile object and it&#39;s id is set.
+<i>994</i>&nbsp;     * */
+<b class="fc"><i>995</i>&nbsp;    public final static  Tile kitTableTRTile = new KitTableTRTile(30);</b>
 <i>996</i>&nbsp;    /**
-<b class="fc"><i>997</i>&nbsp;     * Here is create a chairLeftTile object and it&#39;s id is set.</b>
+<i>997</i>&nbsp;     * Here is create a kitTableBLTile object and it&#39;s id is set.
 <i>998</i>&nbsp;     * */
-<i>999</i>&nbsp;    public final static  Tile chairLeftTile = new ChairLeftTile(33);
+<b class="fc"><i>999</i>&nbsp;    public final static  Tile kitTableBLTile = new KitTableBLTile(31);</b>
 <i>1000</i>&nbsp;    /**
-<b class="fc"><i>1001</i>&nbsp;     * Here is create a chairRightTile object and it&#39;s id is set.</b>
+<i>1001</i>&nbsp;     * Here is create a kitTableBRTile object and it&#39;s id is set.
 <i>1002</i>&nbsp;     * */
-<i>1003</i>&nbsp;    public final static  Tile chairRightTile = new ChairRightTile(34);
+<b class="fc"><i>1003</i>&nbsp;    public final static  Tile kitTableBRTile = new KitTableBRTile(32);</b>
 <i>1004</i>&nbsp;
 <i>1005</i>&nbsp;    /**
-<b class="fc"><i>1006</i>&nbsp;     * Here is create a counterCenterTile object and it&#39;s id is set.</b>
+<i>1006</i>&nbsp;     * Here is create a chairLeftTile object and it&#39;s id is set.
 <i>1007</i>&nbsp;     * */
-<i>1008</i>&nbsp;    public final static  Tile counterCenterTile = new CounterCenterTile(35);
+<b class="fc"><i>1008</i>&nbsp;    public final static  Tile chairLeftTile = new ChairLeftTile(33);</b>
 <i>1009</i>&nbsp;    /**
-<b class="fc"><i>1010</i>&nbsp;     *Here is create a counterCornerTile object and it&#39;s id is set.</b>
+<i>1010</i>&nbsp;     * Here is create a chairRightTile object and it&#39;s id is set.
 <i>1011</i>&nbsp;     * */
-<i>1012</i>&nbsp;    public final static  Tile counterCornerTile = new CounterCornerTile(36);
-<i>1013</i>&nbsp;    /**
-<b class="fc"><i>1014</i>&nbsp;     * Here is create a counterEndTile object and it&#39;s id is set.</b>
-<i>1015</i>&nbsp;     * */
-<i>1016</i>&nbsp;    public final static  Tile counterEndTile = new CounterEndTile(37);
-<i>1017</i>&nbsp;
-<b class="fc"><i>1018</i>&nbsp;    /**</b>
-<i>1019</i>&nbsp;     * Here is create a dogBowlTile object and it&#39;s id is set.
+<b class="fc"><i>1012</i>&nbsp;    public final static  Tile chairRightTile = new ChairRightTile(34);</b>
+<i>1013</i>&nbsp;
+<i>1014</i>&nbsp;    /**
+<i>1015</i>&nbsp;     * Here is create a counterCenterTile object and it&#39;s id is set.
+<i>1016</i>&nbsp;     * */
+<b class="fc"><i>1017</i>&nbsp;    public final static  Tile counterCenterTile = new CounterCenterTile(35);</b>
+<i>1018</i>&nbsp;    /**
+<i>1019</i>&nbsp;     *Here is create a counterCornerTile object and it&#39;s id is set.
 <i>1020</i>&nbsp;     * */
-<i>1021</i>&nbsp;    public final static  Tile dogBowlTile = new DogBowlTile(38);
-<b class="fc"><i>1022</i>&nbsp;    /**</b>
-<i>1023</i>&nbsp;     * Here is create a dogBoneTile object and it&#39;s id is set.
+<b class="fc"><i>1021</i>&nbsp;    public final static  Tile counterCornerTile = new CounterCornerTile(36);</b>
+<i>1022</i>&nbsp;    /**
+<i>1023</i>&nbsp;     * Here is create a counterEndTile object and it&#39;s id is set.
 <i>1024</i>&nbsp;     * */
-<i>1025</i>&nbsp;    public final static  Tile dogBoneTile = new DogBoneTile(39);
-<b class="fc"><i>1026</i>&nbsp;    /**</b>
-<i>1027</i>&nbsp;     * Here is create a boxTile object and it&#39;s id is set.
-<i>1028</i>&nbsp;     * */
-<i>1029</i>&nbsp;    public final static  Tile boxTile = new BoxTile(40);
-<i>1030</i>&nbsp;
-<b class="fc"><i>1031</i>&nbsp;    /**</b>
-<i>1032</i>&nbsp;     * Here is create a fridgeTopTile object and it&#39;s id is set.
+<b class="fc"><i>1025</i>&nbsp;    public final static  Tile counterEndTile = new CounterEndTile(37);</b>
+<i>1026</i>&nbsp;
+<i>1027</i>&nbsp;    /**
+<i>1028</i>&nbsp;     * Here is create a dogBowlTile object and it&#39;s id is set.
+<i>1029</i>&nbsp;     * */
+<b class="fc"><i>1030</i>&nbsp;    public final static  Tile dogBowlTile = new DogBowlTile(38);</b>
+<i>1031</i>&nbsp;    /**
+<i>1032</i>&nbsp;     * Here is create a dogBoneTile object and it&#39;s id is set.
 <i>1033</i>&nbsp;     * */
-<i>1034</i>&nbsp;    public final static  Tile fridgeTopTile = new FridgeTopTile(41);
-<b class="fc"><i>1035</i>&nbsp;    /**</b>
-<i>1036</i>&nbsp;     * Here is create a fridgeBotTile object and it&#39;s id is set.
+<b class="fc"><i>1034</i>&nbsp;    public final static  Tile dogBoneTile = new DogBoneTile(39);</b>
+<i>1035</i>&nbsp;    /**
+<i>1036</i>&nbsp;     * Here is create a boxTile object and it&#39;s id is set.
 <i>1037</i>&nbsp;     * */
-<i>1038</i>&nbsp;    public final static  Tile fridgeBotTile = new FridgeBotTile(42);
-<b class="fc"><i>1039</i>&nbsp;    /**</b>
-<i>1040</i>&nbsp;     * Here is create a stoveTopTile object and it&#39;s id is set.
-<i>1041</i>&nbsp;     * */
-<i>1042</i>&nbsp;    public final static  Tile stoveTopTile = new StoveTopTile(43);
-<b class="fc"><i>1043</i>&nbsp;    /**</b>
-<i>1044</i>&nbsp;     * Here is create a stoveBotTile object and it&#39;s id is set.
-<i>1045</i>&nbsp;     * */
-<i>1046</i>&nbsp;    public final static  Tile stoveBotTile = new StoveBotTile(44);
-<i>1047</i>&nbsp;    /**
-<b class="fc"><i>1048</i>&nbsp;     * Here is create a sinkLTopTile object and it&#39;s id is set.</b>
-<i>1049</i>&nbsp;     * */
-<i>1050</i>&nbsp;    public final static  Tile sinkLTopTile = new SinkLTopTile(45);
-<i>1051</i>&nbsp;    /**
-<b class="fc"><i>1052</i>&nbsp;     * Here is create a sinkLBotTile object and it&#39;s id is set.</b>
-<i>1053</i>&nbsp;     * */
-<i>1054</i>&nbsp;    public final static  Tile sinkLBotTile = new SinkLBotTile(46);
-<i>1055</i>&nbsp;    /**
-<i>1056</i>&nbsp;     * Here is create a sinkRTopTile object and it&#39;s id is set.
-<b class="fc"><i>1057</i>&nbsp;     * */</b>
-<i>1058</i>&nbsp;    public final static  Tile sinkRTopTile = new SinkRTopTile(47);
-<i>1059</i>&nbsp;    /**
-<i>1060</i>&nbsp;     * Here is create a sinkRBotTile object and it&#39;s id is set.
-<i>1061</i>&nbsp;     * */
-<i>1062</i>&nbsp;    public final static  Tile sinkRBotTile = new SinkRBotTile(48);
-<i>1063</i>&nbsp;
+<b class="fc"><i>1038</i>&nbsp;    public final static  Tile boxTile = new BoxTile(40);</b>
+<i>1039</i>&nbsp;
+<i>1040</i>&nbsp;    /**
+<i>1041</i>&nbsp;     * Here is create a fridgeTopTile object and it&#39;s id is set.
+<i>1042</i>&nbsp;     * */
+<b class="fc"><i>1043</i>&nbsp;    public final static  Tile fridgeTopTile = new FridgeTopTile(41);</b>
+<i>1044</i>&nbsp;    /**
+<i>1045</i>&nbsp;     * Here is create a fridgeBotTile object and it&#39;s id is set.
+<i>1046</i>&nbsp;     * */
+<b class="fc"><i>1047</i>&nbsp;    public final static  Tile fridgeBotTile = new FridgeBotTile(42);</b>
+<i>1048</i>&nbsp;    /**
+<i>1049</i>&nbsp;     * Here is create a stoveTopTile object and it&#39;s id is set.
+<i>1050</i>&nbsp;     * */
+<b class="fc"><i>1051</i>&nbsp;    public final static  Tile stoveTopTile = new StoveTopTile(43);</b>
+<i>1052</i>&nbsp;    /**
+<i>1053</i>&nbsp;     * Here is create a stoveBotTile object and it&#39;s id is set.
+<i>1054</i>&nbsp;     * */
+<b class="fc"><i>1055</i>&nbsp;    public final static  Tile stoveBotTile = new StoveBotTile(44);</b>
+<i>1056</i>&nbsp;    /**
+<i>1057</i>&nbsp;     * Here is create a sinkLTopTile object and it&#39;s id is set.
+<i>1058</i>&nbsp;     * */
+<b class="fc"><i>1059</i>&nbsp;    public final static  Tile sinkLTopTile = new SinkLTopTile(45);</b>
+<i>1060</i>&nbsp;    /**
+<i>1061</i>&nbsp;     * Here is create a sinkLBotTile object and it&#39;s id is set.
+<i>1062</i>&nbsp;     * */
+<b class="fc"><i>1063</i>&nbsp;    public final static  Tile sinkLBotTile = new SinkLBotTile(46);</b>
 <i>1064</i>&nbsp;    /**
-<i>1065</i>&nbsp;     * Here is create a phoneTile object and it&#39;s id is set.
+<i>1065</i>&nbsp;     * Here is create a sinkRTopTile object and it&#39;s id is set.
 <i>1066</i>&nbsp;     * */
-<i>1067</i>&nbsp;    public final static  Tile phoneTile = new PhoneTile(49);
+<b class="fc"><i>1067</i>&nbsp;    public final static  Tile sinkRTopTile = new SinkRTopTile(47);</b>
 <i>1068</i>&nbsp;    /**
-<i>1069</i>&nbsp;     * Here is create a kitRugTile object and it&#39;s id is set.
+<i>1069</i>&nbsp;     * Here is create a sinkRBotTile object and it&#39;s id is set.
 <i>1070</i>&nbsp;     * */
-<i>1071</i>&nbsp;    public final static  Tile kitRugTile = new KitRugTile(50);
-<b class="fc"><i>1072</i>&nbsp;    /**</b>
-<b class="fc"><i>1073</i>&nbsp;     * Here is create a clockTile object and it&#39;s id is set.</b>
-<b class="fc"><i>1074</i>&nbsp;     * */</b>
-<i>1075</i>&nbsp;    public final static  Tile clockTile = new ClockTile(51);
-<b class="fc"><i>1076</i>&nbsp;    /**</b>
-<b class="fc"><i>1077</i>&nbsp;     * Here is create a endTableTile object and it&#39;s id is set.</b>
-<i>1078</i>&nbsp;     * */
-<i>1079</i>&nbsp;    public final static  Tile endTableTile = new EndTableTile(52);
-<i>1080</i>&nbsp;
+<b class="fc"><i>1071</i>&nbsp;    public final static  Tile sinkRBotTile = new SinkRBotTile(48);</b>
+<i>1072</i>&nbsp;
+<i>1073</i>&nbsp;    /**
+<i>1074</i>&nbsp;     * Here is create a phoneTile object and it&#39;s id is set.
+<i>1075</i>&nbsp;     * */
+<b class="fc"><i>1076</i>&nbsp;    public final static  Tile phoneTile = new PhoneTile(49);</b>
+<i>1077</i>&nbsp;    /**
+<i>1078</i>&nbsp;     * Here is create a kitRugTile object and it&#39;s id is set.
+<i>1079</i>&nbsp;     * */
+<b class="fc"><i>1080</i>&nbsp;    public final static  Tile kitRugTile = new KitRugTile(50);</b>
 <i>1081</i>&nbsp;    /**
-<i>1082</i>&nbsp;     * Here is create a toiletTopTile object and it&#39;s id is set.
+<i>1082</i>&nbsp;     * Here is create a clockTile object and it&#39;s id is set.
 <i>1083</i>&nbsp;     * */
-<b class="nc"><i>1084</i>&nbsp;    public final static  Tile toiletTopTile = new ToiletTopTile(53);</b>
+<b class="fc"><i>1084</i>&nbsp;    public final static  Tile clockTile = new ClockTile(51);</b>
 <i>1085</i>&nbsp;    /**
-<i>1086</i>&nbsp;     * Here is create a toiletBotTile object and it&#39;s id is set.
+<i>1086</i>&nbsp;     * Here is create a endTableTile object and it&#39;s id is set.
 <i>1087</i>&nbsp;     * */
-<i>1088</i>&nbsp;    public final static  Tile toiletBotTile = new ToiletBotTile(54);
-<i>1089</i>&nbsp;    /**
-<b class="fc"><i>1090</i>&nbsp;     * Here is create a bathSinkTopTile object and it&#39;s id is set.</b>
-<b class="fc"><i>1091</i>&nbsp;     * */</b>
-<i>1092</i>&nbsp;    public final static  Tile bathSinkTopTile = new BathSinkTopTile(55);
-<i>1093</i>&nbsp;    /**
-<i>1094</i>&nbsp;     * Here is create a bathSinkBotTile object and it&#39;s id is set.
-<i>1095</i>&nbsp;     * */
-<i>1096</i>&nbsp;    public final static  Tile bathSinkBotTile = new BathSinkBotTile(56);
-<b class="fc"><i>1097</i>&nbsp;    /**</b>
-<i>1098</i>&nbsp;     * Here is create a showerTopTile object and it&#39;s id is set.
-<i>1099</i>&nbsp;     * */
-<i>1100</i>&nbsp;    public final static  Tile showerTopTile = new ShowerTopTile(57);
-<i>1101</i>&nbsp;    /**
-<i>1102</i>&nbsp;     * Here is create a showerBotTile object and it&#39;s id is set.
-<i>1103</i>&nbsp;     * */
-<b class="nc"><i>1104</i>&nbsp;    public final static  Tile showerBotTile = new ShowerBotTile(58);</b>
-<i>1105</i>&nbsp;
+<b class="fc"><i>1088</i>&nbsp;    public final static  Tile endTableTile = new EndTableTile(52);</b>
+<i>1089</i>&nbsp;
+<i>1090</i>&nbsp;    /**
+<i>1091</i>&nbsp;     * Here is create a toiletTopTile object and it&#39;s id is set.
+<i>1092</i>&nbsp;     * */
+<b class="fc"><i>1093</i>&nbsp;    public final static  Tile toiletTopTile = new ToiletTopTile(53);</b>
+<i>1094</i>&nbsp;    /**
+<i>1095</i>&nbsp;     * Here is create a toiletBotTile object and it&#39;s id is set.
+<i>1096</i>&nbsp;     * */
+<b class="fc"><i>1097</i>&nbsp;    public final static  Tile toiletBotTile = new ToiletBotTile(54);</b>
+<i>1098</i>&nbsp;    /**
+<i>1099</i>&nbsp;     * Here is create a bathSinkTopTile object and it&#39;s id is set.
+<i>1100</i>&nbsp;     * */
+<b class="fc"><i>1101</i>&nbsp;    public final static  Tile bathSinkTopTile = new BathSinkTopTile(55);</b>
+<i>1102</i>&nbsp;    /**
+<i>1103</i>&nbsp;     * Here is create a bathSinkBotTile object and it&#39;s id is set.
+<i>1104</i>&nbsp;     * */
+<b class="fc"><i>1105</i>&nbsp;    public final static  Tile bathSinkBotTile = new BathSinkBotTile(56);</b>
 <i>1106</i>&nbsp;    /**
-<i>1107</i>&nbsp;     * Here is create a couchLeftTile object and it&#39;s id is set.
+<i>1107</i>&nbsp;     * Here is create a showerTopTile object and it&#39;s id is set.
 <i>1108</i>&nbsp;     * */
-<i>1109</i>&nbsp;    public final static  Tile couchLeftTile = new CouchLeftTile(59);
+<b class="fc"><i>1109</i>&nbsp;    public final static  Tile showerTopTile = new ShowerTopTile(57);</b>
 <i>1110</i>&nbsp;    /**
-<i>1111</i>&nbsp;     * Here is create a couchRightTile object and it&#39;s id is set.
+<i>1111</i>&nbsp;     * Here is create a showerBotTile object and it&#39;s id is set.
 <i>1112</i>&nbsp;     * */
-<i>1113</i>&nbsp;    public final static  Tile couchRightTile = new CouchRightTile(60);
-<i>1114</i>&nbsp;    /**
-<i>1115</i>&nbsp;     * Here is create a tvTopTile object and it&#39;s id is set.
-<i>1116</i>&nbsp;     * */
-<i>1117</i>&nbsp;    public final static  Tile tvTopTile = new TVTopTile(61);
-<i>1118</i>&nbsp;    /**
-<i>1119</i>&nbsp;     * Here is create a tvBotTile object and it&#39;s id is set.
-<i>1120</i>&nbsp;     * */
-<i>1121</i>&nbsp;    public final static  Tile tvBotTile = new TVBotTile(62);
-<i>1122</i>&nbsp;
+<b class="fc"><i>1113</i>&nbsp;    public final static  Tile showerBotTile = new ShowerBotTile(58);</b>
+<i>1114</i>&nbsp;
+<i>1115</i>&nbsp;    /**
+<i>1116</i>&nbsp;     * Here is create a couchLeftTile object and it&#39;s id is set.
+<i>1117</i>&nbsp;     * */
+<b class="fc"><i>1118</i>&nbsp;    public final static  Tile couchLeftTile = new CouchLeftTile(59);</b>
+<i>1119</i>&nbsp;    /**
+<i>1120</i>&nbsp;     * Here is create a couchRightTile object and it&#39;s id is set.
+<i>1121</i>&nbsp;     * */
+<b class="fc"><i>1122</i>&nbsp;    public final static  Tile couchRightTile = new CouchRightTile(60);</b>
 <i>1123</i>&nbsp;    /**
-<i>1124</i>&nbsp;     * Here is create a shelfTLTile object and it&#39;s id is set.
+<i>1124</i>&nbsp;     * Here is create a tvTopTile object and it&#39;s id is set.
 <i>1125</i>&nbsp;     * */
-<i>1126</i>&nbsp;    public final static  Tile shelfTLTile = new ShelfTLTile(63);
+<b class="fc"><i>1126</i>&nbsp;    public final static  Tile tvTopTile = new TVTopTile(61);</b>
 <i>1127</i>&nbsp;    /**
-<i>1128</i>&nbsp;     * Here is create a shelfTRTile object and it&#39;s id is set.
+<i>1128</i>&nbsp;     * Here is create a tvBotTile object and it&#39;s id is set.
 <i>1129</i>&nbsp;     * */
-<i>1130</i>&nbsp;    public final static  Tile shelfTRTile = new ShelfTRTile(64);
-<i>1131</i>&nbsp;    /**
-<i>1132</i>&nbsp;     * Here is create a shelfBLTile object and it&#39;s id is set.
-<i>1133</i>&nbsp;     * */
-<i>1134</i>&nbsp;    public final static  Tile shelfBLTile = new ShelfBLTile(65);
-<i>1135</i>&nbsp;    /**
-<i>1136</i>&nbsp;     * Here is create a shelfBRTile object and it&#39;s id is set.
-<i>1137</i>&nbsp;     * */
-<i>1138</i>&nbsp;    public final static  Tile shelfBRTile = new ShelfBRTile(66);
-<i>1139</i>&nbsp;
+<b class="fc"><i>1130</i>&nbsp;    public final static  Tile tvBotTile = new TVBotTile(62);</b>
+<i>1131</i>&nbsp;
+<i>1132</i>&nbsp;    /**
+<i>1133</i>&nbsp;     * Here is create a shelfTLTile object and it&#39;s id is set.
+<i>1134</i>&nbsp;     * */
+<b class="fc"><i>1135</i>&nbsp;    public final static  Tile shelfTLTile = new ShelfTLTile(63);</b>
+<i>1136</i>&nbsp;    /**
+<i>1137</i>&nbsp;     * Here is create a shelfTRTile object and it&#39;s id is set.
+<i>1138</i>&nbsp;     * */
+<b class="fc"><i>1139</i>&nbsp;    public final static  Tile shelfTRTile = new ShelfTRTile(64);</b>
 <i>1140</i>&nbsp;    /**
-<i>1141</i>&nbsp;     * Here is create a deskTopTile object and it&#39;s id is set.
+<i>1141</i>&nbsp;     * Here is create a shelfBLTile object and it&#39;s id is set.
 <i>1142</i>&nbsp;     * */
-<i>1143</i>&nbsp;    public final static  Tile deskTopTile = new DeskTopTile(67);
+<b class="fc"><i>1143</i>&nbsp;    public final static  Tile shelfBLTile = new ShelfBLTile(65);</b>
 <i>1144</i>&nbsp;    /**
-<i>1145</i>&nbsp;     * Here is create a deskBotTile object and it&#39;s id is set.
+<i>1145</i>&nbsp;     * Here is create a shelfBRTile object and it&#39;s id is set.
 <i>1146</i>&nbsp;     * */
-<i>1147</i>&nbsp;    public final static  Tile deskBotTile = new DeskBotTile(68);
+<b class="fc"><i>1147</i>&nbsp;    public final static  Tile shelfBRTile = new ShelfBRTile(66);</b>
 <i>1148</i>&nbsp;
 <i>1149</i>&nbsp;    /**
-<i>1150</i>&nbsp;     * Here is create a bedTLTile object and it&#39;s id is set.
+<i>1150</i>&nbsp;     * Here is create a deskTopTile object and it&#39;s id is set.
 <i>1151</i>&nbsp;     * */
-<i>1152</i>&nbsp;    public final static  Tile bedTLTile = new BedTLTile(69);
+<b class="fc"><i>1152</i>&nbsp;    public final static  Tile deskTopTile = new DeskTopTile(67);</b>
 <i>1153</i>&nbsp;    /**
-<i>1154</i>&nbsp;     * Here is create a bedTRTile object and it&#39;s id is set.
+<i>1154</i>&nbsp;     * Here is create a deskBotTile object and it&#39;s id is set.
 <i>1155</i>&nbsp;     * */
-<i>1156</i>&nbsp;     public final static  Tile bedTRTile = new BedTRTile(70);
+<b class="fc"><i>1156</i>&nbsp;    public final static  Tile deskBotTile = new DeskBotTile(68);</b>
 <i>1157</i>&nbsp;
-<i>1158</i>&nbsp;     /**
-<i>1159</i>&nbsp;     * Here is create a bedCLTile object and it&#39;s id is set.
+<i>1158</i>&nbsp;    /**
+<i>1159</i>&nbsp;     * Here is create a bedTLTile object and it&#39;s id is set.
 <i>1160</i>&nbsp;     * */
-<i>1161</i>&nbsp;     public final static  Tile bedCLTile = new BedCLTile(90);
+<b class="fc"><i>1161</i>&nbsp;    public final static  Tile bedTLTile = new BedTLTile(69);</b>
 <i>1162</i>&nbsp;    /**
-<i>1163</i>&nbsp;     * Here is create a bedCRTile object and it&#39;s id is set.
+<i>1163</i>&nbsp;     * Here is create a bedTRTile object and it&#39;s id is set.
 <i>1164</i>&nbsp;     * */
-<i>1165</i>&nbsp;    public final static  Tile bedCRTile = new BedCRTile(91);
-<i>1166</i>&nbsp;    /**
-<i>1167</i>&nbsp;     * Here is create a bedBLTile object and it&#39;s id is set.
-<i>1168</i>&nbsp;     * */
-<i>1169</i>&nbsp;    public final static  Tile bedBLTile = new BedBLTile(71);
-<i>1170</i>&nbsp;    /**
-<i>1171</i>&nbsp;     * Here is create a bedBRTile object and it&#39;s id is set.
-<i>1172</i>&nbsp;     * */
-<i>1173</i>&nbsp;    public final static  Tile bedBRTile = new BedBRTile(72);
-<i>1174</i>&nbsp;
+<b class="fc"><i>1165</i>&nbsp;     public final static  Tile bedTRTile = new BedTRTile(70);</b>
+<i>1166</i>&nbsp;
+<i>1167</i>&nbsp;     /**
+<i>1168</i>&nbsp;     * Here is create a bedCLTile object and it&#39;s id is set.
+<i>1169</i>&nbsp;     * */
+<b class="fc"><i>1170</i>&nbsp;     public final static  Tile bedCLTile = new BedCLTile(90);</b>
+<i>1171</i>&nbsp;    /**
+<i>1172</i>&nbsp;     * Here is create a bedCRTile object and it&#39;s id is set.
+<i>1173</i>&nbsp;     * */
+<b class="fc"><i>1174</i>&nbsp;    public final static  Tile bedCRTile = new BedCRTile(91);</b>
 <i>1175</i>&nbsp;    /**
-<i>1176</i>&nbsp;     * Here is create a diningTLTile object and it&#39;s id is set.
+<i>1176</i>&nbsp;     * Here is create a bedBLTile object and it&#39;s id is set.
 <i>1177</i>&nbsp;     * */
-<i>1178</i>&nbsp;    public final static  Tile diningTLTile = new DiningTLTile(73);
+<b class="fc"><i>1178</i>&nbsp;    public final static  Tile bedBLTile = new BedBLTile(71);</b>
 <i>1179</i>&nbsp;    /**
-<i>1180</i>&nbsp;     * Here is create a diningTRTile object and it&#39;s id is set.
+<i>1180</i>&nbsp;     * Here is create a bedBRTile object and it&#39;s id is set.
 <i>1181</i>&nbsp;     * */
-<i>1182</i>&nbsp;    public final static  Tile diningTRTile = new DiningTRTile(74);
-<i>1183</i>&nbsp;    /**
-<i>1184</i>&nbsp;     * Here is create a diningBLTile object and it&#39;s id is set.
-<i>1185</i>&nbsp;     * */
-<i>1186</i>&nbsp;    public final static  Tile diningBLTile = new DiningBLTile(75);
-<i>1187</i>&nbsp;    /**
-<i>1188</i>&nbsp;     * Here is create a diningBRTile object and it&#39;s id is set.
-<i>1189</i>&nbsp;     * */
-<i>1190</i>&nbsp;    public final static  Tile diningBRTile = new DiningBRTile(76);
-<i>1191</i>&nbsp;
+<b class="fc"><i>1182</i>&nbsp;    public final static  Tile bedBRTile = new BedBRTile(72);</b>
+<i>1183</i>&nbsp;
+<i>1184</i>&nbsp;    /**
+<i>1185</i>&nbsp;     * Here is create a diningTLTile object and it&#39;s id is set.
+<i>1186</i>&nbsp;     * */
+<b class="fc"><i>1187</i>&nbsp;    public final static  Tile diningTLTile = new DiningTLTile(73);</b>
+<i>1188</i>&nbsp;    /**
+<i>1189</i>&nbsp;     * Here is create a diningTRTile object and it&#39;s id is set.
+<i>1190</i>&nbsp;     * */
+<b class="fc"><i>1191</i>&nbsp;    public final static  Tile diningTRTile = new DiningTRTile(74);</b>
 <i>1192</i>&nbsp;    /**
-<i>1193</i>&nbsp;     * Here is create a rugTLTile object and it&#39;s id is set.
+<i>1193</i>&nbsp;     * Here is create a diningBLTile object and it&#39;s id is set.
 <i>1194</i>&nbsp;     * */
-<i>1195</i>&nbsp;    public final static  Tile rugTLTile = new RugTLTile(77);
+<b class="fc"><i>1195</i>&nbsp;    public final static  Tile diningBLTile = new DiningBLTile(75);</b>
 <i>1196</i>&nbsp;    /**
-<i>1197</i>&nbsp;     * Here is create a rugTCTile object and it&#39;s id is set.
+<i>1197</i>&nbsp;     * Here is create a diningBRTile object and it&#39;s id is set.
 <i>1198</i>&nbsp;     * */
-<i>1199</i>&nbsp;    public final static  Tile rugTCTile = new RugTCTile(78);
-<i>1200</i>&nbsp;    /**
-<i>1201</i>&nbsp;     * Here is create a rugTRTile object and it&#39;s id is set.
-<i>1202</i>&nbsp;     * */
-<i>1203</i>&nbsp;    public final static  Tile rugTRTile = new RugTRTile(79);
-<i>1204</i>&nbsp;    /**
-<i>1205</i>&nbsp;     * Here is create a rugBLTile object and it&#39;s id is set.
-<i>1206</i>&nbsp;     * */
-<i>1207</i>&nbsp;    public final static  Tile rugBLTile = new RugBLTile(80);
-<i>1208</i>&nbsp;    /**
-<i>1209</i>&nbsp;     * Here is create a rugBCTile object and it&#39;s id is set.
-<i>1210</i>&nbsp;     * */
-<i>1211</i>&nbsp;    public final static  Tile rugBCTile = new RugBCTile(81);
-<i>1212</i>&nbsp;    /**
-<i>1213</i>&nbsp;     * Here is create a rugBRTile object and it&#39;s id is set.
-<i>1214</i>&nbsp;     * */
-<i>1215</i>&nbsp;    public final static  Tile rugBRTile = new RugBRTile(82);
-<i>1216</i>&nbsp;
+<b class="fc"><i>1199</i>&nbsp;    public final static  Tile diningBRTile = new DiningBRTile(76);</b>
+<i>1200</i>&nbsp;
+<i>1201</i>&nbsp;    /**
+<i>1202</i>&nbsp;     * Here is create a rugTLTile object and it&#39;s id is set.
+<i>1203</i>&nbsp;     * */
+<b class="fc"><i>1204</i>&nbsp;    public final static  Tile rugTLTile = new RugTLTile(77);</b>
+<i>1205</i>&nbsp;    /**
+<i>1206</i>&nbsp;     * Here is create a rugTCTile object and it&#39;s id is set.
+<i>1207</i>&nbsp;     * */
+<b class="fc"><i>1208</i>&nbsp;    public final static  Tile rugTCTile = new RugTCTile(78);</b>
+<i>1209</i>&nbsp;    /**
+<i>1210</i>&nbsp;     * Here is create a rugTRTile object and it&#39;s id is set.
+<i>1211</i>&nbsp;     * */
+<b class="fc"><i>1212</i>&nbsp;    public final static  Tile rugTRTile = new RugTRTile(79);</b>
+<i>1213</i>&nbsp;    /**
+<i>1214</i>&nbsp;     * Here is create a rugBLTile object and it&#39;s id is set.
+<i>1215</i>&nbsp;     * */
+<b class="fc"><i>1216</i>&nbsp;    public final static  Tile rugBLTile = new RugBLTile(80);</b>
 <i>1217</i>&nbsp;    /**
-<i>1218</i>&nbsp;     * Here is create a grassLongTile object and it&#39;s id is set.
+<i>1218</i>&nbsp;     * Here is create a rugBCTile object and it&#39;s id is set.
 <i>1219</i>&nbsp;     * */
-<i>1220</i>&nbsp;    public final static  Tile grassLongTile = new GrassLongTile(83);
+<b class="fc"><i>1220</i>&nbsp;    public final static  Tile rugBCTile = new RugBCTile(81);</b>
 <i>1221</i>&nbsp;    /**
-<i>1222</i>&nbsp;     * Here is create a grassFlowersTile object and it&#39;s id is set.
+<i>1222</i>&nbsp;     * Here is create a rugBRTile object and it&#39;s id is set.
 <i>1223</i>&nbsp;     * */
-<i>1224</i>&nbsp;    public final static  Tile grassFlowersTile = new GrassFlowersTile(84);
-<i>1225</i>&nbsp;    /**
-<i>1226</i>&nbsp;     * Here is create a grassRockTile object and it&#39;s id is set.
-<i>1227</i>&nbsp;     * */
-<i>1228</i>&nbsp;    public final static  Tile grassRockTile = new GrassRockTile(85);
-<i>1229</i>&nbsp;    /**
-<i>1230</i>&nbsp;     * Here is create a grassShortTile object and it&#39;s id is set.
-<i>1231</i>&nbsp;     * */
-<i>1232</i>&nbsp;    public final static  Tile grassShortTile = new GrassShortTile(86);
-<i>1233</i>&nbsp;
+<b class="fc"><i>1224</i>&nbsp;    public final static  Tile rugBRTile = new RugBRTile(82);</b>
+<i>1225</i>&nbsp;
+<i>1226</i>&nbsp;    /**
+<i>1227</i>&nbsp;     * Here is create a grassLongTile object and it&#39;s id is set.
+<i>1228</i>&nbsp;     * */
+<b class="fc"><i>1229</i>&nbsp;    public final static  Tile grassLongTile = new GrassLongTile(83);</b>
+<i>1230</i>&nbsp;    /**
+<i>1231</i>&nbsp;     * Here is create a grassFlowersTile object and it&#39;s id is set.
+<i>1232</i>&nbsp;     * */
+<b class="fc"><i>1233</i>&nbsp;    public final static  Tile grassFlowersTile = new GrassFlowersTile(84);</b>
 <i>1234</i>&nbsp;    /**
-<i>1235</i>&nbsp;     * Here is create a doorTopTile object and it&#39;s id is set.
+<i>1235</i>&nbsp;     * Here is create a grassRockTile object and it&#39;s id is set.
 <i>1236</i>&nbsp;     * */
-<i>1237</i>&nbsp;    public final static  Tile doorTopTile = new DoorTopTile(87);
+<b class="fc"><i>1237</i>&nbsp;    public final static  Tile grassRockTile = new GrassRockTile(85);</b>
 <i>1238</i>&nbsp;    /**
-<i>1239</i>&nbsp;     * Here is create a doorBotTile object and it&#39;s id is set.
+<i>1239</i>&nbsp;     * Here is create a grassShortTile object and it&#39;s id is set.
 <i>1240</i>&nbsp;     * */
-<i>1241</i>&nbsp;    public final static  Tile doorBotTile = new DoorBotTile(88);
+<b class="fc"><i>1241</i>&nbsp;    public final static  Tile grassShortTile = new GrassShortTile(86);</b>
 <i>1242</i>&nbsp;
 <i>1243</i>&nbsp;    /**
-<i>1244</i>&nbsp;     * Here is create a pathTile object and it&#39;s id is set.
+<i>1244</i>&nbsp;     * Here is create a doorTopTile object and it&#39;s id is set.
 <i>1245</i>&nbsp;     * */
-<i>1246</i>&nbsp;    public final static  Tile pathTile = new PathTile(89);
-<i>1247</i>&nbsp;
-<i>1248</i>&nbsp;    //CLASS
-<i>1249</i>&nbsp;
-<i>1250</i>&nbsp;    /**
-<i>1251</i>&nbsp;     * filler
-<i>1252</i>&nbsp;     * */
-<i>1253</i>&nbsp;    public final static int TILEWIDTH = 32, TILEHEIGHT = 32;
-<i>1254</i>&nbsp;
-<i>1255</i>&nbsp;    protected BufferedImage texture;
-<i>1256</i>&nbsp;    protected final int id;
-<i>1257</i>&nbsp;
-<i>1258</i>&nbsp;    /**
-<i>1259</i>&nbsp;     * Tile creates a tile object using a BufferedImage
-<i>1260</i>&nbsp;     * and an int id.
-<i>1261</i>&nbsp;     * @param id integer id.
-<i>1262</i>&nbsp;     * @param texture BufferedImage object.
-<i>1263</i>&nbsp;     * */
-<i>1264</i>&nbsp;    public Tile(BufferedImage texture, int id) {
-<i>1265</i>&nbsp;        this.texture = texture;
-<i>1266</i>&nbsp;        this.id = id;
-<i>1267</i>&nbsp;
-<i>1268</i>&nbsp;        tiles[id] = this;
-<i>1269</i>&nbsp;    }
-<i>1270</i>&nbsp;
-<i>1271</i>&nbsp;    /**
-<i>1272</i>&nbsp;     * filler
-<i>1273</i>&nbsp;     * */
-<i>1274</i>&nbsp;    public void tick() {
-<i>1275</i>&nbsp;
-<i>1276</i>&nbsp;    }
-<i>1277</i>&nbsp;
-<i>1278</i>&nbsp;    /**
-<i>1279</i>&nbsp;     * Render draws the image into the game.
-<i>1280</i>&nbsp;     * @param g graphics of the image.
-<i>1281</i>&nbsp;     * @param x int of the x value to render the image.
-<i>1282</i>&nbsp;     * @param y int of the y value to render the image.
-<i>1283</i>&nbsp;     * */
-<i>1284</i>&nbsp;    public void render(Graphics g, int x, int y) {
-<i>1285</i>&nbsp;        g.drawImage(texture,x,y,TILEWIDTH,TILEHEIGHT,null);
-<i>1286</i>&nbsp;    }
-<i>1287</i>&nbsp;
-<i>1288</i>&nbsp;    /**
-<i>1289</i>&nbsp;     * Boolean of tile objects to check if a tile is solid.
-<i>1290</i>&nbsp;     * @return false if the object is not solid and the pet can
-<i>1291</i>&nbsp;     * walk over the tile.
-<i>1292</i>&nbsp;     * */
-<i>1293</i>&nbsp;    public boolean isSolid() {
-<i>1294</i>&nbsp;        return false;
-<i>1295</i>&nbsp;    }
-<i>1296</i>&nbsp;
-<i>1297</i>&nbsp;    /**
-<i>1298</i>&nbsp;     * Get id returns the id a tile.
-<i>1299</i>&nbsp;     * @return the int id of the tile.
-<i>1300</i>&nbsp;     * */
-<i>1301</i>&nbsp;    public int getId() {
-<i>1302</i>&nbsp;        return id;
-<i>1303</i>&nbsp;    }
-<i>1304</i>&nbsp;}
+<b class="fc"><i>1246</i>&nbsp;    public final static  Tile doorTopTile = new DoorTopTile(87);</b>
+<i>1247</i>&nbsp;    /**
+<i>1248</i>&nbsp;     * Here is create a doorBotTile object and it&#39;s id is set.
+<i>1249</i>&nbsp;     * */
+<b class="fc"><i>1250</i>&nbsp;    public final static  Tile doorBotTile = new DoorBotTile(88);</b>
+<i>1251</i>&nbsp;
+<i>1252</i>&nbsp;    /**
+<i>1253</i>&nbsp;     * Here is create a pathTile object and it&#39;s id is set.
+<i>1254</i>&nbsp;     * */
+<b class="fc"><i>1255</i>&nbsp;    public final static  Tile pathTile = new PathTile(89);</b>
+<i>1256</i>&nbsp;
+<i>1257</i>&nbsp;    /**
+<i>1258</i>&nbsp;     * Here is create a grassShortTile object and it&#39;s id is set.
+<i>1259</i>&nbsp;     * This Tile ends the mini game.
+<i>1260</i>&nbsp;     * */
+<b class="fc"><i>1261</i>&nbsp;    public final static  Tile miniGameGrassShortTile = new MiniGameGrassShortTile(95);</b>
+<i>1262</i>&nbsp;
+<i>1263</i>&nbsp;    //CLASS
+<i>1264</i>&nbsp;
+<i>1265</i>&nbsp;    /**
+<i>1266</i>&nbsp;     * filler
+<i>1267</i>&nbsp;     * */
+<i>1268</i>&nbsp;    public final static int TILEWIDTH = 32, TILEHEIGHT = 32;
+<i>1269</i>&nbsp;
+<i>1270</i>&nbsp;    protected BufferedImage texture;
+<i>1271</i>&nbsp;    protected final int id;
+<i>1272</i>&nbsp;
+<i>1273</i>&nbsp;    /**
+<i>1274</i>&nbsp;     * Tile creates a tile object using a BufferedImage
+<i>1275</i>&nbsp;     * and an int id.
+<i>1276</i>&nbsp;     * @param id integer id.
+<i>1277</i>&nbsp;     * @param texture BufferedImage object.
+<i>1278</i>&nbsp;     * */
+<b class="fc"><i>1279</i>&nbsp;    public Tile(BufferedImage texture, int id) {</b>
+<b class="fc"><i>1280</i>&nbsp;        this.texture = texture;</b>
+<b class="fc"><i>1281</i>&nbsp;        this.id = id;</b>
+<i>1282</i>&nbsp;
+<b class="fc"><i>1283</i>&nbsp;        tiles[id] = this;</b>
+<b class="fc"><i>1284</i>&nbsp;    }</b>
+<i>1285</i>&nbsp;
+<i>1286</i>&nbsp;    /**
+<i>1287</i>&nbsp;     * filler
+<i>1288</i>&nbsp;     * */
+<i>1289</i>&nbsp;    public void tick() {
+<i>1290</i>&nbsp;
+<b class="nc"><i>1291</i>&nbsp;    }</b>
+<i>1292</i>&nbsp;
+<i>1293</i>&nbsp;    /**
+<i>1294</i>&nbsp;     * Render draws the image into the game.
+<i>1295</i>&nbsp;     * @param g graphics of the image.
+<i>1296</i>&nbsp;     * @param x int of the x value to render the image.
+<i>1297</i>&nbsp;     * @param y int of the y value to render the image.
+<i>1298</i>&nbsp;     * */
+<i>1299</i>&nbsp;    public void render(Graphics g, int x, int y) {
+<b class="fc"><i>1300</i>&nbsp;        g.drawImage(texture,x,y,TILEWIDTH,TILEHEIGHT,null);</b>
+<b class="fc"><i>1301</i>&nbsp;    }</b>
+<i>1302</i>&nbsp;
+<i>1303</i>&nbsp;    /**
+<i>1304</i>&nbsp;     * Boolean of tile objects to check if a tile is solid.
+<i>1305</i>&nbsp;     * @return false if the object is not solid and the pet can
+<i>1306</i>&nbsp;     * walk over the tile.
+<i>1307</i>&nbsp;     * */
+<i>1308</i>&nbsp;    public boolean isSolid() {
+<b class="fc"><i>1309</i>&nbsp;        return false;</b>
+<i>1310</i>&nbsp;    }
+<i>1311</i>&nbsp;
+<i>1312</i>&nbsp;    /**
+<i>1313</i>&nbsp;     * Get id returns the id a tile.
+<i>1314</i>&nbsp;     * @return the int id of the tile.
+<i>1315</i>&nbsp;     * */
+<i>1316</i>&nbsp;    public int getId() {
+<b class="nc"><i>1317</i>&nbsp;        return id;</b>
+<i>1318</i>&nbsp;    }
+<i>1319</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2017-10-16 22:48</div>
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
 </div>
 </body>
 </html>

@@ -1,0 +1,241 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LoadState</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">dev.tilegame.states</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LoadState (dev.tilegame.states)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LoadState</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (3/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    58%
+  </span>
+  <span class="absValue">
+    (40/ 69)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package dev.tilegame.states;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import dev.tilegame.Manager;
+<i>4</i>&nbsp;import dev.tilegame.entities.animals.Pet;
+<i>5</i>&nbsp;import dev.tilegame.inventory.Inventory;
+<i>6</i>&nbsp;import dev.tilegame.inventory.Item;
+<i>7</i>&nbsp;import dev.tilegame.inventory.items.*;
+<i>8</i>&nbsp;import dev.tilegame.player.Player;
+<i>9</i>&nbsp;import dev.tilegame.sound.LoopLoader;
+<i>10</i>&nbsp;import dev.tilegame.worlds.World;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import javax.swing.*;
+<i>13</i>&nbsp;import java.awt.*;
+<i>14</i>&nbsp;import java.io.*;
+<i>15</i>&nbsp;import java.util.ArrayList;
+<i>16</i>&nbsp;import java.util.Scanner;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;/**
+<i>19</i>&nbsp; * Load state.
+<i>20</i>&nbsp; *
+<i>21</i>&nbsp; * @author allisonbolen
+<i>22</i>&nbsp; * @version 11.10.2017
+<i>23</i>&nbsp; */
+<i>24</i>&nbsp;public class LoadState extends State {
+<i>25</i>&nbsp;    /** the pet needs to be loaded to. */
+<i>26</i>&nbsp;    private Pet pet;
+<i>27</i>&nbsp;    /** the player needs to be loaded to. */
+<i>28</i>&nbsp;    private Player player;
+<i>29</i>&nbsp;    /** music controller. */
+<i>30</i>&nbsp;    private LoopLoader music;
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    /**
+<i>33</i>&nbsp;     * MenuState constructor.
+<i>34</i>&nbsp;     *
+<i>35</i>&nbsp;     * @param manager game class manager
+<i>36</i>&nbsp;     */
+<i>37</i>&nbsp;    public LoadState(final Manager manager) {
+<b class="fc"><i>38</i>&nbsp;        super(manager);</b>
+<b class="fc"><i>39</i>&nbsp;        player = manager.getPlayer();</b>
+<b class="fc"><i>40</i>&nbsp;        pet = manager.getPet();</b>
+<b class="fc"><i>41</i>&nbsp;        music = manager.getLoopLoader();</b>
+<i>42</i>&nbsp;        //statsManager = new StatsManager(pet);
+<b class="fc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    /**
+<i>46</i>&nbsp;     * Checks for button presses.
+<i>47</i>&nbsp;     */
+<i>48</i>&nbsp;    @Override
+<i>49</i>&nbsp;    public void tick() {
+<b class="fc"><i>50</i>&nbsp;        String content = null;</b>
+<b class="fc"><i>51</i>&nbsp;        String name = JOptionPane.showInputDialog(&quot;Enter a name for your file&quot;);</b>
+<b class="fc"><i>52</i>&nbsp;        if (name != null) {</b>
+<b class="fc"><i>53</i>&nbsp;            if (name == &quot;&quot;) {</b>
+<b class="nc"><i>54</i>&nbsp;                JOptionPane.showMessageDialog(null, &quot;You need to include a name if you would like to save a game&quot;);</b>
+<b class="nc"><i>55</i>&nbsp;                State.setState(manager.getGame().getMenuState());</b>
+<i>56</i>&nbsp;            }
+<i>57</i>&nbsp;            try {
+<b class="fc"><i>58</i>&nbsp;                content = new Scanner(new File(&quot;../350-animal-app/savedData/&quot; + name + &quot;.txt&quot;),&quot;UTF-8&quot;).useDelimiter(&quot;\\Z&quot;).next();</b>
+<i>59</i>&nbsp;                //parse content
+<b class="fc"><i>60</i>&nbsp;                String[] info = content.split(&quot;\n&quot;);</b>
+<b class="fc"><i>61</i>&nbsp;                String items = info[2].substring(info[2].indexOf(&#39;:&#39;) + 1);</b>
+<b class="fc"><i>62</i>&nbsp;                String[] itemList = items.split(&quot;,&quot;);</b>
+<b class="fc"><i>63</i>&nbsp;                int money = Integer.parseInt(info[3].substring(info[3].indexOf(&#39;:&#39;) + 1));</b>
+<b class="fc"><i>64</i>&nbsp;                int health = Integer.parseInt(info[4].substring(info[4].indexOf(&#39;:&#39;) + 1));</b>
+<b class="fc"><i>65</i>&nbsp;                int happy = Integer.parseInt(info[5].substring(info[5].indexOf(&#39;:&#39;) + 1));</b>
+<b class="fc"><i>66</i>&nbsp;                int clean = Integer.parseInt(info[6].substring(info[6].indexOf(&#39;:&#39;) + 1));</b>
+<b class="fc"><i>67</i>&nbsp;                int hunger = Integer.parseInt(info[7].substring(info[7].indexOf(&#39;:&#39;) + 1));</b>
+<i>68</i>&nbsp;
+<b class="fc"><i>69</i>&nbsp;                for (String i : itemList) {</b>
+<b class="fc"><i>70</i>&nbsp;                    if (i.equals(&quot;Bacon Treat&quot;)) {</b>
+<b class="nc"><i>71</i>&nbsp;                        BaconTreat bt = new BaconTreat();</b>
+<b class="nc"><i>72</i>&nbsp;                        player.getInventory().addItem(bt);</b>
+<b class="nc"><i>73</i>&nbsp;                    } else if (i.equals(&quot;Chew Toy&quot;)) {</b>
+<b class="nc"><i>74</i>&nbsp;                        ChewToy ct = new ChewToy();</b>
+<b class="nc"><i>75</i>&nbsp;                        player.getInventory().addItem(ct);</b>
+<b class="nc"><i>76</i>&nbsp;                    } else if (i.equals(&quot;Dog Biscuit&quot;)) {</b>
+<b class="nc"><i>77</i>&nbsp;                        DogBiscuit db = new DogBiscuit();</b>
+<b class="nc"><i>78</i>&nbsp;                        player.getInventory().addItem(db);</b>
+<b class="nc"><i>79</i>&nbsp;                    } else if (i.equals(&quot;Dog Bone&quot;)) {</b>
+<b class="nc"><i>80</i>&nbsp;                        DogBone dbo = new DogBone();</b>
+<b class="nc"><i>81</i>&nbsp;                        player.getInventory().addItem(dbo);</b>
+<b class="nc"><i>82</i>&nbsp;                    } else if (i.equals(&quot;Dog Food Premium&quot;)) {</b>
+<b class="nc"><i>83</i>&nbsp;                        DogFoodPremium dfp = new DogFoodPremium();</b>
+<b class="nc"><i>84</i>&nbsp;                        player.getInventory().addItem(dfp);</b>
+<b class="nc"><i>85</i>&nbsp;                    } else if (i.equals(&quot;Dog Food Standard&quot;)) {</b>
+<b class="nc"><i>86</i>&nbsp;                        DogFoodStandard dfs = new DogFoodStandard();</b>
+<b class="nc"><i>87</i>&nbsp;                        player.getInventory().addItem(dfs);</b>
+<b class="nc"><i>88</i>&nbsp;                    } else if (i.equals(&quot;Stuffed Animal&quot;)) {</b>
+<b class="nc"><i>89</i>&nbsp;                        StuffedAnimal sa = new StuffedAnimal();</b>
+<b class="nc"><i>90</i>&nbsp;                        player.getInventory().addItem(sa);</b>
+<b class="nc"><i>91</i>&nbsp;                    } else if (i.equals(&quot;Tennis Ball&quot;)) {</b>
+<b class="nc"><i>92</i>&nbsp;                        TennisBall tb = new TennisBall();</b>
+<b class="nc"><i>93</i>&nbsp;                        player.getInventory().addItem(tb);</b>
+<i>94</i>&nbsp;                    }
+<i>95</i>&nbsp;                }
+<i>96</i>&nbsp;                //set inventory
+<i>97</i>&nbsp;//                inven.setItemList(itemgroup);
+<i>98</i>&nbsp;//                player.setInventory(inven);
+<i>99</i>&nbsp;                //set money
+<b class="fc"><i>100</i>&nbsp;                player.setMoney(money);</b>
+<i>101</i>&nbsp;                //set health
+<b class="fc"><i>102</i>&nbsp;                pet.setHealth(health);</b>
+<i>103</i>&nbsp;                //set happy
+<b class="fc"><i>104</i>&nbsp;                pet.setHappiness(happy);</b>
+<i>105</i>&nbsp;                //set clean
+<b class="fc"><i>106</i>&nbsp;                pet.setCleanliness(clean);</b>
+<i>107</i>&nbsp;                // set hunger
+<b class="fc"><i>108</i>&nbsp;                pet.setHunger(hunger);</b>
+<i>109</i>&nbsp;                //set pet and player to load to
+<b class="fc"><i>110</i>&nbsp;                manager.setPet(pet);</b>
+<b class="fc"><i>111</i>&nbsp;                manager.setPlayer(player);</b>
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;                //set game state == new
+<b class="fc"><i>114</i>&nbsp;                music.stop();</b>
+<b class="fc"><i>115</i>&nbsp;                if(!(State.getLastState() == manager.getGame().getTitleState()))</b>
+<b class="fc"><i>116</i>&nbsp;                    State.setState(manager.getGame().getMenuState());</b>
+<i>117</i>&nbsp;                else
+<b class="nc"><i>118</i>&nbsp;                    State.setState(manager.getGame().getGameState());</b>
+<i>119</i>&nbsp;
+<b class="fc"><i>120</i>&nbsp;            } catch (FileNotFoundException e) {</b>
+<i>121</i>&nbsp;                //if hte file doesnt exist
+<b class="fc"><i>122</i>&nbsp;                JOptionPane.showMessageDialog(null, &quot;&lt;html&gt;The file &lt;b&gt;\&quot;&quot; + name + &quot;\&quot;&lt;/b&gt; is non-existent. \n The directory \&quot;/350-animal-app/savedData/\&quot; is where the files are saved. \n Please make sure your spelled your file name correctly and that it is in the right directory.&quot;);</b>
+<b class="fc"><i>123</i>&nbsp;                System.out.println(State.getLastState());</b>
+<b class="fc"><i>124</i>&nbsp;                if(!(State.getLastState() == manager.getGame().getTitleState()))</b>
+<b class="fc"><i>125</i>&nbsp;                    State.setState(manager.getGame().getMenuState());</b>
+<i>126</i>&nbsp;                else
+<b class="nc"><i>127</i>&nbsp;                    State.setState(manager.getGame().getTitleState());</b>
+<b class="fc"><i>128</i>&nbsp;            }</b>
+<i>129</i>&nbsp;        } else {
+<i>130</i>&nbsp;            // if the player hit cancel or exit
+<b class="fc"><i>131</i>&nbsp;            if(!(State.getLastState() == manager.getGame().getTitleState()))</b>
+<b class="fc"><i>132</i>&nbsp;                State.setState(manager.getGame().getMenuState());</b>
+<i>133</i>&nbsp;            else
+<b class="nc"><i>134</i>&nbsp;                State.setState(manager.getGame().getTitleState());</b>
+<i>135</i>&nbsp;
+<i>136</i>&nbsp;        }
+<i>137</i>&nbsp;
+<i>138</i>&nbsp;
+<b class="fc"><i>139</i>&nbsp;    }</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;    /**
+<i>142</i>&nbsp;     * Render main menu screen.
+<i>143</i>&nbsp;     *
+<i>144</i>&nbsp;     * @param g graphics object.
+<i>145</i>&nbsp;     */
+<i>146</i>&nbsp;    @Override
+<i>147</i>&nbsp;    public void render(final Graphics g) {
+<i>148</i>&nbsp;        // TODO make menu prettier and add exit to title button
+<i>149</i>&nbsp;
+<b class="fc"><i>150</i>&nbsp;    }</b>
+<i>151</i>&nbsp;
+<i>152</i>&nbsp;    /**
+<i>153</i>&nbsp;     * @return null/no world in this state
+<i>154</i>&nbsp;     */
+<i>155</i>&nbsp;    public World getWorld() {
+<b class="nc"><i>156</i>&nbsp;        return null;</b>
+<i>157</i>&nbsp;    }
+<i>158</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2017-12-05 00:26</div>
+</div>
+</body>
+</html>

@@ -79,6 +79,7 @@ public class ParkState extends State {
                 sounds.load("res/sounds/squeeze-toy-4.wav");
                 sounds.play();
                 pet.setHappiness(6);
+                State.setLastState(this);
                 State.setState(new MiniGameState(manager));
             }
             // Inventory Button
