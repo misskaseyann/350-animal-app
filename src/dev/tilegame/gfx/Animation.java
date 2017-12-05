@@ -4,23 +4,33 @@ import java.awt.image.BufferedImage;
 
 /**
  * Animation graphics.
+ *
  * @author kaseystowell
  * @version 10.03.2017
  */
 public class Animation {
-
+    /**
+     * speed and index for animation.
+     */
     private int speed, index;
+    /**
+     * lastTime and timer for animation.
+     */
     private long lastTime, timer;
+    /**
+     * buffered image frames for animation.
+     */
     private BufferedImage[] frames;
 
     /**
      * Animation constructor.
-     * @param speed speed of animation.
-     * @param frames animation frames.
+     *
+     * @param inSpeed  speed of animation.
+     * @param inFrames animation frames.
      */
-    public Animation(final int speed, final BufferedImage[] frames) {
-        this.speed = speed;
-        this.frames = frames;
+    public Animation(final int inSpeed, final BufferedImage[] inFrames) {
+        this.speed = inSpeed;
+        this.frames = inFrames;
         index = 0;
         timer = 0;
         // Set last time to current system time in milliseconds.
@@ -40,8 +50,9 @@ public class Animation {
         if (timer > speed) {
             index++;
             timer = 0;
-            if (index >= frames.length)
+            if (index >= frames.length) {
                 index = 0;
+            }
         }
     }
 

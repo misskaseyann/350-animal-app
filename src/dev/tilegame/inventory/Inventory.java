@@ -12,14 +12,22 @@ import java.util.ArrayList;
  */
 public class Inventory {
 
-    ArrayList<Item> itemList;
-    Manager manager;
+    /**
+     * item list containingthe items in the inventory.
+     */
+    protected ArrayList<Item> itemList;
+    /**
+     * the manager for the inventory.
+     */
+    protected Manager manager;
 
     /**
      * Creates the inventory list.
+     *
+     * @param inManager the manager sent in
      */
-    public Inventory(Manager manager) {
-        this.manager = manager;
+    public Inventory(final Manager inManager) {
+        this.manager = inManager;
         itemList = new ArrayList<>();
     }
 
@@ -29,7 +37,7 @@ public class Inventory {
      * @param item item to be added.
      * @return true if the item was added, false if it could not be added.
      */
-    public boolean addItem(Item item) {
+    public boolean addItem(final Item item) {
         if (itemList.size() < 12) {
             itemList.add(item);
             return true;
@@ -42,7 +50,7 @@ public class Inventory {
      *
      * @param item deletes the given item.
      */
-    public void deleteItem(Item item) {
+    public void deleteItem(final Item item) {
         itemList.get(itemList.indexOf(item)).useItem(manager.getPet());
         itemList.remove(item);
     }
@@ -57,10 +65,10 @@ public class Inventory {
     /**
      * Set the inventory list.
      *
-     * @param itemList inventory array list.
+     * @param inItemList inventory array list.
      */
-    public void setItemList(ArrayList<Item> itemList) {
-        this.itemList = itemList;
+    public void setItemList(final ArrayList<Item> inItemList) {
+        this.itemList = inItemList;
     }
 
     /**
@@ -70,6 +78,11 @@ public class Inventory {
         return itemList.size();
     }
 
+    /**
+     * lists the names of the items in item list.
+     *
+     * @return the list of names of items
+     */
     public String getListNames() {
         String info = "";
         for (Item item : itemList) {
@@ -78,4 +91,21 @@ public class Inventory {
         return info;
     }
 
+    /**
+     * get manager for the inventory.
+     *
+     * @return the manager
+     */
+    public Manager getManager() {
+        return manager;
+    }
+
+    /**
+     * set manager for the inventory.
+     *
+     * @param inManager the manager sent in
+     */
+    public void setManager(final Manager inManager) {
+        this.manager = inManager;
+    }
 }
