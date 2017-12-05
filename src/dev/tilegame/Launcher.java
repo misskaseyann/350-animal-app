@@ -12,7 +12,7 @@ public class Launcher {
      * @param args string arguments.
      */
     public static void main(final String[] args)  {
-        Game game = new Game("Test Game", 360, 640);
+        Game game = new Game("Petgotchi", 360, 640);
         game.start();
     }
 }

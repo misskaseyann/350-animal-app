@@ -31,7 +31,9 @@ public abstract class Item {
         this.description = description;
         this.cost = cost;
         this.img = img;
-        this.ani = ani;
+        this.ani = new BufferedImage[ani.length];
+        for (int i = 0; i < ani.length; i++)
+            this.ani[i] = ani[i];
     }
 
     /** Getters and Setters **/
@@ -61,11 +63,16 @@ public abstract class Item {
     }
 
     public BufferedImage[] getAni() {
+        BufferedImage[] ani = new BufferedImage[this.ani.length];
+        for (int i = 0; i < this.ani.length; i++)
+            ani[i] = this.ani[i];
         return ani;
     }
 
     public void setAni(BufferedImage[] ani) {
-        this.ani = ani;
+        this.ani = new BufferedImage[ani.length];
+        for (int i = 0; i < ani.length; i++)
+            this.ani[i] = ani[i];
     }
 
     public String getDescription() {

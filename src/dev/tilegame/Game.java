@@ -132,31 +132,33 @@ public class Game implements Runnable {
      */
     public void run() {
         init();
-        double fps = 60.0;
-        double timePerTick = 1000000000 / fps;  // one second in nanoseconds divided by fps
-        double delta = 0;
-        long now;
-        long lastTime = System.nanoTime();
-        long timer = 0;
-        int ticks = 0;
-        // delta says when we can run tick and render
-        while (running) {
-            now = System.nanoTime();
+        synchronized(this) {
+            double fps = 60.0;
+            double timePerTick = 1000000000 / fps;  // one second in nanoseconds divided by fps
+            double delta = 0;
+            long now;
+            long lastTime = System.nanoTime();
+            long timer = 0;
+            int ticks = 0;
             // delta says when we can run tick and render
-            delta += (now - lastTime) / timePerTick; // time past since call / max time allowed
-            timer += now - lastTime;
-            lastTime = now;
-            if (delta >= 1) {
-                tick();
-                render();
-                ticks++;
-                delta--;
-            }
-            // if timer running for one second... see FPS
-            if (timer >= 1000000000) {
-                System.out.println("Ticks and Frames: " + ticks);
-                ticks = 0;
-                timer = 0;
+            while (running) {
+                now = System.nanoTime();
+                // delta says when we can run tick and render
+                delta += (now - lastTime) / timePerTick; // time past since call / max time allowed
+                timer += now - lastTime;
+                lastTime = now;
+                if (delta >= 1) {
+                    tick();
+                    render();
+                    ticks++;
+                    delta--;
+                }
+                // if timer running for one second... see FPS
+                if (timer >= 1000000000) {
+                    System.out.println("Ticks and Frames: " + ticks);
+                    ticks = 0;
+                    timer = 0;
+                }
             }
         }
         stop();

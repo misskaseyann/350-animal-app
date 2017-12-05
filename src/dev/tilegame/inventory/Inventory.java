@@ -71,11 +71,11 @@ public class Inventory {
     }
 
     public String getListNames() {
-        String info = "";
+        StringBuffer buf = new StringBuffer();
         for (Item item : itemList) {
-            info += item.getName() + ",";
+            buf.append(item.getName() + ",");
         }
-        return info;
+        return buf.toString();
     }
 
 }

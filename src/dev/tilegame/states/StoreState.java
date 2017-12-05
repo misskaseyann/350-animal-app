@@ -15,8 +15,6 @@ import java.awt.*;
  */
 public class StoreState extends State {
 
-    private LoopLoader music;
-    private Item selected;
     private State storeBuyState;
 
     /**

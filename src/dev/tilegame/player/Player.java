@@ -12,7 +12,6 @@ import dev.tilegame.inventory.Item;
  */
 public class Player {
 
-    Manager manager;
     Inventory inventory;
     int money;
     Item currItem;
@@ -23,7 +22,6 @@ public class Player {
      * @param manager game manager.
      */
     public Player(Manager manager) {
-        this.manager = manager;
         inventory = new Inventory(manager);
         money = 100;
         currItem = null;
