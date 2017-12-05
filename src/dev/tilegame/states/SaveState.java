@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 public class SaveState extends State {
     /** pet to save the stats of. */
     protected Pet pet;
-    /** ßPlayer to save the inventory and money from. */
+    /** Player to save the inventory and money from. */
     protected Player player;
 
     /**
