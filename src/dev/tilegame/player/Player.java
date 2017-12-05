@@ -73,4 +73,5 @@ public class Player {
     public void setCurrItem(Item currItem) {
         this.currItem = currItem;
     }
+
 }

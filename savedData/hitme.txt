@@ -1,8 +1,0 @@
-Xloc:17
-Yloc:13
-Items:NA
-Money:85
-Health:6
-Happiness:6
-Hygene:6
-Hunger:5

@@ -3,6 +3,7 @@ package dev.tilegame.states;
 import dev.tilegame.Manager;
 import dev.tilegame.entities.animals.Pet;
 import dev.tilegame.inventory.Inventory;
+import dev.tilegame.inventory.Item;
 import dev.tilegame.inventory.items.*;
 import dev.tilegame.player.Player;
 import dev.tilegame.sound.LoopLoader;
@@ -11,6 +12,7 @@ import dev.tilegame.worlds.World;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -24,7 +26,7 @@ public class LoadState extends State {
     private Pet pet;
     /** the player needs to be loaded to. */
     private Player player;
-    /** music controller */
+    /** music controller. */
     private LoopLoader music;
 
     /**
@@ -65,35 +67,37 @@ public class LoadState extends State {
                 int hunger = Integer.parseInt(info[7].substring(info[7].indexOf(':') + 1));
 
                 Inventory inven = new Inventory(manager);
+                ArrayList<Item> itemgroup = new ArrayList<Item>();
                 for (String i : itemList) {
                     if (i.equals("Bacon Treat")) {
                         BaconTreat bt = new BaconTreat();
-                        inven.addItem(bt);
+                        player.getInventory().addItem(bt);
                     } else if (i.equals("Chew Toy")) {
                         ChewToy ct = new ChewToy();
-                        inven.addItem(ct);
+                        player.getInventory().addItem(ct);
                     } else if (i.equals("Dog Biscuit")) {
                         DogBiscuit db = new DogBiscuit();
-                        inven.addItem(db);
+                        player.getInventory().addItem(db);
                     } else if (i.equals("Dog Bone")) {
                         DogBone dbo = new DogBone();
-                        inven.addItem(dbo);
+                        player.getInventory().addItem(dbo);
                     } else if (i.equals("Dog Food Premium")) {
                         DogFoodPremium dfp = new DogFoodPremium();
-                        inven.addItem(dfp);
+                        player.getInventory().addItem(dfp);
                     } else if (i.equals("Dog Food Standard")) {
                         DogFoodStandard dfs = new DogFoodStandard();
-                        inven.addItem(dfs);
+                        player.getInventory().addItem(dfs);
                     } else if (i.equals("Stuffed Animal")) {
                         StuffedAnimal sa = new StuffedAnimal();
-                        inven.addItem(sa);
+                        player.getInventory().addItem(sa);
                     } else if (i.equals("Tennis Ball")) {
                         TennisBall tb = new TennisBall();
-                        inven.addItem(tb);
+                        player.getInventory().addItem(tb);
                     }
                 }
                 //set inventory
-                player.setInventory(inven);
+//                inven.setItemList(itemgroup);
+//                player.setInventory(inven);
                 //set money
                 player.setMoney(money);
                 //set health
@@ -110,6 +114,7 @@ public class LoadState extends State {
 
                 //set game state == new
                 music.stop();
+                System.out.println(player.getInventory().getListNames());
                 State.setState(manager.getGame().getGameState());
             } catch (FileNotFoundException e) {
                 //if hte file doesnt exist
