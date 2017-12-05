@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 /**
  * Pet AI.
  * @author brendannahed
- * @version 10.08.2017
+ * @version 12.03.2017
  */
 public class MiniGamePet extends Animal {
 
@@ -159,7 +159,7 @@ public class MiniGamePet extends Animal {
     }
 
     /**
-     * @return True if the game is over.
+     * @return True if the mini game is over.
      */
     public boolean miniGameOver(){
         int[][] tiles = State.getCurrentState().getWorld().getTiles();
