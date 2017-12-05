@@ -11,68 +11,83 @@ import java.awt.image.BufferedImage;
  * @version 11.14.2017
  */
 public abstract class Item {
-
-    int cost;
-    String name;
-    String description;
-    BufferedImage img;
-    BufferedImage[] ani;
+    /**the cost of the item. */
+    protected int cost;
+    /**the name of the item. */
+    protected String name;
+    /** the item description. */
+    protected String description;
+    /** the images for the item. */
+    protected BufferedImage img;
+    /** buffered image animation. */
+    protected BufferedImage[] ani;
 
     /**
      * Constructor for the basic item.
      *
-     * @param name string value for an item name.
-     * @param cost integer representation for cost.
-     * @param img Image object that can be drawn on canvas.
-     * @param ani
+     * @param inName string value for an item name.
+     * @param inCost integer representation for cost.
+     * @param inImg Image object that can be drawn on canvas.
+     * @param inAni animation
+     * @param inDescription item description
      */
-    public Item(String name, String description, int cost, BufferedImage img, BufferedImage[] ani) {
-        this.name = name;
-        this.description = description;
-        this.cost = cost;
-        this.img = img;
-        this.ani = ani;
+    public Item(final String inName, final String inDescription, final int inCost, final BufferedImage inImg, final BufferedImage[] inAni) {
+        this.name = inName;
+        this.description = inDescription;
+        this.cost = inCost;
+        this.img = inImg;
+        this.ani = inAni;
     }
 
-    /** Getters and Setters **/
-
+    /** Getters and Setters. **/
+    /** get cost of item.
+     * @return cost */
     public int getCost() {
         return cost;
     }
-
-    public void setCost(int cost) {
-        this.cost = cost;
+    /** set cost.
+     * @param inCost*/
+    public void setCost(final int inCost) {
+        this.cost = inCost;
     }
-
+    /** get name of item.
+     * @return name */
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /** set name.
+     * @param inName of item*/
+    public void setName(final String inName) {
+        this.name = inName;
     }
-
+    /** return the image.
+     * @return img the image of the item */
     public BufferedImage getImg() {
         return img;
     }
-
-    public void setImg(BufferedImage img) {
+    /** set image.
+     * @param img the item image*/
+    public void setImg(final BufferedImage img) {
         this.img = img;
     }
-
+    /** getting the animation.
+     * @return ani of the item */
     public BufferedImage[] getAni() {
         return ani;
     }
-
-    public void setAni(BufferedImage[] ani) {
+    /**set animation.
+     * @param ani the animation for the item*/
+    public void setAni(final BufferedImage[] ani) {
         this.ani = ani;
     }
-
+    /** the description of the item.
+     * @return description of item */
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
+    /**set description.
+     * @param description of item*/
+    public void setDescription(final String description) {
         this.description = description;
     }
 

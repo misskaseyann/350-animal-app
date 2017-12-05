@@ -10,15 +10,19 @@ import java.awt.*;
 
 /**
  * Inventory menu for the game.
+ *
  * @author kaseystowell
  * @version 10.10.2017
  */
 public class InventoryState extends State {
-    /** inventory for the game. */
+    /**
+     * inventory for the game.
+     */
     Inventory inventory;
 
     /**
      * Inventory state constructor.
+     *
      * @param manager game class manager.
      */
     public InventoryState(final Manager manager) {
@@ -181,6 +185,7 @@ public class InventoryState extends State {
 
     /**
      * Renders the inventory menu.
+     *
      * @param g graphics object.
      */
     @Override
@@ -202,5 +207,7 @@ public class InventoryState extends State {
     /**
      * @return null/no world in inventory state.
      */
-    public World getWorld() { return null; }
+    public World getWorld() {
+        return null;
+    }
 }

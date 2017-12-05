@@ -2,7 +2,6 @@ package dev.tilegame.states;
 
 import dev.tilegame.Manager;
 import dev.tilegame.gfx.Animation;
-import dev.tilegame.gfx.Assets;
 import dev.tilegame.inventory.Item;
 import dev.tilegame.worlds.World;
 
@@ -22,7 +21,7 @@ public class ItemState extends State {
      * @param manager game manager.
      * @param item item being viewed in the state.
      */
-    public ItemState(Manager manager, Item item) {
+    public ItemState(final Manager manager, final Item item) {
         super(manager);
         animation = new Animation(300, item.getAni());
     }
@@ -45,7 +44,7 @@ public class ItemState extends State {
      * @param g graphics object.
      */
     @Override
-    public void render(Graphics g) {
+    public void render(final Graphics g) {
         g.drawImage(animation.getCurrentFrame(), 0, 0, null);
     }
 
